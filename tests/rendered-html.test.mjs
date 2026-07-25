@@ -25,6 +25,7 @@ test("ships the complete reviewed static site", async () => {
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
     assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
     assert.doesNotMatch(html, /Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/, `${page}: normalized legal footer`);
+    assert.doesNotMatch(html, /KM빌딩 3층|금정역SKV1센터 722호/, `${page}: full office address in footer`);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
   }
 });

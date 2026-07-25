@@ -89,6 +89,9 @@ for (const file of htmlFiles) {
   if (/Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/.test(html)) {
     add(file, "content", "footer copyright style is not normalized");
   }
+  if (/KM빌딩 3층|금정역SKV1센터 722호/.test(html)) {
+    add(file, "content", "footer office address is incomplete");
+  }
   if (/Cintelion|Cinterionion|CubeOn|AgentQ|DataQ|FactoryQ|VisionQ|V-모델|스마트 뱃지/.test(html)) {
     add(file, "content", "legacy or inconsistent product terminology");
   }
