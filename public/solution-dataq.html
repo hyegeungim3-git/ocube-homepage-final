@@ -129,8 +129,8 @@
 <section id="overview" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Overview</span>
-    <h2>모든 AI 판단은 표준화된 데이터에서 시작합니다</h2>
-    <p class="sec-sub">부서·<wbr>설비마다 다른 이기종 데이터를 <b>수집·<wbr>표준화·<wbr>통합</b>해, 지도 기반 관제와 실시간 질의로 잇는 산업 데이터 기반입니다.</p></div>
+    <h2>설비와 문서 데이터를 분석 시스템과 AI가 함께 쓸 수 있게 정리합니다</h2>
+    <p class="sec-sub">QData는 부서·<wbr>설비마다 다른 데이터를 수집해 형식과 의미를 통일하는 산업 데이터 플랫폼입니다. 정리된 데이터는 관제·<wbr>분석·<wbr>지식 검색에 활용됩니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <div class="feat-list">
         <div class="feat"><b>Connect</b><span>PLC·<wbr>센서·<wbr>MES·<wbr>ERP 등 이기종 소스 수집 — 프로토콜/포맷 차이 흡수</span></div>
@@ -147,7 +147,7 @@
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Features</span>
       <h2>데이터를 자산으로 만드는 핵심 기능</h2>
-      <p class="lead">수집 → 표준화 → 지식화 → 서빙, 각 단계를 제품 기능으로 제공합니다.</p></div>
+      <p class="lead">현장 소스를 연결하고 품질을 확인한 뒤, 공통 의미로 정리해 분석과 에이전트가 사용할 수 있게 제공합니다.</p></div>
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">Connect</span>
         <h3>프리빌트 커넥터</h3>
@@ -192,7 +192,7 @@
       <div class="tl-card reveal" data-d="1"><span class="yr">01 · Ingest</span><h3>수집 (Raw)</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>REST 어댑터로 OT/IT 이기종 소스를 실시간 스트림·<wbr>배치로 원본 그대로 적재.</p></div>
       <div class="tl-card reveal" data-d="2"><span class="yr">02 · Refine</span><h3>정합·<wbr>정제 (Clean)</h3><p>중복 제거·<wbr>타입 정합·<wbr>결측 보정·<wbr>이상값 필터 — 품질 규칙으로 신뢰 가능한 정제 데이터로.</p></div>
       <div class="tl-card reveal" data-d="3"><span class="yr">03 · Standardize</span><h3>표준화 (Semantic)</h3><p>공통 스키마·<wbr>온톨로지에 매핑 — 설비마다 다른 데이터를 하나의 의미 모델로 통합.</p></div>
-      <div class="tl-card cur reveal" data-d="4"><span class="yr">04 · Serve</span><h3>서빙</h3><p>지도·<wbr>대시보드 관제 + 실시간 질의 API — QFactory·<wbr>QAgent가 즉시 소비.</p></div>
+      <div class="tl-card cur reveal" data-d="4"><span class="yr">04 · Serve</span><h3>활용</h3><p>지도·<wbr>대시보드와 실시간 질의 API로 QFactory·<wbr>QAgent가 정리된 데이터를 바로 활용합니다.</p></div>
     </div>
     <p class="sec-note">상용 레이크하우스의 메달리온 패턴(원시→정제→표준)처럼 각 계층의 품질이 다운스트림 AI의 신뢰도를 결정합니다. QData는 이 4계층 정제 흐름을 파이프라인으로 구성하도록 설계됩니다.</p>
   </div>
@@ -234,8 +234,8 @@
 <section id="arch" class="sec-anchor deploy">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Architecture</span>
-    <h2>모든 판단의 최하단, 표준화층</h2>
-    <p class="sec-sub">QData가 이기종 데이터를 표준화하면, 그 위에서 <b>판단</b>과 <b>운영</b>이 흐릅니다.</p></div>
+    <h2>QData가 데이터를 정리하면, 분석과 에이전트가 같은 기준을 씁니다</h2>
+    <p class="sec-sub">QFactory와 QAgent는 QData가 통일한 형식과 의미를 기준으로 데이터를 조회하고 판단합니다.</p></div>
     <div class="stack-diagram reveal" data-d="1">
       <div class="stack-layer"><span class="stack-tag">운영 · 행동</span><b>Cubeon</b><small>통합 관제·<wbr>오케스트레이션 · Manufacturing/Safety 도메인팩</small></div>
       <div class="stack-arrow" aria-hidden="true">▲</div>
@@ -365,7 +365,7 @@
             <path d="M28 33.5l3 3 5-6" stroke="#0075de" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
            </svg></div>
         <h3>데이터와 모델이 함께 도는 운영 체계</h3>
-        <p>데이터 품질과 모델 성능을 같은 지표 체계에서 관찰하고, 변화가 감지되면 재학습과 재배포로 이어지는 폐루프를 운영합니다.</p>
+        <p>데이터 품질과 모델 성능을 함께 살피고, 변화가 감지되면 모델을 다시 학습·<wbr>검증해 배포하는 운영 흐름으로 연결합니다.</p>
         <ul class="kt-chk">
           <li>품질 규칙·<wbr>계보(lineage) 추적으로 데이터 신뢰도를 지속 관리</li>
           <li>MLOps 연계로 드리프트 감지부터 재학습·<wbr>롤백까지 자동화</li>
@@ -464,7 +464,7 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Ideal Use Cases</span>
     <h2>이런 조직에 적합합니다</h2>
-    <p class="sec-sub">복잡한 현장 데이터 환경에서 AI 도입을 준비하는 조직에 최적화된 기반을 제공합니다.</p></div>
+    <p class="sec-sub">데이터 형식과 보관 위치가 제각각이어서 분석이나 AI 도입을 시작하기 어려운 조직에 적합합니다.</p></div>
     <div class="dep-grid reveal" data-d="1" style="margin-top:24px">
       <div class="dep-card"><h3>데이터 정비에서 막혀 있는 제조 현장</h3><p>설비·<wbr>공정 데이터는 쌓이고 있으나 태그 체계와 단위가 라인마다 달라, 분석 이전의 정제·<wbr>통합 단계에서 프로젝트가 멈춰 있는 조직</p></div>
       <div class="dep-card"><h3>OT와 IT가 분리되어 있는 운영 조직</h3><p>제어망의 설비 데이터와 업무망의 MES·<wbr>ERP 데이터가 서로 연결되지 않아, 품질 이슈의 원인을 설비까지 되짚기 어려운 환경</p></div>
@@ -511,12 +511,12 @@
           <div class="fb-col"><p class="f-h">솔루션</p>
             <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
           <div class="fb-col"><p class="f-h">회사</p>
-            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
         </div>
       </div>
 
       <div class="fb-legal">
-        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
         <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
         <a href="tel:0533135333">053-313-5333</a>
         <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>

@@ -129,8 +129,8 @@
 <section id="overview" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Overview</span>
-    <h2>데이터를 찾는 시간을 없앱니다</h2>
-    <p class="sec-sub">시스템마다 흩어진 데이터·<wbr>지식을 <b>자연어 하나로</b> — 조회·<wbr>분석·<wbr>리포트, 나아가 사내 시스템 실행까지 수행하는 업무 에이전트를 구축합니다.</p></div>
+    <h2>여러 시스템을 오가며 데이터를 찾는 시간을 줄입니다</h2>
+    <p class="sec-sub">QAgent는 업무 시스템과 사내 문서를 자연어로 조회·<wbr>분석하는 AI 에이전트입니다. 답변을 리포트로 정리하고, 필요한 작업은 담당자 승인 후 실행합니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <figure><img class="shot" src="assets/img/proto/agentq-analysis.jpg" alt="QAgent 데이터 분석 에이전트 화면 — 업무 데이터를 자연어로 분석" loading="lazy" width="1100" height="691">
         <figcaption class="shot-cap">QAgent — 자연어 기반 업무 데이터 분석 (예시 화면)</figcaption></figure>
@@ -147,7 +147,7 @@
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Features</span>
       <h2>에이전트를 완성하는 핵심 기능</h2>
-      <p class="lead">조회 → 근거 → 실행 통제, 업무 에이전트에 꼭 필요한 세 기능입니다.</p></div>
+      <p class="lead">데이터를 찾아 답하고, 확인 가능한 근거를 제시하며, 실행 전에는 담당자의 통제를 거칩니다.</p></div>
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">NL2SQL</span>
         <h3>자연어 데이터 조회</h3>
@@ -202,10 +202,10 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Runtime Pipeline</span>
     <h2>근거 있는 답을 만드는 흐름</h2>
-    <p class="sec-sub">질의부터 실행까지 각 단계에 검색·<wbr>근거·<wbr>검증을 넣어 환각을 억제하도록 설계합니다.</p></div>
+    <p class="sec-sub">질문과 관련된 사내 자료를 먼저 찾고, 답변에 근거를 붙여 검증합니다. 근거가 부족한 답은 실행으로 바로 이어지지 않도록 구성합니다.</p></div>
     <div class="tl reveal" data-d="1">
-      <div class="tl-card"><div class="yr">STEP 1</div><h3>질의 이해</h3><p>자연어 의도 파악 · NL2SQL로 구조화 쿼리 변환</p></div>
-      <div class="tl-card"><div class="yr">STEP 2</div><h3>검색 · 임베딩</h3><p>벡터 검색으로 사내 문서·<wbr>지식 후보 검색 · Reranking으로 재순위화</p></div>
+      <div class="tl-card"><div class="yr">STEP 1</div><h3>질의 이해</h3><p>자연어 질문을 데이터 조회문으로 변환(NL2SQL)</p></div>
+      <div class="tl-card"><div class="yr">STEP 2</div><h3>문서 검색</h3><p>문서를 의미 기반으로 검색하고 관련도가 높은 순서로 재정렬</p></div>
       <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>RAG·<wbr>GraphRAG로 근거 경로를 답변에 결합 · 지식그래프 관계 추론</p></div>
       <div class="tl-card"><div class="yr">STEP 4</div><h3>추론 · 생성</h3><p>상용 LLM API 또는 온프레미스 sLLM으로 분석·<wbr>리포트 생성</p></div>
       <div class="tl-card"><div class="yr">STEP 5</div><h3>근거 검증 · 가드레일</h3><p>근거성 검증(Groundedness) · PII 마스킹 등 가드레일로 안전성 확보</p></div>
@@ -399,12 +399,12 @@
           <div class="fb-col"><p class="f-h">솔루션</p>
             <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
           <div class="fb-col"><p class="f-h">회사</p>
-            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
         </div>
       </div>
 
       <div class="fb-legal">
-        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
         <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
         <a href="tel:0533135333">053-313-5333</a>
         <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>

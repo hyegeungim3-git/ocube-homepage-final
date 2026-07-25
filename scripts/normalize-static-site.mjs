@@ -37,7 +37,11 @@ for (const file of htmlFiles) {
   let html = fs.readFileSync(file, "utf8");
 
   html = html
-    .replace(/(?:<wbr>\s*){2,}/gi, "<wbr>")
+    .replace(/(?:<wbr\s*\/?>\s*){2,}/gi, "<wbr>")
+    .replace(/>About Ocube<\/a>/g, ">회사소개</a>")
+    .replace(/>Location<\/a>/g, ">오시는 길</a>")
+    .replace(/>Build Cases<\/a>/g, ">구축 사례</a>")
+    .replace(/Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/g, "Copyright © OCUBE Co., Ltd. All rights reserved.")
     .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-6")
     .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-1")
     .replace(

@@ -21,7 +21,10 @@ test("ships the complete reviewed static site", async () => {
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
     assert.match(html, /site2\.css\?v=codex-6/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-1/, `${page}: reviewed JS`);
-    assert.doesNotMatch(html, /<wbr>\s*<wbr>/i, `${page}: no duplicate wbr`);
+    assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
+    assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
+    assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
+    assert.doesNotMatch(html, /Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/, `${page}: normalized legal footer`);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
   }
 });

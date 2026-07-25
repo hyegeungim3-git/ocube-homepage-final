@@ -102,11 +102,11 @@
     <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="solutions.html">솔루션</a><i aria-hidden="true">›</i><b>QVision</b></nav>
     <span class="hero-badge">SOLUTION · 산업 솔루션</span>
     <h1>QVision</h1>
-    <p>영상 인식 AI — 도로와 현장의 <em>위험을 봅니다</em>. 기존 CCTV 인프라를 그대로 활용해 돌발상황과 위험 행동을 검지하고, 개인영상정보는 엣지 단계에서 비식별 처리해 안전하게 다룹니다.</p>
+    <p>영상 인식 AI — 기존 CCTV 영상에서 <em>도로와 작업 현장의 위험을 찾습니다</em>. 돌발상황과 위험 행동을 감지해 관제 이벤트로 전달하고, 현장 요건에 따라 개인영상정보를 엣지에서 비식별 처리하도록 구성할 수 있습니다.</p>
     <ul class="hero-keys">
       <li><span class="k">연동</span><span class="v">ONVIF · RTSP · GStreamer</span></li>
       <li><span class="k">검지</span><span class="v">돌발상황(AID) · 위험 행동</span></li>
-      <li><span class="k">처리</span><span class="v">엣지 추론 · 영상정보 비식별</span></li>
+      <li><span class="k">처리</span><span class="v">엣지 추론 · 요건별 영상정보 비식별</span></li>
     </ul>
   </div>
   <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
@@ -117,7 +117,7 @@
   <h2 class="rv d1"><span>도로와 현장의 위험을</span><span>먼저 보는 영상 AI</span></h2>
   <div class="sol-lead rv d2">
     <p>기존 CCTV 인프라를 그대로 활용해 돌발상황과 위험 행동을 검지합니다.</p>
-    <p>개인영상정보는 엣지 단계에서 비식별 처리합니다.</p>
+    <p>현장 요건과 관련 규정에 따라 엣지 단계에서 비식별 처리하도록 구성합니다.</p>
   </div>
   <figure class="sol-stage rv d3">
     <img src="assets/img/tms.png" alt="QVision 화면 — 프로토타입 예시" loading="lazy" width="560" height="204">
@@ -129,8 +129,8 @@
 <section id="overview" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Overview</span>
-    <h2>영상이 곧 센서입니다</h2>
-    <p class="sec-sub">영상 인식(Vision) AI로 <b>도로·<wbr>교통을 분석하고 위험을 감지</b>합니다 — 차종·<wbr>통행 분석부터 노면 파손(포트홀) 자동 검출, 작업장 안전 관제까지.</p></div>
+    <h2>기존 CCTV를 교통·<wbr>안전 감지 센서로 활용합니다</h2>
+    <p class="sec-sub">QVision은 카메라 영상을 분석해 차종과 통행량을 집계하고, 포트홀·<wbr>돌발상황·<wbr>작업 위험을 관제 화면에 전달하는 영상 인식 AI입니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <figure><img class="shot" src="assets/img/tms.png" alt="QVision — 영상 기반 교통 분석" loading="lazy" width="560" height="204">
         <figcaption class="shot-cap">교통 분석 — 차종 분류·<wbr>통행량 계측</figcaption></figure>
@@ -195,8 +195,8 @@
 <section id="detect" class="sec-anchor dark">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Incident Detection</span>
-    <h2>도로가 보내는 신호를 자동으로 잡습니다</h2>
-    <p class="sec-sub">자동 돌발상황 검지(AID)로 도로·<wbr>현장의 위험 이벤트를 실시간 검지하도록 설계합니다.</p></div>
+    <h2>도로·<wbr>현장의 위험 영상을 관제 이벤트로 전환합니다</h2>
+    <p class="sec-sub">자동 돌발상황 검지(AID)가 위험 장면을 분류해 관제에 알리고, 필요하면 담당자 검수 후 현장 대응으로 이어지게 구성합니다.</p></div>
     <div class="mod-grid reveal" data-d="1">
       <div class="mod">역주행</div>
       <div class="mod">정지 차량</div>
@@ -222,7 +222,7 @@
 <section id="spec" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Specification</span>
-    <h2>무엇을 입력받아 무엇을 내보내는가</h2></div>
+    <h2>카메라 영상을 받아 위험 이벤트와 관제 정보를 제공합니다</h2></div>
     <table class="cmp reveal" data-d="1">
       <thead><tr><th>구분</th><th class="ok">QVision</th></tr></thead>
       <tbody>
@@ -320,12 +320,12 @@
           <div class="fb-col"><p class="f-h">솔루션</p>
             <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
           <div class="fb-col"><p class="f-h">회사</p>
-            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
         </div>
       </div>
 
       <div class="fb-legal">
-        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
         <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
         <a href="tel:0533135333">053-313-5333</a>
         <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>

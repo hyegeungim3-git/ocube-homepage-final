@@ -129,8 +129,8 @@
 <section id="overview" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Overview</span>
-    <h2>충전 사업에 필요한 전부를 하나로</h2>
-    <p class="sec-sub">회원·<wbr>연동·<wbr>결제·<wbr>관제를 <b>OCPP 표준 기반 마이크로서비스</b>로 구현한 자체 전기차 충전 플랫폼. SK에너지 충전 사업 구축·<wbr>운영 경험을 제품으로 자산화했습니다.</p></div>
+    <h2>충전 사업에 필요한 운영 기능을 한 플랫폼으로 제공합니다</h2>
+    <p class="sec-sub">EVCP는 제조사가 다른 충전기를 OCPP 표준으로 연결하고, 회원·<wbr>결제·<wbr>관제를 함께 운영하는 전기차 충전 플랫폼입니다. 충전 사업 구축·<wbr>운영 경험을 바탕으로 구성했습니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <div class="feat-list">
         <div class="feat"><b>OCPP 표준</b><span>충전기 제조사 무관 연동 — 이기종 충전 인프라 통합 관제</span></div>
@@ -145,8 +145,8 @@
 <section id="arch" class="sec-anchor deploy">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Architecture</span>
-    <h2>통신단부터 관제까지, 풀스택 한 구조</h2>
-    <p class="sec-sub">충전 인프라의 <b>통신 모듈</b>부터 <b>CSMS 코어 관제</b>, <b>로밍·<wbr>스마트 에너지</b>까지 하나의 계층 구조로 구성합니다.</p></div>
+    <h2>충전기 통신부터 회원·<wbr>결제·<wbr>관제까지 연결합니다</h2>
+    <p class="sec-sub">충전기와 통신 모듈에서 받은 정보를 충전 관리 시스템(CSMS)이 처리하고, 회원·<wbr>결제·<wbr>로밍·<wbr>에너지 관리 서비스가 함께 사용하도록 구성합니다.</p></div>
     <div class="stack-diagram reveal" data-d="1">
       <div class="stack-layer l-op"><span class="stack-tag">서비스 · 확장</span><b>로밍 · 스마트 에너지</b><small>OCPI 로밍 연동 · 동적 부하분산(DLM) · V2G 양방향 충전 — 지원하도록 설계</small></div>
       <div class="stack-arrow" aria-hidden="true">▲</div>
@@ -161,8 +161,8 @@
 <section id="struct" class="sec-anchor deploy">
   <div class="wrap">
     <div class="reveal"><span class="kicker">MSA Modules</span>
-    <h2>독립 확장되는 마이크로서비스</h2>
-    <p class="sec-sub">각 서비스가 독립 배포·<wbr>확장 — 사업 규모와 요구에 맞춰 조립합니다. <b>MSA(Microservice Architecture)</b> 구조.</p></div>
+    <h2>필요한 기능부터 조합하고, 서비스별로 확장합니다</h2>
+    <p class="sec-sub">회원·<wbr>결제·<wbr>충전기 연동·<wbr>관제를 각각 배포하고 확장할 수 있어, 사업 범위와 운영 규모에 맞춰 구성합니다.</p></div>
     <div class="dep-grid">
       <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">👤</div><h3>회원</h3><p>가입·<wbr>인증·<wbr>요금제·<wbr>이용 이력</p></div>
       <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">💳</div><h3>결제·<wbr>정산</h3><p>충전 세션 단위 과금·<wbr>정산·<wbr>PG 연동</p></div>
@@ -217,8 +217,8 @@
 <section id="energy" class="sec-anchor dark">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Smart Energy</span>
-    <h2>충전을 전력에 맞춰 지능적으로</h2>
-    <p class="sec-sub">충전소 가용 전력과 전력 시장 신호에 맞춰 충전을 배분·<wbr>시프팅하도록 설계합니다.</p></div>
+    <h2>충전소의 가용 전력에 맞춰 충전량을 배분하도록 설계합니다</h2>
+    <p class="sec-sub">충전기별 우선순위와 가용 전력을 기준으로 충전 부하를 나누고, 전력 신호에 따라 충전 시간을 조정하도록 구성합니다.</p></div>
     <div class="feat-list reveal" data-d="1">
       <div class="feat"><b>동적 부하분산 (DLM)</b><span>충전소 내 가용 전력을 충전기별 우선순위로 실시간 분배 — 계약 전력 초과 방지</span></div>
       <div class="feat"><b>스마트 차징</b><span>전력 요금·<wbr>시장 신호(OpenADR) 기반 충전 시프팅으로 피크 회피·<wbr>비용 최적화</span></div>
@@ -304,12 +304,12 @@
           <div class="fb-col"><p class="f-h">솔루션</p>
             <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
           <div class="fb-col"><p class="f-h">회사</p>
-            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
         </div>
       </div>
 
       <div class="fb-legal">
-        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
         <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
         <a href="tel:0533135333">053-313-5333</a>
         <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>

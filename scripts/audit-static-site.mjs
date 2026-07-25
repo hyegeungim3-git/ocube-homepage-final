@@ -79,7 +79,16 @@ for (const file of htmlFiles) {
     }
   }
 
-  if (/<wbr>\s*<wbr>/i.test(html)) add(file, "content", "consecutive wbr elements");
+  if (/<wbr\s*\/?>\s*<wbr\s*\/?>/i.test(html)) add(file, "content", "consecutive wbr elements");
+  if (/탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i.test(html)) {
+    add(file, "content", "opaque closed-loop copy");
+  }
+  if (/>(?:About Ocube|Location|Build Cases)<\/a>/i.test(html)) {
+    add(file, "content", "footer labels should be Korean");
+  }
+  if (/Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/.test(html)) {
+    add(file, "content", "footer copyright style is not normalized");
+  }
   if (/Cintelion|Cinterionion|CubeOn|AgentQ|DataQ|FactoryQ|VisionQ|V-모델|스마트 뱃지/.test(html)) {
     add(file, "content", "legacy or inconsistent product terminology");
   }
