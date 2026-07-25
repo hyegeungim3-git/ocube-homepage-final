@@ -1,0 +1,414 @@
+/* ===== OCUBE v2 공통 스크립트 (자연 스크롤 테마) ===== */
+(function () {
+  'use strict';
+
+  /* --- 1) 스크롤 리빌 : IO 우선 + 스크롤 폴백 (IO 미발동 환경에서도 콘텐츠가 숨겨지지 않도록) --- */
+  (function reveal() {
+    var els = [].slice.call(document.querySelectorAll('.rv, .reveal'));
+    if (!els.length) return;
+    function show(el) { el.classList.add('in'); }
+    function drop(el) { var k = els.indexOf(el); if (k > -1) els.splice(k, 1); }
+    function check() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = els.length - 1; i >= 0; i--) {
+        var r = els[i].getBoundingClientRect();
+        if (r.top < vh * 0.92) { show(els[i]); els.splice(i, 1); }   // 지나간 요소도 반드시 표시
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); drop(e.target); } });
+      }, { threshold: .1, rootMargin: '0px 0px -6% 0px' });
+      els.slice().forEach(function (el) { io.observe(el); });
+    }
+    var last = 0;
+    function onScroll() { var n = Date.now(); if (n - last < 120) return; last = n; check(); }
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+    check(); setTimeout(check, 600); setTimeout(check, 1800);
+  })();
+
+  /* --- 1-b) 광폭 비교표: 가로 스크롤 래퍼 자동 적용(모바일 오버플로 방지) --- */
+  (function wrapTables() {
+    document.querySelectorAll('table.cmp').forEach(function (tb) {
+      if (tb.parentElement && tb.parentElement.classList.contains('cmp-scroll')) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'cmp-scroll';
+      tb.parentNode.insertBefore(wrap, tb);
+      wrap.appendChild(tb);
+    });
+  })();
+
+  /* --- 1-c) GNB 상태 : 히어로 위 투명 → 스크롤 시 솔리드 (i-bricks 패턴) --- */
+  (function gnbState() {
+    var g = document.querySelector('.gnb');
+    if (!g) return;
+    if (!document.querySelector('.hero')) {              // 히어로 없는 페이지(privacy 등)
+      g.classList.add('scrolled');
+      document.body.classList.add('no-hero');
+      return;
+    }
+    function upd() { g.classList.toggle('scrolled', (window.scrollY || document.documentElement.scrollTop || 0) > 30); }
+    addEventListener('scroll', upd, { passive: true });
+    addEventListener('resize', upd, { passive: true });
+    upd(); setTimeout(upd, 300);
+  })();
+
+  /* --- 2) 모바일 메뉴 --- */
+  (function mobileNav() {
+    var t = document.querySelector('.m-toggle'), p = document.querySelector('.m-panel');
+    if (!t || !p) return;
+    function close() { p.classList.remove('open'); document.body.classList.remove('m-lock'); t.setAttribute('aria-expanded', 'false'); t.setAttribute('aria-label', '메뉴 열기'); t.textContent = '메뉴'; }
+    t.addEventListener('click', function () {
+      var o = p.classList.toggle('open');
+      document.body.classList.toggle('m-lock', o);
+      t.setAttribute('aria-expanded', o); t.setAttribute('aria-label', o ? '메뉴 닫기' : '메뉴 열기'); t.textContent = o ? '닫기' : '메뉴';
+    });
+    p.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+
+  /* --- 3) 히어로 4영상 배너 슬라이더 --- */
+  (function heroSlider() {
+    var hero = document.querySelector('.hero-slider, .hero');
+    if (!hero) return;
+    var slides = [].slice.call(hero.querySelectorAll('.hslide'));
+    if (slides.length < 2) return;                       // 단일 히어로 페이지에서는 비활성
+    var bars = [].slice.call(hero.querySelectorAll('.hbar'));
+    var vids = [].slice.call(hero.querySelectorAll('.hslide video'));
+    var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var mob = reduced || matchMedia('(max-width:900px)').matches;
+    if (mob) vids.forEach(function (v) { if (v) v.remove(); });
+    var idx = 0, timer = null, DUR = 5200;
+    function show(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) { s.classList.toggle('on', i === idx); });
+      bars.forEach(function (b, i) { b.classList.toggle('on', i === idx); });
+      if (!mob) vids.forEach(function (v, i) {
+        if (!v) return;
+        if (i === idx) { var pr = v.play && v.play(); if (pr && pr.catch) pr.catch(function () { }); }
+        else { try { v.pause(); } catch (e) { } }
+      });
+    }
+    var manualPause = false;                              // 사용자가 명시적으로 일시정지한 상태
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { if (mob || manualPause) return; stop(); timer = setInterval(function () { show(idx + 1); }, DUR); }
+    bars.forEach(function (b, i) { b.addEventListener('click', function () { show(i); start(); }); });
+
+    /* 이전 · 일시정지/재생 · 다음 */
+    var ctrl = hero.querySelector('.hctrl');
+    if (ctrl) ctrl.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.hnav') : null;
+      if (!b) return;
+      var act = b.getAttribute('data-act');
+      if (act === 'prev') { show(idx - 1); start(); }
+      else if (act === 'next') { show(idx + 1); start(); }
+      else if (act === 'toggle') {
+        manualPause = !manualPause;
+        hero.classList.toggle('paused', manualPause);
+        b.setAttribute('aria-pressed', manualPause ? 'true' : 'false');
+        b.setAttribute('aria-label', manualPause ? '자동 전환 재생' : '자동 전환 일시정지');
+        if (manualPause) stop(); else start();
+      }
+    });
+    /* 좌우 방향키로도 이동 */
+    hero.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { show(idx - 1); start(); }
+      else if (e.key === 'ArrowRight') { show(idx + 1); start(); }
+    });
+
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+    show(0); start();
+  })();
+
+  /* --- 3-b) 모바일/reduced-motion : 단일 히어로 영상 제거 + 포스터 배경 대체(데이터·LCP) --- */
+  (function heroVideoMobile() {
+    var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!(reduced || matchMedia('(max-width:900px)').matches)) return;
+    document.querySelectorAll('.hero video').forEach(function (v) {
+      if (v.closest('.hslide')) return;                  // 4배너 슬라이더는 자체 처리
+      var hero = v.closest('.hero'), poster = v.getAttribute('poster');
+      if (hero && poster) {
+        hero.style.backgroundImage = 'url("' + poster + '")';
+        hero.style.backgroundSize = 'cover';
+        hero.style.backgroundPosition = 'center';
+      }
+      v.remove();
+    });
+  })();
+
+  /* --- 3-c) KPI 카운트업 : [data-count] — 미발동 환경에서도 최종값 보장 --- */
+  (function counters() {
+    var els = [].slice.call(document.querySelectorAll('[data-count]'));
+    if (!els.length) return;
+    function run(el) {
+      if (el.__done) return; el.__done = true;
+      var to = parseFloat(el.getAttribute('data-count')) || 0;
+      var t0 = null, DUR = 900;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / DUR, 1);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString();
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      setTimeout(function () { el.textContent = to.toLocaleString(); }, DUR + 250); // rAF 정지 대비 최종값 보장
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+      }, { threshold: .4 });
+      els.forEach(function (el) { io.observe(el); });
+    }
+    setTimeout(function () { els.forEach(run); }, 2500);   // IO 미발동 폴백
+  })();
+
+  /* --- 3-d) 구축 사례 필터 (references) --- */
+  (function caseFilter() {
+    var bar = document.querySelector('.case-filter');
+    if (!bar) return;
+    var tabs = [].slice.call(bar.querySelectorAll('.case-tab'));
+    var cards = [].slice.call(document.querySelectorAll('.case-card[data-line]'));
+    var domains = [].slice.call(document.querySelectorAll('.case-domain'));
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.case-tab') : null;
+      if (!b) return;
+      var line = b.getAttribute('data-line');
+      tabs.forEach(function (t) { t.classList.toggle('active', t === b); t.setAttribute('aria-selected', t === b); });
+      cards.forEach(function (c) {
+        var show = line === 'all' || (c.getAttribute('data-line') || '').split(/\s+/).indexOf(line) > -1;
+        c.classList.toggle('is-hidden', !show);
+      });
+      domains.forEach(function (d) {
+        var any = d.querySelector('.case-card:not(.is-hidden)');
+        d.style.display = any ? '' : 'none';
+      });
+    });
+  })();
+
+  /* --- 3-d2) 인증·특허·저작권 갤러리 필터 (company) --- */
+  (function certFilter() {
+    var bar = document.querySelector('.cert-filter');
+    if (!bar) return;
+    var tabs = [].slice.call(bar.querySelectorAll('.case-tab'));
+    // 증서(.cert-card)·구축실적(.ref-card) 공용
+    var cards = [].slice.call(document.querySelectorAll('.cert-card[data-cat],.ref-card[data-cat]'));
+    if (!cards.length) return;
+    var count = document.querySelector('[data-cert-count]');
+    function apply(cat) {
+      var n = 0;
+      cards.forEach(function (c) {
+        var show = cat === 'all' || c.getAttribute('data-cat') === cat;
+        c.classList.toggle('is-hidden', !show);
+        if (show) n++;
+      });
+      if (count) count.textContent = n;
+    }
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.case-tab') : null;
+      if (!b) return;
+      tabs.forEach(function (t) { t.classList.toggle('active', t === b); t.setAttribute('aria-selected', t === b); });
+      apply(b.getAttribute('data-cat'));
+    });
+    apply('all');
+  })();
+
+  /* --- 3-e) 원클릭 복사 [data-copy] + 토스트 --- */
+  (function copyBtns() {
+    if (!document.querySelector('[data-copy]')) return;
+    var toast = document.createElement('div');
+    toast.className = 'toast'; toast.setAttribute('role', 'status');
+    document.body.appendChild(toast);
+    var tid = null;
+    function show(msg) {
+      toast.textContent = msg; toast.classList.add('show');
+      clearTimeout(tid); tid = setTimeout(function () { toast.classList.remove('show'); }, 1800);
+    }
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-copy]') : null;
+      if (!b) return;
+      var v = b.getAttribute('data-copy');
+      function ok() { show('복사되었습니다 — ' + v); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(ok, ok);
+      else {
+        var ta = document.createElement('textarea'); ta.value = v; document.body.appendChild(ta);
+        ta.select(); try { document.execCommand('copy'); } catch (err) { } ta.remove(); ok();
+      }
+    });
+  })();
+
+  /* --- 3-f) FAB 스택 : 맨 위로 · 전화 문의 (전 페이지 공통, i-bricks 참고) --- */
+  (function fabStack() {
+    var fab = document.createElement('div');
+    fab.className = 'fab-stack';
+    fab.innerHTML =
+      '<a class="fab-btn" href="tel:0533135333" aria-label="전화 문의 053-313-5333">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>' +
+      '</a>' +
+      '<button class="fab-btn fab-top" type="button" aria-label="맨 위로">' +
+        '<svg viewBox="0 0 17 19" width="16" height="18" aria-hidden="true"><path d="M1 8l7.3-7 7.3 7M8.3 1v17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '</button>';
+    document.body.appendChild(fab);
+    var topBtn = fab.querySelector('.fab-top');
+    function toggle() { fab.classList.toggle('show', (window.scrollY || document.documentElement.scrollTop || 0) > 500); }
+    addEventListener('scroll', toggle, { passive: true });
+    toggle(); setTimeout(toggle, 400);
+    topBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+  })();
+
+  /* --- 4) What We Do 핀드 : 진행 도트를 항목 리빌과 동기화 --- */
+  (function pinDots() {
+    var secs = [].slice.call(document.querySelectorAll('.pinsec'));
+    if (!secs.length) return;
+    secs.forEach(function (sec) {
+      var items = [].slice.call(sec.querySelectorAll('.pin-item'));
+      var dots = [].slice.call(sec.querySelectorAll('.pin-progress i'));
+      if (!items.length || !dots.length) return;
+      function sync() {
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        var cur = -1;
+        items.forEach(function (it, i) { if (it.getBoundingClientRect().top < vh * 0.75) cur = i; });
+        dots.forEach(function (d, i) { d.classList.toggle('on', i <= cur); });
+      }
+      var last = 0;
+      addEventListener('scroll', function () { var n = Date.now(); if (n - last < 110) return; last = n; sync(); }, { passive: true });
+      addEventListener('resize', sync, { passive: true });
+      sync(); setTimeout(sync, 600);
+    });
+  })();
+
+})();
+
+/* --- 시연 영상 IO 재생: video.demovid — 화면에 보일 때만 재생, 벗어나면 정지 --- */
+(function demoVids() {
+  var vids = [].slice.call(document.querySelectorAll('video.demovid'));
+  if (!vids.length) return;
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (rm) return; /* 모션 최소화: 포스터만 표시 */
+  if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { v.play && v.play().catch(function(){}); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting && e.intersectionRatio >= .35) { v.play && v.play().catch(function(){}); }
+      else { v.pause && v.pause(); }
+    });
+  }, { threshold: [0, .35] });
+  vids.forEach(function (v) { io.observe(v); });
+})();
+
+/* --- 스크롤 프로그레스 바 (마크업 주입, rAF 스로틀) --- */
+(function scrollProgress() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var bar = document.createElement('div');
+  bar.className = 'scroll-progress'; bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  var ticking = false;
+  function paint() {
+    ticking = false;
+    var max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }, { passive: true });
+  paint();
+})();
+
+/* --- GNB 스마트 숨김: 320px 이상에서 하강 시 숨김, 상승 즉시 복귀 (i-bricks 패턴) --- */
+(function gnbHide() {
+  var gnb = document.querySelector('.gnb');
+  if (!gnb) return;
+  var lastY = scrollY, ticking = false;
+  function paint() {
+    ticking = false;
+    var y = scrollY;
+    if (document.body.classList.contains('m-lock')) { gnb.classList.remove('gnb-hide'); lastY = y; return; }
+    if (y > 320 && y > lastY + 6) gnb.classList.add('gnb-hide');
+    else if (y < lastY - 4 || y <= 320) gnb.classList.remove('gnb-hide');
+    lastY = y;
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }, { passive: true });
+  /* 키보드 포커스가 헤더로 가면 항상 표시 */
+  gnb.addEventListener('focusin', function () { gnb.classList.remove('gnb-hide'); });
+})();
+
+/* --- CI 로고 포인터 틸트: 커서를 따라 3D 기울기 (fine pointer 전용, lerp) --- */
+(function ciTilt() {
+  var stage = document.querySelector('.ci-stage'), el = document.querySelector('.ci-tilt');
+  if (!stage || !el) return;
+  if (!matchMedia('(pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, over = false;
+  function loop() {
+    cx += (tx - cx) * .12; cy += (ty - cy) * .12;
+    el.style.transform = 'perspective(900px) rotateX(' + (-cy).toFixed(2) + 'deg) rotateY(' + cx.toFixed(2) + 'deg)';
+    if (over || Math.abs(cx) > .05 || Math.abs(cy) > .05) raf = requestAnimationFrame(loop);
+    else { el.style.transform = ''; raf = null; }
+  }
+  stage.addEventListener('pointerenter', function () { over = true; });
+  stage.addEventListener('pointermove', function (e) {
+    var r = stage.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width - .5) * 18;   /* ±9deg */
+    ty = ((e.clientY - r.top) / r.height - .5) * 14;
+    if (!raf) raf = requestAnimationFrame(loop);
+  });
+  stage.addEventListener('pointerleave', function () { over = false; tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); });
+})();
+
+/* --- GNB 메가 메뉴: 내비 호버/포커스 시 간격 확장 + 전 메뉴 동시 펼침 (Seegene 패턴) --- */
+(function gnbMega() {
+  var gnb = document.querySelector('.gnb');
+  var menu = gnb && gnb.querySelector('.nav-menu');
+  if (!gnb || !menu) return;
+  if (!matchMedia('(pointer: fine)').matches && !matchMedia('(min-width: 901px)').matches) return;
+  var timer = null;
+  function open() {
+    clearTimeout(timer);
+    /* 가장 긴 드롭다운 높이로 패널 높이 산정 */
+    var h = 0;
+    gnb.querySelectorAll('.dropdown').forEach(function (d) { h = Math.max(h, d.scrollHeight); });
+    gnb.style.setProperty('--mega-h', (h + 10) + 'px');
+    gnb.classList.add('gnb-mega');
+    gnb.classList.remove('gnb-hide');
+  }
+  function close() { timer = setTimeout(function () { gnb.classList.remove('gnb-mega'); }, 140); }
+  menu.addEventListener('mouseenter', open);
+  menu.addEventListener('mouseleave', close);
+  /* 패널 영역(드롭다운) 위에 있는 동안 유지 */
+  gnb.addEventListener('mouseleave', close);
+  gnb.addEventListener('mouseenter', function () { if (gnb.classList.contains('gnb-mega')) clearTimeout(timer); });
+  /* 키보드 접근성 */
+  menu.addEventListener('focusin', open);
+  gnb.addEventListener('focusout', function (e) { if (!gnb.contains(e.relatedTarget)) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') gnb.classList.remove('gnb-mega'); });
+})();
+
+/* 문의 폼: 서버 저장 없이 사용자의 이메일 앱에 작성 내용을 전달한다. */
+(function contactMail() {
+  var form = document.querySelector('[data-contact-form]');
+  if (!form) return;
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var type = document.getElementById('f-type').value;
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-mail').value.trim();
+    var message = document.getElementById('f-msg').value.trim();
+    var subject = '[오큐브 홈페이지 문의] ' + type + ' - ' + name;
+    var body = [
+      '문의 유형: ' + type,
+      '성함 / 회사: ' + name,
+      '회신 이메일: ' + email,
+      '',
+      '문의 내용',
+      message
+    ].join('\n');
+    if (status) status.textContent = '이메일 앱에서 내용을 확인한 뒤 전송해 주세요. 앱이 열리지 않으면 sales@ocube.co.kr로 보내 주세요.';
+    window.location.href = 'mailto:sales@ocube.co.kr?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+})();
+
+/* 모션 초기화가 끝난 경우에만 리빌 요소를 숨긴다. 스크립트 실패 시 본문은 기본적으로 보인다. */
+document.documentElement.classList.add('motion-ready');

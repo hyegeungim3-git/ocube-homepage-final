@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>임베디드 · 차량 전장·보안 — 오큐브</title>
+<meta name="description" content="글로벌 완성차 양산 프로젝트에서 검증된 차량 전장·임베디드·차량 사이버보안 SW 개발. Linux·QNX·AAOS 포팅부터 ISO-21434까지.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<link rel="stylesheet" href="assets/site.css?v=46">
+<link rel="canonical" href="https://www.ocube.co.kr/business-embedded.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23050B26'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%233B82F6'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235B9BFF'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="임베디드 · 차량 전장·보안 — 오큐브">
+<meta property="og:description" content="글로벌 완성차 양산 프로젝트에서 검증된 차량 전장·임베디드·차량 사이버보안 SW 개발. Linux·QNX·AAOS 포팅부터 ISO-21434까지.">
+<meta property="og:url" content="https://www.ocube.co.kr/business-embedded.html">
+<meta property="og:image" content="https://www.ocube.co.kr/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="임베디드 · 차량 전장·보안 — 오큐브">
+<meta name="twitter:description" content="글로벌 완성차 양산 프로젝트에서 검증된 차량 전장·임베디드·차량 사이버보안 SW 개발. Linux·QNX·AAOS 포팅부터 ISO-21434까지.">
+<meta name="twitter:image" content="https://www.ocube.co.kr/assets/og-image.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"비즈니스","item":"https://www.ocube.co.kr/business-ax.html"},{"@type":"ListItem","position":3,"name":"임베디드","item":"https://www.ocube.co.kr/business-embedded.html"}]}</script>
+</head>
+<body class="snap-full" data-page="business">
+<a class="skip" href="#top">본문 바로가기</a>
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img src="assets/ci_01.avif" alt="OCUBE — Always in your life"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a href="business.html" data-nav="business" aria-haspopup="true">비즈니스 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·프로젝트 수행</small></a>
+            <a href="business-embedded.html">임베디드<small>차량 전장·PLC·엣지·보안</small></a>
+            <a href="business-si.html">SI<small>시스템 통합·구축·운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="solutions.html" data-nav="solutions" aria-haspopup="true">솔루션 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">DataQ<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">FactoryQ<small>제조 AI</small></a>
+            <a href="solution-agentq.html">AgentQ<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">VisionQ<small>영상 인식 교통·안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="business-license.html" data-nav="license" aria-haspopup="true">기술지원 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
+            <a href="business-license.html#license">Qt · Telit · Toradex<small>VisualOn · Tuxera · ProtoPie</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="company.html" data-nav="company" aria-haspopup="true">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="company.html#about">회사소개</a><a href="company.html#history">연혁·인증</a><a href="references.html">주요 구축 사례</a><a href="company.html#location">오시는 길</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn" data-magnet>문의하기</a>
+    <button class="m-toggle" aria-label="메뉴 열기">메뉴</button>
+  </div>
+</header>
+
+<section id="top" class="hero page-hero dark">
+  <video class="hero-video" src="assets/video/sec_autonomous.mp4" poster="assets/video/sec_autonomous.jpg"
+    autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="hero-badge">BUSINESS · EMBEDDED</span>
+    <h1>현장을 움직이는 소프트웨어 (임베디드)</h1>
+    <p>글로벌 완성차 양산 프로젝트에서 검증된 전장·임베디드·보안 개발.</p>
+  </div>
+</section>
+
+<section id="capability" class="sec-anchor platform dark">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Capability · Trust</span>
+    <h2 style="color:#fff">근 20년, 현장에서 검증된 임베디드 역량</h2>
+    <p class="sec-sub">2007년 설립 이래 글로벌 완성차 양산과 산업 현장 SW를 개발해 온 고신뢰성 소프트웨어 전문 기업입니다.</p></div>
+    <div class="hero-stats reveal" data-d="1">
+      <div class="stat" data-tilt><b>Since 2007</b><span>대구·서울·안양 3개 거점</span></div>
+      <div class="stat" data-tilt><b><span data-count="90">0</span><i class="u">%</i></b><span>SW 엔지니어 비중 · 총 146명</span></div>
+      <div class="stat" data-tilt><b><span data-count="7">0</span><i class="u">개 그룹</i></b><span>글로벌 완성차 양산 프로젝트</span></div>
+      <div class="stat" data-tilt><b><span data-count="30">0</span><i class="u">건</i></b><span>지식재산권 · 등록특허 9건</span></div>
+    </div>
+    <div class="mod-grid reveal" data-d="2" style="margin-top:16px" aria-label="대응 국제 표준·프로토콜">
+      <div class="mod">ISO 26262</div><div class="mod">ISO/SAE 21434</div><div class="mod">Automotive SPICE</div><div class="mod">AUTOSAR</div>
+      <div class="mod">MISRA C/C++</div><div class="mod">OPC-UA</div><div class="mod">OCPP 1.6 / 2.0.1</div><div class="mod">Modbus · MQTT</div>
+    </div>
+    <p class="sec-note reveal" data-d="3">기능안전(ISO 26262)·차량 사이버보안(ISO 21434)·프로세스 성숙도(ASPICE)를 적용하도록 프로젝트를 구성합니다.</p>
+  </div>
+</section>
+
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#capability">역량</a><a href="#automotive">차량 전장</a><a href="#arch-vehicle">차량 SW 구조</a><a href="#ivi-stack">IVI 스펙</a><a href="#safety">기능안전</a><a href="#embedded">임베디드</a><a href="#edge-arch">엣지 구조</a><a href="#bsp">개발 프로세스</a><a href="#security">보안</a></div></nav>
+
+<section id="automotive" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Embedded · 01</span>
+    <h2>차량 전장</h2>
+    <p class="sec-sub">글로벌 완성차 7개 그룹의 양산 프로젝트에서 검증된 전장 SW 개발·검증 역량.</p></div>
+    <div class="dep-grid g2">
+      <div class="dep-card reveal" data-d="1" data-tilt><div class="ic" aria-hidden="true">🧩</div><h3>Core OS · 플랫폼</h3><p>Linux · QNX · Android Automotive OS(AAOS) 포팅·최적화, BSP 등 하위 계층 대응</p></div>
+      <div class="dep-card reveal" data-d="2" data-tilt><div class="ic" aria-hidden="true">🖥️</div><h3>HMI · IVI</h3><p>Phone Projection(CarPlay·Android Auto·CarLife) · BT/Wi-Fi · Broadcast · OTA/Update · Qt/QML 기반 UI 구성</p></div>
+      <div class="dep-card reveal" data-d="3" data-tilt><div class="ic" aria-hidden="true">🔗</div><h3>Middleware · Connectivity</h3><p>Bluetooth · BT Stack · Diagnostic · Telematics · AutoSAR 등 차량 중간 SW 계층 개발</p></div>
+      <div class="dep-card reveal" data-d="4" data-tilt><div class="ic" aria-hidden="true">📋</div><h3>개발 · 품질 관리</h3><p>PM/PL · Error/Release/CR · ASPICE · AUTOSAR · ISO-26262 기능안전 기반 개발·검증 프로세스</p></div>
+    </div>
+    <div class="oem-band reveal" data-d="2">
+      <div class="row"><b>글로벌 완성차 양산 이력</b> — 7개 완성차 그룹의 IVI·클러스터·텔레매틱스·차량 보안 프로젝트에 양산 SW 공급 (고급형 인포테인먼트, AAOS·QNX 미들웨어, 보안 라이브러리 등)</div>
+      <div class="row">차량용 AVN·전장 SW 장기 연간계약 기반 — 다수 양산 프로젝트 수행</div>
+    </div>
+  </div>
+</section>
+
+<section id="arch-vehicle" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Vehicle · Architecture</span>
+    <h2>차량 SW를 3계층으로 설계·검증합니다</h2>
+    <p class="sec-sub">OS·BSP부터 미들웨어, HMI까지 계층을 분리해 AUTOSAR Classic·Adaptive 두 변종으로 대응합니다.</p></div>
+    <div class="stack-diagram reveal" data-d="1">
+      <div class="stack-layer l-op"><span class="stack-tag">HMI · 응용</span><b>Qt / QML · Phone Projection · OTA</b><small>IVI·클러스터 HMI · CarPlay·Android Auto·CarLife · OTA/Update</small></div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer"><span class="stack-tag">미들웨어 · RTE</span><b>AUTOSAR Classic BSW/RTE · Adaptive ara</b><small>SOME/IP · DDS · Diagnostic · Telematics 서비스 지향 통신</small></div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer l-data"><span class="stack-tag">OS · BSP</span><b>QNX Neutrino · Linux/Yocto · AAOS</b><small>MCAL · 부트로더 · 커널/드라이버 하위 계층 포팅·최적화</small></div>
+    </div>
+    <div class="reveal" data-d="2" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px">
+      <span class="pill light" style="margin:0">CAN · CAN-FD</span><span class="pill light" style="margin:0">LIN</span><span class="pill light" style="margin:0">FlexRay</span><span class="pill light" style="margin:0">Automotive Ethernet</span><span class="pill light" style="margin:0">SOME/IP</span><span class="pill light" style="margin:0">UDS (ISO 14229)</span><span class="pill light" style="margin:0">DoIP (ISO 13400)</span><span class="pill light" style="margin:0">V2X</span>
+    </div>
+    <p class="sec-note reveal" data-d="3">HW 의존 Basic SW를 응용과 분리하는 Classic 플랫폼과, POSIX·SOA 기반 고성능 도메인/존 컨트롤러용 Adaptive 플랫폼을 대상에 맞춰 구성하도록 설계합니다.</p>
+  </div>
+</section>
+
+<section id="ivi-stack" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Vehicle · Middleware Stack</span>
+    <h2>IVI 미들웨어 계층별 지원 기술</h2>
+    <p class="sec-sub">계층마다 표준 기술과 오큐브 보유 역량(총판 자산 포함)을 매핑합니다.</p></div>
+    <table class="cmp reveal" data-d="1">
+      <thead><tr><th class="ok">계층</th><th class="ok">지원 기술</th><th class="ok">표준 · 프로토콜</th><th class="ok">오큐브 역량</th></tr></thead>
+      <tbody>
+        <tr><th>OS · BSP</th><td>QNX Neutrino · Linux/Yocto · AAOS</td><td class="ok">POSIX · AUTOSAR OS</td><td>완성차 양산 미들웨어 포팅 이력</td></tr>
+        <tr><th>미들웨어</th><td>AUTOSAR Classic/Adaptive · SOME/IP · DDS</td><td class="ok">ISO 26262 · ASPICE</td><td>텔레매틱스·커넥티드 SW 개발</td></tr>
+        <tr><th>HMI · 그래픽</th><td>Qt / QML · Qt Automotive Suite</td><td class="ok">OpenGL ES · Vulkan</td><td>Qt 공식 파트너·차량 HMI 개발</td></tr>
+        <tr><th>미디어</th><td>VisualOn SDK · GStreamer</td><td class="ok">H.264/H.265 · DASH/HLS</td><td>VisualOn 총판·미디어 파이프라인</td></tr>
+        <tr><th>스토리지</th><td>Tuxera 페일세이프 FS</td><td class="ok">exFAT/NTFS · 저널링</td><td>Tuxera 총판·스토리지 신뢰성</td></tr>
+        <tr><th>커넥티비티</th><td>Telit Cinterion LTE Cat M1 · BT/Wi-Fi</td><td class="ok">CAN/CAN-FD · UDS · V2X</td><td>Telit 총판·자체 통신 모듈(2025)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="safety" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Functional Safety · Quality</span>
+    <h2>기능안전 V-model로 개발·검증합니다</h2>
+    <p class="sec-sub">ISO 26262 기반 개발의 좌측 설계와 우측 검증을 단계별로 대응합니다.</p></div>
+    <table class="cmp reveal" data-d="1">
+      <thead><tr><th class="ok">개발 단계</th><th class="ok">설계 (좌측)</th><th class="ok">검증 (우측)</th></tr></thead>
+      <tbody>
+        <tr><th>차량 · 시스템</th><td>안전요구 · HARA · ASIL 할당</td><td class="ok">차량 통합·양산 확인</td></tr>
+        <tr><th>시스템 설계</th><td>아키텍처 · 안전개념</td><td class="ok">시스템 검증 (HIL)</td></tr>
+        <tr><th>SW 설계</th><td>컴포넌트·인터페이스 (AUTOSAR)</td><td class="ok">통합 테스트 (SIL)</td></tr>
+        <tr><th>구현</th><td>MISRA C/C++ 코딩</td><td class="ok">단위 테스트 (MC/DC 커버리지)</td></tr>
+      </tbody>
+    </table>
+    <div class="reveal" data-d="2" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px">
+      <span class="pill light" style="margin:0">ISO 26262 (ASIL A~D)</span><span class="pill light" style="margin:0">ISO/SAE 21434</span><span class="pill light" style="margin:0">Automotive SPICE L2/3</span><span class="pill light" style="margin:0">AUTOSAR</span><span class="pill light" style="margin:0">MISRA C/C++</span>
+    </div>
+    <p class="sec-note reveal" data-d="3">HARA·FMEA·FTA 기반 안전분석과 ASPICE 프로세스를 접목한 개발 거버넌스를 적용하도록 프로젝트를 구성합니다.</p>
+    <div class="feat-list reveal" data-d="4" style="margin-top:22px">
+      <div class="feat"><b>안전 산출물 (Work Products)</b><span>안전계획·안전개념·안전 사례(Safety Case)·검증 리포트 등 ISO 26262 단계별 산출물을 체계적으로 관리합니다.</span></div>
+      <div class="feat"><b>프로세스 신뢰성 (ASPICE)</b><span>Confirmation Measures(검토·감사·평가)와 요구 추적성 매트릭스로 개발 거버넌스를 확보합니다.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="embedded" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Embedded · 02</span>
+    <h2>임베디드</h2>
+    <p class="sec-sub">산업 현장의 장비와 디바이스에 들어가는 소프트웨어 — PLC부터 엣지 AI 게이트웨이까지.</p></div>
+    <div class="reveal" data-d="1" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+      <span class="pill light" style="margin:0">Linux · Yocto</span><span class="pill light" style="margin:0">QNX</span><span class="pill light" style="margin:0">FreeRTOS · Zephyr</span><span class="pill light" style="margin:0">ARM Cortex-M/A</span><span class="pill light" style="margin:0">IEC 61131-3</span><span class="pill light" style="margin:0">Bare-metal 펌웨어</span><span class="pill light" style="margin:0">Device Driver · BSP</span>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card reveal" data-d="1" data-tilt><div class="ic" aria-hidden="true">🏭</div><h3>산업용 PLC</h3><p>LS Electric 전략 파트너 — 산업용 제어기 SW 개발</p></div>
+      <div class="dep-card reveal" data-d="2" data-tilt><div class="ic" aria-hidden="true">🏠</div><h3>Home-IoT · 가전</h3><p>스마트홈 연동 디바이스, Qt 기반 HMI 개발</p></div>
+      <div class="dep-card reveal" data-d="3" data-tilt><div class="ic" aria-hidden="true">📡</div><h3>엣지 · 통신 모듈</h3><p>엣지 AI 게이트웨이, 자체 OCPP Mini PCI LTE Cat M1 모듈(2025)</p></div>
+      <div class="dep-card reveal" data-d="4" data-tilt><div class="ic" aria-hidden="true">⚙️</div><h3>RTOS · 펌웨어</h3><p>FreeRTOS·Zephyr 등 경량 RTOS 및 베어메탈 펌웨어 · 부트 최적화</p></div>
+      <div class="dep-card reveal" data-d="5" data-tilt><div class="ic" aria-hidden="true">🔌</div><h3>디바이스 드라이버</h3><p>센서·주변장치 드라이버 · 저전력·전력관리 최적화</p></div>
+      <div class="dep-card reveal" data-d="6" data-tilt><div class="ic" aria-hidden="true">🖧</div><h3>산업 네트워크</h3><p>Modbus·OPC-UA·MQTT 등 산업 프로토콜 스택 연동</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="edge-arch" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Industrial · Edge-to-Cloud</span>
+    <h2>필드 디바이스에서 플랫폼까지 잇습니다</h2>
+    <p class="sec-sub">현장 설비 데이터를 엣지에서 정규화·경량 추론하고 클라우드·플랫폼으로 연계하는 구조를 지향합니다.</p></div>
+    <div class="stack-diagram reveal" data-d="1">
+      <div class="stack-layer l-op"><span class="stack-tag">클라우드 · 플랫폼</span><b>Cubeon · DataQ 연계</b><small>운영·관제 및 표준화 계층으로 데이터 전달</small></div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer"><span class="stack-tag">엣지 게이트웨이</span><b>데이터 수집·정규화 · 경량 추론</b><small>OPC-UA·Modbus·MQTT 커넥터로 OT 데이터 표준화 · 엣지 AI</small></div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer l-data"><span class="stack-tag">필드 · 디바이스</span><b>PLC · 센서 · 통신 모듈</b><small>IEC 61131-3 제어 SW · 자체 OCPP Mini PCI LTE Cat M1 모듈(2025)</small></div>
+    </div>
+    <div class="reveal" data-d="2" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px">
+      <span class="pill light" style="margin:0">OCPP 1.6 / 2.0.1</span><span class="pill light" style="margin:0">Modbus RTU/TCP</span><span class="pill light" style="margin:0">OPC-UA</span><span class="pill light" style="margin:0">MQTT</span><span class="pill light" style="margin:0">LTE Cat M1 · NB-IoT</span><span class="pill light" style="margin:0">CAN</span><span class="pill light" style="margin:0">IEC 62443</span>
+    </div>
+  </div>
+</section>
+
+<section id="bsp" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Embedded · Process</span>
+    <h2>OS 포팅 · BSP 개발 프로세스</h2>
+    <p class="sec-sub">타깃 보드 브링업부터 양산 검증까지, 임베디드 개발을 단계로 수행합니다.</p></div>
+    <div class="tl reveal" data-d="1">
+      <div class="tl-card"><span class="yr">STEP 1</span><h3>보드 브링업</h3><p>타깃 보드 초기화·부트로더 · 하드웨어 점검</p></div>
+      <div class="tl-card"><span class="yr">STEP 2</span><h3>BSP · 드라이버 포팅</h3><p>커널·드라이버·MCAL 하위 계층 포팅</p></div>
+      <div class="tl-card cur"><span class="yr">STEP 3</span><h3>OS · 커널 튜닝</h3><p>Yocto/Buildroot 이미지 · 실시간성·전력 최적화</p></div>
+      <div class="tl-card"><span class="yr">STEP 4</span><h3>미들웨어 · HMI 통합</h3><p>Qt 기반 HMI · 통신 스택 통합</p></div>
+      <div class="tl-card"><span class="yr">STEP 5</span><h3>최적화 · 양산 검증</h3><p>성능 튜닝 · 내구성·신뢰성 시험</p></div>
+    </div>
+    <p class="sec-note reveal" data-d="2">Toradex SoM·Carrier Board 총판 경험과 삼성 심비안/안드로이드 SW 이력을 기반으로 한 임베디드 개발 파이프라인입니다.</p>
+    <div class="mod-grid reveal" data-d="3" style="margin-top:18px">
+      <div class="mod">부트로더<small>U-Boot 등 초기화</small></div>
+      <div class="mod">디바이스 트리<small>하드웨어 기술</small></div>
+      <div class="mod">디바이스 드라이버<small>주변장치 제어</small></div>
+      <div class="mod">전원 관리 · OTA<small>저전력 · 원격 업데이트</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="security" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Embedded · 03</span>
+    <h2>보안</h2>
+    <p class="sec-sub">차량 사이버보안 국제표준 대응 — 설계부터 검증·산출물까지.</p></div>
+    <div class="dep-grid">
+      <div class="dep-card reveal" data-d="1" data-tilt><div class="ic" aria-hidden="true">🛡️</div><h3>ISO-21434</h3><p>CSMS/TARA 위협 분석·리스크 평가 산출물 대응</p></div>
+      <div class="dep-card reveal" data-d="2" data-tilt><div class="ic" aria-hidden="true">🔐</div><h3>Secure Library</h3><p>차량 MCU 보안 라이브러리 개발 (양산 적용)</p></div>
+      <div class="dep-card reveal" data-d="3" data-tilt><div class="ic" aria-hidden="true">📦</div><h3>SBOM · 공급망</h3><p>소프트웨어 자재명세서 관리 — 공급망 보안 리스크 최소화</p></div>
+    </div>
+    <div class="oem-band reveal" data-d="3" style="margin-top:28px">
+      <div class="row"><b>차량 보안 전 생애주기 (ISO/SAE 21434)</b> — 위협분석(TARA) → 보안설계(Secure Boot · HSM · SecOC · MCU Secure Library) → 검증(침투·퍼징) → 산출물(CSMS · UN R155/R156 대응)</div>
+      <div class="row">기능안전(ISO 26262)과 사이버보안(ISO 21434)을 병행(safety + security co-engineering)하고, SBOM으로 공급망 보안 리스크를 관리하도록 설계합니다.</div>
+    </div>
+    <div class="reveal" data-d="4" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">
+      <span class="pill light" style="margin:0">ISO/SAE 21434</span><span class="pill light" style="margin:0">UN R155 (CSMS)</span><span class="pill light" style="margin:0">UN R156 (SUMS)</span><span class="pill light" style="margin:0">SecOC</span><span class="pill light" style="margin:0">UDS Security Access</span><span class="pill light" style="margin:0">SBOM</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-band dark">
+  <div class="wrap reveal">
+    <img src="assets/ci_02.avif" alt="" class="cta-logo" aria-hidden="true">
+    <span class="kicker">Contact</span>
+    <h2>이 분야의 과제, 오큐브와 함께 풀어보세요</h2>
+    <p>근 20년 현장 경험으로 가장 맞는 접근을 제안드립니다.</p>
+    <a href="contact.html" class="btn-primary" data-magnet>문의하기</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="f-logo">
+        대표이사 원창연 · 사업자등록번호 504-81-71345<br>
+        본사 대구광역시 수성구 알파시티1로31길 18<br>
+        T. 053-313-5333 · F. 053-313-5332<br><br>
+        서울 강서구 강서로56가길 141 KM빌딩 3층<br>
+        안양 동안구 LS로 142 금정역SKV1센터 722호
+      </div>
+      <div><p class="f-h">비즈니스</p><a href="business-ax.html">AX</a><a href="business-embedded.html">임베디드</a><a href="business-si.html">SI</a><a href="business-license.html">기술지원</a></div>
+      <div><p class="f-h">솔루션</p><a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">DataQ</a><a href="solution-factoryq.html">FactoryQ</a><a href="solution-agentq.html">AgentQ</a></div>
+      <div><p class="f-h">회사</p><a href="company.html#about">회사소개</a><a href="company.html#history">연혁</a><a href="contact.html">문의</a><a href="privacy.html">개인정보처리방침</a></div>
+    </div>
+    <div class="f-legal">Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="assets/site.js?v=25"></script>
+<script src="assets/fx.js?v=13"></script>
+</body>
+</html>

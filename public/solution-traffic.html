@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QVision 영상 인식 교통·안전 — 오큐브</title>
+<meta name="description" content="QVision — 영상 인식(Vision) AI로 교통을 분석하고 도로·작업 위험을 감지합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-1">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://www.ocube.co.kr/solution-traffic.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="QVision 영상 인식 교통·안전 — 오큐브">
+<meta property="og:description" content="QVision — 영상 인식(Vision) AI로 교통을 분석하고 도로·작업 위험을 감지합니다.">
+<meta property="og:url" content="https://www.ocube.co.kr/solution-traffic.html">
+<meta property="og:image" content="/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QVision 영상 인식 교통·안전 — 오큐브">
+<meta name="twitter:description" content="QVision — 영상 인식(Vision) AI로 교통을 분석하고 도로·작업 위험을 감지합니다.">
+<meta name="twitter:image" content="/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"솔루션","item":"https://www.ocube.co.kr/solutions.html"},{"@type":"ListItem","position":3,"name":"QVision","item":"https://www.ocube.co.kr/solution-traffic.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a href="business.html">비즈니스 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>시스템 통합·<wbr>구축·<wbr>운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="solutions.html">솔루션 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>제조 AI</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="business-license.html">기술지원 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="company.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Build Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business.html">비즈니스</a>
+  <a href="solutions.html">솔루션</a>
+  <a href="business-license.html">기술지원</a>
+  <a href="company.html">회사</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+
+
+<section id="top" class="hero page-hero dark">
+  <div class="hero-bg" style="background-image:url('assets/video/sec_autonomous.jpg')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="solutions.html">솔루션</a><i aria-hidden="true">›</i><b>QVision</b></nav>
+    <span class="hero-badge">SOLUTION · 산업 솔루션</span>
+    <h1>QVision</h1>
+    <p>영상 인식 AI — 도로와 현장의 <em>위험을 봅니다</em>. 기존 CCTV 인프라를 그대로 활용해 돌발상황과 위험 행동을 검지하고, 개인영상정보는 엣지 단계에서 비식별 처리해 안전하게 다룹니다.</p>
+    <ul class="hero-keys">
+      <li><span class="k">연동</span><span class="v">ONVIF · RTSP · GStreamer</span></li>
+      <li><span class="k">검지</span><span class="v">돌발상황(AID) · 위험 행동</span></li>
+      <li><span class="k">처리</span><span class="v">엣지 추론 · 영상정보 비식별</span></li>
+    </ul>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<section class="sol-intro">
+  <span class="eb rv">SOLUTION / VISIONQ</span>
+  <h2 class="rv d1"><span>도로와 현장의 위험을</span><span>먼저 보는 영상 AI</span></h2>
+  <div class="sol-lead rv d2">
+    <p>기존 CCTV 인프라를 그대로 활용해 돌발상황과 위험 행동을 검지합니다.</p>
+    <p>개인영상정보는 엣지 단계에서 비식별 처리합니다.</p>
+  </div>
+  <figure class="sol-stage rv d3">
+    <img src="assets/img/tms.png" alt="QVision 화면 — 프로토타입 예시" loading="lazy" width="560" height="204">
+  </figure>
+</section>
+
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#arch">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#caps">기능</a><a href="#detect">돌발검지</a><a href="#spec">스펙</a><a href="#deploy">배포</a><a href="#proof">국책 실증</a></div></nav>
+
+<section id="overview" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Overview</span>
+    <h2>영상이 곧 센서입니다</h2>
+    <p class="sec-sub">영상 인식(Vision) AI로 <b>도로·<wbr>교통을 분석하고 위험을 감지</b>합니다 — 차종·<wbr>통행 분석부터 노면 파손(포트홀) 자동 검출, 작업장 안전 관제까지.</p></div>
+    <div class="media-duo reveal" data-d="1">
+      <figure><img class="shot" src="assets/img/tms.png" alt="QVision — 영상 기반 교통 분석" loading="lazy" width="560" height="204">
+        <figcaption class="shot-cap">교통 분석 — 차종 분류·<wbr>통행량 계측</figcaption></figure>
+      <figure><img class="shot" src="assets/img/pothole.png" alt="포트홀 검출 — 노면 파손 자동 감지" loading="lazy" width="600" height="211">
+        <figcaption class="shot-cap">노면 안전 — 포트홀 자동 검출</figcaption></figure>
+    </div>
+    <div class="hero-stats reveal" data-d="2" style="margin-top:26px">
+      <div class="stat"><b>국책 주관</b><span>공공안전 AI 국책과제 — 오큐브 주관·<wbr>KT 수요기관</span></div>
+      <div class="stat"><b><span data-count="4">0</span><i class="u">개소</i></b><span>세이프뱃지 안전관제 실증</span></div>
+      <div class="stat"><b><span data-count="8">0</span><i class="u">종</i></b><span>자동 돌발상황 검지(AID) 항목</span></div>
+    </div>
+  </div>
+</section>
+<section id="arch" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Architecture</span>
+    <h2>카메라에서 관제까지, 3계층으로</h2>
+    <p class="sec-sub">현장 카메라의 영상을 <b>엣지에서 추론</b>하고, 표준 프로토콜로 수집해 <b>중앙 관제</b>로 잇는 엣지-투-클라우드 구조로 설계합니다.</p></div>
+    <div class="stack-diagram reveal" data-d="1">
+      <div class="stack-layer"><span class="stack-tag">EDGE · 현장</span><b>엣지 카메라 · 영상 수집</b><small>IP 카메라(ONVIF)·<wbr>RTSP 스트림 — 이기종 CCTV를 표준 인터페이스로 연결하도록 설계</small></div>
+      <div class="stack-arrow">▼</div>
+      <div class="stack-layer l-op"><span class="stack-tag">INFERENCE · 추론</span><b>엣지 추론 · 영상 파이프라인</b><small>GStreamer 디코딩·<wbr>전처리 + CNN 객체 검출·<wbr>분류·<wbr>추적 — 카메라 인접 엣지에서 실시간 처리</small></div>
+      <div class="stack-arrow">▼</div>
+      <div class="stack-layer"><span class="stack-tag">CONTROL · 관제</span><b>GIS 중앙 통합관제</b><small>다수 현장 이벤트를 지도 기반으로 통합 관제 — Cubeon Safety Pack(도메인팩) 위에서 결합</small></div>
+    </div>
+  </div>
+</section>
+<section id="pipeline" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Pipeline</span>
+    <h2>영상 한 프레임이 이벤트가 되기까지</h2>
+    <p class="sec-sub">수집부터 관제까지 6단계 영상 분석 파이프라인으로 구성합니다.</p></div>
+    <div class="tl reveal" data-d="1">
+      <div class="tl-card"><span class="yr">01</span><h3>영상 수집</h3><p>RTSP·<wbr>ONVIF로 IP 카메라 스트림 수집</p></div>
+      <div class="tl-card"><span class="yr">02</span><h3>디코딩·<wbr>전처리</h3><p>GStreamer 파이프라인으로 디코드·<wbr>프레임 정규화</p></div>
+      <div class="tl-card"><span class="yr">03</span><h3>객체 추론</h3><p>CNN 기반 검출·<wbr>분류 — 차종·<wbr>보행자·<wbr>노면 파손</p></div>
+      <div class="tl-card"><span class="yr">04</span><h3>객체 추적</h3><p>다중 객체 추적(multi-object tracking)으로 이동 경로 산출</p></div>
+      <div class="tl-card"><span class="yr">05</span><h3>이벤트 판단</h3><p>자동 돌발상황 검지(AID)·<wbr>오탐 억제(HITL 검수)</p></div>
+      <div class="tl-card cur"><span class="yr">06</span><h3>GIS 관제</h3><p>지도 기반 실시간 이벤트 표출·<wbr>현장 통합 관제</p></div>
+    </div>
+    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
+      <div class="feat"><b>엣지 전처리로 대역 절감</b><span>원본 영상 대신 검지 이벤트·<wbr>썸네일만 센터로 보내 회선 부담을 낮추도록 설계합니다.</span></div>
+      <div class="feat"><b>이벤트 중심 아카이빙</b><span>상시 저장 대신 이벤트 전후 구간 중심으로 보관해 저장 비용과 개인정보 노출을 줄입니다.</span></div>
+    </div>
+  </div>
+</section>
+<section id="caps" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Capabilities</span>
+    <h2>도로에서 현장까지</h2></div>
+    <p class="sec-sub reveal">도로 위 교통 흐름부터 산업 현장의 작업 위험까지, <b>하나의 영상 인식 엔진</b>으로 폭넓게 감지하도록 설계합니다.</p>
+    <div class="dep-grid">
+      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🚦</div><h3>교통 분석</h3><p>차종 분류·<wbr>통행량 계측 — 도로 통행 데이터 분석</p></div>
+      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🕳️</div><h3>노면 안전</h3><p>포트홀·<wbr>균열 등 노면 파손 영상 자동 검출</p></div>
+      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🦺</div><h3>작업 안전</h3><p>영상+센서 융합 위험 추론 — 작업자별 위험도 산출</p></div>
+      <div class="dep-card reveal" data-d="4"><div class="ic" aria-hidden="true">🚶</div><h3>보행자·<wbr>군중</h3><p>횡단·<wbr>무단횡단·<wbr>군중 밀집도 영상 분석</p></div>
+      <div class="dep-card reveal" data-d="5"><div class="ic" aria-hidden="true">🅿️</div><h3>주정차 관제</h3><p>불법 주정차·<wbr>주차면 점유 자동 판별</p></div>
+      <div class="dep-card reveal" data-d="6"><div class="ic" aria-hidden="true">🌫️</div><h3>환경 위험</h3><p>저시정·<wbr>연기·<wbr>낙하물 등 도로 위험 요소 검지</p></div>
+    </div>
+  </div>
+</section>
+<section id="detect" class="sec-anchor dark">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Incident Detection</span>
+    <h2>도로가 보내는 신호를 자동으로 잡습니다</h2>
+    <p class="sec-sub">자동 돌발상황 검지(AID)로 도로·<wbr>현장의 위험 이벤트를 실시간 검지하도록 설계합니다.</p></div>
+    <div class="mod-grid reveal" data-d="1">
+      <div class="mod">역주행</div>
+      <div class="mod">정지 차량</div>
+      <div class="mod">교통 정체</div>
+      <div class="mod">보행자 진입</div>
+      <div class="mod">낙하물</div>
+      <div class="mod">저시정·<wbr>연기</div>
+      <div class="mod">노면 파손(포트홀)</div>
+      <div class="mod">통행량·<wbr>차종</div>
+    </div>
+    <p class="sec-note">검지 항목은 현장 요건에 맞춰 확장하도록 구성하며, 오탐을 줄이기 위해 사람 검수(HITL) 단계를 둘 수 있습니다. 개인영상정보는 비식별(블러) 처리 원칙을 따릅니다.</p>
+    <div class="feat-list reveal" data-d="2" style="margin-top:20px">
+      <div class="feat"><b>오탐 억제 설계</b><span>이벤트 신뢰도 점수·<wbr>연속 프레임 확인·<wbr>사람 검수(HITL)를 거쳐 확정하도록 구성합니다.</span></div>
+      <div class="feat"><b>야간·<wbr>악천후 대응</b><span>저조도·<wbr>역광·<wbr>우천 환경의 검지 성능을 현장 데이터로 보정하는 접근을 취합니다.</span></div>
+      <div class="feat"><b>개인영상정보 보호</b><span>비식별(블러) 처리·<wbr>접근 권한 분리·<wbr>보관 기한 관리로 영상정보 규정을 준수하도록 설계합니다.</span></div>
+    </div>
+    <figure class="shot-fig reveal" data-d="3" style="margin-top:20px">
+      <img class="shot fit" style="max-height:22vh" src="assets/img/proto/qdrive-city.jpg" alt="교통·안전 통합 관제 예시 화면 — 위험운전 히트맵 지도·돌발상황·실시간 관제" loading="lazy" width="1600" height="1005">
+      <figcaption class="shot-cap">교통·<wbr>안전 통합 관제(위험운전 히트맵·<wbr>돌발상황) — 프로토타입 예시 화면</figcaption>
+    </figure>
+  </div>
+</section>
+<section id="spec" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Specification</span>
+    <h2>무엇을 입력받아 무엇을 내보내는가</h2></div>
+    <table class="cmp reveal" data-d="1">
+      <thead><tr><th>구분</th><th class="ok">QVision</th></tr></thead>
+      <tbody>
+        <tr><th>영상 입력</th><td class="ok">IP 카메라(ONVIF)·<wbr>RTSP 스트림 — 이기종 CCTV 연동 설계</td></tr>
+        <tr><th>추론 방식</th><td>엣지 추론(카메라 인접) + 중앙 AI 추론 서버 2티어 구성</td></tr>
+        <tr><th>영상 처리</th><td>GStreamer 파이프라인 · CNN 객체 검출·<wbr>분류·<wbr>다중 추적</td></tr>
+        <tr><th>융합 입력</th><td>영상 + 뱃지 + 환경 센서 멀티모달 융합(작업 안전)</td></tr>
+        <tr><th>산출물</th><td>돌발상황(AID) 이벤트 · 작업자별 위험도 · 통행·<wbr>차종 통계</td></tr>
+        <tr><th>관제</th><td class="ok">GIS 지도 기반 중앙 통합관제 · Cubeon Safety Pack 연계</td></tr>
+      </tbody>
+    </table>
+    <div class="reveal" data-d="2" style="margin-top:20px">
+      <span class="pill light">ONVIF</span> <span class="pill light">RTSP</span>
+      <span class="pill light">GStreamer</span> <span class="pill light">CNN 객체검출</span>
+      <span class="pill light">멀티모달 융합</span> <span class="pill light">엣지 추론</span>
+      <span class="pill light">MQTT</span> <span class="pill light">GIS 관제</span>
+    </div>
+    <p class="sec-note">표준·<wbr>프로토콜은 이기종 카메라·<wbr>관제 시스템과의 상호운용을 지원하도록 설계한 방향이며, 주요 VMS와 연동하도록 설계·<wbr>지원하는 방향으로 확장합니다.</p>
+  </div>
+</section>
+<section id="deploy" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Deployment</span>
+    <h2>클라우드부터 폐쇄망까지</h2>
+    <p class="sec-sub">데이터 규제·<wbr>영상정보 보안 환경에 맞춰 동일 솔루션을 세 가지 형태로 배포하도록 구성합니다.</p></div>
+    <div class="dep-grid">
+      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드 관제</h3><p>중앙 관제·<wbr>통계를 클라우드에 배치 — 빠른 구축·<wbr>다현장 통합</p></div>
+      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스</h3><p>사내 서버에서 영상·<wbr>데이터 내부화 — 데이터 주권 확보</p></div>
+      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망 엣지</h3><p>망분리 현장에서 엣지 추론만으로 운영 — 영상 반출 없이 검지</p></div>
+    </div>
+    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
+      <div class="feat"><b>영상 반출 가능 여부</b><span>반출 불가 현장은 엣지 추론만으로 운영 — 이벤트 메타데이터만 센터로 전송합니다.</span></div>
+      <div class="feat"><b>현장 수 · 관제 범위</b><span>다지점 통합 관제가 필요하면 클라우드 중앙 관제, 단일 현장은 온프레미스가 유리합니다.</span></div>
+      <div class="feat"><b>회선 대역 · 지연</b><span>대역이 제한된 현장은 엣지 전처리로 전송량을 줄이는 구성을 권장합니다.</span></div>
+    </div>
+  </div>
+</section>
+<section id="proof" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">National Project</span>
+    <h2>공공안전 국책, 오큐브가 주관합니다</h2></div>
+    <p class="sec-sub reveal">공공안전 국책 과제를 <b>오큐브가 주관</b>하고, 영상·<wbr>센서 융합 기반 작업 안전 관제를 현장에서 실증합니다.</p>
+    <div class="feat-list reveal" data-d="1">
+      <div class="feat">주관기관 수행 — 과제 설계·<wbr>개발·<wbr>실증 총괄</div>
+      <div class="feat">멀티모달 융합 — 영상 + 뱃지 + 환경 센서 결합</div>
+      <div class="feat">현장 실증 — 밀폐·<wbr>단독 작업 환경 다수 현장</div>
+    </div>
+    <div class="case-grid two">
+      <article class="case-card reveal" data-d="1"><span class="dom">공공안전 · 국책 (KT 수요기관)</span>
+        <h3>세이프뱃지 안전 관제</h3>
+        <p class="csi"><b>과제</b> 밀폐·<wbr>단독 작업 환경의 복합 위험을 단일 센서로 판단 불가</p>
+        <p class="csi"><b>해결</b> 영상+뱃지+환경 센서 융합으로 작업자별 위험도 실시간 산출 — 실증 4개소</p>
+        <p class="csi"><b>성과</b> 단일 센서로 못 잡던 복합 위험을 작업자별 실시간 감지</p></article>
+      <article class="case-card reveal" data-d="2"><span class="dom">확장</span>
+        <h3>중앙 통합관제(GIS)</h3>
+        <p class="csi">다수 현장을 지도 기반 중앙에서 통합 관제 — Cubeon Safety Pack으로 결합</p></article>
+    </div>
+    <div class="rv" style="margin-top:36px;text-align:center"><a href="references.html" class="btn btn-ghost">전체 구축 사례 보기 <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">어떤 위험을 봐야 하는지 함께 정의합니다</h2>
+          <p class="fcta-p">도로·<wbr/>현장의 영상 데이터로 감지할 위험을 먼저 정의합니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722호</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a><a href="business-license.html">기술지원</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/site2.js?v=codex-1"></script>
+</body>
+</html>

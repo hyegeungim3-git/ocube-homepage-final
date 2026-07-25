@@ -1,0 +1,11 @@
+:root {
+  --background: #ffffff;
+  --foreground: #141414;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Pretendard, "Noto Sans KR", Arial, sans-serif;
+}

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AX · AI 전환 — 오큐브</title>
+<meta name="description" content="오큐브 AX — 데이터 진단부터 PoC·구축·운영(MLOps)까지, 현장을 아는 팀이 고객사의 AI 전환을 처음부터 끝까지 수행합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-1">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://www.ocube.co.kr/business-ax.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="AX · AI 전환 — 오큐브">
+<meta property="og:description" content="오큐브 AX — 데이터 진단부터 PoC·구축·운영(MLOps)까지, 현장을 아는 팀이 고객사의 AI 전환을 처음부터 끝까지 수행합니다.">
+<meta property="og:url" content="https://www.ocube.co.kr/business-ax.html">
+<meta property="og:image" content="/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AX · AI 전환 — 오큐브">
+<meta name="twitter:description" content="오큐브 AX — 데이터 진단부터 PoC·구축·운영(MLOps)까지, 현장을 아는 팀이 고객사의 AI 전환을 처음부터 끝까지 수행합니다.">
+<meta name="twitter:image" content="/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"비즈니스 · AX","item":"https://www.ocube.co.kr/business-ax.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a href="business.html">비즈니스 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>시스템 통합·<wbr>구축·<wbr>운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="solutions.html">솔루션 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>제조 AI</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="business-license.html">기술지원 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="company.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Build Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business.html">비즈니스</a>
+  <a href="solutions.html">솔루션</a>
+  <a href="business-license.html">기술지원</a>
+  <a href="company.html">회사</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+<main id="top">
+
+<!-- 1. HERO (풀스크린 · 이미지) -->
+<section class="hero page-hero dark">
+  <div class="hero-bg" style="background-image:url('assets/video/platform_brain_cube.jpg')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="business.html">비즈니스</a><i aria-hidden="true">›</i><b>AX</b></nav>
+    <span class="hero-badge">BUSINESS · AX</span>
+    <h1>산업을 바꾸는 AI 전환 <em>(AX)</em></h1>
+    <p>흩어진 산업 데이터를 판단으로, 판단을 실행으로 바꾸는 AI 전환입니다. 제조·공공·금융·에너지 — 어느 현장이든 데이터 진단부터 검증·통합·자율 운영까지 처음부터 끝까지 함께 설계합니다. 자체 산업 AI 플랫폼 위에서 시작하기에, 첫 성과까지의 거리가 짧습니다.</p>
+    <ul class="hero-keys">
+      <li><span class="k">전 과정</span><span class="v">데이터 → 판단 → 실행 → 자율 운영</span></li>
+      <li><span class="k">적용 범위</span><span class="v">제조 · 공공 · 금융 · 에너지</span></li>
+      <li><span class="k">지향</span><span class="v">탐지를 넘어 현장 자율화로</span></li>
+    </ul>
+</div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<!-- 2. 파트너 가로 슬라이드 -->
+<section class="pcl" aria-label="AI 전환 파트너 및 고객사">
+  <div class="wrap pcl-head rv">
+    <span class="eb">PARTNERS &amp; CLIENTS</span>
+    <p>산업을 이해하는 파트너들과 검증된 프로젝트를 만들어갑니다.</p>
+  </div>
+  <div class="pcl-mq">
+    <div class="pcl-track">
+        <div class="pcl-logo"><img src="assets/img/client/lg-electronics.png" alt="LG전자" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo"><img src="assets/img/client/sk-energy.png" alt="SK에너지" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo"><img src="assets/img/client/ls-electric.png" alt="LS ELECTRIC" loading="lazy" width="170" height="45"></div>
+        <div class="pcl-logo"><img src="assets/img/client/doosan.png" alt="두산" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo"><img src="assets/img/client/dgb-financial-group.png" alt="DGB금융지주" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/lg-electronics.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/sk-energy.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/ls-electric.png" alt="" loading="lazy" width="170" height="45"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/doosan.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/dgb-financial-group.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/lg-electronics.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/sk-energy.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/ls-electric.png" alt="" loading="lazy" width="170" height="45"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/doosan.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/dgb-financial-group.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/lg-electronics.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/sk-energy.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/ls-electric.png" alt="" loading="lazy" width="170" height="45"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/doosan.png" alt="" loading="lazy" width="280" height="90"></div>
+        <div class="pcl-logo" aria-hidden="true"><img src="assets/img/client/dgb-financial-group.png" alt="" loading="lazy" width="280" height="90"></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- 3. What We Do (좌고정 + 6단계) -->
+<section class="pinsec" id="whatwedo">
+  <div class="wrap">
+    <div class="pin-left">
+      <span class="pin-num">What We Do</span>
+      <h2>AX · <em>AI Transformation</em></h2>
+      <p>흩어진 산업 데이터를 판단으로, 판단을 실행으로 바꾸는 AI 전환입니다. 데이터 진단·표준화부터 검증된 AI 모델링, 시스템 통합과 자율 운영까지 — 현장의 일하는 방식을 바꾸는 전 과정을 <b>6단계</b>로 설계합니다.</p>
+      <div class="pin-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="pin-right">
+
+      <article class="pin-item reveal" data-i="0">
+        <div class="pin-illust" data-slot="ax1">
+          <svg viewBox="0 0 380 146" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="설비·센서·시스템 데이터 수집 개념도">
+            <g stroke="#5B9BFF" stroke-width="1.6" fill="none">
+              <circle cx="44" cy="30" r="12" fill="rgba(91,155,255,.1)"/><circle cx="44" cy="30" r="4.5"/>
+              <g stroke-width="2.2"><path d="M44 14v4M44 42v4M26 30h4M58 30h4M33 19l3 3M52 38l3 3M55 19l-3 3M36 38l-3 3"/></g>
+              <rect x="28" y="60" width="34" height="22" rx="4" fill="rgba(91,155,255,.08)"/>
+              <path d="M33 71l4-6 4 11 4-8 4 4 4-2" stroke-width="1.5"/>
+              <path d="M30 98h22l7 7v20H30Z" fill="rgba(91,155,255,.08)"/>
+              <path d="M36 108h16M36 115h16M36 122h10" stroke="rgba(91,155,255,.5)" stroke-width="1.3"/>
+              <path d="M74 30C150 30 172 66 214 70" stroke="rgba(91,155,255,.4)"/>
+              <path d="M78 71H214" stroke="rgba(91,155,255,.4)"/>
+              <path d="M74 111C150 111 172 74 214 72" stroke="rgba(91,155,255,.4)"/>
+              <ellipse cx="252" cy="49" rx="34" ry="11" fill="rgba(59,130,246,.16)"/>
+              <path d="M218 49V93a34 11 0 0 0 68 0V49"/>
+              <path d="M218 71a34 11 0 0 0 68 0"/>
+            </g>
+            <g fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="700"><text x="62" y="34">설비</text><text x="66" y="74">센서</text><text x="62" y="113">시스템</text><text x="224" y="122">데이터 수집</text></g>
+          </svg>
+        </div>
+        <div class="pi-no">01</div>
+        <h3>AI 기회 발굴 · 데이터 진단</h3>
+        <p>어떤 업무가 AI로 바뀔 수 있는지부터 찾습니다. 데이터가 말해주는 것과 현장이 원하는 것을 잇습니다.</p>
+        <ul class="pi-bul">
+          <li>반복 판단과 대기가 몰린 업무를 찾아 AI 적용 기회 맵을 만들고, 기대 효과와 난이도로 우선순위를 정합니다</li>
+          <li>설비 PLC·SCADA부터 MES·ERP까지 보유 데이터의 가용성·품질·라벨 유무를 진단해 학습 가능성을 판정합니다</li>
+          <li>OPC-UA·Modbus·MQTT 커넥터와 엣지 전처리로 모델 학습에 쓸 원천 데이터 파이프라인을 확보합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="1">
+        <div class="pin-illust" data-slot="ax2">
+          <svg viewBox="0 0 380 146" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="데이터 표준화·지식화 개념도">
+            <g stroke="#5B9BFF" stroke-width="1.5" fill="rgba(91,155,255,.1)">
+              <rect x="24" y="32" width="20" height="20" rx="3"/>
+              <circle cx="34" cy="74" r="10"/>
+              <path d="M34 96l11 20H23Z"/>
+            </g>
+            <path d="M50 42H110M52 74H110M46 106H110" stroke="rgba(91,155,255,.34)" stroke-width="1.4"/>
+            <g stroke="#5B9BFF" stroke-width="1.6" fill="rgba(59,130,246,.12)"><path d="M116 44h60l-17 27v26h-26V71Z"/></g>
+            <text x="123" y="62" fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="800">표준화</text>
+            <path d="M180 72H212" stroke="rgba(91,155,255,.4)" stroke-width="1.5"/>
+            <g stroke="rgba(91,155,255,.45)" stroke-width="1.4"><path d="M248 42L300 34M300 34L342 60M248 42L268 88M300 34L300 90M342 60L320 100M268 88L300 90M300 90L320 100"/></g>
+            <g fill="rgba(59,130,246,.16)" stroke="#5B9BFF" stroke-width="1.5"><circle cx="248" cy="42" r="9"/><circle cx="300" cy="34" r="10"/><circle cx="342" cy="60" r="9"/><circle cx="268" cy="88" r="8"/><circle cx="300" cy="90" r="10"/><circle cx="320" cy="100" r="8"/></g>
+            <text x="286" y="126" fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="700">지식 그래프</text>
+          </svg>
+        </div>
+        <div class="pi-no">02</div>
+        <h3>데이터 표준화 · 지식화</h3>
+        <p>AI가 이해할 수 있는 형태로 — 흩어진 데이터에 온톨로지로 의미를 부여합니다.</p>
+        <ul class="pi-bul">
+          <li>설비마다 다른 태그와 코드를 표준 스키마로 정규화하고, 온톨로지로 개체·속성·관계를 정의합니다</li>
+          <li>문서·도면·이미지 같은 비정형 자료는 임베딩·벡터DB로, 개체 간 관계는 지식그래프로 연결합니다</li>
+          <li>시계열·이벤트·텍스트를 하나의 의미 체계로 묶어 이후 모든 모델과 에이전트가 공유하는 지식 기반을 만듭니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="2">
+        <div class="pin-illust" data-slot="ax3">
+          <svg viewBox="0 0 380 146" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI 모델링·학습 신경망 개념도">
+            <g fill="#5B9BFF"><circle cx="26" cy="46" r="2.6"/><circle cx="26" cy="73" r="2.6"/><circle cx="26" cy="100" r="2.6"/></g>
+            <path d="M30 46H82M30 73H82M30 100H82" stroke="rgba(91,155,255,.28)" stroke-width="1.1"/>
+            <g stroke="rgba(91,155,255,.3)" stroke-width="1.1">
+              <path d="M98 46L188 40M98 46L188 73M98 46L188 106M98 73L188 40M98 73L188 73M98 73L188 106M98 100L188 40M98 100L188 73M98 100L188 106"/>
+              <path d="M188 40L280 58M188 40L280 90M188 73L280 58M188 73L280 90M188 106L280 58M188 106L280 90"/>
+            </g>
+            <g fill="rgba(59,130,246,.18)" stroke="#5B9BFF" stroke-width="1.6">
+              <circle cx="98" cy="46" r="8"/><circle cx="98" cy="73" r="8"/><circle cx="98" cy="100" r="8"/>
+              <circle cx="188" cy="40" r="8"/><circle cx="188" cy="73" r="8"/><circle cx="188" cy="106" r="8"/>
+              <circle cx="280" cy="58" r="8"/><circle cx="280" cy="90" r="8"/>
+            </g>
+            <path d="M296 74l7 8 14-18" stroke="#3DDC97" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="700"><text x="14" y="126">입력</text><text x="170" y="130">모델 학습</text><text x="296" y="112">예측</text></g>
+          </svg>
+        </div>
+        <div class="pi-no">03</div>
+        <h3>AI 모델링 · 학습</h3>
+        <p>과제에 맞는 AI를 고릅니다. 예측이 필요한 곳엔 예측 모델을, 언어가 필요한 곳엔 언어 모델을.</p>
+        <ul class="pi-bul">
+          <li>이상탐지·예지보전·수요예측은 시계열 특화 모델로, 문서 이해·질의응답은 생성형 AI와 RAG로 설계합니다</li>
+          <li>도메인 데이터로 미세조정한 sLLM과 상용 LLM API를 과제 특성과 보안 요건에 맞춰 조합합니다</li>
+          <li>실험 추적과 교차 검증으로 후보 모델을 비교하고, 정확도만이 아니라 현장의 오탐 비용까지 반영해 선정합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="3">
+        <div class="pin-illust" data-slot="ax4">
+          <svg viewBox="0 0 380 146" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="검증 성과 비교 개념도">
+            <path d="M48 118H228" stroke="rgba(91,155,255,.3)" stroke-width="1"/>
+            <rect x="64" y="82" width="42" height="36" rx="3" fill="rgba(141,150,184,.16)" stroke="#8D96B8" stroke-width="1.4"/>
+            <rect x="140" y="44" width="42" height="74" rx="3" fill="rgba(91,155,255,.24)" stroke="#5B9BFF" stroke-width="1.6"/>
+            <path d="M110 86l28 -30" stroke="#3DDC97" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M138 56l-11 1M138 56l-1 11" stroke="#3DDC97" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <circle cx="286" cy="70" r="24" fill="rgba(61,220,151,.1)" stroke="#3DDC97" stroke-width="1.8"/>
+            <path d="M273 70l9 10 17 -21" stroke="#3DDC97" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="700"><text x="66" y="134">도입 전</text><text x="142" y="134">도입 후</text><text x="270" y="112">검증됨</text></g>
+          </svg>
+        </div>
+        <div class="pi-no">04</div>
+        <h3>현장 검증 PoC · HITL</h3>
+        <p>AI의 판단을 현장 전문가가 검증합니다. 신뢰가 쌓인 만큼만 맡깁니다.</p>
+        <ul class="pi-bul">
+          <li>실제 현장 데이터로 PoC를 수행해 도입 전후 효과를 같은 기준으로 비교하고 정량화합니다</li>
+          <li>사람이 승인·수정하는 HITL 루프를 설계해 AI 판단의 근거를 확인하고, 경계 사례를 학습 데이터로 되돌립니다</li>
+          <li>오탐과 미탐의 비용을 현장과 합의해 알람 임계값과 자율화 수준을 조정합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="4">
+        <div class="pin-illust" data-slot="ax5">
+          <svg viewBox="0 0 380 146" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="시스템 통합·배포 개념도">
+            <g stroke="#5B9BFF" stroke-width="1.6">
+              <rect x="146" y="58" width="76" height="32" rx="8" fill="rgba(59,130,246,.18)"/>
+              <path d="M146 74H108M108 74V40M108 40H86" stroke="rgba(91,155,255,.42)"/>
+              <path d="M222 62H286" stroke="rgba(91,155,255,.42)"/>
+              <path d="M222 86C258 86 268 110 300 110" stroke="rgba(91,155,255,.42)"/>
+              <path d="M60 34q-7 0 -7 8q-11 0 -11 10q0 9 10 9h34q10 0 10 -10q0 -9 -9 -9q0 -9 -11 -9q-7 0 -16 1Z" fill="rgba(91,155,255,.12)"/>
+              <rect x="288" y="46" width="30" height="32" rx="3" fill="rgba(91,155,255,.1)"/>
+              <path d="M294 55h18M294 62h18M294 69h18" stroke-width="1.2"/>
+              <rect x="300" y="96" width="28" height="28" rx="4" fill="rgba(91,155,255,.1)"/>
+              <rect x="308" y="104" width="12" height="12" rx="2"/>
+              <path d="M312 96v-4M316 96v-4M312 124v4M316 124v4M300 108h-4M300 114h-4M328 108h4M328 114h4" stroke-width="1.3"/>
+            </g>
+            <g fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="10" font-weight="800"><text x="158" y="78">PLATFORM</text></g>
+            <g fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="700"><text x="44" y="76">클라우드</text><text x="286" y="34">온프레미스</text><text x="302" y="138">엣지</text></g>
+          </svg>
+        </div>
+        <div class="pi-no">05</div>
+        <h3>AI 에이전트 · 시스템 연결</h3>
+        <p>판단을 실행으로 — AI를 현장 시스템에 심고 행동으로 잇습니다.</p>
+        <ul class="pi-bul">
+          <li>조회·분석·보고 업무는 자연어 에이전트로, 설비 이상은 탐지→조치 제안→승인→실행의 폐루프로 연결합니다</li>
+          <li>클라우드·온프레미스·폐쇄망까지, 보안 요건에 맞는 형태로 모델과 에이전트를 배포합니다</li>
+          <li>MES·ERP·그룹웨어 같은 기간계와 API로 연동해 AI가 실제 업무 흐름 안에서 동작하게 합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="5">
+        <div class="pin-illust" data-slot="ax6">
+          <svg viewBox="0 0 380 146" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="운영 고도화 순환 개념도">
+            <g stroke="#5B9BFF" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M190 25a48 48 0 1 1 -34 14"/>
+              <path d="M190 25l-13 -4M190 25l-3 13"/>
+            </g>
+            <g stroke="#5B9BFF" stroke-width="1.6" fill="#0e1740"><circle cx="190" cy="25" r="7"/><circle cx="238" cy="73" r="7"/><circle cx="190" cy="121" r="7"/><circle cx="142" cy="73" r="7"/></g>
+            <path d="M162 88l12 -14 10 8 16 -22" stroke="#3DDC97" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M200 60l6 -2 -1 6" stroke="#3DDC97" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#8FB4FF" font-family="'Wanted Sans Variable',sans-serif" font-size="8.5" font-weight="700" text-anchor="middle"><text x="190" y="15">모니터</text><text x="262" y="76">드리프트</text><text x="190" y="139">재학습</text><text x="116" y="76">배포</text></g>
+          </svg>
+        </div>
+        <div class="pi-no">06</div>
+        <h3>MLOps 운영 · 지속 학습</h3>
+        <p>도입이 끝이 아니라 시작입니다. AI는 운영하면서 더 정확해집니다.</p>
+        <ul class="pi-bul">
+          <li>입력 데이터의 분포 변화(드리프트)와 성능 저하를 감시해 재학습 시점을 자동으로 판단합니다</li>
+          <li>모델 레지스트리로 버전과 배포 이력을 관리하고, 문제가 생기면 이전 버전으로 즉시 롤백합니다</li>
+          <li>현장 피드백과 새 데이터를 재학습 파이프라인으로 되돌려 모델 정확도를 유지·개선합니다</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. 적용분야 -->
+<section class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Applications</span>
+    <h2>적용 분야</h2>
+    <p class="sec-sub">AX·<wbr>임베디드·<wbr>SI 역량을 <b>공공·<wbr>금융·<wbr>제조·<wbr>교통</b> 현장의 과제에 맞춰 제공합니다.</p></div>
+    <div class="dep-grid reveal" data-d="1">
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏛️</div><h3>공공·<wbr>안전</h3><p>영상·<wbr>센서 융합 안전 관제와 공공 서비스 시스템 — AI CCTV·<wbr>세이프뱃지 국책 등</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏦</div><h3>금융</h3><p>모바일 금융·<wbr>그룹 소통앱·<wbr>플랫폼 고도화 — 금융 그룹 다년 SI 파트너</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏭</div><h3>제조</h3><p>설비 이상 조기감지·<wbr>공정 최적화·<wbr>자율운영 — 자동차부품·<wbr>열처리·<wbr>제지</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🚦</div><h3>교통·<wbr>모빌리티</h3><p>영상 인식 교통·<wbr>안전과 모빌리티 데이터 플랫폼 — QVision·<wbr>Qdrive</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 레퍼런스 -->
+<section id="projects" class="bcase">
+  <div class="bcase-head rv">
+    <span class="eb">BUILD CASES</span>
+    <h2>대표 프로젝트</h2>
+    <p>현장의 요구를 이해하고 실제 운영과 제품에 적용한 오큐브의 구축 사례입니다.</p>
+  </div>
+  <div class="wrap">
+    <div class="bcase-grid">
+      <article class="bcase-card rv">
+        <div class="bcase-visual"><img src="assets/img/case/factory-insight.jpg" alt="Factory Insight AI 화면 예시" loading="lazy" width="900" height="506"></div>
+        <span class="cat">ROBOT MANUFACTURING</span>
+        <h3>Factory Insight AI</h3>
+        <span class="sum">스크류 체결과 흡착 이동 로봇의 이상을 조기에 감지하고, 자연어 질의로 원인과 조치 방안을 확인합니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>LSTM Autoencoder</li>
+          <li><i aria-hidden="true">✓</i>LLM Assistant</li>
+          <li><i aria-hidden="true">✓</i>LightGBM</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d1">
+        <div class="bcase-visual"><img src="assets/img/case/smart-optimizer.jpg" alt="AI Smart Optimizer 화면 예시" loading="lazy" width="900" height="502"></div>
+        <span class="cat">PROCESS OPTIMIZATION</span>
+        <h3>AI Smart Optimizer</h3>
+        <span class="sum">열 처리 설비의 이상을 감지하고 열질량을 추정해 제조 프로파일을 권고하는 데이터 기반 최적화 시스템입니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>XGBoost</li>
+          <li><i aria-hidden="true">✓</i>Transformer</li>
+          <li><i aria-hidden="true">✓</i>Edge Gateway</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d2">
+        <div class="bcase-visual"><img src="assets/img/case/paperon-ai.jpg" alt="PAPERON AI 화면 예시" loading="lazy" width="900" height="506"></div>
+        <span class="cat">AUTONOMOUS OPERATION</span>
+        <h3>PAPERON AI</h3>
+        <span class="sum">제지 공정의 설비·에너지·품질·안전 상태를 연결하는 AI-OT 자율운영 플랫폼입니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>AI-OT</li>
+          <li><i aria-hidden="true">✓</i>Predictive Maintenance</li>
+          <li><i aria-hidden="true">✓</i>MLOps</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <a class="bcase-more" href="references.html">전체 구축 사례 보기 <span aria-hidden="true">→</span></a>
+</section>
+
+</main>
+
+<section id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">AI 전환, 어디서부터 시작할지 함께 진단해드립니다</h2>
+          <p class="fcta-p">현장 데이터와 목표만 알려주시면 실현 가능한 로드맵을 제안드립니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722호</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a><a href="business-license.html">기술지원</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/site2.js?v=codex-1"></script>
+</body>
+</html>

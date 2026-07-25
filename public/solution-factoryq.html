@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QFactory 제조 AI — 오큐브</title>
+<meta name="description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 잡고 공정을 최적화하는 제조 AI.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-1">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://www.ocube.co.kr/solution-factoryq.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="QFactory 제조 AI — 오큐브">
+<meta property="og:description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 잡고 공정을 최적화하는 제조 AI.">
+<meta property="og:url" content="https://www.ocube.co.kr/solution-factoryq.html">
+<meta property="og:image" content="/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QFactory 제조 AI — 오큐브">
+<meta name="twitter:description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 잡고 공정을 최적화하는 제조 AI.">
+<meta name="twitter:image" content="/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"솔루션","item":"https://www.ocube.co.kr/solutions.html"},{"@type":"ListItem","position":3,"name":"QFactory","item":"https://www.ocube.co.kr/solution-factoryq.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a href="business.html">비즈니스 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>시스템 통합·<wbr>구축·<wbr>운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="solutions.html">솔루션 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>제조 AI</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="business-license.html">기술지원 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="company.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Build Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business.html">비즈니스</a>
+  <a href="solutions.html">솔루션</a>
+  <a href="business-license.html">기술지원</a>
+  <a href="company.html">회사</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+
+
+<section id="top" class="hero page-hero dark">
+  <div class="hero-bg" style="background-image:url('assets/video/business_robot_arm.jpg')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="solutions.html">솔루션</a><i aria-hidden="true">›</i><b>QFactory</b></nav>
+    <span class="hero-badge">SOLUTION · AI 플랫폼</span>
+    <h1>QFactory</h1>
+    <p>제조 AI — 이상을 <em>후공정 전에</em> 잡습니다. 설비 신호의 미세한 변화를 학습해 불량과 고장의 전조를 조기에 포착하고, 숙련자의 판단 기준을 데이터로 표준화해 공정 조건을 권고합니다.</p>
+    <ul class="hero-keys">
+      <li><span class="k">진단</span><span class="v">이상탐지 · 예지보전(RUL)</span></li>
+      <li><span class="k">최적화</span><span class="v">공정 조건 권고 · 에너지 절감</span></li>
+      <li><span class="k">운영</span><span class="v">엣지 추론 · 드리프트 재학습</span></li>
+    </ul>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<section class="sol-intro">
+  <span class="eb rv">SOLUTION / FACTORYQ</span>
+  <h2 class="rv d1"><span>이상을 후공정 전에</span><span>잡아내는 제조 AI</span></h2>
+  <div class="sol-lead rv d2">
+    <p>설비 신호의 미세한 변화에서 불량과 고장의 전조를 읽습니다.</p>
+    <p>숙련자의 판단 기준을 데이터로 표준화해 공정 조건을 권고합니다.</p>
+  </div>
+  <figure class="sol-stage rv d3">
+    <img src="assets/img/proto/factoryq-analysis.jpg" alt="QFactory 화면 — 프로토타입 예시" loading="lazy" width="1500" height="942">
+  </figure>
+</section>
+
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#spec">대상·<wbr>기법</a><a href="#caps">핵심 기능</a><a href="#stack">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#protocols">프로토콜·<wbr>표준</a><a href="#modelops">ModelOps</a><a href="#why">왜 AI</a><a href="#proof">실증 사례</a><a href="#deploy">배포</a></div></nav>
+
+<section id="overview" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Overview</span>
+    <h2>숙련자의 감을 데이터로</h2>
+    <p class="sec-sub">설비 신호와 공정 데이터로 <b>이상을 조기에 감지</b>하고, 최적 공정 조건을 AI가 권고합니다 — 대기업·<wbr>중견 제조 현장에서 실증 완료.</p></div>
+    <div class="media-duo reveal" data-d="1">
+      <figure><img class="shot" src="assets/img/factoryq.jpg" alt="스마트 팩토리 — 로봇 조립 라인과 공정 데이터" loading="lazy" width="820" height="510">
+        <figcaption class="shot-cap">제조 DX 플랫폼 <b>pomia</b> — 설비·<wbr>공정 데이터로 이상 조기감지·<wbr>공정 최적화</figcaption></figure>
+      <div class="feat-list">
+        <div class="feat"><b>이상 조기감지</b><span>시계열 이상탐지 + LLM 질의응답으로 원인·<wbr>조치 즉시 확인</span></div>
+        <div class="feat"><b>공정 최적화</b><span>설비 상태진단·<wbr>프로파일 권고 — 품질 편차 축소</span></div>
+        <div class="feat"><b>예지보전·<wbr>RUL</b><span>에너지 최적화·<wbr>잔존수명(RUL) 예측으로 다운타임 저감</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="sec-anchor">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="kicker">Features</span>
+      <h2>제조 지능화의 핵심 기능</h2>
+      <p class="lead">진단 → 권고 → 지속 학습, 제조 AI의 세 축을 제품 기능으로 제공합니다.</p></div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Detect</span>
+        <h3>이상탐지 · 예지보전</h3>
+        <p>설비 신호의 미세한 변화를 학습해 불량과 고장의 전조를 조기에 포착하고, 잔존수명(RUL)을 추정합니다. 임계 알람이 놓치는 복합 패턴을 잡습니다.</p>
+        <a class="duo-cta" href="#caps">세 가지 지능화 자세히 <i aria-hidden="true">→</i></a>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/agentq-analysis.jpg" alt="데이터 분석·이상치 탐지 화면" loading="lazy" width="1100" height="691">
+        <p class="fitcap">이상치 탐지 분석 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Optimize</span>
+        <h3>공정 조건 권고</h3>
+        <p>숙련자의 판단 기준을 데이터로 표준화해 열처리·조립 같은 공정의 조건을 권고합니다. 사람의 경험이 개인에 머물지 않고 조직의 기준이 됩니다.</p>
+        <a class="duo-cta" href="#why">왜 임계 알람으로 부족한지 <i aria-hidden="true">→</i></a>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/case/smart-optimizer.jpg" alt="열처리 공정 최적화 대시보드 예시" loading="lazy" width="900" height="502">
+        <p class="fitcap">공정 최적화 대시보드 — 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Sustain</span>
+        <h3>지속 학습 운영</h3>
+        <p>드리프트를 감시하고 재학습 파이프라인을 돌려 배포 후에도 정확도를 유지합니다. 공정이 바뀌면 모델도 함께 따라가는 운영 체계입니다.</p>
+        <a class="duo-cta" href="#modelops">ModelOps 자세히 <i aria-hidden="true">→</i></a>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
+        <p class="fitcap">모델 레지스트리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="spec" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Coverage</span>
+    <h2>무엇을, 어떤 데이터로 다루나</h2>
+    <p class="sec-sub">설비·<wbr>공정 시계열을 입력받아 이상·<wbr>품질·<wbr>정비를 지능화합니다. <span class="pill light">OPC-UA</span> <span class="pill light">MQTT</span> <span class="pill light">Modbus</span> <span class="pill light">CAN</span></p></div>
+    <table class="cmp reveal" data-d="1">
+      <thead><tr><th>기능 축</th><th class="ok">대상 설비·<wbr>데이터</th><th class="ok">핵심 기법</th><th class="ok">산출물</th></tr></thead>
+      <tbody>
+        <tr><th>이상 조기감지</th><td>회전기·<wbr>모터·<wbr>로봇, 체결·<wbr>흡착 공정의 시계열(진동·<wbr>전류·<wbr>온도)</td><td class="ok">시계열 이상탐지(정상 패턴 학습) + LLM 원인 질의응답</td><td>이탈 알람 · 근거 · 조치 가이드</td></tr>
+        <tr><th>공정 최적화</th><td>열처리·<wbr>브레이징·<wbr>성형 등 공정 조건·<wbr>프로파일</td><td class="ok">상태진단 · 프로파일 권고(숙련자 경험 표준화)</td><td>최적 공정 조건 · 품질 편차 리포트</td></tr>
+        <tr><th>예지보전</th><td>설비 부하·<wbr>마모·<wbr>가동 이력</td><td class="ok">잔존수명(RUL) 예측 · 정비 시점 산정</td><td>RUL · 정비 권고 · 비계획 정지 예방</td></tr>
+      </tbody>
+    </table>
+    <p class="sec-note">수집 프로토콜·<wbr>표준은 현장 설비 환경에 맞춰 연결하도록 설계합니다(아래 참조).</p>
+    <div class="hero-stats reveal" data-d="2">
+      <div class="stat"><b><span data-count="3">0</span><i class="u">기능 축</i></b><span>이상 조기감지 · 공정 최적화 · 예지보전</span></div>
+      <div class="stat"><b><span data-count="8">0</span><i class="u">연결 대상</i></b><span>프로토콜·<wbr>제어기·<wbr>시스템 커넥터</span></div>
+      <div class="stat"><b><span data-count="6">0</span><i class="u">단계</i></b><span>수집→조치 파이프라인</span></div>
+      <div class="stat"><b><span data-count="3">0</span><i class="u">현장</i></b><span>제조 실증 · 자동차부품·<wbr>EV열처리·<wbr>제지</span></div>
+    </div>
+  </div>
+</section>
+<section id="caps" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Capabilities</span>
+    <h2>세 가지로 제조를 지능화합니다</h2></div>
+    <div class="dep-grid">
+      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🚨</div><h3>이상탐지</h3><p>정상 패턴 학습 후 미세 이탈 조기 감지 — 근거와 함께</p></div>
+      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🎛️</div><h3>공정 최적화</h3><p>공정 조건·<wbr>프로파일 권고 — 숙련자 경험의 표준화</p></div>
+      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔧</div><h3>예지보전</h3><p>설비 잔존수명 예측·<wbr>정비 시점 권고로 비계획 정지 방지</p></div>
+    </div>
+    <div class="feat-list reveal" data-d="4" style="margin-top:24px">
+      <div class="feat"><b>근거 기반 알람</b><span>단순 이탈 통보가 아니라 원인·<wbr>조치를 함께 제시 — 블랙박스가 아닌 설명 가능한 판단</span></div>
+      <div class="feat"><b>엣지·<wbr>서버 선택 추론</b><span>현장 지연·<wbr>보안 요건에 맞춰 설비 근접(엣지) 또는 서버에서 추론하도록 배치</span></div>
+      <div class="feat"><b>숙련자 경험의 표준화</b><span>상태 기반 프로파일 권고로 사람 의존 공정 조건을 데이터 기준으로 정착</span></div>
+    </div>
+  </div>
+</section>
+<section id="stack" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Architecture</span>
+    <h2>판단 계층 제품, 한 스택 위에서</h2>
+    <p class="sec-sub">QFactory는 <b>QData가 표준화한 데이터</b>를 입력받아 판단하고, <b>Cubeon</b> 운영 계층에서 관제·<wbr>자율화됩니다.</p></div>
+    <div class="stack-diagram reveal" data-d="1">
+      <div class="stack-layer l-op"><span class="stack-tag">운영 · 행동</span><b>Cubeon · Manufacturing 도메인팩</b><small>통합 관제 · ModelOps 재학습 · 자율화 L1→L3(탐지 → 원인분석·<wbr>HITL 승인 → 폐루프 제어)</small></div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer l-judge"><span class="stack-tag">판단 · 분석 (QFactory)</span>
+        <div class="stack-prods"><span>이상탐지<small>시계열 이상</small></span><span>공정 최적화<small>프로파일 권고</small></span><span>예지보전<small>RUL 예측</small></span></div>
+      </div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer l-data"><span class="stack-tag">표준화</span><b>QData</b><small>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>CAN 설비 데이터를 공통 스키마·<wbr>온톨로지로</small></div>
+    </div>
+  </div>
+</section>
+<section id="pipeline" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Pipeline</span>
+    <h2>신호에서 조치까지, 여섯 단계</h2>
+    <p class="sec-sub">설비 신호가 표준화·<wbr>모델링을 거쳐 <b>현장 언어의 조치</b>로 이어집니다.</p></div>
+    <div class="tl reveal" data-d="1">
+      <div class="tl-card"><span class="yr">01 수집</span><h3>설비 신호 인제스트</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>CAN으로 진동·<wbr>전류·<wbr>온도·<wbr>공정값을 실시간 수집</p></div>
+      <div class="tl-card"><span class="yr">02 표준화</span><h3>정규화·<wbr>시맨틱 정합</h3><p>QData 공통 스키마·<wbr>온톨로지로 결측 보정·<wbr>품질 검증</p></div>
+      <div class="tl-card"><span class="yr">03 모델링</span><h3>피처·<wbr>정상 프로파일</h3><p>시계열 피처 추출, 정상 패턴 학습으로 이상탐지 기준선 수립</p></div>
+      <div class="tl-card cur"><span class="yr">04 추론</span><h3>이상·<wbr>RUL 추론</h3><p>미세 이탈 조기 검출 + 잔존수명 예측, 엣지·<wbr>서버 선택 추론</p></div>
+      <div class="tl-card"><span class="yr">05 권고</span><h3>원인·<wbr>조치 권고</h3><p>LLM 질의응답으로 원인·<wbr>조치를 현장 언어로 제시</p></div>
+      <div class="tl-card"><span class="yr">06 피드백</span><h3>재학습(CT)</h3><p>현장 피드백·<wbr>드리프트를 반영해 ModelOps로 지속 재학습</p></div>
+    </div>
+    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
+      <div class="feat"><b>현장 언어의 조치</b><span>임계 알람이 아니라 원인·<wbr>권고·<wbr>작업지시 형태로 전달해 현장이 바로 움직일 수 있게 합니다.</span></div>
+      <div class="feat"><b>기준선 버전 관리</b><span>정상 프로파일을 제품·<wbr>라인별로 버전 관리해 공정 변경에도 기준선을 유지합니다.</span></div>
+    </div>
+  </div>
+</section>
+<section id="protocols" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Connectivity &amp; Standards</span>
+    <h2>현장 데이터를 연결하도록 설계</h2>
+    <p class="sec-sub">이기종 설비·<wbr>제어기·<wbr>시스템을 표준 프로토콜로 흡수하도록 커넥터를 구성합니다.</p></div>
+    <div class="mod-grid reveal" data-d="1">
+      <div class="mod">OPC-UA</div><div class="mod">MQTT</div><div class="mod">Modbus (RTU/TCP)</div><div class="mod">CAN / CAN-FD</div>
+      <div class="mod">PLC</div><div class="mod">SCADA</div><div class="mod">MES</div><div class="mod">Historian</div>
+    </div>
+    <p class="sec-note reveal" data-d="2"><b>예지보전·<wbr>상태감시 표준을 지향합니다.</b> <span class="pill light">ISO 10816</span> <span class="pill light">ISO 13373</span> <span class="pill light">ISA-95</span> — 설비 진동·<wbr>상태감시·<wbr>제조 정보 계층 참조. 실제 현장 설비 구성에 맞춰 커넥터를 구성합니다.</p>
+    <div class="feat-list reveal" data-d="2" style="margin-top:20px">
+      <div class="feat"><b>수집 주기 · 해상도 설계</b><span>진동 고주파 샘플링부터 공정값 저주기 수집까지, 신호 특성에 맞춰 수집 정책을 설계합니다.</span></div>
+      <div class="feat"><b>엣지 전처리</b><span>FFT·<wbr>특징 추출을 설비 근접에서 수행해 전송량을 줄이고 응답성을 높이도록 구성합니다.</span></div>
+      <div class="feat"><b>표준 태그 매핑</b><span>설비별 상이한 태그를 ISA-95 계층·<wbr>공통 스키마로 매핑해 모델 재사용성을 확보합니다.</span></div>
+    </div>
+  </div>
+</section>
+<section id="modelops" class="sec-anchor dark">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">ModelOps</span>
+    <h2>모델을 지속 학습·<wbr>감시하도록 설계</h2>
+    <p class="sec-sub">현장은 계속 변합니다. <b>학습 → 배포 → 감시 → 재학습(CT)</b> 순환으로 정확도를 유지하도록 구성합니다.</p></div>
+    <div class="kmod-grid reveal" data-d="1">
+      <div class="kmod"><b>학습 · 등록</b><span>모델 레지스트리 · 버전관리 · 승인 워크플로</span></div>
+      <div class="kmod"><b>배포</b><span>클라우드 · 온프레미스 · 엣지 추론 배포(CI/CD)</span></div>
+      <div class="kmod"><b>모니터링</b><span>예측 분포 · 성능 관측(observability) · 감사 추적</span></div>
+      <div class="kmod"><b>드리프트 탐지</b><span>PSI · KL divergence로 데이터·<wbr>개념 변화 감지</span></div>
+      <div class="kmod"><b>재학습 (CT)</b><span>드리프트·<wbr>현장 피드백 반영 지속 학습(Continuous Training)</span></div>
+      <div class="kmod"><b>거버넌스</b><span>모델 거버넌스 · 감사 로그 · HITL 승인 게이트</span></div>
+    </div>
+    <p class="sec-note">Cubeon <b>ModelOps</b> 모듈과 연동해 운영합니다. MLOps 표준 관행(CI/CD/CT·<wbr>모델 레지스트리)을 지향합니다.</p>
+    <div class="mod-grid reveal" data-d="2" style="margin-top:18px">
+      <div class="mod">드리프트 지표<small>PSI · KL divergence</small></div>
+      <div class="mod">성능 관측<small>지연·<wbr>정확도 모니터링</small></div>
+      <div class="mod">재학습 트리거<small>임계·<wbr>주기·<wbr>피드백 기반</small></div>
+      <div class="mod">롤백<small>버전 이력 기반 즉시 복귀</small></div>
+    </div>
+    <figure class="shot-fig reveal" data-d="3" style="margin-top:22px">
+      <img class="shot fit" style="max-height:24vh" src="assets/img/proto/factoryq-analysis.jpg" alt="데이터 분석·이상 탐지 에이전트 예시 화면 — 데이터 업로드·종합 분석·이상치 탐지(Z-score·IQR)" loading="lazy" width="1500" height="942">
+      <figcaption class="shot-cap">데이터 분석·<wbr>이상 탐지(종합 분석·<wbr>Z-score·<wbr>IQR) — 프로토타입 예시 화면</figcaption>
+    </figure>
+  </div>
+</section>
+<section id="why" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Why AI</span>
+    <h2>임계 알람을 넘어서</h2>
+    <p class="sec-sub">고정 임계 감시로는 잡지 못하는 미세 이탈과 원인·<wbr>정비를 지능화합니다.</p></div>
+    <table class="cmp reveal" data-d="1">
+      <thead><tr><th>관점</th><th>규칙 기반 임계 감시</th><th class="ok">QFactory 제조 AI</th></tr></thead>
+      <tbody>
+        <tr><th>이상 감지</th><td>고정 임계 초과 시 알람(사후)</td><td class="ok">정상 패턴 학습 후 미세 이탈 조기 감지</td></tr>
+        <tr><th>원인 파악</th><td>사람이 로그를 수동 추적</td><td class="ok">LLM 질의응답으로 원인·<wbr>조치 즉시 제시</td></tr>
+        <tr><th>공정 조건</th><td>고정 레시피 유지</td><td class="ok">상태 기반 프로파일 권고(숙련자 경험 표준화)</td></tr>
+        <tr><th>정비</th><td>주기·<wbr>고장 후 정비</td><td class="ok">RUL 예측 기반 예지보전</td></tr>
+        <tr><th>운영</th><td>수동 튜닝·<wbr>고정</td><td class="ok">드리프트 감시·<wbr>재학습(ModelOps)</td></tr>
+      </tbody>
+    </table>
+    <p class="sec-note reveal" data-d="2">규칙 기반 감시를 대체하는 것이 아니라 보완합니다 — 기존 임계 알람 위에 AI 판단 레이어를 얹는 전환 경로를 권장합니다.</p>
+  </div>
+</section>
+<section id="proof" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Proven</span>
+    <h2>제조 현장 실증</h2></div>
+    <div class="case-grid">
+      <article class="case-card reveal" data-d="1"><span class="dom">자동차 부품 · SL</span>
+        <h3>로봇 조립 라인 이상 조기감지</h3>
+        <p class="csi"><b>과제</b> 체결 불량·<wbr>흡착 실패가 후공정에서야 발견</p>
+        <p class="csi"><b>해결</b> 시계열 이상탐지 + LLM 질의응답</p>
+        <p class="csi"><b>성과</b> 후공정 유출 전 조기 검출 — 재작업 흐름 차단</p></article>
+      <article class="case-card reveal" data-d="2"><span class="dom">EV 부품 열처리 · 하이박</span>
+        <h3>진공 브레이징 공정 최적화</h3>
+        <p class="csi"><b>과제</b> 고온 열처리 품질이 숙련자 경험 의존</p>
+        <p class="csi"><b>해결</b> 상태진단·<wbr>이상감지·<wbr>프로파일 권고 3단 AI</p>
+        <p class="csi"><b>성과</b> 숙련자 경험을 데이터로 표준화 — 품질 편차 관리</p></article>
+      <article class="case-card reveal" data-d="3"><span class="dom">제지 · 한솔제지</span>
+        <h3>공정 AI-OT 자율운영</h3>
+        <p class="csi"><b>과제</b> 에너지 과투입·<wbr>다운타임 예측 불가</p>
+        <p class="csi"><b>해결</b> 예지보전·<wbr>에너지 최적화·<wbr>RUL 예측</p>
+        <p class="csi"><b>성과</b> 다운타임·<wbr>에너지 과투입에 사전 대응</p></article>
+    </div>
+    <div class="hero-stats reveal" data-d="2" style="margin-top:26px">
+      <div class="stat"><b><span data-count="3">0</span><i class="u">개 사</i></b><span>제조 현장 실증 — 자동차부품·<wbr>열처리·<wbr>제지</span></div>
+      <div class="stat"><b>국책 과제</b><span>산업 AI 에이전트 국책과제 참여(컨소시엄)</span></div>
+      <div class="stat"><b>Manufacturing</b><span>Cubeon 제조 도메인팩으로 운영·<wbr>확장</span></div>
+    </div>
+    <figure class="shot-fig reveal" data-d="3" style="margin-top:22px">
+      <img class="shot fit" style="max-height:24vh" src="assets/img/proto/qdrive-verify.jpg" alt="AI 도입 성과 검증 예시 화면 — 반사실 비교·A/B 그룹·기준선(Baseline) 대비" loading="lazy" width="1600" height="1005">
+      <figcaption class="shot-cap">AI 도입 성과 검증(반사실 비교·<wbr>A/B·<wbr>기준선 대비) — 프로토타입 예시 화면</figcaption>
+    </figure>
+    <div class="rv" style="margin-top:36px;text-align:center"><a href="references.html" class="btn btn-ghost">전체 구축 사례 보기 <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section id="deploy" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Deployment</span>
+    <h2>현장 규제에 맞춘 배포 3옵션</h2>
+    <p class="sec-sub">데이터 반출이 어려운 제조 현장까지 — 동일 제품을 세 형태로 배포하도록 설계합니다.</p></div>
+    <div class="dep-grid reveal" data-d="1">
+      <div class="dep-card"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드</h3><p>상용 LLM API·<wbr>빠른 구축. 다거점 통합 관제에 적합</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏭</div><h3>온프레미스</h3><p>사내 서버 sLLM·<wbr>데이터 내부화. 엣지 추론으로 현장 근접 처리</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망(에어갭)</h3><p>망분리 대응. 반출 불가 데이터도 현장 내에서 추론</p></div>
+    </div>
+    <p class="sec-note">상용 LLM API와 온프레미스 sLLM을 현장 보안·<wbr>규제에 맞춰 선택하도록 구성합니다.</p>
+    <div class="feat-list reveal" data-d="2">
+      <div class="feat"><b>동일 제품·<wbr>모델 일관성</b><span>배포 형태가 달라도 같은 모델·<wbr>API로 운영하도록 설계 — 이관 비용 최소화</span></div>
+      <div class="feat"><b>데이터 주권 보장</b><span>민감 공정 데이터를 현장 밖으로 반출하지 않고 내부에서 추론하도록 구성</span></div>
+      <div class="feat"><b>단계적 확장</b><span>단일 설비 PoC에서 다거점 통합 관제까지 무중단으로 순차 확장</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">우리 공정에 맞을지 PoC로 확인하세요</h2>
+          <p class="fcta-p">설비 데이터만 있으면 빠른 실증으로 효과를 수치로 검증합니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722호</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a><a href="business-license.html">기술지원</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/site2.js?v=codex-1"></script>
+</body>
+</html>

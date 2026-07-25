@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주요 구축 사례 — 오큐브(주)</title>
+<meta name="description" content="오큐브(주) 주요 구축 사례 — 제조 AI·자동차 전장·에너지·공공안전·금융·가전 플랫폼. 산업 도메인별 레퍼런스와 AX·임베디드·SI 역량을 과제-해결-성과로 정리했습니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-1">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://www.ocube.co.kr/references.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="주요 구축 사례 — 오큐브(주)">
+<meta property="og:description" content="제조 AI·자동차 전장·에너지·공공안전·금융·가전 — 산업 도메인별 구축 사례를 과제-해결-성과로 정리했습니다.">
+<meta property="og:url" content="https://www.ocube.co.kr/references.html">
+<meta property="og:image" content="/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="주요 구축 사례 — 오큐브(주)">
+<meta name="twitter:description" content="제조 AI·자동차 전장·에너지·공공안전·금융·가전 — 산업 도메인별 구축 사례.">
+<meta name="twitter:image" content="/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"회사","item":"https://www.ocube.co.kr/company.html"},{"@type":"ListItem","position":3,"name":"주요 구축 사례","item":"https://www.ocube.co.kr/references.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a href="business.html">비즈니스 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>시스템 통합·<wbr>구축·<wbr>운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="solutions.html">솔루션 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>제조 AI</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="business-license.html">기술지원 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="company.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Build Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business.html">비즈니스</a>
+  <a href="solutions.html">솔루션</a>
+  <a href="business-license.html">기술지원</a>
+  <a href="company.html">회사</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+<main>
+<section id="top" class="hero page-hero dark">
+  <div class="cube-a" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><b>회사</b><i aria-hidden="true">›</i><b>주요 구축 실적</b></nav>
+    <span class="hero-badge">REFERENCES</span>
+    <h1>주요 구축 사례</h1>
+    <p>제조·자동차·에너지·공공안전·금융·가전 — 현장의 문제를 실제로 풀어온 기록입니다. 산업 도메인별로 정리하고, 발주처 유형을 색으로 구분해 한눈에 확인하실 수 있도록 했습니다.</p>
+    <ul class="hero-keys">
+      <li><span class="k">도메인</span><span class="v">제조 · 자동차 · 에너지 · 공공 · 금융 · 가전</span></li>
+      <li><span class="k">표기 기준</span><span class="v">계약 · 실적확인서 기반, 진행 중 과제 명시</span></li>
+      <li><span class="k">한눈에</span><span class="v">발주처 유형 6색 배지 구분</span></li>
+    </ul>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<section id="refs" class="sec">
+  <div class="wrap">
+    <div class="sec-head center rv"><span class="kicker">References</span>
+      <h2>주요 구축 실적</h2>
+      <p class="lead">발주처 유형을 색으로 구분했습니다. 산업 도메인별로 살펴보실 수 있습니다.</p></div>
+
+    <div class="ref-feat rv d1" style="margin-top:clamp(26px,3.2vw,44px)">
+      <div class="ref-feat-body">
+        <div class="ref-tags"><span class="rbadge t-public">공공 · 국책 주관</span><span class="rbadge t-own">자체 솔루션 연계</span></div>
+        <h3>AI CCTV × 세이프뱃지 작업자 안전 실증</h3>
+        <span class="client">공공안전 · 국책 주관 과제 (KT 실증) · 4개 현장</span>
+        <p>영상만으로는 판단하기 어려운 단독·밀폐 작업의 복합 위험을, <b>AI CCTV 영상 + 작업자 뱃지(위치·모션) + 환경센서</b>를 융합해 위험도로 환산합니다. PTZ 자동 포커싱과 대응 오케스트레이션까지 이어지는 구조로, 오큐브가 주관기관으로 수행하고 있습니다.</p>
+      </div>
+      <div class="ref-feat-media">
+        <img src="assets/img/proto/qdrive-city.jpg" alt="AI 영상 인식 기반 관제 화면 — 프로토타입 예시" loading="lazy" width="1600" height="1005">
+      </div>
+    </div>
+
+    <div class="case-filter cert-filter rv d2" role="tablist" aria-label="산업 도메인 분류" style="position:static;background:none;border:0;padding:0;margin-top:clamp(28px,3.4vw,44px)">
+      <button class="case-tab active" type="button" data-cat="all" role="tab" aria-selected="true">전체</button>
+      <button class="case-tab" type="button" data-cat="mfg" role="tab" aria-selected="false">제조 · AI</button>
+      <button class="case-tab" type="button" data-cat="auto" role="tab" aria-selected="false">자동차 · 전장</button>
+      <button class="case-tab" type="button" data-cat="energy" role="tab" aria-selected="false">에너지 · 모빌리티</button>
+      <button class="case-tab" type="button" data-cat="public" role="tab" aria-selected="false">공공 · 안전</button>
+      <button class="case-tab" type="button" data-cat="fin" role="tab" aria-selected="false">금융</button>
+      <button class="case-tab" type="button" data-cat="svc" role="tab" aria-selected="false">가전 · 서비스</button>
+    </div>
+
+    <div class="ref-grid">
+      <article class="ref-card rv" data-cat="mfg">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>로봇 조립 라인 이상 조기감지</h3>
+        <span class="client">자동차 부품 · SL</span>
+        <p>설비 신호(토크·각도·진공압) 시계열 이상탐지와 LLM 질의응답으로, 후공정에서야 드러나던 체결 불량을 발생 시점에 포착합니다.</p>
+      </article>
+      <article class="ref-card rv d1" data-cat="mfg">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>진공 브레이징 열처리 최적화</h3>
+        <span class="client">EV 부품 열처리 · 하이박</span>
+        <p>상태진단 → 열응답 이상감지 → 프로파일 권고 3단 AI로 숙련자 경험을 데이터로 표준화합니다. <em>(과제 진행 중)</em></p>
+      </article>
+      <article class="ref-card rv d2" data-cat="mfg">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>제지 공정 AI-OT 자율운영</h3>
+        <span class="client">제지 · 한솔제지</span>
+        <p>DCS·QCS·PLC로 분산된 공정 데이터를 AI-OT 허브로 통합해 에너지 최적화·잔존수명(RUL) 예측·폐루프 자율운영을 구현합니다.</p>
+      </article>
+      <article class="ref-card rv d3" data-cat="mfg">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>자재 의사결정 AI Agent</h3>
+        <span class="client">대기업 제조 · LG전자</span>
+        <p>자연어→SQL(NL2SQL)과 사내 지식 검색증강(RAG)을 결합해, 여러 시스템에 흩어진 자재 조회를 대화형 단일 창구로 통합했습니다.</p>
+      </article>
+      <article class="ref-card rv" data-cat="auto">
+        <div class="ref-tags"><span class="rbadge t-oem">글로벌 OEM</span></div>
+        <h3>7개 완성차 그룹 양산 개발·검증</h3>
+        <span class="client">글로벌 완성차 · 양산</span>
+        <p>Linux·QNX·AAOS 포팅과 OTA, ASPICE·ISO 26262·ISO 21434 프로세스로 OEM 규격의 고신뢰 임베디드 SW를 설계·검증합니다.</p>
+      </article>
+      <article class="ref-card rv d1" data-cat="auto">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>차량 AVN·클러스터 SW 양산</h3>
+        <span class="client">국내 완성차·부품사 · 양산</span>
+        <p>연간계약 기반으로 인포테인먼트(AVN)·클러스터 SW의 설계·개발·검증 체계를 운영하며 다년간 양산 SW를 공급했습니다.</p>
+      </article>
+      <article class="ref-card rv d2" data-cat="energy">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>전기차 충전 플랫폼 구축·운영</h3>
+        <span class="client">에너지 · SK에너지</span>
+        <p>OCPP 국제표준 충전기 연동, 지도 기반 실시간 관제, 회원·결제 MSA를 턴키로 구축했습니다. 운영 노하우는 자체 제품 EVCP로 자산화했습니다.</p>
+      </article>
+      <article class="ref-card rv d3" data-cat="energy">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>EV 충전기 앱 (북미·유럽향)</h3>
+        <span class="client">가전·모빌리티 · LG전자</span>
+        <p>급속(북미향)·완속 충전기용 사용자·엔지니어 앱을 다국가 대응으로 개발해 공급했습니다.</p>
+      </article>
+      <article class="ref-card rv" data-cat="energy">
+        <div class="ref-tags"><span class="rbadge t-local">지자체 · 클러스터</span></div>
+        <h3>클라우드 인포테인먼트 관제</h3>
+        <span class="client">모빌리티 · 지역혁신클러스터</span>
+        <p>컨테이너 기반 클라우드 인포테인먼트 관제 플랫폼을 파트너와 공동 개발해 대구 지역혁신클러스터에서 실증했습니다. (FIX 2025 전시)</p>
+      </article>
+      <article class="ref-card rv d1" data-cat="public">
+        <div class="ref-tags"><span class="rbadge t-public">공공 · 국책 주관</span></div>
+        <h3>AI CCTV × 세이프뱃지 작업자 안전</h3>
+        <span class="client">공공안전 · 국책 주관 (KT 실증)</span>
+        <p>AI CCTV 영상 + 작업자 뱃지(위치·모션) + 환경센서를 융합해 위험도를 판정하고 대응을 오케스트레이션합니다. 오큐브 주관 국책과제 · 4개 현장 실증. <em>(과제 진행 중)</em></p>
+      </article>
+      <article class="ref-card rv d2" data-cat="fin">
+        <div class="ref-tags"><span class="rbadge t-fin">금융</span></div>
+        <h3>통합 금융 SI · 그룹 소통앱</h3>
+        <span class="client">금융 · DGB금융그룹</span>
+        <p>HCE 모바일 선불카드, 그룹 소통앱(계열 8개사), 유페이 홈페이지 고도화까지 다년간 금융 그룹 SI 파트너로 운영·확장했습니다.</p>
+      </article>
+      <article class="ref-card rv d3" data-cat="svc">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>ThinQ 가전 플랫폼 · webOS · B2B Cloud</h3>
+        <span class="client">가전 플랫폼 · LG전자</span>
+        <p>ThinQ 앱(레시피·반려·홈 IoT), webOS 앱·베타 고도화, Pro:Centric·SuperSign 클라우드를 다년간 연간협력사로 공급했습니다.</p>
+      </article>
+      <article class="ref-card rv" data-cat="svc">
+        <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
+        <h3>AI 고객상담(CS) 지원 시스템</h3>
+        <span class="client">서비스 AI · LG전자</span>
+        <p>LLM 기반 상담 지원 체계 — HyDE RAG로 방대한 상담 지식을 검색하고 응대 초안 작성을 지원하며 업무 시스템과 연동합니다.</p>
+      </article>
+    </div>
+    <p class="ref-note rv" style="text-align:center">표시 중 <b data-cert-count>13</b>건 · 고객사 표기는 계약·실적확인서 기준이며, 진행 중 과제는 별도 표기했습니다.</p>
+  </div>
+</section>
+
+<!-- 공공안전 -->
+<!-- 가전·서비스 플랫폼 -->
+<!-- 파트너 (기술 파트너) -->
+<section class="sec plogo-sec">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Partners &amp; Clients</span>
+      <h2>함께한 고객과 기술 파트너</h2>
+      <p class="sec-sub">현장을 아는 고객사와 글로벌 SW 벤더가 오큐브의 설계·개발·검증을 함께합니다.</p></div>
+    <div class="plogo-rows">
+      <div class="plogo-row reveal" data-d="1">
+        <span class="plogo-label">주요 고객사<small>Consulting &amp; Development</small></span>
+        <div class="plogo-grid">
+          <span class="plogo"><img src="assets/img/client/lg-electronics.png" alt="LG전자" loading="lazy" width="280" height="90"></span>
+          <span class="plogo"><img src="assets/img/client/sk-energy.png" alt="SK에너지" loading="lazy" width="280" height="90"></span>
+          <span class="plogo"><img src="assets/img/client/ls-electric.png" alt="LS ELECTRIC" loading="lazy" width="170" height="45"></span>
+          <span class="plogo"><img src="assets/img/client/doosan.png" alt="두산" loading="lazy" width="280" height="90"></span>
+          <span class="plogo"><img src="assets/img/client/dgb-financial-group.png" alt="DGB금융지주" loading="lazy" width="280" height="90"></span>
+        </div>
+      </div>
+      <div class="plogo-row reveal" data-d="2">
+        <span class="plogo-label">기술 파트너<small>Vendor</small></span>
+        <div class="plogo-grid">
+          <span class="plogo"><img src="assets/img/vlogo/qt.png" alt="Qt" loading="lazy" width="240" height="70"></span>
+          <span class="plogo"><img src="assets/img/vlogo/telit.png" alt="Telit Cinterion" loading="lazy" width="308" height="163"></span>
+          <span class="plogo"><img src="assets/img/vlogo/toradex.png" alt="Toradex" loading="lazy" width="240" height="70"></span>
+          <span class="plogo"><img src="assets/img/vlogo/visualon.png" alt="VisualOn" loading="lazy" width="240" height="70"></span>
+          <span class="plogo"><img src="assets/img/vlogo/tuxera.png" alt="Tuxera" loading="lazy" width="418" height="117"></span>
+          <span class="plogo"><img src="assets/img/vlogo/protopie.png" alt="ProtoPie" loading="lazy" width="411" height="94"></span>
+        </div>
+      </div>
+    </div>
+    <p class="sec-note reveal" data-d="2" style="margin-top:clamp(20px,2.4vw,30px)">글로벌 SW 벤더의 한국 공식 파트너로서 정품 라이선스·<wbr>기술지원·<wbr>교육·<wbr>통합을 함께 제공합니다. 자세한 내용은 <a href="business-license.html">기술지원</a>에서 확인하세요.</p>
+  </div>
+</section>
+
+<section class="sec-anchor dark">
+  <div class="wrap" style="text-align:center">
+    <div class="reveal">
+      <span class="kicker">Contact</span>
+      <h2 style="color:#fff">유사한 과제가 있으신가요?</h2>
+      <p class="sec-sub" style="margin-left:auto;margin-right:auto">현장의 문제를 들려주시면, 오큐브가 축적한 도메인 경험으로 적합한 접근을 함께 설계합니다.</p>
+      <a href="contact.html" class="btn-primary" style="margin-top:20px">문의하기</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722호</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a><a href="business-license.html">기술지원</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solutions.html">전체 보기</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">About Ocube</a><a href="location.html">Location</a><a href="references.html">Build Cases</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co. LTD ALL RIGHTS RESERVED</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/site2.js?v=codex-1"></script>
+</body>
+</html>
