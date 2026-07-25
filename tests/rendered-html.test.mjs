@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-3/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-5/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-1/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr>\s*<wbr>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
