@@ -38,7 +38,7 @@ for (const file of htmlFiles) {
 
   html = html
     .replace(/(?:<wbr>\s*){2,}/gi, "<wbr>")
-    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-5")
+    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-6")
     .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-1")
     .replace(
       /(<meta\s+property="og:image"\s+content=")[^"]*(">)/g,
