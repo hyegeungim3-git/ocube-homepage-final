@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-16/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-17/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
@@ -231,7 +231,9 @@ test("presents QFactory as a source-verified, full-cycle AI smart factory", asyn
   assert.match(solutions, /제지 AI Factory 연구개발을 바탕으로 확장합니다/);
   assert.doesNotMatch(solutions, /제지 현장에서 실증했습니다/);
   assert.ok(style.includes(".factory-app-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))"));
-  assert.ok(style.includes("@media(max-width:640px){\n  .factory-app-grid{grid-template-columns:1fr"));
+  assert.ok(style.includes("#overview.sec-anchor,\n#applications.sec-anchor{padding-top:clamp(84px,8vw,116px)}"));
+  assert.ok(style.includes("#applications.sec-anchor{padding-top:72px}"));
+  assert.ok(style.includes(".factory-app-grid{grid-template-columns:1fr;gap:14px;margin-top:26px}"));
 });
 
 test("includes the dedicated social preview and deployable build", async () => {

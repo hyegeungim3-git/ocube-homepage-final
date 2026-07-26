@@ -1407,6 +1407,8 @@ body.lb-open{overflow:hidden}
 
 /* QFactory AI Smart Factory scope — source-verified 2026-07-26 */
 .factory-apps{background:linear-gradient(180deg,#f6f8fb 0%,#fff 100%)}
+#overview.sec-anchor,
+#applications.sec-anchor{padding-top:clamp(84px,8vw,116px)}
 .factory-apps .sec-head{max-width:900px}
 .factory-app-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px}
 .factory-app{position:relative;min-width:0;padding:28px;border:1px solid #dce3ec;border-radius:22px;background:#fff;box-shadow:0 12px 34px rgba(14,22,38,.055);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
@@ -1436,6 +1438,8 @@ body.lb-open{overflow:hidden}
   .factory-flow li:nth-child(3)::after{display:none}
 }
 @media(max-width:640px){
+  #overview.sec-anchor,
+  #applications.sec-anchor{padding-top:72px}
   .factory-app-grid{grid-template-columns:1fr;gap:14px;margin-top:26px}
   .factory-app{padding:23px 21px;border-radius:18px}
   .factory-app>p{min-height:0}
