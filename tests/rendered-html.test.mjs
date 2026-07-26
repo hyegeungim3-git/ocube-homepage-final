@@ -19,14 +19,18 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-14/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-15/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
     assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
+    assert.equal((html.match(/href="business-si\.html">SI/g) ?? []).length, 2, `${page}: SI navigation labels`);
+    assert.match(html, /href="references\.html">Use Cases<small>/, `${page}: Use Cases mega-menu label`);
+    assert.doesNotMatch(html, /href="business-si\.html">Enterprise|href="references\.html">Build Cases/, `${page}: no superseded navigation labels`);
     assert.doesNotMatch(html, /Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/, `${page}: normalized legal footer`);
     assert.doesNotMatch(html, /KM빌딩 3층|금정역SKV1센터 722호/, `${page}: full office address in footer`);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+    assert.doesNotMatch(html, /font-size:14px/, `${page}: no undersized inline copy`);
     assert.equal((html.match(/<main\b/gi) ?? []).length, 1, `${page}: one main landmark`);
     assert.equal((html.match(/<footer\b/gi) ?? []).length, 1, `${page}: one footer landmark`);
     assert.doesNotMatch(html, /Web(?:·|\s·\s)App(?:·|\s·\s)Cloud[^<]{0,40}환경으로/i, `${page}: no rejected generic delivery copy`);
@@ -166,6 +170,15 @@ test("keeps the desktop mega menu at one stable height", async () => {
   assert.match(style, /\.nav-item\.is-current>a/);
   assert.match(style, /\.gnb\.gnb-mega \.nav-item>a::after/);
   assert.match(style, /html:not\(\.js\) \.m-panel\{display:grid/);
+});
+
+test("keeps content cards readable at production sizes", async () => {
+  const style = await readFile(new URL("assets/site2.css", publicRoot), "utf8");
+  assert.match(style, /\.stat b>span\{[^}]*font:inherit/);
+  assert.match(style, /\.stat b \.u\{[^}]*font-size:16px[^}]*font-style:normal/);
+  assert.match(style, /\.stat>span\{[^}]*font-size:15\.5px/);
+  assert.match(style, /\.sec-note,[^{]+\{font-size:15\.5px/);
+  assert.match(style, /\.shot-cap,[^{]+\{font-size:14\.5px/);
 });
 
 test("builds accessible mobile submenu accordions", async () => {

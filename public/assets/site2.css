@@ -1388,3 +1388,18 @@ body.lb-open{overflow:hidden}
 @media(max-width:899px){
   .dep-grid:not(.g2):has(>:nth-child(3)):not(:has(>:nth-child(4))){grid-template-columns:1fr}
 }
+
+/* Production readability QA — 숫자·설명 위계를 분리하고 본문성 텍스트를 15px 이상으로 유지 */
+.stat b>span{display:inline;margin:0;font:inherit;color:inherit}
+.stat b .u{display:block;margin:8px 0 0;font-size:16px;font-style:normal;line-height:1.35}
+.stat>span{margin-top:12px;font-size:15.5px;line-height:1.55}
+.dropdown a small,.m-acc-panel a small{font-size:13.5px;line-height:1.45}
+.h-badge span,.hpag-item{font-size:13.5px}
+.shot-cap,.duo-media .fitcap,.sol-stage figcaption,.hover-preview figcaption,.pin-cover figcaption{font-size:14.5px;line-height:1.55}
+.sec-note,.stack-layer small,.case-card p,.ref-card p,.dep-card p,.case-card .csi,.feat span,
+.pi-bul li,.tl-card p,.cmp,.kmod p,.faq-a,.rung b,.rung span,.prod-card p,.oem-band .row,
+.kt-card>p,.kt-chk li,.vision-card .v-m,.form label,.form .agree,.form-note,.form-status,
+.bcase-card .sum,.bcase-card li,.pcl-head p,.lb-cap{font-size:15.5px}
+.cmp thead th,.case-tab,.bcase-more,.loc-dl dd,.loc-btn,.fb-links a{font-size:15px}
+.stack-prods span small,.prod-card .sub,.ref-note,.cert-note{font-size:14px;line-height:1.55}
+.loc-note{font-size:15px;line-height:1.6}
