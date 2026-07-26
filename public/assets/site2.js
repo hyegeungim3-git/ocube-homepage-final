@@ -92,7 +92,7 @@
         var icon = document.createElement('span');
         icon.className = 'm-acc-icon';
         icon.setAttribute('aria-hidden', 'true');
-        icon.textContent = '⌄';
+        icon.textContent = '';
         trigger.appendChild(triggerLabel);
         trigger.appendChild(icon);
 

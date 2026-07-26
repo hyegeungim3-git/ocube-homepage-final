@@ -19,8 +19,8 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-10/, `${page}: reviewed CSS`);
-    assert.match(html, /site2\.js\?v=codex-5/, `${page}: reviewed JS`);
+    assert.match(html, /site2\.css\?v=codex-11/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.js\?v=codex-6/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
     assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
@@ -96,6 +96,7 @@ test("builds accessible mobile submenu accordions", async () => {
   ]);
 
   assert.match(script, /accordion\.className = 'm-accordion'/);
+  assert.match(script, /icon\.textContent = ''/);
   assert.match(script, /trigger\.setAttribute\('aria-controls', panelId\)/);
   assert.match(script, /panel\.setAttribute\('role', 'region'\)/);
   assert.match(script, /collapseAll\(trigger\)/);
@@ -107,7 +108,9 @@ test("builds accessible mobile submenu accordions", async () => {
   assert.match(script, /e\.key !== 'Tab'/);
   assert.doesNotMatch(script, /p\.setAttribute\('aria-hidden'/);
   assert.match(style, /\.m-toggle\{display:block;min-width:48px;min-height:48px\}/);
-  assert.match(style, /\.m-acc-trigger\{[^}]*min-height:60px/);
+  assert.match(style, /\.m-acc-trigger\{[^}]*min-height:64px/);
+  assert.match(style, /\.m-acc-icon::before\{[^}]*border-right:1\.75px solid currentColor/);
+  assert.doesNotMatch(style, /\.m-acc-icon\{[^}]*border-radius:999px/);
   assert.match(style, /\.m-acc-panel\[hidden\]\{display:none\}/);
   assert.match(style, /\.m-acc-panel a:focus-visible\{[^}]*outline:2px solid var\(--accent\)/);
   assert.match(style, /height:calc\(100dvh - 72px\)/);
