@@ -7,7 +7,7 @@
 <meta name="description" content="Cubeon — 산업 데이터를 표준화하고 AI 판단을 담당자 승인과 검증된 범위의 제한적 자동 실행으로 연결하는 산업 AI 운영 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-18">
+<link rel="stylesheet" href="assets/site2.css?v=codex-19">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-cubeon.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -125,7 +125,7 @@
   </figure>
 </section>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#arch">8모듈</a><a href="#connect">연결·<wbr>표준</a><a href="#pipeline">파이프라인</a><a href="#stack">생태계</a><a href="#modelops">AI 모델 운영</a><a href="#autonomy">자율화</a><a href="#packs">도메인·<wbr>배포</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#arch">8모듈</a><a href="#connect">연결·<wbr>표준</a><a href="#pipeline">파이프라인</a><a href="#stack">생태계</a><a href="#modelops">ModelOps</a><a href="#autonomy">자율화</a><a href="#packs">도메인·<wbr>배포</a></div></nav>
 
 <section id="overview" class="sec-anchor platform dark" style="padding-top:64px">
   <div class="wrap">
@@ -165,10 +165,10 @@
       </div>
     </div>
     <div class="duo rev">
-      <div class="duo-txt rv"><span class="pill">AI 모델 운영</span>
+      <div class="duo-txt rv"><span class="pill">ModelOps</span>
         <h3>모델 레지스트리 · 지속 운영</h3>
         <p>모델의 버전과 배포 상태를 한곳에서 관리하고, 성능 변화를 감시해 재학습 시점을 판단합니다. 운영 중 품질 저하를 조기에 확인하고 대응할 수 있는 구조입니다.</p>
-        <a class="duo-cta" href="#modelops">AI 모델 운영 자세히 <i aria-hidden="true">→</i></a>
+        <a class="duo-cta" href="#modelops">ModelOps 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
@@ -219,7 +219,7 @@
         <button type="button" class="pi-shot" data-shot="assets/img/proto/dataq-knowledge.jpg" data-shot-alt="의미 표준화·지식 관리 프로토타입 화면" data-shot-cap="의미 표준화·지식 관리 — 프로토타입 예시 화면">화면 보기</button>
       </article>
       <article class="pin-item reveal">
-        <div class="pi-no">AI 모델 운영</div>
+        <div class="pi-no">ModelOps</div>
         <h3>모델 거버넌스</h3>
         <p>모델의 학습·<wbr>배포 이력을 관리하고, 운영 중 성능을 감시해 필요할 때 재학습합니다.</p>
         <div class="pi-tags"><span class="pill light">자동 통합·배포·지속적 재학습</span></div>
@@ -286,7 +286,7 @@
       <div class="tl-card"><span class="yr">01</span><h3>데이터 수집</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus로 서로 다른 설비·<wbr>시스템의 데이터 수집</p></div>
       <div class="tl-card"><span class="yr">02</span><h3>표준화</h3><p>공통 스키마 정합·<wbr>품질 검증·<wbr>결측 보정 (QData)</p></div>
       <div class="tl-card"><span class="yr">03</span><h3>의미·<wbr>관계 정의</h3><p>설비·<wbr>공정을 객체·<wbr>속성·<wbr>관계로 정리</p></div>
-      <div class="tl-card"><span class="yr">04</span><h3>모델 운영</h3><p>모델 학습·<wbr>배포·<wbr>성능 변화 감시·<wbr>재학습(AI 모델 운영)</p></div>
+      <div class="tl-card"><span class="yr">04</span><h3>모델 운영</h3><p>모델 학습·<wbr>배포·<wbr>성능 변화 감시·<wbr>재학습·운영(ModelOps)</p></div>
       <div class="tl-card"><span class="yr">05</span><h3>판단·<wbr>권고 통합</h3><p>여러 AI 에이전트의 판단과 권고를 하나의 흐름으로 조정</p></div>
       <div class="tl-card cur"><span class="yr">06</span><h3>현장 조치</h3><p>담당자 승인 또는 검증된 자동 실행으로 현장 시스템에 조치 반영</p></div>
     </div>
@@ -320,7 +320,7 @@
 </section>
 <section id="modelops" class="sec-anchor dark">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">AI 모델 운영 · Governance</span>
+    <div class="reveal"><span class="kicker">ModelOps · Governance</span>
     <h2 style="color:#fff">모델을 한 번 배포하고 끝내지 않습니다</h2>
     <p class="sec-sub">학습·<wbr>배포·<wbr>성능 감시·<wbr>재학습을 반복 운영하고, 모델 버전과 변경 이력을 남겨 문제 발생 시 원인을 확인할 수 있게 합니다.</p></div>
     <div class="feat-list reveal" data-d="1">
@@ -329,7 +329,7 @@
       <div class="feat"><b>모델 레지스트리 · 버전관리</b><span>모델 버전·<wbr>승인 워크플로·<wbr>이전 상태 복구을 이력으로 관리</span></div>
       <div class="feat"><b>감사추적(Audit Trail)</b><span>추론·<wbr>액션 전 구간 로그로 규제·<wbr>품질 대응</span></div>
     </div>
-    <p class="sec-note reveal" data-d="2">AI 모델 운영 모듈 기반 · 업계 표준 AI 모델 관리체계(MLOps)를 도입하는 방향으로 구성합니다.</p>
+    <p class="sec-note reveal" data-d="2"><b>ModelOps</b>(배포된 AI 모델의 버전·성능·승인 이력을 관리하는 운영 체계) 모듈을 기반으로 하며, <b>MLOps</b>(모델 개발·학습·배포·재학습 전 과정을 관리하는 운영 체계)로 확장할 수 있게 구성합니다.</p>
     <figure class="shot-fig reveal" data-d="3">
       <img class="shot fit" style="max-height:18vh" src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 예시 화면 — 배포 모델의 파라미터·컨텍스트·양자화·노드·상태 관리" loading="lazy" width="1600" height="1005">
       <figcaption class="shot-cap">모델 레지스트리 — 프로토타입 예시 화면</figcaption>

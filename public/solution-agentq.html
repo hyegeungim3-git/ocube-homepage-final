@@ -7,7 +7,7 @@
 <meta name="description" content="QAgent — 흩어진 사내 데이터와 지식을 자연어로 조회·분석하고, 실행 작업은 담당자 승인 후 처리하는 산업 AI 에이전트.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-18">
+<link rel="stylesheet" href="assets/site2.css?v=codex-19">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-agentq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -210,7 +210,7 @@
       <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>근거 검색(RAG·<wbr>GraphRAG)로 근거 경로를 답변에 결합 · 지식그래프 관계 추론</p></div>
       <div class="tl-card"><div class="yr">STEP 4</div><h3>추론 · 생성</h3><p>상용 대규모 언어모델(LLM) API 또는 사내 소형 언어모델(sLLM)으로 분석·<wbr>리포트 생성</p></div>
       <div class="tl-card"><div class="yr">STEP 5</div><h3>근거 검증 · 안전장치</h3><p>검색한 자료와 답변이 일치하는지 확인하고 개인정보를 가려 안전성을 점검</p></div>
-      <div class="tl-card cur"><div class="yr">STEP 6</div><h3>실행 · HITL</h3><p>사람 승인 후 생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커로 액션 실행</p></div>
+      <div class="tl-card cur"><div class="yr">STEP 6</div><h3>실행 · HITL</h3><p>HITL(사람이 검토·승인하는 절차)을 거친 후 생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커로 액션 실행</p></div>
     </div>
     <div class="feat-list reveal" data-d="2" style="margin-top:22px">
       <div class="feat"><b>근거가 부족하면 답변 보류</b><span>검색 자료와 답변의 일치도가 기준에 못 미치면 답변을 보류하고 다시 검색합니다.</span></div>
@@ -231,7 +231,7 @@
       <div class="kmod" role="listitem" data-preview="assets/img/proto/dataq-knowledge.jpg" data-preview-cap="지식·의미 데이터 관리(권한·마스킹)" data-preview-alt="온톨로지·의미 기반 검색 관련 예시 화면"><b>온톨로지·<wbr>의미 검색</b><span>사내 용어·<wbr>관계로 근거 경로 제시</span></div>
       <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-rag.jpg" data-preview-cap="문서·벡터 검색으로 근거 후보 확보" data-preview-alt="벡터 검색 · Reranking 관련 예시 화면"><b>벡터 검색 · Reranking</b><span>임베딩 후보 검색·<wbr>재순위화</span></div>
       <div class="kmod" role="listitem" data-preview="assets/img/proto/cubeon-builder.jpg" data-preview-cap="에이전트 빌더 — MCP 도구·오케스트레이션" data-preview-alt="MCP · Function Calling 관련 예시 화면"><b>MCP · Function Calling</b><span>도구 호출 기반 에이전트 오케스트레이션</span></div>
-      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-guard.jpg" data-preview-cap="안전정책 — 안전·품질 정책 관리" data-preview-alt="안전정책 · AI 모델 운영 관련 예시 화면"><b>안전정책 · AI 모델 운영</b><span>개인정보 비식별화 · 지속 학습·<wbr>감시·<wbr>개선</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-guard.jpg" data-preview-cap="안전정책 — 안전·품질 정책 관리" data-preview-alt="안전정책 · MLOps 관련 예시 화면"><b>안전정책 · MLOps</b><span>MLOps(모델 학습·배포·성능 관리) · 개인정보 비식별화 · 지속 개선</span></div>
     </div>
     <figure class="shot-fig reveal" data-d="2">
       <img class="shot fit" src="assets/img/proto/agentq-hub.jpg" alt="멀티 에이전트 허브 예시 화면 — 업무 에이전트와 복합 업무 오케스트레이션(OCR·DB검색·보고서 자동 릴레이)" loading="lazy" width="1600" height="1005">

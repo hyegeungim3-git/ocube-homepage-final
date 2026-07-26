@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-18/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-19/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
@@ -80,13 +80,17 @@ test("explains specialist terminology in plain Korean", async () => {
   assert.doesNotMatch(visible, /B2B\s*·\s*B2G 시스템\s*·\s*구축/);
   assert.doesNotMatch(combined, /Toradex<small>산업용 SoM/);
   assert.match(visible, /지속적 재학습/);
-  assert.match(visible, /사전 검증\(PoC\)/);
-  assert.match(visible, /사람이 승인·수정하는 검토 과정\(HITL\)/);
+  assert.match(visible, /PoC[^.]{0,60}도입 전 효과를 확인하는 사전 검증/);
+  assert.match(visible, /HITL[^.]{0,60}사람이 검토·승인하는 절차/);
   assert.match(visible, /설비제어\(PLC\).*설비감시\(SCADA\).*생산관리\(MES\).*전사자원관리\(ERP\)/);
   assert.match(visible, /대규모 언어모델\(LLM\).*소형 언어모델\(sLLM\)|소형 언어모델\(sLLM\).*대규모 언어모델\(LLM\)/);
   assert.match(visible, /국제 충전 통신 표준\(OCPP\)/);
   assert.match(visible, /보드 지원 패키지\(BSP\)/);
   assert.match(visible, /멀티미디어 재생 개발도구\(SDK\)/);
+  assert.match(visible, /MLOps[^.]{0,80}모델 학습·배포·성능/);
+  assert.match(visible, /ModelOps[^.]{0,100}배포(?:된)? (?:AI )?모델의? 버전·성능/);
+  assert.match(visible, /PoC[^.]{0,60}도입 전 효과를 확인하는 사전 검증/);
+  assert.match(visible, /HITL[^.]{0,60}사람이 검토·승인하는 절차/);
 });
 
 test("reflects the reviewed Enterprise message and benchmarked home flow", async () => {
@@ -250,7 +254,7 @@ test("presents QFactory as a source-verified, full-cycle AI smart factory", asyn
   assert.match(applications, /설비 건전성·잔존수명 예측/);
   assert.match(applications, /품질 예측·공급망 추적/);
   assert.match(applications, /Vision AI 안전 관제/);
-  assert.match(applications, /AI 모델 운영·자율운영 지원/);
+  assert.match(applications, /MLOps·자율운영 지원/);
   assert.match(html, /2026~2029 연구개발·<wbr>현장 실증 추진/);
   assert.ok(!html.includes("<b>성과</b> 다운타임·<wbr>에너지 과투입에 사전 대응"));
   assert.match(solutions, /제지 AI Factory 연구개발을 바탕으로 확장합니다/);

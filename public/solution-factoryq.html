@@ -7,7 +7,7 @@
 <meta name="description" content="QFactory — 공정·설비·품질·에너지·안전 데이터를 연결하고, 예측·최적화부터 승인 기반 운영까지 지원하는 AI 스마트 팩토리 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-18">
+<link rel="stylesheet" href="assets/site2.css?v=codex-19">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-factoryq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -107,7 +107,7 @@
     <ul class="hero-keys">
       <li><span class="k">통합</span><span class="v">공정·품질·설비·생산 데이터 · 시간·작업 단위 표준화</span></li>
       <li><span class="k">최적화</span><span class="v">열에너지·설비·품질·안전 AI</span></li>
-      <li><span class="k">운영</span><span class="v">AI 모델 운영·현장 엣지 연계 · 승인 기반 자율운영</span></li>
+      <li><span class="k">운영</span><span class="v">MLOps·현장 엣지 연계 · 승인 기반 자율운영</span></li>
     </ul>
   </div>
   <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
@@ -125,7 +125,7 @@
   </figure>
 </section>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#applications">적용 범위</a><a href="#features">핵심 기능</a><a href="#spec">대상·<wbr>기법</a><a href="#caps">핵심 기능</a><a href="#stack">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#protocols">프로토콜·<wbr>표준</a><a href="#modelops">AI 모델 운영</a><a href="#why">왜 AI</a><a href="#proof">실증 사례</a><a href="#deploy">배포</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#applications">적용 범위</a><a href="#features">핵심 기능</a><a href="#spec">대상·<wbr>기법</a><a href="#caps">핵심 기능</a><a href="#stack">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#protocols">프로토콜·<wbr>표준</a><a href="#modelops">ModelOps</a><a href="#why">왜 AI</a><a href="#proof">실증 사례</a><a href="#deploy">배포</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -156,7 +156,7 @@
       <article class="factory-app rv d2"><div class="factory-app-top"><span>03</span><b>Equipment AI</b></div><h3>설비 건전성·잔존수명 예측</h3><p>회전체와 건조 설비의 상태 변화를 분석해 이상·위험도·잔존수명을 예측합니다.</p><dl><div><dt>연결 데이터</dt><dd>진동·전류·온도·압력·유량·정비 이력</dd></div><div><dt>현장 활용</dt><dd>고장 조기경보, 정비 우선순위, 다운타임 예방</dd></div></dl></article>
       <article class="factory-app rv"><div class="factory-app-top"><span>04</span><b>Quality AI</b></div><h3>품질 예측·공급망 추적</h3><p>원료·첨가제부터 최종 품질까지 시간·Lot 이력을 연결해 편차 원인을 찾습니다.</p><dl><div><dt>연결 데이터</dt><dd>농도·입도·공정조건·검사·출하 Lot</dd></div><div><dt>현장 활용</dt><dd>품질 예측, 원인 추적, 공급망 피드백</dd></div></dl></article>
       <article class="factory-app rv d1"><div class="factory-app-top"><span>05</span><b>Safety AI</b></div><h3>Vision AI 안전 관제</h3><p>영상과 설비 이벤트를 결합해 위험 행동·구역 접근·화재·이상 상황을 감지합니다.</p><dl><div><dt>연결 데이터</dt><dd>실시간 영상 스트림(RTSP)·작업 구역·설비 알람</dd></div><div><dt>현장 활용</dt><dd>위험도별 알림, 이력 조회, 오탐 피드백</dd></div></dl></article>
-      <article class="factory-app rv d2"><div class="factory-app-top"><span>06</span><b>AI Operations</b></div><h3>AI 모델 운영·자율운영 지원</h3><p>모델을 학습·배포·감시하고 권고–승인–조치–결과 확인을 하나의 운영 흐름으로 만듭니다.</p><dl><div><dt>운영 정보</dt><dd>모델·데이터 버전·성능·데이터 변화</dd></div><div><dt>현장 활용</dt><dd>지속적 재학습·이전 모델 복구, 현장 엣지 연계, 단계적 자율운영</dd></div></dl></article>
+      <article class="factory-app rv d2"><div class="factory-app-top"><span>06</span><b>AI Operations</b></div><h3>MLOps·자율운영 지원</h3><p><b>MLOps</b>(모델 학습·배포·성능을 관리하는 운영 체계)로 모델을 학습·배포·감시하고 권고–승인–조치–결과 확인을 하나의 운영 흐름으로 만듭니다.</p><dl><div><dt>운영 정보</dt><dd>모델·데이터 버전·성능·데이터 변화</dd></div><div><dt>현장 활용</dt><dd>지속적 재학습·이전 모델 복구, 현장 엣지 연계, 단계적 자율운영</dd></div></dl></article>
     </div>
     <ol class="factory-flow rv d2" aria-label="QFactory 현장 적용 흐름"><li><b>01</b><span>수집</span></li><li><b>02</b><span>표준화</span></li><li><b>03</b><span>예측·최적화</span></li><li><b>04</b><span>운영자 승인</span></li><li><b>05</b><span>현장 적용</span></li><li><b>06</b><span>성과 검증</span></li></ol>
     <p class="factory-note rv d3"><b>단계적 도입</b> 기존 설비를 전면 교체하지 않고, 기존 설비 보완용 센서와 현장 엣지 연계를 활용해 필요한 공정부터 확장합니다.</p>
@@ -194,7 +194,7 @@
       <div class="duo-txt rv"><span class="pill">Sustain</span>
         <h3>지속 학습 운영</h3>
         <p>공정 변화에 따른 모델 성능 저하를 감시하고 재학습 시점을 판단합니다. 새 모델은 검증과 배포 절차를 거쳐 운영에 반영합니다.</p>
-        <a class="duo-cta" href="#modelops">AI 모델 운영 자세히 <i aria-hidden="true">→</i></a>
+        <a class="duo-cta" href="#modelops">ModelOps 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
@@ -296,7 +296,7 @@
 </section>
 <section id="modelops" class="sec-anchor dark">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">AI 모델 운영</span>
+    <div class="reveal"><span class="kicker">ModelOps</span>
     <h2>모델을 지속 학습·<wbr>감시하도록 설계</h2>
     <p class="sec-sub">현장은 계속 변합니다. <b>학습 → 배포 → 감시 → 재학습</b> 흐름으로 운영 중 성능 저하를 확인하고 대응하도록 구성합니다.</p></div>
     <div class="kmod-grid reveal" data-d="1">
@@ -307,7 +307,7 @@
       <div class="kmod"><b>지속적 재학습</b><span>데이터 변화·<wbr>현장 피드백 반영 지속적 재학습</span></div>
       <div class="kmod"><b>거버넌스</b><span>모델 관리정책 · 감사 로그 · 사람 승인 절차</span></div>
     </div>
-    <p class="sec-note">Cubeon의 <b>AI 모델 운영</b> 기능과 연동합니다. 모델 자동 배포·지속적 재학습·버전 관리 체계를 적용합니다.</p>
+    <p class="sec-note">Cubeon의 <b>ModelOps</b>(배포 모델의 버전·성능·승인 이력을 관리하는 운영 체계) 기능과 연동합니다. 모델 자동 배포·지속적 재학습·버전 관리 체계를 적용합니다.</p>
     <div class="mod-grid reveal" data-d="2" style="margin-top:18px">
       <div class="mod">데이터 변화 지표<small>PSI · KL divergence</small></div>
       <div class="mod">성능 관측<small>지연·<wbr>정확도 모니터링</small></div>
@@ -387,7 +387,7 @@
     <div class="feat-list reveal" data-d="2">
       <div class="feat"><b>동일 제품·<wbr>모델 일관성</b><span>배포 형태가 달라도 같은 모델·<wbr>API로 운영하도록 설계 — 이관 비용 최소화</span></div>
       <div class="feat"><b>현장 내부 데이터 처리</b><span>민감 공정 데이터를 현장 밖으로 반출하지 않고 내부에서 분석하도록 구성</span></div>
-      <div class="feat"><b>단계적 확장</b><span>기존 운영 영향을 줄이며 단일 설비 사전 검증에서 다거점 통합 관제까지 단계적으로 확장</span></div>
+      <div class="feat"><b>단계적 확장</b><span>기존 운영 영향을 줄이며 단일 설비 PoC(도입 전 효과를 확인하는 사전 검증)에서 다거점 통합 관제까지 단계적으로 확장</span></div>
     </div>
   </div>
 </section>
@@ -400,8 +400,8 @@
       <div class="fcta-top">
         <div>
           <span class="kicker">CONTACT</span>
-          <h2 class="fcta-h">우리 공정에 맞을지 사전 검증으로 확인하세요</h2>
-          <p class="fcta-p">보유한 설비 데이터와 개선 목표를 먼저 확인한 뒤, 검증 가능한 도입 범위를 함께 정합니다.</p>
+          <h2 class="fcta-h">우리 공정에 맞을지 PoC로 확인하세요</h2>
+          <p class="fcta-p">보유한 설비 데이터와 개선 목표를 먼저 확인한 뒤, 검증 가능한 PoC(사전 검증) 범위를 함께 정합니다.</p>
           <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
         </div>
         <div class="cta-badge">
