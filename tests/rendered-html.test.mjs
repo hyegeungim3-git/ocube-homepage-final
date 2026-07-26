@@ -19,8 +19,8 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-8/, `${page}: reviewed CSS`);
-    assert.match(html, /site2\.js\?v=codex-3/, `${page}: reviewed JS`);
+    assert.match(html, /site2\.css\?v=codex-10/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.js\?v=codex-5/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
     assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
@@ -82,11 +82,37 @@ test("keeps the desktop mega menu at one stable height", async () => {
   assert.match(script, /megaHeight = Math\.ceil\(h\) \+ 24/);
   assert.match(script, /if \(!megaHeight\) measureMegaHeight\(\)/);
   assert.match(script, /hoverDesktop\.addEventListener\('change'/);
-  assert.match(script, /desktop\.addEventListener\('change', function \(e\) \{ if \(e\.matches\) close\(\); \}\)/);
+  assert.match(script, /desktop\.addEventListener\('change', function \(e\) \{ if \(e\.matches\) close\(false\); \}\)/);
   assert.ok(script.indexOf("if (trigger) trigger.focus();", script.indexOf("e.key !== 'Escape'")) < script.indexOf("closeNow();", script.indexOf("e.key !== 'Escape'")));
   assert.match(style, /\.gnb\.gnb-mega \.nav-item:hover>a[^}]*color:var\(--accent-text\)/);
   assert.match(style, /\.gnb\.gnb-mega \.nav-item>a::after/);
   assert.match(style, /html:not\(\.js\) \.m-panel\{display:grid/);
+});
+
+test("builds accessible mobile submenu accordions", async () => {
+  const [style, script] = await Promise.all([
+    readFile(new URL("assets/site2.css", publicRoot), "utf8"),
+    readFile(new URL("assets/site2.js", publicRoot), "utf8"),
+  ]);
+
+  assert.match(script, /accordion\.className = 'm-accordion'/);
+  assert.match(script, /trigger\.setAttribute\('aria-controls', panelId\)/);
+  assert.match(script, /panel\.setAttribute\('role', 'region'\)/);
+  assert.match(script, /collapseAll\(trigger\)/);
+  assert.match(script, /panel\.hidden = !opening/);
+  assert.match(script, /setBackgroundInert\(true\)/);
+  assert.match(script, /a\.addEventListener\('click', function \(\) \{ close\(false\); \}\)/);
+  assert.match(script, /if \(p\.classList\.contains\('open'\)\) \{\s*close\(false\)/);
+  assert.match(script, /if \(returnFocus\) t\.focus\(\)/);
+  assert.match(script, /e\.key !== 'Tab'/);
+  assert.doesNotMatch(script, /p\.setAttribute\('aria-hidden'/);
+  assert.match(style, /\.m-toggle\{display:block;min-width:48px;min-height:48px\}/);
+  assert.match(style, /\.m-acc-trigger\{[^}]*min-height:60px/);
+  assert.match(style, /\.m-acc-panel\[hidden\]\{display:none\}/);
+  assert.match(style, /\.m-acc-panel a:focus-visible\{[^}]*outline:2px solid var\(--accent\)/);
+  assert.match(style, /height:calc\(100dvh - 72px\)/);
+  assert.match(style, /@media\(hover:hover\)/);
+  assert.match(style, /\.m-panel \.m-direct\{/);
 });
 
 test("includes the dedicated social preview and deployable build", async () => {
