@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-15/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-16/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
@@ -208,6 +208,30 @@ test("builds accessible mobile submenu accordions", async () => {
   assert.match(style, /height:calc\(100dvh - 72px\)/);
   assert.match(style, /@media\(hover:hover\)/);
   assert.match(style, /\.m-panel \.m-direct\{/);
+});
+
+test("presents QFactory as a source-verified, full-cycle AI smart factory", async () => {
+  const [html, style, solutions] = await Promise.all([
+    readFile(new URL("solution-factoryq.html", publicRoot), "utf8"),
+    readFile(new URL("assets/site2.css", publicRoot), "utf8"),
+    readFile(new URL("solutions.html", publicRoot), "utf8"),
+  ]);
+  const applications = html.slice(html.indexOf('<section id="applications"'), html.indexOf('<section id="features"'));
+  assert.match(html, /공장 전주기<\/em>를 데이터로 연결합니다/);
+  assert.match(html, /공장 전주기를 여섯 가지 AI로 연결합니다/);
+  assert.equal((applications.match(/class="factory-app /g) ?? []).length, 6);
+  assert.match(applications, /AI-OT 통합·표준화/);
+  assert.match(applications, /열에너지 생산·사용 최적화/);
+  assert.match(applications, /PHM·RUL 예지보전/);
+  assert.match(applications, /품질 예측·공급망 추적/);
+  assert.match(applications, /Vision AI 안전 관제/);
+  assert.match(applications, /MLOps·자율운영 지원/);
+  assert.match(html, /2026~2029 연구개발·<wbr>현장 실증 추진/);
+  assert.ok(!html.includes("<b>성과</b> 다운타임·<wbr>에너지 과투입에 사전 대응"));
+  assert.match(solutions, /제지 AI Factory 연구개발을 바탕으로 확장합니다/);
+  assert.doesNotMatch(solutions, /제지 현장에서 실증했습니다/);
+  assert.ok(style.includes(".factory-app-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))"));
+  assert.ok(style.includes("@media(max-width:640px){\n  .factory-app-grid{grid-template-columns:1fr"));
 });
 
 test("includes the dedicated social preview and deployable build", async () => {

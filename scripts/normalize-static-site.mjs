@@ -50,7 +50,7 @@ for (const file of htmlFiles) {
     .replace(/안양 동안구 LS로 142 금정역SKV1센터 722호/g, "안양 동안구 LS로 142 금정역SKV1센터 722·723·710호")
     .replace(/(<a href="business-si\.html">)Enterprise/g, "$1SI")
     .replace(/(<a href="references\.html">)Build Cases/g, "$1Use Cases")
-    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-15")
+    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-16")
     .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-8")
     .replace(
       /(<meta\s+property="og:image"\s+content=")[^"]*(">)/g,

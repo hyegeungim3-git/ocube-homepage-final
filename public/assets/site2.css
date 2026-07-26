@@ -1403,3 +1403,49 @@ body.lb-open{overflow:hidden}
 .cmp thead th,.case-tab,.bcase-more,.loc-dl dd,.loc-btn,.fb-links a{font-size:15px}
 .stack-prods span small,.prod-card .sub,.ref-note,.cert-note{font-size:14px;line-height:1.55}
 .loc-note{font-size:15px;line-height:1.6}
+
+
+/* QFactory AI Smart Factory scope — source-verified 2026-07-26 */
+.factory-apps{background:linear-gradient(180deg,#f6f8fb 0%,#fff 100%)}
+.factory-apps .sec-head{max-width:900px}
+.factory-app-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px}
+.factory-app{position:relative;min-width:0;padding:28px;border:1px solid #dce3ec;border-radius:22px;background:#fff;box-shadow:0 12px 34px rgba(14,22,38,.055);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.factory-app:hover{transform:translateY(-4px);border-color:#8fbdf0;box-shadow:0 18px 42px rgba(14,22,38,.1)}
+.factory-app-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid #e8edf3}
+.factory-app-top span{font-size:26px;font-weight:800;letter-spacing:-.04em;color:#0877d8}
+.factory-app-top b{font-size:13px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;color:#5d6b7b}
+.factory-app h3{margin:22px 0 12px;font-size:clamp(21px,1.65vw,25px);line-height:1.3;letter-spacing:-.035em;color:#111827}
+.factory-app>p{min-height:74px;margin:0;color:#536170;font-size:15.5px;line-height:1.62}
+.factory-app dl{margin:22px 0 0;padding-top:4px;border-top:1px solid #edf1f5}
+.factory-app dl div{display:grid;grid-template-columns:78px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #edf1f5}
+.factory-app dt{font-size:13.5px;font-weight:750;line-height:1.55;color:#0877d8}
+.factory-app dd{min-width:0;margin:0;font-size:14.5px;line-height:1.55;color:#344152;overflow-wrap:anywhere}
+.factory-flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin:42px 0 0;padding:0;overflow:hidden;border:1px solid #cfd9e5;border-radius:18px;background:#0e1626;list-style:none}
+.factory-flow li{position:relative;display:flex;align-items:center;justify-content:center;gap:9px;min-height:74px;padding:14px 12px;color:#fff;text-align:center}
+.factory-flow li+li{border-left:1px solid rgba(255,255,255,.16)}
+.factory-flow li:not(:last-child)::after{content:'›';position:absolute;right:-6px;z-index:2;color:#70b8ff;font-size:23px;font-weight:700}
+.factory-flow b{color:#70b8ff;font-size:13px;letter-spacing:.05em}
+.factory-flow span{font-size:15px;font-weight:700;line-height:1.35}
+.factory-note{display:flex;align-items:flex-start;gap:14px;margin:16px 0 0;padding:18px 22px;border-radius:14px;background:#eaf4ff;color:#354354;font-size:15.5px;line-height:1.6}
+.factory-note b{flex:0 0 auto;color:#0068c9}
+@media(max-width:980px){
+  .factory-app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .factory-flow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .factory-flow li:nth-child(4){border-left:0;border-top:1px solid rgba(255,255,255,.16)}
+  .factory-flow li:nth-child(5),.factory-flow li:nth-child(6){border-top:1px solid rgba(255,255,255,.16)}
+  .factory-flow li:nth-child(3)::after{display:none}
+}
+@media(max-width:640px){
+  .factory-app-grid{grid-template-columns:1fr;gap:14px;margin-top:26px}
+  .factory-app{padding:23px 21px;border-radius:18px}
+  .factory-app>p{min-height:0}
+  .factory-app dl div{grid-template-columns:74px minmax(0,1fr)}
+  .factory-flow{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}
+  .factory-flow li{min-height:68px;padding:12px 8px}
+  .factory-flow li:nth-child(3),.factory-flow li:nth-child(5){border-left:0}
+  .factory-flow li:nth-child(3),.factory-flow li:nth-child(4),.factory-flow li:nth-child(5),.factory-flow li:nth-child(6){border-top:1px solid rgba(255,255,255,.16)}
+  .factory-flow li:nth-child(2)::after,.factory-flow li:nth-child(4)::after{display:none}
+  .factory-flow li:nth-child(3)::after{display:block}
+  .factory-note{display:block;padding:17px 18px}
+  .factory-note b{display:block;margin-bottom:5px}
+}
