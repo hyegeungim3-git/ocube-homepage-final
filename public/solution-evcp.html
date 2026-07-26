@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EVCP 전기차 충전 플랫폼 — 오큐브</title>
-<meta name="description" content="EVCP — OCPP 표준 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
+<meta name="description" content="EVCP — 국제 충전 통신 표준(OCPP) 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-17">
+<link rel="stylesheet" href="assets/site2.css?v=codex-18">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-evcp.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="오큐브(주)">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="EVCP 전기차 충전 플랫폼 — 오큐브">
-<meta property="og:description" content="EVCP — OCPP 표준 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
+<meta property="og:description" content="EVCP — 국제 충전 통신 표준(OCPP) 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
 <meta property="og:url" content="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-evcp.html">
 <meta property="og:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EVCP 전기차 충전 플랫폼 — 오큐브">
-<meta name="twitter:description" content="EVCP — OCPP 표준 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
+<meta name="twitter:description" content="EVCP — 국제 충전 통신 표준(OCPP) 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
 <meta name="twitter:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/"},{"@type":"ListItem","position":2,"name":"솔루션","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/solutions.html"},{"@type":"ListItem","position":3,"name":"EVCP","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/solution-evcp.html"}]}</script>
 </head>
@@ -37,8 +37,8 @@
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">BUSINESS</p>
             <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
-            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
-            <a href="business-si.html">SI<small>B2B·<wbr>B2G 시스템·<wbr>구축·<wbr>운영</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
           </div>
         </div>
       </div>
@@ -62,8 +62,8 @@
           <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
             <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
             <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
-            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
-            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
             <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
             <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
           </div>
@@ -72,7 +72,7 @@
       <div class="nav-item"><a href="about.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">COMPANY</p>
-            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
             <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
             <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
             <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
@@ -103,11 +103,11 @@
     <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="solutions.html">솔루션</a><i aria-hidden="true">›</i><span aria-current="page">EVCP</span></nav>
     <span class="hero-badge">SOLUTION · 산업 솔루션</span>
     <h1>EVCP</h1>
-    <p>전기차 충전 플랫폼 — <em>OCPP 표준</em>을 지원하는 충전기를 연결하고, 회원·<wbr>결제·<wbr>관제 서비스를 마이크로서비스로 구성합니다. 로밍과 Plug &amp; Charge는 사업 요건과 충전기 호환성에 맞춰 단계적으로 확장합니다.</p>
+    <p>전기차 충전 플랫폼 — <em>국제 충전 통신 표준(OCPP)</em>을 지원하는 충전기를 연결하고, 회원·<wbr>결제·<wbr>관제 서비스를 마이크로서비스로 구성합니다. 로밍과 차량 인증 기반 자동 충전(Plug &amp; Charge)는 사업 요건과 충전기 호환성에 맞춰 단계적으로 확장합니다.</p>
     <ul class="hero-keys">
-      <li><span class="k">충전기 연동</span><span class="v">OCPP 1.6J 구축 · 2.0.1 확장</span></li>
-      <li><span class="k">확장 설계</span><span class="v">OCPI · ISO 15118</span></li>
-      <li><span class="k">운영</span><span class="v">회원 · 결제 · 관제 MSA</span></li>
+      <li><span class="k">충전기 연동</span><span class="v">충전기 표준 1.6J 구축 · 2.0.1 확장</span></li>
+      <li><span class="k">확장 설계</span><span class="v">충전 로밍 표준(OCPI) · 차량 충전통신(ISO 15118)</span></li>
+      <li><span class="k">운영</span><span class="v">회원 · 결제 · 관제 마이크로서비스</span></li>
     </ul>
   </div>
   <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
@@ -117,7 +117,7 @@
   <span class="eb rv">SOLUTION / EVCP</span>
   <h2 class="rv d1"><span>국제 표준 위에 세운</span><span>전기차 충전 플랫폼</span></h2>
   <div class="sol-lead rv d2">
-    <p>OCPP 표준을 지원하는 충전기를 연결해 한 화면에서 관제합니다.</p>
+    <p>국제 충전 통신 표준(OCPP)을 지원하는 충전기를 연결해 한 화면에서 관제합니다.</p>
     <p>회원·<wbr>결제를 마이크로서비스로 구성하고, 로밍은 사업 요건에 맞춰 확장합니다.</p>
   </div>
   <figure class="sol-stage rv d3">
@@ -125,7 +125,7 @@
   </figure>
 </section>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#arch">아키텍처</a><a href="#struct">MSA 구조</a><a href="#standards">표준</a><a href="#ocpp">OCPP</a><a href="#energy">스마트 에너지</a><a href="#deploy">배포</a><a href="#proof">레퍼런스</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#arch">아키텍처</a><a href="#struct">마이크로서비스 구조(MSA)</a><a href="#standards">표준</a><a href="#ocpp">OCPP</a><a href="#energy">스마트 에너지</a><a href="#deploy">배포</a><a href="#proof">레퍼런스</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -134,9 +134,9 @@
     <p class="sec-sub">EVCP는 OCPP 호환 충전기를 연결하고 회원·<wbr>결제·<wbr>관제를 함께 운영하는 전기차 충전 플랫폼입니다. 충전 사업 구축·<wbr>운영 경험을 바탕으로 구성했습니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <div class="feat-list">
-        <div class="feat"><b>OCPP 표준</b><span>OCPP 호환 충전기 연동 — 서로 다른 충전 인프라를 한 화면에서 관제</span></div>
+        <div class="feat"><b>국제 충전 통신 표준(OCPP)</b><span>OCPP 호환 충전기 연동 — 서로 다른 충전 인프라를 한 화면에서 관제</span></div>
         <div class="feat"><b>지도 기반 관제</b><span>다거점 충전소의 상태·<wbr>이용률·<wbr>장애 모니터링</span></div>
-        <div class="feat"><b>MSA 구조</b><span>회원·<wbr>결제·<wbr>연동·<wbr>관제 독립 확장 — 사업 규모에 따라 유연 확장</span></div>
+        <div class="feat"><b>마이크로서비스 구조(MSA)</b><span>회원·<wbr>결제·<wbr>연동·<wbr>관제 독립 확장 — 사업 규모에 따라 유연 확장</span></div>
       </div>
       <figure><img class="shot" src="assets/img/evcp.png" alt="EVCP — 지도 기반 다거점 충전소 관제 화면" loading="lazy" style="max-height:320px;object-fit:cover;object-position:top" width="1746" height="748">
         <figcaption class="shot-cap">EVCP — 지도 기반 충전소 실시간 관제 (자체 제품)</figcaption></figure>
@@ -149,9 +149,9 @@
     <h2>충전기 통신부터 회원·<wbr>결제·<wbr>관제까지 연결합니다</h2>
     <p class="sec-sub">충전기와 통신 모듈에서 받은 정보를 충전 관리 시스템(CSMS)이 처리하고, 회원·<wbr>결제·<wbr>로밍·<wbr>에너지 관리 서비스가 함께 사용하도록 구성합니다.</p></div>
     <div class="stack-diagram reveal" data-d="1">
-      <div class="stack-layer l-op"><span class="stack-tag">서비스 · 확장</span><b>로밍 · 스마트 에너지</b><small>OCPI 로밍 연동 · 동적 부하분산(DLM) · V2G 양방향 충전 — 지원하도록 설계</small></div>
+      <div class="stack-layer l-op"><span class="stack-tag">서비스 · 확장</span><b>로밍 · 스마트 에너지</b><small>충전 로밍 표준(OCPI) 연동 · 동적 부하분산(DLM) · 차량–전력망 양방향 충전(V2G) — 지원하도록 설계</small></div>
       <div class="stack-arrow" aria-hidden="true">▲</div>
-      <div class="stack-layer l-judge"><span class="stack-tag">CSMS 코어</span>
+      <div class="stack-layer l-judge"><span class="stack-tag">충전 관제 핵심 서비스</span>
         <div class="stack-prods"><span>회원<small>인증·<wbr>요금</small></span><span>결제·<wbr>정산<small>세션 과금</small></span><span>연동<small>OCPP 게이트웨이</small></span><span>관제<small>GIS 대시보드</small></span></div>
       </div>
       <div class="stack-arrow" aria-hidden="true">▲</div>
@@ -169,7 +169,7 @@
       <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">💳</div><h3>결제·<wbr>정산</h3><p>충전 세션 단위 과금·<wbr>정산·<wbr>PG 연동</p></div>
       <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔌</div><h3>연동(OCPP)</h3><p>충전기별 OCPP 버전과 호환성을 확인해 게이트웨이 연동</p></div>
       <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🗺️</div><h3>관제(GIS)</h3><p>지도 기반 실시간 상태·<wbr>이용률·<wbr>장애 관제</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔗</div><h3>로밍(OCPI)</h3><p>사업자 간 로밍·<wbr>데이터 교환 — 지원 설계</p></div>
+      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔗</div><h3>사업자 간 충전 로밍(OCPI)</h3><p>사업자 간 로밍·<wbr>데이터 교환 — 지원 설계</p></div>
       <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">⚡</div><h3>스마트 에너지</h3><p>동적 부하분산(DLM)·<wbr>V2G — 지원 설계</p></div>
     </div>
   </div>
@@ -253,14 +253,14 @@
     <div class="hero-stats reveal">
       <div class="stat"><b>OCPP 1.6J</b><span>충전기 연동·<wbr>관제 운영 경험</span></div>
       <div class="stat"><b>OCPP 2.0.1</b><span>사업 요건별 기능 적용</span></div>
-      <div class="stat"><b>확장 표준</b><span>OCPI · ISO 15118 연계 설계</span></div>
+      <div class="stat"><b>확장 표준</b><span>충전 로밍 표준(OCPI) · 차량 충전통신(ISO 15118) 연계 설계</span></div>
       <div class="stat"><b>LTE Cat M1</b><span>자체 통신 모듈(2025)</span></div>
     </div>
     <div class="case-grid two">
       <article class="case-card reveal" data-d="1"><span class="dom">에너지 · SK에너지</span>
         <h3>전기차 충전 서비스 구축·<wbr>운영</h3>
         <p class="csi"><b>과제</b> 충전 사업 진출에 필요한 회원·<wbr>연동·<wbr>결제·<wbr>관제 플랫폼 부재</p>
-        <p class="csi"><b>해결</b> OCPP 표준 기반 마이크로서비스 구축·<wbr>운영 → 자체 제품 EVCP로 자산화</p>
+        <p class="csi"><b>해결</b> 국제 충전 통신 표준(OCPP) 기반 마이크로서비스 구축·<wbr>운영 → 자체 제품 EVCP로 자산화</p>
         <p class="csi"><b>성과</b> 충전 사업 전 기능을 재사용 가능한 자체 플랫폼으로 확보</p></article>
       <article class="case-card reveal" data-d="2"><span class="dom">자체 모듈</span>
         <h3>OCPP LTE 모듈</h3>

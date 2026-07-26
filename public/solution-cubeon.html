@@ -7,7 +7,7 @@
 <meta name="description" content="Cubeon — 산업 데이터를 표준화하고 AI 판단을 담당자 승인과 검증된 범위의 제한적 자동 실행으로 연결하는 산업 AI 운영 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-17">
+<link rel="stylesheet" href="assets/site2.css?v=codex-18">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-cubeon.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -37,8 +37,8 @@
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">BUSINESS</p>
             <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
-            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
-            <a href="business-si.html">SI<small>B2B·<wbr>B2G 시스템·<wbr>구축·<wbr>운영</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
           </div>
         </div>
       </div>
@@ -62,8 +62,8 @@
           <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
             <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
             <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
-            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
-            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
             <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
             <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
           </div>
@@ -72,7 +72,7 @@
       <div class="nav-item"><a href="about.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">COMPANY</p>
-            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
             <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
             <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
             <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
@@ -125,7 +125,7 @@
   </figure>
 </section>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#arch">8모듈</a><a href="#connect">연결·<wbr>표준</a><a href="#pipeline">파이프라인</a><a href="#stack">생태계</a><a href="#modelops">ModelOps</a><a href="#autonomy">자율화</a><a href="#packs">도메인·<wbr>배포</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#arch">8모듈</a><a href="#connect">연결·<wbr>표준</a><a href="#pipeline">파이프라인</a><a href="#stack">생태계</a><a href="#modelops">AI 모델 운영</a><a href="#autonomy">자율화</a><a href="#packs">도메인·<wbr>배포</a></div></nav>
 
 <section id="overview" class="sec-anchor platform dark" style="padding-top:64px">
   <div class="wrap">
@@ -138,8 +138,8 @@
         <p>먼저 알림으로 시작하고(L1), 담당자 승인 후 실행하는 단계(L2)를 거쳐, 위험이 낮고 충분히 검증된 업무만 제한적으로 자동 실행(L3)합니다.</p>
         <div class="ladder">
           <div class="rung l1"><b>L1 · Sense</b><span>탐지·<wbr>알람, 근거 제시</span></div>
-          <div class="rung l2"><b>L2 · Decide</b><span>원인 분석·<wbr>권고, HITL 승인</span></div>
-          <div class="rung l3"><b>L3 · Act</b><span>워크플로·<wbr>설비 자율 제어</span></div>
+          <div class="rung l2"><b>L2 · 판단</b><span>원인 분석·<wbr>권고, 사람 승인</span></div>
+          <div class="rung l3"><b>L3 · 제한 자동 실행</b><span>워크플로·<wbr>설비 자율 제어</span></div>
         </div>
       </div>
       <figure><img class="shot" src="assets/img/ai_1.png" alt="Cubeon 운영 콘솔 — 8모듈·자율화 단계" loading="lazy" width="1100" height="655">
@@ -165,10 +165,10 @@
       </div>
     </div>
     <div class="duo rev">
-      <div class="duo-txt rv"><span class="pill">ModelOps</span>
+      <div class="duo-txt rv"><span class="pill">AI 모델 운영</span>
         <h3>모델 레지스트리 · 지속 운영</h3>
         <p>모델의 버전과 배포 상태를 한곳에서 관리하고, 성능 변화를 감시해 재학습 시점을 판단합니다. 운영 중 품질 저하를 조기에 확인하고 대응할 수 있는 구조입니다.</p>
-        <a class="duo-cta" href="#modelops">ModelOps 자세히 <i aria-hidden="true">→</i></a>
+        <a class="duo-cta" href="#modelops">AI 모델 운영 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
@@ -219,25 +219,25 @@
         <button type="button" class="pi-shot" data-shot="assets/img/proto/dataq-knowledge.jpg" data-shot-alt="의미 표준화·지식 관리 프로토타입 화면" data-shot-cap="의미 표준화·지식 관리 — 프로토타입 예시 화면">화면 보기</button>
       </article>
       <article class="pin-item reveal">
-        <div class="pi-no">ModelOps</div>
+        <div class="pi-no">AI 모델 운영</div>
         <h3>모델 거버넌스</h3>
         <p>모델의 학습·<wbr>배포 이력을 관리하고, 운영 중 성능을 감시해 필요할 때 재학습합니다.</p>
-        <div class="pi-tags"><span class="pill light">CI/CD/CT</span></div>
+        <div class="pi-tags"><span class="pill light">자동 통합·배포·지속적 재학습</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-modelreg.jpg" data-shot-alt="모델 레지스트리·거버넌스 프로토타입 화면" data-shot-cap="모델 레지스트리·거버넌스 — 프로토타입 예시 화면">화면 보기</button>
       </article>
       <article class="pin-item reveal">
         <div class="pi-no">Agents</div>
         <h3>AI 에이전트</h3>
         <p>현장·<wbr>업무 AI 에이전트를 실행합니다.</p>
-        <div class="pi-tags"><span class="pill light">RAG</span><span class="pill light">sLLM</span></div>
+        <div class="pi-tags"><span class="pill light">근거 검색(RAG)</span><span class="pill light">사내 소형 언어모델(sLLM)</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/agentq-hub.jpg" data-shot-alt="AI 에이전트 허브 프로토타입 화면" data-shot-cap="AI 에이전트 허브 — 프로토타입 예시 화면">화면 보기</button>
       </article>
       <article class="pin-item reveal">
         <div class="pi-no">Orchestrator</div>
-        <h3>오케스트레이션</h3>
+        <h3>서비스 조정</h3>
         <p>여러 AI 에이전트가 정해진 순서와 역할에 따라 협업하도록 조정합니다.</p>
         <div class="pi-tags"><span class="pill light">MCP</span></div>
-        <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-builder.jpg" data-shot-alt="노코드 에이전트 빌더·오케스트레이션 프로토타입 화면" data-shot-cap="노코드 에이전트 빌더·오케스트레이션 — 프로토타입 예시 화면">화면 보기</button>
+        <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-builder.jpg" data-shot-alt="노코드 에이전트 빌더·서비스 조정 프로토타입 화면" data-shot-cap="노코드 에이전트 빌더·서비스 조정 — 프로토타입 예시 화면">화면 보기</button>
       </article>
       <article class="pin-item reveal">
         <div class="pi-no">Console</div>
@@ -269,7 +269,7 @@
       <div class="mod" role="listitem">BACnet</div>
       <div class="mod" role="listitem">REST · 실시간 API</div>
     </div>
-    <p class="sec-note reveal" data-d="2"><b>시스템 연동</b> PLC · SCADA · MES · ERP · Historian · 시계열 DB를 어댑터 계층으로 통합 &nbsp;·<wbr>&nbsp; <b>표준 참조</b> OPC-UA · ISA-95 산업 자동화 계층 모델 · MSA 기반 커넥터 독립 확장.</p>
+    <p class="sec-note reveal" data-d="2"><b>시스템 연동</b> 설비제어(PLC) · 설비감시(SCADA) · 생산관리(MES) · 전사자원관리(ERP) · 설비 이력 저장소 · 시계열 데이터베이스를 어댑터 계층으로 통합 &nbsp;·<wbr>&nbsp; <b>표준 참조</b> OPC-UA · ISA-95 산업 자동화 계층 모델 · 마이크로서비스 구조(MSA) 기반의 독립적인 연결 기능 확장.</p>
     <div class="feat-list reveal" data-d="3" style="margin-top:20px">
       <div class="feat"><b>엣지 수집 · 전송 복구</b><span>네트워크가 끊기면 현장 데이터를 임시 저장하고, 연결 복구 후 다시 전송해 데이터 유실 위험을 줄입니다.</span></div>
       <div class="feat"><b>보안 연결</b><span>TLS 암호화 · 디바이스 인증 · 역할 기반 접근제어(RBAC)로 OT/IT 경계를 보호합니다.</span></div>
@@ -286,7 +286,7 @@
       <div class="tl-card"><span class="yr">01</span><h3>데이터 수집</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus로 서로 다른 설비·<wbr>시스템의 데이터 수집</p></div>
       <div class="tl-card"><span class="yr">02</span><h3>표준화</h3><p>공통 스키마 정합·<wbr>품질 검증·<wbr>결측 보정 (QData)</p></div>
       <div class="tl-card"><span class="yr">03</span><h3>의미·<wbr>관계 정의</h3><p>설비·<wbr>공정을 객체·<wbr>속성·<wbr>관계로 정리</p></div>
-      <div class="tl-card"><span class="yr">04</span><h3>모델 운영</h3><p>모델 학습·<wbr>배포·<wbr>성능 변화 감시·<wbr>재학습(ModelOps)</p></div>
+      <div class="tl-card"><span class="yr">04</span><h3>모델 운영</h3><p>모델 학습·<wbr>배포·<wbr>성능 변화 감시·<wbr>재학습(AI 모델 운영)</p></div>
       <div class="tl-card"><span class="yr">05</span><h3>판단·<wbr>권고 통합</h3><p>여러 AI 에이전트의 판단과 권고를 하나의 흐름으로 조정</p></div>
       <div class="tl-card cur"><span class="yr">06</span><h3>현장 조치</h3><p>담당자 승인 또는 검증된 자동 실행으로 현장 시스템에 조치 반영</p></div>
     </div>
@@ -320,16 +320,16 @@
 </section>
 <section id="modelops" class="sec-anchor dark">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">ModelOps · Governance</span>
+    <div class="reveal"><span class="kicker">AI 모델 운영 · Governance</span>
     <h2 style="color:#fff">모델을 한 번 배포하고 끝내지 않습니다</h2>
     <p class="sec-sub">학습·<wbr>배포·<wbr>성능 감시·<wbr>재학습을 반복 운영하고, 모델 버전과 변경 이력을 남겨 문제 발생 시 원인을 확인할 수 있게 합니다.</p></div>
     <div class="feat-list reveal" data-d="1">
-      <div class="feat"><b>CI/CD/CT 파이프라인</b><span>학습 → 배포 → 모니터링 → 재학습(Continuous Training)을 자동화 루프로 운영</span></div>
-      <div class="feat"><b>드리프트 탐지</b><span>PSI·<wbr>KL divergence 등 예측 분포 변화를 감지해 재학습 시점을 판단</span></div>
-      <div class="feat"><b>모델 레지스트리 · 버전관리</b><span>모델 버전·<wbr>승인 워크플로·<wbr>롤백을 이력으로 관리</span></div>
+      <div class="feat"><b>자동 통합·배포·지속적 재학습</b><span>학습 → 배포 → 모니터링 → 지속적 재학습을 자동화된 운영 과정으로 관리</span></div>
+      <div class="feat"><b>데이터 변화 탐지</b><span>PSI·<wbr>KL divergence 등 예측 분포 변화를 감지해 재학습 시점을 판단</span></div>
+      <div class="feat"><b>모델 레지스트리 · 버전관리</b><span>모델 버전·<wbr>승인 워크플로·<wbr>이전 상태 복구을 이력으로 관리</span></div>
       <div class="feat"><b>감사추적(Audit Trail)</b><span>추론·<wbr>액션 전 구간 로그로 규제·<wbr>품질 대응</span></div>
     </div>
-    <p class="sec-note reveal" data-d="2">ModelOps 모듈 기반 · 업계 표준 모델 거버넌스(MLOps)를 도입하는 방향으로 구성합니다.</p>
+    <p class="sec-note reveal" data-d="2">AI 모델 운영 모듈 기반 · 업계 표준 AI 모델 관리체계(MLOps)를 도입하는 방향으로 구성합니다.</p>
     <figure class="shot-fig reveal" data-d="3">
       <img class="shot fit" style="max-height:18vh" src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 예시 화면 — 배포 모델의 파라미터·컨텍스트·양자화·노드·상태 관리" loading="lazy" width="1600" height="1005">
       <figcaption class="shot-cap">모델 레지스트리 — 프로토타입 예시 화면</figcaption>
@@ -338,7 +338,7 @@
 </section>
 <section id="autonomy" class="sec-anchor deploy">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">Autonomy · HITL</span>
+    <div class="reveal"><span class="kicker">Autonomy · 사람 승인</span>
     <h2>자율화 수준을 위험도에 맞춰 설계합니다</h2>
     <p class="sec-sub">업무의 위험도와 되돌릴 수 있는지를 기준으로, 알림만 할지 담당자 승인을 받을지 자동 실행할지를 정합니다.</p></div>
     <table class="cmp reveal" data-d="1">
@@ -404,7 +404,7 @@
           <li>외부 반출이 제한된 데이터가 경계를 넘지 않도록 처리 위치를 정책으로 고정</li>
           <li>조회·<wbr>질의·<wbr>다운로드 이력을 남겨 사후 확인이 가능하도록 구성</li>
         </ul></div>
-      <div class="dep-card"><h3>변경 관리와 롤백</h3>
+      <div class="dep-card"><h3>변경 관리와 이전 상태 복구</h3>
         <ul class="pi-bul">
           <li>프롬프트·<wbr>모델·<wbr>지식 변경을 배포 단위로 묶어 이력화</li>
           <li>표준 질의 세트 자동 재검증을 통과한 변경만 운영에 반영</li>

@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-17/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-18/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
@@ -62,6 +62,31 @@ test("keeps legacy links truthful and correctly routed", async () => {
     assert.ok(html.includes(target), `${route}: correct target`);
     assert.doesNotMatch(html, /#license/);
   }
+});
+
+test("explains specialist terminology in plain Korean", async () => {
+  const pages = await pageNames();
+  const combined = (
+    await Promise.all(pages.map((page) => readFile(new URL(page, publicRoot), "utf8")))
+  ).join("\n");
+  const visible = combined
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+
+  assert.doesNotMatch(visible, /재학습\s*\(CT\)|CI\/CD\/CT/);
+  assert.doesNotMatch(visible, /현장 검증 PoC\s*·\s*HITL|HITL 승인|HITL 검수/);
+  assert.doesNotMatch(visible, /B2B\s*·\s*B2G 시스템\s*·\s*구축/);
+  assert.doesNotMatch(combined, /Toradex<small>산업용 SoM/);
+  assert.match(visible, /지속적 재학습/);
+  assert.match(visible, /사전 검증\(PoC\)/);
+  assert.match(visible, /사람이 승인·수정하는 검토 과정\(HITL\)/);
+  assert.match(visible, /설비제어\(PLC\).*설비감시\(SCADA\).*생산관리\(MES\).*전사자원관리\(ERP\)/);
+  assert.match(visible, /대규모 언어모델\(LLM\).*소형 언어모델\(sLLM\)|소형 언어모델\(sLLM\).*대규모 언어모델\(LLM\)/);
+  assert.match(visible, /국제 충전 통신 표준\(OCPP\)/);
+  assert.match(visible, /보드 지원 패키지\(BSP\)/);
+  assert.match(visible, /멀티미디어 재생 개발도구\(SDK\)/);
 });
 
 test("reflects the reviewed Enterprise message and benchmarked home flow", async () => {
@@ -220,12 +245,12 @@ test("presents QFactory as a source-verified, full-cycle AI smart factory", asyn
   assert.match(html, /공장 전주기<\/em>를 데이터로 연결합니다/);
   assert.match(html, /공장 전주기를 여섯 가지 AI로 연결합니다/);
   assert.equal((applications.match(/class="factory-app /g) ?? []).length, 6);
-  assert.match(applications, /AI-OT 통합·표준화/);
+  assert.match(applications, /AI–현장 운영기술\(AI-OT\) 통합·표준화/);
   assert.match(applications, /열에너지 생산·사용 최적화/);
-  assert.match(applications, /PHM·RUL 예지보전/);
+  assert.match(applications, /설비 건전성·잔존수명 예측/);
   assert.match(applications, /품질 예측·공급망 추적/);
   assert.match(applications, /Vision AI 안전 관제/);
-  assert.match(applications, /MLOps·자율운영 지원/);
+  assert.match(applications, /AI 모델 운영·자율운영 지원/);
   assert.match(html, /2026~2029 연구개발·<wbr>현장 실증 추진/);
   assert.ok(!html.includes("<b>성과</b> 다운타임·<wbr>에너지 과투입에 사전 대응"));
   assert.match(solutions, /제지 AI Factory 연구개발을 바탕으로 확장합니다/);

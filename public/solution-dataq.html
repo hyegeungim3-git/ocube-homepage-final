@@ -7,7 +7,7 @@
 <meta name="description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합해 산업 AI가 신뢰할 데이터를 만드는 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-17">
+<link rel="stylesheet" href="assets/site2.css?v=codex-18">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-dataq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -37,8 +37,8 @@
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">BUSINESS</p>
             <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
-            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
-            <a href="business-si.html">SI<small>B2B·<wbr>B2G 시스템·<wbr>구축·<wbr>운영</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
           </div>
         </div>
       </div>
@@ -62,8 +62,8 @@
           <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
             <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
             <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
-            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
-            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
             <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
             <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
           </div>
@@ -72,7 +72,7 @@
       <div class="nav-item"><a href="about.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">COMPANY</p>
-            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
             <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
             <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
             <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
@@ -224,7 +224,7 @@
         <div class="mod" role="listitem">MES</div>
         <div class="mod" role="listitem">ERP</div>
         <div class="mod" role="listitem">Historian</div>
-        <div class="mod" role="listitem">시계열 DB</div>
+        <div class="mod" role="listitem">시계열 데이터베이스</div>
         <div class="mod" role="listitem">문서 · 파일</div>
         <div class="mod" role="listitem">REST · OpenAPI</div>
       </div>
@@ -355,7 +355,7 @@
         <p>용어와 단위를 표준화하는 데서 그치지 않고, 설비·<wbr>공정·<wbr>불량·<wbr>조치 사이의 관계를 정의해 검색을 넘어 추론이 가능한 형태로 만듭니다.</p>
         <ul class="kt-chk">
           <li>공통 스키마·<wbr>온톨로지로 이기종 태그 체계를 하나의 의미로 정합</li>
-          <li>지식그래프와 벡터 색인을 함께 구성해 검색증강(RAG)에 활용</li>
+          <li>지식그래프와 벡터 색인을 함께 구성해 근거 검색(RAG)에 활용</li>
         </ul>
       </article>
       <article class="kt-card">
@@ -369,7 +369,7 @@
         <p>데이터 품질과 모델 성능을 함께 살피고, 변화가 감지되면 모델을 다시 학습·<wbr>검증해 배포하는 운영 흐름으로 연결합니다.</p>
         <ul class="kt-chk">
           <li>품질 규칙·<wbr>계보(lineage) 추적으로 데이터 신뢰도를 지속 관리</li>
-          <li>MLOps 연계로 드리프트 감지부터 재학습·<wbr>롤백까지 자동화</li>
+          <li>AI 모델 운영 연계로 데이터 변화를 감지하고 재학습·<wbr>이전 모델 복구까지 관리</li>
         </ul>
       </article>
     </div>
@@ -384,7 +384,7 @@
       <caption class="sr-only">무엇을 수집하고 어떻게 제공하는가 비교표</caption>
       <thead><tr><th scope="col">항목</th><th scope="col" class="ok">QData 산업 데이터 플랫폼</th></tr></thead>
       <tbody>
-        <tr><th scope="row">입력 소스</th><td class="ok">PLC · 센서 · SCADA · MES · ERP · Historian · 시계열 DB · 문서</td></tr>
+        <tr><th scope="row">입력 소스</th><td class="ok">PLC · 센서 · SCADA · MES · ERP · Historian · 시계열 데이터베이스 · 문서</td></tr>
         <tr><th scope="row">수집 프로토콜</th><td>OPC-UA · MQTT · Modbus · REST/API (실시간 스트림 + 배치)</td></tr>
         <tr><th scope="row">표준화 방식</th><td>공통 스키마 매핑 · 온톨로지 기반 의미 표준화 · 품질검증 · 결측 보정</td></tr>
         <tr><th scope="row">데이터 관리</th><td>데이터 카탈로그 · 계보 추적 · 품질 규칙 · 접근제어 (프로젝트별 구성)</td></tr>
@@ -393,8 +393,8 @@
       </tbody>
     </table>
     <figure class="shot-fig reveal" data-d="3" style="margin-top:22px">
-      <img class="shot fit" style="max-height:26vh" src="assets/img/proto/dataq-vectordb.jpg" alt="벡터 DB·컬렉션 관리 예시 화면 — 총 벡터 수·활성 컬렉션·임베딩 차원·평균 쿼리 지연" loading="lazy" width="1500" height="942">
-      <figcaption class="shot-cap">벡터 DB·<wbr>컬렉션 관리(임베딩 차원·<wbr>쿼리 지연) — 프로토타입 예시 화면</figcaption>
+      <img class="shot fit" style="max-height:26vh" src="assets/img/proto/dataq-vectordb.jpg" alt="벡터 데이터베이스·컬렉션 관리 예시 화면 — 총 벡터 수·활성 컬렉션·임베딩 차원·평균 쿼리 지연" loading="lazy" width="1500" height="942">
+      <figcaption class="shot-cap">벡터 데이터베이스·<wbr>컬렉션 관리(임베딩 차원·<wbr>쿼리 지연) — 프로토타입 예시 화면</figcaption>
     </figure>
   </div>
 </section>
@@ -470,8 +470,8 @@
     <div class="dep-grid reveal" data-d="1" style="margin-top:24px">
       <div class="dep-card"><h3>데이터 정비에서 막혀 있는 제조 현장</h3><p>설비·<wbr>공정 데이터는 쌓이고 있으나 태그 체계와 단위가 라인마다 달라, 분석 이전의 정제·<wbr>통합 단계에서 프로젝트가 멈춰 있는 조직</p></div>
       <div class="dep-card"><h3>OT와 IT가 분리되어 있는 운영 조직</h3><p>제어망의 설비 데이터와 업무망의 MES·<wbr>ERP 데이터가 서로 연결되지 않아, 품질 이슈의 원인을 설비까지 되짚기 어려운 환경</p></div>
-      <div class="dep-card"><h3>비정형 기술 자산이 잠들어 있는 기업</h3><p>작업표준서·<wbr>점검일지·<wbr>설비 매뉴얼·<wbr>불량 보고서가 문서로만 존재해, 검색증강(RAG) 지식베이스로 전환하지 못하고 있는 조직</p></div>
-      <div class="dep-card"><h3>AI 도입을 반복 검증해야 하는 팀</h3><p>PoC 때마다 데이터 수집·<wbr>정제를 처음부터 다시 하느라, 정작 모델 고도화에 시간을 쓰지 못하는 조직</p></div>
+      <div class="dep-card"><h3>비정형 기술 자산이 잠들어 있는 기업</h3><p>작업표준서·<wbr>점검일지·<wbr>설비 매뉴얼·<wbr>불량 보고서가 문서로만 존재해, 근거 검색(RAG) 지식베이스로 전환하지 못하고 있는 조직</p></div>
+      <div class="dep-card"><h3>AI 도입을 반복 검증해야 하는 팀</h3><p>사전 검증(PoC) 때마다 데이터 수집·<wbr>정제를 처음부터 다시 하느라, 정작 모델 고도화에 시간을 쓰지 못하는 조직</p></div>
       <div class="dep-card"><h3>폐쇄망·<wbr>망분리 요건이 있는 기관</h3><p>외부 반출이 불가능한 데이터를 내부에 둔 채로 표준화와 AI 활용 기반을 갖춰야 하는 공공·<wbr>에너지 성격의 환경</p></div>
     </div>
   </div>

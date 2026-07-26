@@ -7,7 +7,7 @@
 <meta name="description" content="Qdrive — 차량 데이터로 주행·에너지·탄소를 잇는 자체 모빌리티 서비스 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-17">
+<link rel="stylesheet" href="assets/site2.css?v=codex-18">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-qdrive.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -37,8 +37,8 @@
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">BUSINESS</p>
             <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
-            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>PLC·<wbr>엣지·<wbr>보안</small></a>
-            <a href="business-si.html">SI<small>B2B·<wbr>B2G 시스템·<wbr>구축·<wbr>운영</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
           </div>
         </div>
       </div>
@@ -62,8 +62,8 @@
           <div class="dd-group"><p class="dd-h">기술지원 · 총판</p>
             <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
             <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
-            <a href="license-toradex.html">Toradex<small>산업용 SoM · 캐리어보드</small></a>
-            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 SDK</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
             <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
             <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
           </div>
@@ -72,7 +72,7 @@
       <div class="nav-item"><a href="about.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">COMPANY</p>
-            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>CI</small></a>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
             <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
             <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
             <a href="location.html">Location<small>대구·<wbr>서울·<wbr>안양</small></a>
@@ -105,7 +105,7 @@
     <h1>Qdrive</h1>
     <p>모빌리티·탄소중립 플랫폼 — <em>차량 데이터가 서비스가 됩니다</em>. 운행기록과 차량 진단 신호를 표준 형식으로 수집해 위험운전을 판정하고, 운수사 관제와 탄소 배출 산정·리포트까지 하나의 흐름으로 연결합니다.</p>
     <ul class="hero-keys">
-      <li><span class="k">수집</span><span class="v">DTG · OBD · CAN 표준 연동</span></li>
+      <li><span class="k">수집</span><span class="v">운행기록·차량진단·차량통신 데이터 연동</span></li>
       <li><span class="k">분석</span><span class="v">위험운전 판정 · 운행 패턴</span></li>
       <li><span class="k">확장</span><span class="v">탄소 배출 산정 · 코칭 리포트</span></li>
     </ul>
@@ -139,7 +139,7 @@
         <figcaption class="shot-cap">디지털 클러스터 UI (자체 개발)</figcaption></figure>
     </div>
     <div class="reveal" data-d="2" style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
-      <span class="pill">OCPP 연계</span><span class="pill">ISO 15118</span><span class="pill">GHG Protocol · ISO 14064</span><span class="pill">LTE Cat M1 자체 모듈</span>
+      <span class="pill">충전 통신 표준(OCPP) 연계</span><span class="pill">ISO 15118</span><span class="pill">온실가스 산정 기준(GHG Protocol·ISO 14064)</span><span class="pill">LTE Cat M1 자체 모듈</span>
     </div>
   </div>
 </section>
@@ -169,12 +169,12 @@
       <div class="stack-layer l-op"><span class="stack-tag">APPLICATION</span><b>애플리케이션층</b><small>디지털 클러스터 UI · 커넥티드 서비스 앱 · 관제 대시보드</small></div>
       <div class="stack-arrow">▲</div>
       <div class="stack-layer"><span class="stack-tag">SERVICE</span><b>서비스층</b>
-        <div class="stack-prods"><span>주행 최적화<small>주행·<wbr>경로 분석</small></span><span>충·<wbr>방전 스케줄링<small>EVCP 연계</small></span><span>탄소 산정<small>GHG 저감 로직</small></span></div>
+        <div class="stack-prods"><span>주행 최적화<small>주행·<wbr>경로 분석</small></span><span>충·<wbr>방전 스케줄링<small>EVCP 연계</small></span><span>탄소 산정<small>온실가스 감축 산정 로직</small></span></div>
       </div>
       <div class="stack-arrow">▲</div>
       <div class="stack-layer"><span class="stack-tag">STANDARDIZATION</span><b>데이터 표준화층 · QData 연계</b><small>디지털 클러스터·<wbr>AVN·<wbr>커넥티드 차량 데이터 수집 → 공통 스키마·<wbr>의미 기준으로 정규화</small></div>
     </div>
-    <p class="sec-note">서로 다른 차량·<wbr>에너지 데이터를 QData의 공통 의미 기준으로 표준화하고, EVCP(OCPP)·<wbr>Cubeon과 연결해 서비스에 활용하도록 설계합니다.</p>
+    <p class="sec-note">서로 다른 차량·<wbr>에너지 데이터를 QData의 공통 의미 기준으로 표준화하고, EVCP(충전 통신 표준 OCPP)·<wbr>Cubeon과 연결해 서비스에 활용하도록 설계합니다.</p>
   </div>
 </section>
 <section id="flow" class="sec-anchor">
@@ -182,7 +182,7 @@
     <div class="reveal"><span class="kicker">Data Pipeline</span>
     <h2>차량 데이터가 서비스가 되기까지</h2></div>
     <div class="tl reveal" data-d="1">
-      <div class="tl-card"><div class="yr">01</div><h3>수집</h3><p>커넥티드 차량·<wbr>충전 인프라에서 주행·<wbr>에너지 데이터 수집 (OCPP · MQTT · LTE Cat M1)</p></div>
+      <div class="tl-card"><div class="yr">01</div><h3>수집</h3><p>커넥티드 차량·<wbr>충전 인프라에서 주행·<wbr>에너지 데이터 수집 (충전 통신 표준(OCPP) · 메시지 통신(MQTT) · 저전력 이동통신(LTE Cat M1))</p></div>
       <div class="tl-card"><div class="yr">02</div><h3>표준화</h3><p>이기종 데이터를 공통 스키마·<wbr>온톨로지로 정규화 (QData 표준화층)</p></div>
       <div class="tl-card"><div class="yr">03</div><h3>분석</h3><p>주행·<wbr>에너지 패턴 분석 · 충·<wbr>방전 최적화 · 탄소 저감량 산정</p></div>
       <div class="tl-card cur"><div class="yr">04</div><h3>서비스</h3><p>클러스터 UI·<wbr>앱·<wbr>관제로 전달 (REST / gRPC API)</p></div>
@@ -199,19 +199,19 @@
     <h2 style="color:#fff">표준·<wbr>프로토콜 기반</h2>
     <p class="sec-sub" style="color:#c7d1df">모빌리티·<wbr>충전·<wbr>탄소 도메인의 통용 표준과 프로토콜을 지원하도록 설계합니다.</p></div>
     <div class="mod-grid reveal" data-d="1">
-      <div class="mod">OCPP 1.6 / 2.0.1<small>충전 인프라 연계</small></div>
-      <div class="mod">ISO 15118<small>Plug &amp; Charge · V2G</small></div>
-      <div class="mod">MQTT<small>커넥티드 텔레메트리</small></div>
+      <div class="mod">충전 통신 표준(OCPP)<small>충전 인프라 연계</small></div>
+      <div class="mod">ISO 15118<small>자동 인증 충전 · 양방향 충전(V2G)</small></div>
+      <div class="mod">메시지 통신(MQTT)<small>차량 데이터 전송</small></div>
       <div class="mod">LTE Cat M1<small>차량·<wbr>충전 통신</small></div>
-      <div class="mod">REST / gRPC<small>서비스 간 통신</small></div>
-      <div class="mod">MSA<small>Microservice Architecture</small></div>
-      <div class="mod">GHG Protocol / ISO 14064<small>온실가스 산정</small></div>
+      <div class="mod">서비스 연동 API<small>REST · gRPC</small></div>
+      <div class="mod">마이크로서비스 구조(MSA)<small>기능별 독립 확장</small></div>
+      <div class="mod">온실가스 산정 기준<small>GHG Protocol · ISO 14064</small></div>
       <div class="mod">TLS 1.2 / 1.3<small>데이터 전송 보안</small></div>
     </div>
     <p class="sec-note">OCPP는 EVCP에 적용했고, LTE Cat M1은 자체 통신 모듈 개발 경험을 보유합니다. ISO 15118과 GHG Protocol은 사업 요건에 따라 적용 범위를 정합니다.</p>
     <figure class="shot-fig reveal" data-d="2">
-      <img class="shot fit" src="assets/img/proto/qdrive-verify.jpg" alt="성과 검증 예시 화면 — 코칭 효과 반사실 비교·운전 그룹별 A/B 효과·기준선 대비·OBD·DTG 교차검증" loading="lazy" width="1600" height="1005">
-      <figcaption class="shot-cap">성과 검증 — 반사실 비교·<wbr>OBD·<wbr>DTG 교차검증 · 실증 데모 예시 화면</figcaption>
+      <img class="shot fit" src="assets/img/proto/qdrive-verify.jpg" alt="성과 검증 예시 화면 — 코칭 효과 AI 미적용 가정과 비교·운전 그룹별 A/B 효과·기준선 대비·OBD·DTG 교차검증" loading="lazy" width="1600" height="1005">
+      <figcaption class="shot-cap">성과 검증 — AI 미적용 가정과 비교·<wbr>차량진단(OBD)·<wbr>운행기록(DTG) 교차검증 · 실증 데모 예시 화면</figcaption>
     </figure>
   </div>
 </section>
@@ -224,8 +224,8 @@
       <thead><tr><th scope="col">서비스 축</th><th scope="col" class="ok">입력 데이터</th><th scope="col">표준·<wbr>프로토콜</th><th scope="col">산출물</th></tr></thead>
       <tbody>
         <tr><th scope="row">차량 데이터</th><td class="ok">디지털 클러스터·<wbr>AVN·<wbr>커넥티드 텔레메트리</td><td>MQTT · LTE Cat M1</td><td>표준화 주행·<wbr>상태 데이터셋</td></tr>
-        <tr><th scope="row">에너지·<wbr>충전</th><td class="ok">충전 세션·<wbr>전력·<wbr>SoC</td><td>OCPP 연계 · ISO 15118 참조(사업별 적용)</td><td>충·<wbr>방전 예약·<wbr>운영 스케줄</td></tr>
-        <tr><th scope="row">탄소중립</th><td class="ok">주행·<wbr>에너지 소비 데이터</td><td>GHG Protocol · ISO 14064 참조(사업별 적용)</td><td>산정 기준에 따른 탄소 저감량 리포트</td></tr>
+        <tr><th scope="row">에너지·<wbr>충전</th><td class="ok">충전 세션·<wbr>전력·<wbr>SoC</td><td>충전 통신 표준(OCPP) 연계 · ISO 15118 참조(사업별 적용)</td><td>충·<wbr>방전 예약·<wbr>운영 스케줄</td></tr>
+        <tr><th scope="row">탄소중립</th><td class="ok">주행·<wbr>에너지 소비 데이터</td><td>온실가스 산정 기준(GHG Protocol·ISO 14064) 참조(사업별 적용)</td><td>산정 기준에 따른 탄소 저감량 리포트</td></tr>
       </tbody>
     </table>
     <figure class="shot-fig reveal" data-d="2">
