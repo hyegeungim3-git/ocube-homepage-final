@@ -34,6 +34,9 @@
       if (tb.parentElement && tb.parentElement.classList.contains('cmp-scroll')) return;
       var wrap = document.createElement('div');
       wrap.className = 'cmp-scroll';
+      wrap.tabIndex = 0;
+      var caption = tb.querySelector('caption');
+      wrap.setAttribute('aria-label', (caption ? caption.textContent.trim() : '비교표') + ' — 가로로 스크롤할 수 있습니다');
       tb.parentNode.insertBefore(wrap, tb);
       wrap.appendChild(tb);
     });
@@ -58,7 +61,7 @@
   (function mobileNav() {
     var t = document.querySelector('.m-toggle'), p = document.querySelector('.m-panel');
     if (!t || !p) return;
-    var desktop = matchMedia('(min-width: 901px)');
+    var desktop = matchMedia('(min-width: 901px) and (hover: hover) and (pointer: fine)');
     var sourceItems = document.querySelectorAll('.nav-menu .nav-item');
     var directContact = p.querySelector('a[href*="contact"]');
     var inerted = [];
@@ -226,7 +229,27 @@
     desktop.addEventListener('change', function (e) { if (e.matches) close(false); });
   })();
 
-  /* --- 3) 히어로 4영상 배너 슬라이더 --- */
+  /* --- 2-b) 현재 페이지 내비게이션 표시 --- */
+  (function currentNavigation() {
+    var current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    function targetName(link) {
+      try {
+        var url = new URL(link.getAttribute('href'), location.href);
+        return (url.pathname.split('/').pop() || 'index.html').toLowerCase();
+      } catch (e) { return ''; }
+    }
+    document.querySelectorAll('.nav-menu a, .m-panel a, .fb-links a, .subnav a').forEach(function (link) {
+      if (targetName(link) === current) link.setAttribute('aria-current', 'page');
+    });
+    document.querySelectorAll('.nav-menu .nav-item').forEach(function (item) {
+      if (item.querySelector('[aria-current="page"]')) item.classList.add('is-current');
+    });
+    document.querySelectorAll('.m-acc-item').forEach(function (item) {
+      if (item.querySelector('[aria-current="page"]')) item.classList.add('is-current');
+    });
+  })();
+
+  /* --- 3) 히어로 3개 비즈니스 배너 슬라이더 --- */
   (function heroSlider() {
     var hero = document.querySelector('.hero-slider, .hero');
     if (!hero) return;
@@ -235,13 +258,45 @@
     var bars = [].slice.call(hero.querySelectorAll('.hbar'));
     var vids = [].slice.call(hero.querySelectorAll('.hslide video'));
     var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var mob = reduced || matchMedia('(max-width:900px)').matches;
+    var mob = reduced || matchMedia('(max-width:900px), (hover:none) and (pointer:coarse)').matches;
     if (mob) vids.forEach(function (v) { if (v) v.remove(); });
     var idx = 0, timer = null, DUR = 5200;
+    slides.forEach(function (s, i) {
+      var slideId = s.id || 'hero-panel-' + (i + 1);
+      var tabId = bars[i] && (bars[i].id || 'hero-tab-' + (i + 1));
+      s.id = slideId;
+      s.setAttribute('role', 'tabpanel');
+      if (tabId) s.setAttribute('aria-labelledby', tabId);
+      if (bars[i]) {
+        bars[i].id = tabId;
+        bars[i].setAttribute('role', 'tab');
+        bars[i].setAttribute('aria-controls', slideId);
+      }
+    });
+    function setSlideFocusable(slide, active) {
+      slide.querySelectorAll('a[href],button,input,select,textarea,[tabindex]').forEach(function (el) {
+        if (typeof el.__heroTabIndex === 'undefined') el.__heroTabIndex = el.getAttribute('tabindex');
+        if (active) {
+          if (el.__heroTabIndex === null) el.removeAttribute('tabindex');
+          else el.setAttribute('tabindex', el.__heroTabIndex);
+        } else el.setAttribute('tabindex', '-1');
+      });
+    }
     function show(n) {
       idx = (n + slides.length) % slides.length;
-      slides.forEach(function (s, i) { s.classList.toggle('on', i === idx); });
-      bars.forEach(function (b, i) { b.classList.toggle('on', i === idx); });
+      slides.forEach(function (s, i) {
+        var active = i === idx;
+        s.classList.toggle('on', active);
+        s.setAttribute('aria-hidden', active ? 'false' : 'true');
+        s.toggleAttribute('inert', !active);
+        setSlideFocusable(s, active);
+      });
+      bars.forEach(function (b, i) {
+        var active = i === idx;
+        b.classList.toggle('on', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+        b.tabIndex = active ? 0 : -1;
+      });
       if (!mob) vids.forEach(function (v, i) {
         if (!v) return;
         if (i === idx) { var pr = v.play && v.play(); if (pr && pr.catch) pr.catch(function () { }); }
@@ -251,7 +306,16 @@
     var manualPause = false;                              // 사용자가 명시적으로 일시정지한 상태
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function start() { if (mob || manualPause) return; stop(); timer = setInterval(function () { show(idx + 1); }, DUR); }
-    bars.forEach(function (b, i) { b.addEventListener('click', function () { show(i); start(); }); });
+    bars.forEach(function (b, i) {
+      b.addEventListener('click', function () { show(i); start(); });
+      b.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Home' && e.key !== 'End') return;
+        e.preventDefault();
+        var next = e.key === 'Home' ? 0 : e.key === 'End' ? bars.length - 1 : i + (e.key === 'ArrowLeft' ? -1 : 1);
+        next = (next + bars.length) % bars.length;
+        show(next); bars[next].focus(); start();
+      });
+    });
 
     /* 이전 · 일시정지/재생 · 다음 */
     var ctrl = hero.querySelector('.hctrl');
@@ -269,12 +333,6 @@
         if (manualPause) stop(); else start();
       }
     });
-    /* 좌우 방향키로도 이동 */
-    hero.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { show(idx - 1); start(); }
-      else if (e.key === 'ArrowRight') { show(idx + 1); start(); }
-    });
-
     hero.addEventListener('mouseenter', stop);
     hero.addEventListener('mouseleave', start);
     document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
@@ -334,7 +392,7 @@
       var b = e.target.closest ? e.target.closest('.case-tab') : null;
       if (!b) return;
       var line = b.getAttribute('data-line');
-      tabs.forEach(function (t) { t.classList.toggle('active', t === b); t.setAttribute('aria-selected', t === b); });
+      tabs.forEach(function (t) { t.classList.toggle('active', t === b); t.setAttribute('aria-pressed', t === b ? 'true' : 'false'); });
       cards.forEach(function (c) {
         var show = line === 'all' || (c.getAttribute('data-line') || '').split(/\s+/).indexOf(line) > -1;
         c.classList.toggle('is-hidden', !show);
@@ -367,7 +425,7 @@
     bar.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('.case-tab') : null;
       if (!b) return;
-      tabs.forEach(function (t) { t.classList.toggle('active', t === b); t.setAttribute('aria-selected', t === b); });
+      tabs.forEach(function (t) { t.classList.toggle('active', t === b); t.setAttribute('aria-pressed', t === b ? 'true' : 'false'); });
       apply(b.getAttribute('data-cat'));
     });
     apply('all');
@@ -394,6 +452,94 @@
         var ta = document.createElement('textarea'); ta.value = v; document.body.appendChild(ta);
         ta.select(); try { document.execCommand('copy'); } catch (err) { } ta.remove(); ok();
       }
+    });
+  })();
+
+  /* --- 3-f) 제품 화면 확대 + 기능 카드 포인터 미리보기 --- */
+  (function productLightbox() {
+    var imgs = [].slice.call(document.querySelectorAll('img.shot'));
+    var shotButtons = [].slice.call(document.querySelectorAll('[data-shot]'));
+    if (!imgs.length && !shotButtons.length) return;
+    var dialog = null, lastFocus = null;
+    function close() {
+      if (!dialog || !dialog.classList.contains('open')) return;
+      document.body.classList.remove('lb-open');
+      dialog.classList.remove('open');
+      dialog.setAttribute('aria-hidden', 'true');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    function build() {
+      dialog = document.createElement('div');
+      dialog.className = 'lightbox';
+      dialog.setAttribute('role', 'dialog');
+      dialog.setAttribute('aria-modal', 'true');
+      dialog.setAttribute('aria-label', '제품 화면 확대 보기');
+      dialog.setAttribute('aria-hidden', 'true');
+      dialog.innerHTML = '<button class="lb-close" type="button" aria-label="확대 화면 닫기">×</button><img class="lb-img" alt=""><p class="lb-cap" id="lb-caption"></p>';
+      dialog.setAttribute('aria-describedby', 'lb-caption');
+      document.body.appendChild(dialog);
+      dialog.addEventListener('click', function (e) { if (e.target === dialog || e.target.classList.contains('lb-close')) close(); });
+      dialog.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); close(); }
+        else if (e.key === 'Tab') { e.preventDefault(); dialog.querySelector('.lb-close').focus(); }
+      });
+    }
+    function openSource(src, alt, caption) {
+      if (!dialog) build();
+      lastFocus = document.activeElement;
+      var image = dialog.querySelector('.lb-img');
+      image.src = src; image.alt = alt || '';
+      dialog.querySelector('.lb-cap').textContent = caption || alt || '';
+      document.body.classList.add('lb-open');
+      dialog.classList.add('open');
+      dialog.setAttribute('aria-hidden', 'false');
+      dialog.querySelector('.lb-close').focus();
+    }
+    imgs.forEach(function (img) {
+      if (img.closest('a,button')) return;
+      img.classList.add('zoomable'); img.tabIndex = 0; img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', (img.alt || '제품 화면') + ' 확대 보기');
+      function openImage() {
+        var figure = img.closest('figure');
+        var caption = figure && figure.querySelector('figcaption');
+        openSource(img.currentSrc || img.src, img.alt, caption ? caption.textContent : img.alt);
+      }
+      img.addEventListener('click', openImage);
+      img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openImage(); } });
+    });
+    shotButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        openSource(button.getAttribute('data-shot'), button.getAttribute('data-shot-alt') || '', button.getAttribute('data-shot-cap') || '');
+      });
+    });
+  })();
+
+  (function pointerPreview() {
+    if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    var cards = [].slice.call(document.querySelectorAll('[data-preview]'));
+    if (!cards.length) return;
+    var preview = document.createElement('figure');
+    preview.className = 'hover-preview';
+    preview.setAttribute('aria-hidden', 'true');
+    preview.innerHTML = '<img alt=""><figcaption></figcaption>';
+    document.body.appendChild(preview);
+    var image = preview.querySelector('img'), caption = preview.querySelector('figcaption');
+    function place(e) {
+      var width = 360, height = 250, gap = 22;
+      var x = e.clientX + gap, y = e.clientY + gap;
+      if (x + width > innerWidth - 12) x = e.clientX - width - gap;
+      if (y + height > innerHeight - 12) y = Math.max(12, innerHeight - height - 12);
+      preview.style.left = x + 'px'; preview.style.top = y + 'px';
+    }
+    cards.forEach(function (card) {
+      card.addEventListener('mouseenter', function (e) {
+        image.src = card.getAttribute('data-preview');
+        image.alt = card.getAttribute('data-preview-alt') || '';
+        caption.textContent = card.getAttribute('data-preview-cap') || '';
+        place(e); preview.classList.add('show');
+      });
+      card.addEventListener('mousemove', place, { passive: true });
+      card.addEventListener('mouseleave', function () { preview.classList.remove('show'); });
     });
   })();
 
@@ -519,7 +665,7 @@
   var gnb = document.querySelector('.gnb');
   var menu = gnb && gnb.querySelector('.nav-menu');
   if (!gnb || !menu) return;
-  var desktop = matchMedia('(min-width: 901px)');
+  var desktop = matchMedia('(min-width: 901px) and (hover: hover) and (pointer: fine)');
   var hoverDesktop = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 901px)');
   var timer = null;
   var resizeTimer = null;

@@ -19,15 +19,91 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-11/, `${page}: reviewed CSS`);
-    assert.match(html, /site2\.js\?v=codex-6/, `${page}: reviewed JS`);
+    assert.match(html, /site2\.css\?v=codex-13/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
     assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
     assert.doesNotMatch(html, /Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/, `${page}: normalized legal footer`);
     assert.doesNotMatch(html, /KM빌딩 3층|금정역SKV1센터 722호/, `${page}: full office address in footer`);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+    assert.equal((html.match(/<main\b/gi) ?? []).length, 1, `${page}: one main landmark`);
+    assert.equal((html.match(/<footer\b/gi) ?? []).length, 1, `${page}: one footer landmark`);
+    assert.doesNotMatch(html, /Web(?:·|\s·\s)App(?:·|\s·\s)Cloud[^<]{0,40}환경으로/i, `${page}: no rejected generic delivery copy`);
+    assert.doesNotMatch(html, /홈페이지 시안의 초안|시안 초안|배포 시 확정|보호책임자 지정은/i, `${page}: no public draft copy`);
+    assert.doesNotMatch(html, /www\.ocube\.co\.kr/i, `${page}: no mixed production domain`);
+    assert.match(html, /<link rel="canonical" href="https:\/\/ocube-codex-review\.issoyeon16\.chatgpt\.site\//, `${page}: Codex canonical URL`);
+    assert.match(html, /<meta property="og:image" content="https:\/\/ocube-codex-review\.issoyeon16\.chatgpt\.site\/og-codex\.png">/, `${page}: absolute OG image`);
+    assert.match(html, /<meta name="twitter:image" content="https:\/\/ocube-codex-review\.issoyeon16\.chatgpt\.site\/og-codex\.png">/, `${page}: absolute social image`);
+    assert.match(html, /<button type="button" class="m-toggle"/, `${page}: explicit mobile menu button type`);
+    assert.match(html, /<div class="nav-item"><a href="about\.html">회사/, `${page}: company overview parent route`);
+    const crumb = html.match(/<nav class="hero-crumb"[\s\S]*?<\/nav>/i)?.[0];
+    if (crumb) assert.equal((crumb.match(/aria-current="page"/g) ?? []).length, 1, `${page}: one current breadcrumb`);
   }
+});
+
+test("keeps legacy links truthful and correctly routed", async () => {
+  const routes = [
+    ["about-1/index.html", "../about.html"],
+    ["btnanotech/index.html", "../business-license.html"],
+    ["tenable/index.html", "../business-license.html"],
+    ["qt/index.html", "../license-qt.html"],
+    ["telit-cintelion/index.html", "../license-telit.html"],
+    ["toradex/index.html", "../license-toradex.html"],
+    ["visualon/index.html", "../license-visualon.html"],
+    ["복제-pot-hole-검출-및-관제시스템/index.html", "../solution-traffic.html"],
+  ];
+  for (const [route, target] of routes) {
+    const html = await readFile(new URL(route, publicRoot), "utf8");
+    assert.ok(html.includes(target), `${route}: correct target`);
+    assert.doesNotMatch(html, /#license/);
+  }
+});
+
+test("reflects the reviewed Enterprise message and benchmarked home flow", async () => {
+  const [home, business, enterprise, location] = await Promise.all([
+    readFile(new URL("index.html", publicRoot), "utf8"),
+    readFile(new URL("business.html", publicRoot), "utf8"),
+    readFile(new URL("business-si.html", publicRoot), "utf8"),
+    readFile(new URL("location.html", publicRoot), "utf8"),
+  ]);
+
+  assert.equal((home.match(/class="hslide(?: on)?"/g) ?? []).length, 3);
+  assert.match(home, /Enterprise, Engineered for Reliability/);
+  assert.match(home, /복잡한 B2B·B2G 업무/);
+  assert.match(home, /class="home-partners"/);
+  assert.match(home, /로봇 조립 라인 이상 조기감지/);
+  assert.match(home, /SK에너지 전기차 충전 플랫폼/);
+  assert.doesNotMatch(home, /Technology Integration/);
+  assert.doesNotMatch(home, /Global Partners 슬라이드/);
+  assert.match(business, /Enterprise · <em>System Integration<\/em>/);
+  assert.match(enterprise, /BUSINESS · ENTERPRISE/);
+  assert.match(enterprise, /B2B · B2G · 업무 시스템 · 데이터 연계/);
+  const daegu = location.indexOf("오큐브 대구사옥");
+  const seoul = location.indexOf("오큐브 서울");
+  const anyang = location.indexOf("오큐브 안양사옥");
+  assert.ok(daegu >= 0 && daegu < seoul && seoul < anyang);
+});
+
+test("keeps comparison tables and interactive media accessible", async () => {
+  const pages = await pageNames();
+  let tables = 0;
+  for (const page of pages) {
+    const html = await readFile(new URL(page, publicRoot), "utf8");
+    for (const match of html.matchAll(/<table\b[^>]*class="[^"]*\bcmp\b[^"]*"[^>]*>([\s\S]*?)<\/table>/gi)) {
+      tables += 1;
+      assert.match(match[1], /<caption\b[^>]*class="sr-only"/i, `${page}: table caption`);
+      assert.match(match[1], /<th\b[^>]*scope="col"/i, `${page}: column headers`);
+      assert.match(match[1], /<th\b[^>]*scope="row"/i, `${page}: row headers`);
+    }
+  }
+  assert.equal(tables, 10);
+  const script = await readFile(new URL("assets/site2.js", publicRoot), "utf8");
+  assert.match(script, /s\.toggleAttribute\('inert', !active\)/);
+  assert.match(script, /s\.setAttribute\('aria-hidden'/);
+  assert.match(script, /b\.setAttribute\('aria-selected'/);
+  assert.match(script, /function productLightbox\(\)/);
+  assert.match(script, /function currentNavigation\(\)/);
 });
 
 test("keeps the QAgent architecture ordered and unambiguous", async () => {
@@ -85,6 +161,10 @@ test("keeps the desktop mega menu at one stable height", async () => {
   assert.match(script, /desktop\.addEventListener\('change', function \(e\) \{ if \(e\.matches\) close\(false\); \}\)/);
   assert.ok(script.indexOf("if (trigger) trigger.focus();", script.indexOf("e.key !== 'Escape'")) < script.indexOf("closeNow();", script.indexOf("e.key !== 'Escape'")));
   assert.match(style, /\.gnb\.gnb-mega \.nav-item:hover>a[^}]*color:var\(--accent-text\)/);
+  assert.match(style, /\.nav-menu\{[^}]*gap:2px/);
+  assert.match(style, /\.nav-menu\{transition:none\}/);
+  assert.match(style, /\.gnb\.gnb-mega \.nav-menu\{gap:2px\}/);
+  assert.match(style, /\.nav-item\.is-current>a/);
   assert.match(style, /\.gnb\.gnb-mega \.nav-item>a::after/);
   assert.match(style, /html:not\(\.js\) \.m-panel\{display:grid/);
 });

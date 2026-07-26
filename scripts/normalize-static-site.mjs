@@ -3,7 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const root = path.resolve("public");
-const socialImage = process.argv[2] ?? "/og-codex.png";
+const socialImage = process.argv[2] ?? "https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png";
 if (!/^(?:https:\/\/|\/)/.test(socialImage)) {
   throw new Error("Social preview image must be an HTTPS URL or a root-relative path.");
 }
@@ -41,11 +41,15 @@ for (const file of htmlFiles) {
     .replace(/>About Ocube<\/a>/g, ">회사소개</a>")
     .replace(/>Location<\/a>/g, ">오시는 길</a>")
     .replace(/>Build Cases<\/a>/g, ">구축 사례</a>")
+    .replace(/<div class="nav-item"><a href="company\.html">회사/g, '<div class="nav-item"><a href="about.html">회사')
+    .replace(/<button class="m-toggle"/g, '<button type="button" class="m-toggle"')
+    .replace(/<a href="business-si\.html">SI<small>시스템 통합·(?:<wbr>)?구축·(?:<wbr>)?운영<\/small><\/a>/g, '<a href="business-si.html">Enterprise<small>B2B·<wbr>B2G 시스템·<wbr>구축·<wbr>운영</small></a>')
+    .replace(/<a href="business-si\.html">SI<\/a>/g, '<a href="business-si.html">Enterprise</a>')
     .replace(/Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/g, "Copyright © OCUBE Co., Ltd. All rights reserved.")
     .replace(/서울 강서구 강서로56가길 141 KM빌딩 3층/g, "서울 강서구 강서로56가길 141 KM빌딩 2·3층")
     .replace(/안양 동안구 LS로 142 금정역SKV1센터 722호/g, "안양 동안구 LS로 142 금정역SKV1센터 722·723·710호")
-    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-11")
-    .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-6")
+    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-13")
+    .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-8")
     .replace(
       /(<meta\s+property="og:image"\s+content=")[^"]*(">)/g,
       `$1${socialImage}$2`,
@@ -58,7 +62,8 @@ for (const file of htmlFiles) {
     .replace(/Dataq 화면/g, "QData 화면")
     .replace(/Factoryq 화면/g, "QFactory 화면")
     .replace(/Visionq 화면/g, "QVision 화면")
-    .replace(/Evcp 화면/g, "EVCP 화면");
+    .replace(/Evcp 화면/g, "EVCP 화면")
+    .replaceAll("SOLUTION / VISIONQ", "SOLUTION / QVISION");
 
   const tags = [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
   for (const tag of tags) {
