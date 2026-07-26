@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-13/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-14/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
@@ -161,9 +161,8 @@ test("keeps the desktop mega menu at one stable height", async () => {
   assert.match(script, /desktop\.addEventListener\('change', function \(e\) \{ if \(e\.matches\) close\(false\); \}\)/);
   assert.ok(script.indexOf("if (trigger) trigger.focus();", script.indexOf("e.key !== 'Escape'")) < script.indexOf("closeNow();", script.indexOf("e.key !== 'Escape'")));
   assert.match(style, /\.gnb\.gnb-mega \.nav-item:hover>a[^}]*color:var\(--accent-text\)/);
-  assert.match(style, /\.nav-menu\{[^}]*gap:2px/);
-  assert.match(style, /\.nav-menu\{transition:none\}/);
-  assert.match(style, /\.gnb\.gnb-mega \.nav-menu\{gap:2px\}/);
+  assert.match(style, /\.nav-menu\{[^}]*justify-content:center[^}]*width:min\(440px,calc\(100vw - 420px\)\)[^}]*transition:width \.34s/);
+  assert.match(style, /\.gnb\.gnb-mega \.nav-menu\{[^}]*justify-content:space-between[^}]*gap:2px[^}]*width:min\(720px,calc\(100vw - 420px\)\)/);
   assert.match(style, /\.nav-item\.is-current>a/);
   assert.match(style, /\.gnb\.gnb-mega \.nav-item>a::after/);
   assert.match(style, /html:not\(\.js\) \.m-panel\{display:grid/);

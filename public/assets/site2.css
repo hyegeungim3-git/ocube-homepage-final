@@ -78,7 +78,7 @@ h2{font-size:var(--fz-h2);margin-top:14px}
 .logo img{height:25px;width:auto;filter:brightness(0) invert(1);transition:filter .28s}   /* 투명 상태: 흰 로고 */
 .gnb.scrolled .logo img,body.m-lock .gnb .logo img{filter:none}
 /* 메뉴 가운데 정렬 — 로고 좌·CTA 우 유지, 메가 확장 시에도 중앙 고정 */
-.nav-menu{display:flex;justify-content:space-between;gap:2px;width:min(720px,calc(100vw - 420px));position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.nav-menu{display:flex;justify-content:center;gap:2px;width:min(440px,calc(100vw - 420px));position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transition:width .34s cubic-bezier(.22,.61,.36,1)}
 .nav-item{position:relative}
 .nav-item>a{display:flex;align-items:center;justify-content:center;gap:6px;min-width:clamp(94px,8vw,116px);padding:10px 15px;font-weight:600;font-size:15.5px;color:#fff;border-radius:10px;transition:background .15s,color .28s}
 .nav-item>a:hover{background:rgba(255,255,255,.14)}
@@ -1140,9 +1140,8 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 }
 @media(prefers-reduced-motion:reduce){.ci-tilt{animation:none}}
 
-/* ══ GNB 메가 메뉴 — Seegene 벤치마크: 고정 열 간격 + 전 메뉴 동시 펼침 ══ */
-.nav-menu{transition:none}
-.gnb.gnb-mega .nav-menu{gap:2px}
+/* ══ GNB 메가 메뉴 — 중앙 집중 → 펼침 시 고정 열 확장 ══ */
+.gnb.gnb-mega .nav-menu{justify-content:space-between;gap:2px;width:min(720px,calc(100vw - 420px))}
 /* 헤더는 흰 솔리드로 (히어로 위 투명 상태에서도) */
 .gnb.gnb-mega{height:calc(72px + var(--mega-h,0px));background:rgba(255,255,255,.98);border-bottom:1px solid var(--border)}
 .gnb.gnb-mega .logo img{filter:none}
