@@ -1061,7 +1061,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 @media(prefers-reduced-motion:reduce){.hero-bg,.hbg{animation:none}}
 
 /* ② GNB 스마트 숨김 — i-bricks `scrolled hide`(아래 스크롤 시 숨김·위로 복귀, transform .3s) */
-.gnb{transition:background .28s,border-color .28s,transform .3s}
+.gnb{transition:height .34s cubic-bezier(.22,.61,.36,1),background .28s,border-color .28s,transform .3s}
 .gnb.gnb-hide{transform:translateY(-100%)}
 
 /* ③ 카드 이미지 hover 줌 통일 — renewal 전 이미지 transform .35~.45s 문법 */
@@ -1103,9 +1103,12 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* 헤더는 흰 솔리드로 (히어로 위 투명 상태에서도) */
 .gnb.gnb-mega{height:calc(72px + var(--mega-h,0px));background:rgba(255,255,255,.98);border-bottom:1px solid var(--border)}
 .gnb.gnb-mega .logo img{filter:none}
-.gnb.gnb-mega .nav-item>a{color:var(--fg)}
-.gnb.gnb-mega .nav-item>a:hover{background:var(--soft)}
+.gnb.gnb-mega .nav-item>a{position:relative;justify-content:center;min-width:clamp(94px,8vw,116px);color:var(--fg);background:transparent;transition:color .2s}
+.gnb.gnb-mega .nav-item:hover>a,.gnb.gnb-mega .nav-item:focus-within>a{color:var(--accent-text);background:transparent}
+.gnb.gnb-mega .nav-item>a::after{content:"";position:absolute;left:15px;right:15px;bottom:-7px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:50% 50%;transition:transform .22s ease}
+.gnb.gnb-mega .nav-item:hover>a::after,.gnb.gnb-mega .nav-item:focus-within>a::after{transform:scaleX(1)}
 .gnb.gnb-mega .badge-caret{color:var(--fg-3)}
+.gnb.gnb-mega .nav-item:hover .badge-caret,.gnb.gnb-mega .nav-item:focus-within .badge-caret{color:var(--accent-text)}
 /* 풀와이드 패널 배경 — max-height로 펼침 */
 .gnb::before{content:"";position:absolute;left:0;right:0;top:72px;height:var(--mega-h,0px);max-height:0;
   background:rgba(255,255,255,.98);border-bottom:1px solid var(--border);box-shadow:0 22px 40px rgba(14,22,38,.08);

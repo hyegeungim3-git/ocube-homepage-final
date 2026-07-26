@@ -44,8 +44,8 @@ for (const file of htmlFiles) {
     .replace(/Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/g, "Copyright © OCUBE Co., Ltd. All rights reserved.")
     .replace(/서울 강서구 강서로56가길 141 KM빌딩 3층/g, "서울 강서구 강서로56가길 141 KM빌딩 2·3층")
     .replace(/안양 동안구 LS로 142 금정역SKV1센터 722호/g, "안양 동안구 LS로 142 금정역SKV1센터 722·723·710호")
-    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-7")
-    .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-2")
+    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-8")
+    .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-3")
     .replace(
       /(<meta\s+property="og:image"\s+content=")[^"]*(">)/g,
       `$1${socialImage}$2`,

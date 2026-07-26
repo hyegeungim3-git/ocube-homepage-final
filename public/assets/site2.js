@@ -366,24 +366,36 @@
   var desktop = matchMedia('(min-width: 901px)');
   var hoverDesktop = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 901px)');
   var timer = null;
+  var resizeTimer = null;
   var hoverBound = false;
+  var megaHeight = 0;
   var triggers = gnb.querySelectorAll('.nav-item > a');
-  triggers.forEach(function (trigger) {
+  triggers.forEach(function (trigger, index) {
+    var panel = trigger.nextElementSibling;
+    if (panel && panel.classList.contains('dropdown')) {
+      if (!panel.id) panel.id = 'gnb-panel-' + (index + 1);
+      trigger.setAttribute('aria-controls', panel.id);
+    }
     trigger.setAttribute('aria-haspopup', 'true');
     trigger.setAttribute('aria-expanded', 'false');
   });
   function setExpanded(value) {
     triggers.forEach(function (trigger) { trigger.setAttribute('aria-expanded', String(value)); });
   }
+  function measureMegaHeight() {
+    var h = 0;
+    gnb.querySelectorAll('.dropdown').forEach(function (d) { h = Math.max(h, d.scrollHeight); });
+    megaHeight = Math.ceil(h) + 24;
+    gnb.style.setProperty('--mega-h', megaHeight + 'px');
+  }
   function open() {
     if (!desktop.matches) return;
     clearTimeout(timer);
-    /* 메가 레이아웃을 먼저 적용한 뒤 가장 긴 컬럼 높이로 패널을 고정한다. */
+    /* 메가 레이아웃의 최장 컬럼 높이를 한 번만 저장해 컬럼 이동 중 패널이 흔들리지 않게 한다. */
     gnb.classList.add('gnb-mega');
-    var h = 0;
-    gnb.querySelectorAll('.dropdown').forEach(function (d) { h = Math.max(h, d.scrollHeight); });
-    gnb.style.setProperty('--mega-h', (h + 10) + 'px');
     gnb.classList.remove('gnb-hide');
+    if (!megaHeight) measureMegaHeight();
+    else gnb.style.setProperty('--mega-h', megaHeight + 'px');
     setExpanded(true);
   }
   function closeNow() {
@@ -428,10 +440,22 @@
     if (trigger) trigger.focus();
     closeNow();
   });
+  function invalidateMegaHeight() {
+    megaHeight = 0;
+    if (gnb.classList.contains('gnb-mega')) measureMegaHeight();
+  }
+  addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(invalidateMegaHeight, 120);
+  }, { passive: true });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(invalidateMegaHeight);
+  }
   desktop.addEventListener('change', function (e) {
     if (!e.matches) {
       closeNow();
       gnb.style.removeProperty('--mega-h');
+      megaHeight = 0;
     }
   });
 })();

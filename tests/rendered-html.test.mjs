@@ -19,8 +19,8 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-7/, `${page}: reviewed CSS`);
-    assert.match(html, /site2\.js\?v=codex-2/, `${page}: reviewed JS`);
+    assert.match(html, /site2\.css\?v=codex-8/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.js\?v=codex-3/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
     assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
@@ -66,10 +66,12 @@ test("keeps the desktop mega menu at one stable height", async () => {
     readFile(new URL("assets/site2.js", publicRoot), "utf8"),
   ]);
   const megaStart = script.indexOf("function open()");
-  const classFirst = script.indexOf("gnb.classList.add('gnb-mega')", megaStart);
-  const measureAfter = script.indexOf("d.scrollHeight", megaStart);
+  const megaEnd = script.indexOf("function closeNow()", megaStart);
+  const openBlock = script.slice(megaStart, megaEnd);
+  const classFirst = openBlock.indexOf("gnb.classList.add('gnb-mega')");
+  const measureAfter = openBlock.indexOf("measureMegaHeight()");
 
-  assert.ok(megaStart >= 0 && classFirst > megaStart && classFirst < measureAfter);
+  assert.ok(megaStart >= 0 && megaEnd > megaStart && classFirst >= 0 && classFirst < measureAfter);
   assert.match(style, /\.gnb\{[^}]*height:72px/);
   assert.match(style, /\.gnb\.gnb-mega\{[^}]*height:calc\(72px \+ var\(--mega-h,0px\)\)/);
   assert.match(style, /html:not\(\.js\) \.nav-item:hover \.dropdown/);
@@ -77,9 +79,13 @@ test("keeps the desktop mega menu at one stable height", async () => {
   assert.doesNotMatch(noJsFallbackRemoved, /\.nav-item:hover\s+\.dropdown/);
   assert.match(script, /gnb\.addEventListener\('mouseleave', close\)/);
   assert.doesNotMatch(script, /menu\.addEventListener\('mouseleave', close\)/);
+  assert.match(script, /megaHeight = Math\.ceil\(h\) \+ 24/);
+  assert.match(script, /if \(!megaHeight\) measureMegaHeight\(\)/);
   assert.match(script, /hoverDesktop\.addEventListener\('change'/);
   assert.match(script, /desktop\.addEventListener\('change', function \(e\) \{ if \(e\.matches\) close\(\); \}\)/);
   assert.ok(script.indexOf("if (trigger) trigger.focus();", script.indexOf("e.key !== 'Escape'")) < script.indexOf("closeNow();", script.indexOf("e.key !== 'Escape'")));
+  assert.match(style, /\.gnb\.gnb-mega \.nav-item:hover>a[^}]*color:var\(--accent-text\)/);
+  assert.match(style, /\.gnb\.gnb-mega \.nav-item>a::after/);
   assert.match(style, /html:not\(\.js\) \.m-panel\{display:grid/);
 });
 
