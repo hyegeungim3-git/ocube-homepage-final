@@ -58,6 +58,7 @@
   (function mobileNav() {
     var t = document.querySelector('.m-toggle'), p = document.querySelector('.m-panel');
     if (!t || !p) return;
+    var desktop = matchMedia('(min-width: 901px)');
     function close() { p.classList.remove('open'); document.body.classList.remove('m-lock'); t.setAttribute('aria-expanded', 'false'); t.setAttribute('aria-label', '메뉴 열기'); t.textContent = '메뉴'; }
     t.addEventListener('click', function () {
       var o = p.classList.toggle('open');
@@ -66,6 +67,7 @@
     });
     p.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
     addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    desktop.addEventListener('change', function (e) { if (e.matches) close(); });
   })();
 
   /* --- 3) 히어로 4영상 배너 슬라이더 --- */
@@ -361,27 +363,77 @@
   var gnb = document.querySelector('.gnb');
   var menu = gnb && gnb.querySelector('.nav-menu');
   if (!gnb || !menu) return;
-  if (!matchMedia('(pointer: fine)').matches && !matchMedia('(min-width: 901px)').matches) return;
+  var desktop = matchMedia('(min-width: 901px)');
+  var hoverDesktop = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 901px)');
   var timer = null;
+  var hoverBound = false;
+  var triggers = gnb.querySelectorAll('.nav-item > a');
+  triggers.forEach(function (trigger) {
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+  function setExpanded(value) {
+    triggers.forEach(function (trigger) { trigger.setAttribute('aria-expanded', String(value)); });
+  }
   function open() {
+    if (!desktop.matches) return;
     clearTimeout(timer);
-    /* 가장 긴 드롭다운 높이로 패널 높이 산정 */
+    /* 메가 레이아웃을 먼저 적용한 뒤 가장 긴 컬럼 높이로 패널을 고정한다. */
+    gnb.classList.add('gnb-mega');
     var h = 0;
     gnb.querySelectorAll('.dropdown').forEach(function (d) { h = Math.max(h, d.scrollHeight); });
     gnb.style.setProperty('--mega-h', (h + 10) + 'px');
-    gnb.classList.add('gnb-mega');
     gnb.classList.remove('gnb-hide');
+    setExpanded(true);
   }
-  function close() { timer = setTimeout(function () { gnb.classList.remove('gnb-mega'); }, 140); }
-  menu.addEventListener('mouseenter', open);
-  menu.addEventListener('mouseleave', close);
-  /* 패널 영역(드롭다운) 위에 있는 동안 유지 */
-  gnb.addEventListener('mouseleave', close);
-  gnb.addEventListener('mouseenter', function () { if (gnb.classList.contains('gnb-mega')) clearTimeout(timer); });
+  function closeNow() {
+    clearTimeout(timer);
+    gnb.classList.remove('gnb-mega');
+    setExpanded(false);
+  }
+  function close() { timer = setTimeout(closeNow, 140); }
+  function hold() { if (gnb.classList.contains('gnb-mega')) clearTimeout(timer); }
+  function bindHover(enable) {
+    if (enable === hoverBound) return;
+    hoverBound = enable;
+    if (enable) {
+      menu.addEventListener('mouseenter', open);
+      gnb.addEventListener('mouseleave', close);
+      gnb.addEventListener('mouseenter', hold);
+    } else {
+      menu.removeEventListener('mouseenter', open);
+      gnb.removeEventListener('mouseleave', close);
+      gnb.removeEventListener('mouseenter', hold);
+      closeNow();
+    }
+  }
+  bindHover(hoverDesktop.matches);
+  hoverDesktop.addEventListener('change', function (e) { bindHover(e.matches); });
+  /* 패널의 빈 영역까지 실제 GNB 박스에 포함되므로, 바깥으로 나갈 때만 닫는다. */
+  menu.addEventListener('click', function (e) {
+    var trigger = e.target.closest('.nav-item > a');
+    if (!trigger || !desktop.matches || hoverDesktop.matches || gnb.classList.contains('gnb-mega')) return;
+    e.preventDefault();
+    open();
+    trigger.focus();
+  });
   /* 키보드 접근성 */
   menu.addEventListener('focusin', open);
   gnb.addEventListener('focusout', function (e) { if (!gnb.contains(e.relatedTarget)) close(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') gnb.classList.remove('gnb-mega'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || !gnb.classList.contains('gnb-mega')) return;
+    var active = document.activeElement;
+    var item = active && active.closest ? active.closest('.nav-item') : null;
+    var trigger = item && item.querySelector(':scope > a');
+    if (trigger) trigger.focus();
+    closeNow();
+  });
+  desktop.addEventListener('change', function (e) {
+    if (!e.matches) {
+      closeNow();
+      gnb.style.removeProperty('--mega-h');
+    }
+  });
 })();
 
 /* 문의 폼: 서버 저장 없이 사용자의 이메일 앱에 작성 내용을 전달한다. */

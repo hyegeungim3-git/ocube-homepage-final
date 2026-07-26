@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QFactory 제조 AI — 오큐브</title>
-<meta name="description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 잡고 공정을 최적화하는 제조 AI.">
+<meta name="description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 감지하고, 담당자가 검토할 공정 조건을 권고하는 제조 AI.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/solution-factoryq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="오큐브(주)">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="QFactory 제조 AI — 오큐브">
-<meta property="og:description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 잡고 공정을 최적화하는 제조 AI.">
+<meta property="og:description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 감지하고, 담당자가 검토할 공정 조건을 권고하는 제조 AI.">
 <meta property="og:url" content="https://www.ocube.co.kr/solution-factoryq.html">
 <meta property="og:image" content="/og-codex.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="QFactory 제조 AI — 오큐브">
-<meta name="twitter:description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 잡고 공정을 최적화하는 제조 AI.">
+<meta name="twitter:description" content="QFactory — 설비 신호와 공정 데이터로 이상을 조기에 감지하고, 담당자가 검토할 공정 조건을 권고하는 제조 AI.">
 <meta name="twitter:image" content="/og-codex.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"솔루션","item":"https://www.ocube.co.kr/solutions.html"},{"@type":"ListItem","position":3,"name":"QFactory","item":"https://www.ocube.co.kr/solution-factoryq.html"}]}</script>
 </head>
@@ -192,8 +192,8 @@
       <thead><tr><th>기능 축</th><th class="ok">대상 설비·<wbr>데이터</th><th class="ok">핵심 기법</th><th class="ok">산출물</th></tr></thead>
       <tbody>
         <tr><th>이상 조기감지</th><td>회전기·<wbr>모터·<wbr>로봇, 체결·<wbr>흡착 공정의 시계열(진동·<wbr>전류·<wbr>온도)</td><td class="ok">시계열 이상탐지(정상 패턴 학습) + LLM 원인 질의응답</td><td>이탈 알람 · 근거 · 조치 가이드</td></tr>
-        <tr><th>공정 최적화</th><td>열처리·<wbr>브레이징·<wbr>성형 등 공정 조건·<wbr>프로파일</td><td class="ok">상태진단 · 품질 데이터 기반 프로파일 권고</td><td>최적 공정 조건 · 품질 편차 리포트</td></tr>
-        <tr><th>예지보전</th><td>설비 부하·<wbr>마모·<wbr>가동 이력</td><td class="ok">잔존수명(RUL) 예측 · 정비 시점 산정</td><td>RUL · 정비 권고 · 비계획 정지 예방</td></tr>
+        <tr><th>공정 조건 권고</th><td>열처리·<wbr>브레이징·<wbr>성형 등 공정 조건·<wbr>프로파일</td><td class="ok">상태진단 · 품질 데이터 기반 프로파일 권고</td><td>권고 공정 조건 · 품질 편차 리포트</td></tr>
+        <tr><th>예지보전</th><td>설비 부하·<wbr>마모·<wbr>가동 이력</td><td class="ok">잔존수명(RUL) 예측 · 정비 시점 산정</td><td>RUL · 정비 권고 · 비계획 정지 위험에 사전 대응</td></tr>
       </tbody>
     </table>
     <p class="sec-note">수집 프로토콜·<wbr>표준은 현장 설비 환경에 맞춰 연결하도록 설계합니다(아래 참조).</p>
@@ -241,17 +241,17 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Pipeline</span>
     <h2>신호에서 조치까지, 여섯 단계</h2>
-    <p class="sec-sub">설비 신호가 표준화·<wbr>모델링을 거쳐 <b>현장 언어의 조치</b>로 이어집니다.</p></div>
+    <p class="sec-sub">설비 신호를 표준화·<wbr>분석해 <b>담당자가 검토할 수 있는 원인 후보와 조치 권고</b>로 제공합니다.</p></div>
     <div class="tl reveal" data-d="1">
-      <div class="tl-card"><span class="yr">01 수집</span><h3>설비 신호 인제스트</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>CAN으로 진동·<wbr>전류·<wbr>온도·<wbr>공정값을 실시간 수집</p></div>
-      <div class="tl-card"><span class="yr">02 표준화</span><h3>정규화·<wbr>시맨틱 정합</h3><p>QData 공통 스키마·<wbr>온톨로지로 결측 보정·<wbr>품질 검증</p></div>
-      <div class="tl-card"><span class="yr">03 모델링</span><h3>피처·<wbr>정상 프로파일</h3><p>시계열 피처 추출, 정상 패턴 학습으로 이상탐지 기준선 수립</p></div>
-      <div class="tl-card cur"><span class="yr">04 추론</span><h3>이상·<wbr>RUL 추론</h3><p>미세 이탈 조기 검출 + 잔존수명 예측, 엣지·<wbr>서버 선택 추론</p></div>
+      <div class="tl-card"><span class="yr">01 수집</span><h3>설비 신호 수집</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>CAN으로 진동·<wbr>전류·<wbr>온도·<wbr>공정값을 실시간 수집</p></div>
+      <div class="tl-card"><span class="yr">02 표준화</span><h3>형식·<wbr>의미 통일</h3><p>QData 공통 스키마·<wbr>온톨로지로 결측 보정·<wbr>품질 검증</p></div>
+      <div class="tl-card"><span class="yr">03 모델링</span><h3>특징값·<wbr>정상 기준</h3><p>시계열 특징값을 추출하고 정상 패턴을 학습해 이상탐지 기준선을 만듭니다.</p></div>
+      <div class="tl-card cur"><span class="yr">04 추론</span><h3>이상·<wbr>잔존수명 예측</h3><p>미세한 이탈을 조기에 찾고 설비의 남은 사용 가능 기간을 예측합니다.</p></div>
       <div class="tl-card"><span class="yr">05 권고</span><h3>원인·<wbr>조치 권고</h3><p>LLM 질의응답으로 원인·<wbr>조치를 현장 언어로 제시</p></div>
       <div class="tl-card"><span class="yr">06 피드백</span><h3>재학습(CT)</h3><p>현장 피드백·<wbr>드리프트를 반영해 ModelOps로 지속 재학습</p></div>
     </div>
     <div class="feat-list reveal" data-d="2" style="margin-top:22px">
-      <div class="feat"><b>현장 언어의 조치</b><span>임계 알람이 아니라 원인·<wbr>권고·<wbr>작업지시 형태로 전달해 현장이 바로 움직일 수 있게 합니다.</span></div>
+      <div class="feat"><b>검토 가능한 조치 권고</b><span>단순 알람이 아니라 원인 후보와 권고 내용을 제공해, 담당자가 검토한 뒤 작업지시로 이어갈 수 있게 합니다.</span></div>
       <div class="feat"><b>기준선 버전 관리</b><span>정상 프로파일을 제품·<wbr>라인별로 버전 관리해 공정 변경에도 기준선을 유지합니다.</span></div>
     </div>
   </div>
@@ -260,7 +260,7 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Connectivity &amp; Standards</span>
     <h2>현장 데이터를 연결하도록 설계</h2>
-    <p class="sec-sub">이기종 설비·<wbr>제어기·<wbr>시스템을 표준 프로토콜로 흡수하도록 커넥터를 구성합니다.</p></div>
+    <p class="sec-sub">서로 다른 설비·<wbr>제어기·<wbr>업무 시스템을 표준 프로토콜로 연결하도록 커넥터를 구성합니다.</p></div>
     <div class="mod-grid reveal" data-d="1">
       <div class="mod">OPC-UA</div><div class="mod">MQTT</div><div class="mod">Modbus (RTU/TCP)</div><div class="mod">CAN / CAN-FD</div>
       <div class="mod">PLC</div><div class="mod">SCADA</div><div class="mod">MES</div><div class="mod">Historian</div>
@@ -277,7 +277,7 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">ModelOps</span>
     <h2>모델을 지속 학습·<wbr>감시하도록 설계</h2>
-    <p class="sec-sub">현장은 계속 변합니다. <b>학습 → 배포 → 감시 → 재학습(CT)</b> 순환으로 정확도를 유지하도록 구성합니다.</p></div>
+    <p class="sec-sub">현장은 계속 변합니다. <b>학습 → 배포 → 감시 → 재학습</b> 흐름으로 운영 중 성능 저하를 확인하고 대응하도록 구성합니다.</p></div>
     <div class="kmod-grid reveal" data-d="1">
       <div class="kmod"><b>학습 · 등록</b><span>모델 레지스트리 · 버전관리 · 승인 워크플로</span></div>
       <div class="kmod"><b>배포</b><span>클라우드 · 온프레미스 · 엣지 추론 배포(CI/CD)</span></div>
@@ -326,7 +326,7 @@
         <h3>로봇 조립 라인 이상 조기감지</h3>
         <p class="csi"><b>과제</b> 체결 불량·<wbr>흡착 실패가 후공정에서야 발견</p>
         <p class="csi"><b>해결</b> 시계열 이상탐지 + LLM 질의응답</p>
-        <p class="csi"><b>성과</b> 후공정 유출 전 조기 검출 — 재작업 흐름 차단</p></article>
+        <p class="csi"><b>성과</b> 후공정 유출 전 조기 검출 — 재작업 위험을 줄이는 체계 구축</p></article>
       <article class="case-card reveal" data-d="2"><span class="dom">EV 부품 열처리 · 하이박</span>
         <h3>진공 브레이징 공정 최적화</h3>
         <p class="csi"><b>과제</b> 고온 열처리 품질이 숙련자 경험 의존</p>
@@ -364,7 +364,7 @@
     <p class="sec-note">상용 LLM API와 온프레미스 sLLM을 현장 보안·<wbr>규제에 맞춰 선택하도록 구성합니다.</p>
     <div class="feat-list reveal" data-d="2">
       <div class="feat"><b>동일 제품·<wbr>모델 일관성</b><span>배포 형태가 달라도 같은 모델·<wbr>API로 운영하도록 설계 — 이관 비용 최소화</span></div>
-      <div class="feat"><b>데이터 주권 보장</b><span>민감 공정 데이터를 현장 밖으로 반출하지 않고 내부에서 추론하도록 구성</span></div>
+      <div class="feat"><b>현장 내부 데이터 처리</b><span>민감 공정 데이터를 현장 밖으로 반출하지 않고 내부에서 분석하도록 구성</span></div>
       <div class="feat"><b>단계적 확장</b><span>기존 운영 영향을 줄이며 단일 설비 PoC에서 다거점 통합 관제까지 단계적으로 확장</span></div>
     </div>
   </div>
@@ -421,6 +421,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

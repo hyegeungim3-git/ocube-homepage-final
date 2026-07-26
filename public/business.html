@@ -7,7 +7,7 @@
 <meta name="description" content="오큐브 비즈니스 — AI 전환(AX)·임베디드·시스템 통합(SI) 세 가지 실행 역량으로 산업의 과제를 운영 가능한 시스템과 제품으로 완성합니다. 적용분야·대표 구축 사례.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/business.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -161,7 +161,7 @@
         <ul class="pi-bul">
           <li>설비마다 다른 태그와 코드를 표준 스키마로 정규화하고, 온톨로지로 개체·속성·관계를 정의합니다</li>
           <li>문서·도면·이미지 같은 비정형 자료는 임베딩·벡터DB로, 개체 간 관계는 지식그래프로 연결합니다</li>
-          <li>시계열·이벤트·텍스트를 하나의 의미 체계로 묶어 이후 모든 모델과 에이전트가 공유하는 지식 기반을 만듭니다</li>
+          <li>시계열·이벤트·텍스트를 하나의 의미 체계로 묶어 후속 모델과 에이전트가 함께 참조하는 지식 기반을 만듭니다</li>
         </ul>
       </article>
 
@@ -215,9 +215,9 @@
         <h3>MLOps 운영 · 지속 학습</h3>
         <p>운영 중 모델 성능 변화를 확인하고, 재학습·<wbr>배포·<wbr>롤백으로 품질 저하에 대응합니다.</p>
         <ul class="pi-bul">
-          <li>입력 데이터의 분포 변화(드리프트)와 성능 저하를 감시해 재학습 시점을 자동으로 판단합니다</li>
-          <li>모델 레지스트리로 버전과 배포 이력을 관리하고, 문제가 생기면 이전 버전으로 즉시 롤백합니다</li>
-          <li>현장 피드백과 새 데이터를 재학습 파이프라인으로 되돌려 모델 정확도를 유지·개선합니다</li>
+          <li>입력 데이터의 분포 변화와 성능 저하를 감시해 담당자가 재학습 검토 시점을 판단할 수 있게 알립니다</li>
+          <li>모델 버전과 배포 이력을 관리하고, 문제가 생기면 검증된 이전 버전으로 신속히 복구합니다</li>
+          <li>현장 피드백과 새 데이터를 재학습 과정에 반영해 모델 성능을 지속적으로 점검·개선합니다</li>
         </ul>
       </article>
 
@@ -290,7 +290,7 @@
         <h3>HMI · 미들웨어 개발</h3>
         <p>차량 화면과 센서·<wbr>서비스 통신을 함께 개발해 일관된 사용자 경험과 안정적인 데이터 흐름을 구현합니다.</p>
         <ul class="pi-bul">
-          <li>Qt·QML 기반 차량용 HMI를 프레임 드랍 없는 응답성 기준으로 개발합니다</li>
+          <li>Qt·QML 기반 차량용 HMI를 화면 끊김과 입력 지연을 최소화하는 응답성 기준으로 개발합니다</li>
           <li>SOME/IP·CAN·차량 이더넷 등 차량 네트워크 미들웨어를 개발·통합합니다</li>
           <li>내비게이션·미디어·공조 등 도메인 앱과 서비스 계층을 구현합니다</li>
         </ul>
@@ -394,7 +394,7 @@
         <p>코드 리뷰·<wbr>자동 테스트·<wbr>CI/CD로 품질을 관리하고, 스프린트마다 동작하는 결과물로 진행 상황을 확인합니다.</p>
         <ul class="pi-bul">
           <li>코딩 표준·코드 리뷰·정적분석을 CI 파이프라인에 내장합니다</li>
-          <li>단위·통합 테스트 자동화로 회귀 결함을 조기에 차단합니다</li>
+          <li>단위·통합 테스트 자동화로 회귀 결함을 조기에 발견하고 재발 위험을 낮춥니다</li>
           <li>스프린트 단위로 동작하는 결과물을 시연하며 현업과 방향을 맞춥니다</li>
         </ul>
       </article>
@@ -415,13 +415,13 @@
 
       <article class="pin-item reveal" data-i="5">
         <div class="pin-illust pin-illust--art" data-slot="si6">
-          <img src="assets/img/business/steps/si-06-cutover-operations-v3.webp" alt="무중단 시스템 이행과 롤백, 운영 모니터링 및 지속 개선 체계" loading="lazy" decoding="async" width="1600" height="900">
+          <img src="assets/img/business/steps/si-06-cutover-operations-v3.webp" alt="중단 위험을 낮춘 시스템 이행과 롤백, 운영 모니터링 및 지속 개선 체계" loading="lazy" decoding="async" width="1600" height="900">
         </div>
         <div class="pi-no">06</div>
         <h3>이행 · 운영 · SLA</h3>
         <p>이행 리허설과 롤백 계획으로 오픈 위험을 낮추고, 모니터링·<wbr>SLA·<wbr>개선 백로그로 운영 품질을 관리합니다.</p>
         <ul class="pi-bul">
-          <li>데이터 이행 리허설과 롤백 계획으로 무중단 오픈을 준비합니다</li>
+          <li>데이터 이행 리허설과 롤백 계획으로 서비스 중단 위험을 낮춰 오픈합니다</li>
           <li>모니터링·알림 체계와 장애 대응 프로세스(SLA)를 가동합니다</li>
           <li>운영 데이터 기반 개선 백로그로 시스템을 지속 고도화합니다</li>
         </ul>
@@ -459,7 +459,7 @@
       <article class="case-card"><span class="dom">공공안전 · 국책 주관</span>
         <h3>AI CCTV × 세이프뱃지 작업자 안전</h3>
         <p class="csi"><b>과제</b> 단독·<wbr>밀폐 작업의 복합 위험을 단일 센서로 판단 불가</p>
-        <p class="csi"><b>해결</b> 영상·<wbr>뱃지·<wbr>환경센서를 결합한 위험 판단과 대응 절차 자동화</p>
+        <p class="csi"><b>해결</b> 영상·<wbr>뱃지·<wbr>환경센서를 결합한 위험 판단과 담당자 알림·<wbr>승인·<wbr>현장 대응 절차 연결</p>
         <p class="csi"><b>성과</b> 오큐브 주관 국책 · 4개 현장 실증 <em>(진행 중)</em></p></article>
       <article class="case-card"><span class="dom">금융 · DGB금융그룹</span>
         <h3>통합 금융 SI · 그룹 소통앱</h3>
@@ -529,6 +529,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

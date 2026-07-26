@@ -7,7 +7,7 @@
 <meta name="description" content="오큐브 자체 산업 AI 제품군 — Cubeon·QData·QFactory·QAgent와 Qdrive·EVCP·QVision 솔루션.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/solutions.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -29,7 +29,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"외부 AI에 우리 회사 데이터가 새지 않나요?","acceptedAnswer":{"@type":"Answer","text":"상용 LLM API부터 사내 서버에서만 도는 온프레미스 sLLM까지 선택형입니다. 폐쇄망 환경도 대응합니다."}},
 {"@type":"Question","name":"AI가 틀린 답(환각)을 하면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"RAG·GraphRAG로 답변마다 근거 경로를 제시해 출처 없는 답을 억제하고 판단 근거를 사람이 확인할 수 있습니다."}},
-{"@type":"Question","name":"개발자가 아니어도 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"자연어로 조회·분석하는 에이전트(QAgent)와 관제 콘솔로 현장 담당자가 바로 사용합니다."}},
+{"@type":"Question","name":"개발자가 아니어도 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"QAgent는 별도 SQL 작성 없이 자연어로 데이터를 조회·분석할 수 있도록 구성하고, 관제 콘솔은 역할별 화면과 권한을 제공합니다."}},
 {"@type":"Question","name":"온프레미스·폐쇄망에서도 되나요?","acceptedAnswer":{"@type":"Answer","text":"클라우드·온프레미스·폐쇄망 3가지 배포를 지원합니다."}},
 {"@type":"Question","name":"전면 교체 없이 일부부터 시작할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"PoC로 임팩트 큰 과제부터 시작해 현장 시스템에 붙여 단계적으로 확장합니다."}},
 {"@type":"Question","name":"데이터가 정리돼 있지 않은데 괜찮나요?","acceptedAnswer":{"@type":"Answer","text":"이기종·비정형 데이터를 수집·표준화하는 것부터가 출발점입니다."}}
@@ -155,7 +155,7 @@
       <div class="duo-txt rv">
         <span class="pill">하나의 스택</span>
         <h3>현장 데이터를 표준화해, 모든 제품이 같은 기준으로 판단하게 합니다</h3>
-        <p><b>QData</b>가 설비·<wbr>OT·<wbr>업무 시스템 데이터를 같은 의미 체계로 정리합니다. <b>QFactory·<wbr>QAgent·<wbr>QVision</b>는 이 데이터를 활용하고, <b>Cubeon</b>은 각 서비스의 배포와 운영을 통합합니다.</p>
+        <p><b>QData</b>가 설비·<wbr>OT·<wbr>업무 시스템 데이터를 같은 의미 체계로 정리합니다. <b>QFactory·<wbr>QAgent·<wbr>QVision</b>은 이 데이터를 활용하고, <b>Cubeon</b>은 각 서비스의 배포와 운영을 통합합니다.</p>
         <a class="more" href="solution-cubeon.html">플랫폼 구조 자세히 →</a>
       </div>
       <div class="duo-media rv d1">
@@ -248,8 +248,8 @@
       </a>
       <a class="biz-card rv d1" href="solution-evcp.html">
         <span class="biz-no">EVCP</span><h3>전기차 충전 플랫폼</h3>
-        <p>OCPP 표준 기반 충전 인프라 관제·<wbr>운영 — 충전기 연동부터 과금·<wbr>로밍까지.</p>
-        <div class="chips"><span class="chip">OCPP 1.6·<wbr>2.0.1</span><span class="chip">관제·<wbr>과금</span><span class="chip">스마트 충전</span></div>
+        <p>OCPP 기반 충전기 연동·<wbr>관제·<wbr>과금 — 로밍과 스마트 충전은 사업 범위에 따라 확장합니다.</p>
+        <div class="chips"><span class="chip">OCPP 1.6J 구축</span><span class="chip">2.0.1 확장 설계</span><span class="chip">관제·<wbr>과금</span></div>
         <span class="txtlink">자세히 보기 →</span>
       </a>
       <a class="biz-card rv d2" href="solution-traffic.html">
@@ -311,7 +311,7 @@
       <div class="faq-item rv"><p class="faq-q">AI가 틀린 답(환각)을 하면요?</p>
         <p class="faq-a">RAG·<wbr>GraphRAG로 답변마다 근거 경로를 함께 제시합니다 — 출처 없는 답을 억제하고, 판단 근거를 사람이 확인할 수 있습니다.</p></div>
       <div class="faq-item rv d1"><p class="faq-q">개발자가 아니어도 쓸 수 있나요?</p>
-        <p class="faq-a">자연어로 조회·<wbr>분석하는 에이전트(QAgent)와 관제 콘솔로 현장 담당자가 바로 씁니다 — 질문하면 차트·<wbr>리포트로 답합니다.</p></div>
+        <p class="faq-a">QAgent는 별도 SQL 작성 없이 자연어로 데이터를 조회·<wbr>분석할 수 있도록 구성합니다. 관제 콘솔도 역할별 화면과 권한을 제공해 교육 부담을 줄입니다.</p></div>
       <div class="faq-item rv d1"><p class="faq-q">온프레미스·<wbr>폐쇄망에서도 되나요?</p>
         <p class="faq-a">클라우드 · 온프레미스 · 폐쇄망 3가지 배포를 지원합니다(Cubeon). 데이터 규제 환경에 맞춰 고릅니다.</p></div>
       <div class="faq-item rv d2"><p class="faq-q">전면 교체 없이 일부부터 시작할 수 있나요?</p>
@@ -376,6 +376,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

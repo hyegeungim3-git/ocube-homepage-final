@@ -7,7 +7,7 @@
 <meta name="description" content="EVCP — OCPP 표준 기반 마이크로서비스로 구현한 자체 전기차 충전 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/solution-evcp.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -102,10 +102,10 @@
     <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="solutions.html">솔루션</a><i aria-hidden="true">›</i><b>EVCP</b></nav>
     <span class="hero-badge">SOLUTION · 산업 솔루션</span>
     <h1>EVCP</h1>
-    <p>전기차 충전 플랫폼 — <em>OCPP 표준</em> 위에 회원·결제·관제. 제조사가 다른 충전기를 국제표준으로 묶어 관제하고, 로밍과 결제까지 이어지는 운영 체계를 마이크로서비스로 구성했습니다.</p>
+    <p>전기차 충전 플랫폼 — <em>OCPP 표준</em>을 지원하는 충전기를 연결하고, 회원·<wbr>결제·<wbr>관제 서비스를 마이크로서비스로 구성합니다. 로밍과 Plug &amp; Charge는 사업 요건과 충전기 호환성에 맞춰 단계적으로 확장합니다.</p>
     <ul class="hero-keys">
-      <li><span class="k">충전기 연동</span><span class="v">OCPP 1.6J · 2.0.1</span></li>
-      <li><span class="k">로밍·인증</span><span class="v">OCPI · Plug &amp; Charge</span></li>
+      <li><span class="k">충전기 연동</span><span class="v">OCPP 1.6J 구축 · 2.0.1 확장</span></li>
+      <li><span class="k">확장 설계</span><span class="v">OCPI · ISO 15118</span></li>
       <li><span class="k">운영</span><span class="v">회원 · 결제 · 관제 MSA</span></li>
     </ul>
   </div>
@@ -116,8 +116,8 @@
   <span class="eb rv">SOLUTION / EVCP</span>
   <h2 class="rv d1"><span>국제 표준 위에 세운</span><span>전기차 충전 플랫폼</span></h2>
   <div class="sol-lead rv d2">
-    <p>제조사가 다른 충전기를 OCPP 표준으로 묶어 관제합니다.</p>
-    <p>회원·결제·로밍까지 마이크로서비스로 구성했습니다.</p>
+    <p>OCPP 표준을 지원하는 충전기를 연결해 한 화면에서 관제합니다.</p>
+    <p>회원·<wbr>결제를 마이크로서비스로 구성하고, 로밍은 사업 요건에 맞춰 확장합니다.</p>
   </div>
   <figure class="sol-stage rv d3">
     <img src="assets/img/evcp.png" alt="EVCP 화면 — 프로토타입 예시" loading="lazy" width="1746" height="748">
@@ -130,14 +130,14 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Overview</span>
     <h2>충전 사업에 필요한 운영 기능을 한 플랫폼으로 제공합니다</h2>
-    <p class="sec-sub">EVCP는 제조사가 다른 충전기를 OCPP 표준으로 연결하고, 회원·<wbr>결제·<wbr>관제를 함께 운영하는 전기차 충전 플랫폼입니다. 충전 사업 구축·<wbr>운영 경험을 바탕으로 구성했습니다.</p></div>
+    <p class="sec-sub">EVCP는 OCPP 호환 충전기를 연결하고 회원·<wbr>결제·<wbr>관제를 함께 운영하는 전기차 충전 플랫폼입니다. 충전 사업 구축·<wbr>운영 경험을 바탕으로 구성했습니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <div class="feat-list">
-        <div class="feat"><b>OCPP 표준</b><span>충전기 제조사 무관 연동 — 이기종 충전 인프라 통합 관제</span></div>
-        <div class="feat"><b>지도 기반 관제</b><span>전국 충전소 실시간 상태·<wbr>이용률·<wbr>장애 모니터링</span></div>
+        <div class="feat"><b>OCPP 표준</b><span>OCPP 호환 충전기 연동 — 서로 다른 충전 인프라를 한 화면에서 관제</span></div>
+        <div class="feat"><b>지도 기반 관제</b><span>다거점 충전소의 상태·<wbr>이용률·<wbr>장애 모니터링</span></div>
         <div class="feat"><b>MSA 구조</b><span>회원·<wbr>결제·<wbr>연동·<wbr>관제 독립 확장 — 사업 규모에 따라 유연 확장</span></div>
       </div>
-      <figure><img class="shot" src="assets/img/evcp.png" alt="EVCP — 지도 기반 전국 충전소 관제 화면" loading="lazy" style="max-height:320px;object-fit:cover;object-position:top" width="1746" height="748">
+      <figure><img class="shot" src="assets/img/evcp.png" alt="EVCP — 지도 기반 다거점 충전소 관제 화면" loading="lazy" style="max-height:320px;object-fit:cover;object-position:top" width="1746" height="748">
         <figcaption class="shot-cap">EVCP — 지도 기반 충전소 실시간 관제 (자체 제품)</figcaption></figure>
     </div>
   </div>
@@ -154,7 +154,7 @@
         <div class="stack-prods"><span>회원<small>인증·<wbr>요금</small></span><span>결제·<wbr>정산<small>세션 과금</small></span><span>연동<small>OCPP 게이트웨이</small></span><span>관제<small>GIS 대시보드</small></span></div>
       </div>
       <div class="stack-arrow" aria-hidden="true">▲</div>
-      <div class="stack-layer l-data"><span class="stack-tag">충전 인프라</span><b>충전기 · 통신 모듈</b><small>OCPP 준수 충전기(제조사 무관) · 자체 Mini PCI LTE Cat M1 통신 모듈</small></div>
+      <div class="stack-layer l-data"><span class="stack-tag">충전 인프라</span><b>충전기 · 통신 모듈</b><small>OCPP 호환 충전기 · 자체 Mini PCI LTE Cat M1 통신 모듈</small></div>
     </div>
   </div>
 </section>
@@ -166,7 +166,7 @@
     <div class="dep-grid">
       <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">👤</div><h3>회원</h3><p>가입·<wbr>인증·<wbr>요금제·<wbr>이용 이력</p></div>
       <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">💳</div><h3>결제·<wbr>정산</h3><p>충전 세션 단위 과금·<wbr>정산·<wbr>PG 연동</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔌</div><h3>연동(OCPP)</h3><p>충전기 제조사 무관 게이트웨이 연동</p></div>
+      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔌</div><h3>연동(OCPP)</h3><p>충전기별 OCPP 버전과 호환성을 확인해 게이트웨이 연동</p></div>
       <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🗺️</div><h3>관제(GIS)</h3><p>지도 기반 실시간 상태·<wbr>이용률·<wbr>장애 관제</p></div>
       <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔗</div><h3>로밍(OCPI)</h3><p>사업자 간 로밍·<wbr>데이터 교환 — 지원 설계</p></div>
       <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">⚡</div><h3>스마트 에너지</h3><p>동적 부하분산(DLM)·<wbr>V2G — 지원 설계</p></div>
@@ -176,21 +176,21 @@
 <section id="standards" class="sec-anchor dark">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Standards &amp; Protocols</span>
-    <h2>충전 표준을 폭넓게 지원</h2>
-    <p class="sec-sub">개방형 충전 표준과 통신 프로토콜을 지원하도록 설계 — 특정 제조사·<wbr>사업자에 종속되지 않습니다.</p></div>
+    <h2>구축 경험과 확장 표준을 구분합니다</h2>
+    <p class="sec-sub">OCPP 1.6J 구축 경험을 기반으로 2.0.1과 로밍·<wbr>스마트 충전 표준을 사업 범위에 맞춰 확장해, 특정 제조사·<wbr>사업자 의존을 줄입니다.</p></div>
     <div class="mod-grid reveal" data-d="1">
       <div class="mod">OCPP 1.6J</div>
-      <div class="mod">OCPP 2.0.1</div>
-      <div class="mod">OCPI 로밍</div>
-      <div class="mod">ISO 15118 Plug&amp;<wbr>Charge</div>
-      <div class="mod">ISO 15118-20 (V2G)</div>
-      <div class="mod">OpenADR 2.0</div>
+      <div class="mod">OCPP 2.0.1 (확장)</div>
+      <div class="mod">OCPI 로밍 (사업별)</div>
+      <div class="mod">ISO 15118 Plug&amp;<wbr>Charge (사업별)</div>
+      <div class="mod">ISO 15118-20 V2G (참조)</div>
+      <div class="mod">OpenADR 2.0 (참조)</div>
       <div class="mod">IEC 61851</div>
       <div class="mod">LTE Cat M1 / LTE-M</div>
     </div>
-    <p class="sec-note">OCPP 1.6J·<wbr>2.0.1은 자체 플랫폼에 적용된 실사용 표준이며, OCPI·<wbr>ISO 15118·<wbr>OpenADR 등 확장 표준은 지원하도록 설계·<wbr>확장하는 방향입니다.</p>
+    <p class="sec-note">OCPP 1.6J 구축 경험을 기반으로 합니다. OCPP 2.0.1 기능과 OCPI·<wbr>ISO 15118·<wbr>OpenADR 연계는 사업 요건과 충전기 호환성에 따라 적용 범위를 정합니다.</p>
     <div class="feat-list reveal" data-d="2" style="margin-top:20px">
-      <div class="feat"><b>OCPP 실사용 기반</b><span>자체 EV 충전 플랫폼에 OCPP 1.6J·<wbr>2.0.1을 적용해 충전기 제어·<wbr>과금·<wbr>상태 관리를 운영합니다.</span></div>
+      <div class="feat"><b>OCPP 1.6J 구축 기반</b><span>자체 EV 충전 플랫폼의 충전기 제어·<wbr>과금·<wbr>상태 관리 경험을 2.0.1 확장 설계에 반영합니다.</span></div>
       <div class="feat"><b>스마트 충전 확장</b><span>전력 피크 분산·<wbr>충전 스케줄링 등 스마트 충전 프로파일을 지원하는 방향으로 설계합니다.</span></div>
       <div class="feat"><b>로밍 · PnC 로드맵</b><span>OCPI 로밍, ISO 15118 Plug&amp;<wbr>Charge는 표준 성숙도에 맞춰 단계 도입하는 접근입니다.</span></div>
     </div>
@@ -206,12 +206,12 @@
       <tbody>
         <tr><th>보안</th><td>TLS 옵션</td><td class="ok">보안 프로파일(인증서 기반)</td></tr>
         <tr><th>디바이스 관리</th><td>기본</td><td class="ok">원격 진단·<wbr>설정·<wbr>펌웨어 관리 강화</td></tr>
-        <tr><th>ISO 15118 Plug&amp;<wbr>Charge</th><td>제한적</td><td class="ok">표준 지원</td></tr>
+        <tr><th>ISO 15118 Plug&amp;<wbr>Charge</th><td>제한적</td><td class="ok">사업 요건·<wbr>충전기 호환성에 따라 적용</td></tr>
         <tr><th>스마트 차징</th><td>기본 프로파일</td><td class="ok">동적 부하분산·<wbr>시장신호 시프팅</td></tr>
         <tr><th>트랜잭션</th><td>StartTransaction 계열</td><td class="ok">TransactionEvent·<wbr>MeterValues 세분화</td></tr>
       </tbody>
     </table>
-    <p class="sec-note">표기 버전은 Open Charge Alliance 실제 릴리스이며, 2.0.1 고급 기능은 지원하도록 설계·<wbr>확장하는 방향으로 서술합니다.</p>
+    <p class="sec-note">OCPP 2.0.1 고급 기능은 사업 요건과 충전기 호환성에 따라 단계적으로 적용합니다.</p>
   </div>
 </section>
 <section id="energy" class="sec-anchor dark">
@@ -235,23 +235,23 @@
     <h2>세 가지 배포 형태</h2>
     <p class="sec-sub">사업 규모·<wbr>보안 요건에 맞춰 동일 플랫폼을 세 형태로 배포하도록 구성합니다.</p></div>
     <div class="dep-grid">
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드 CSMS</h3><p>빠른 구축·<wbr>탄력 확장 — 전국 충전소 통합 관제</p></div>
+      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드 CSMS</h3><p>빠른 구축·<wbr>탄력 확장 — 다거점 충전소 통합 관제</p></div>
       <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스 관제</h3><p>사내 서버 배치 — 데이터 내부화·<wbr>보안 요건 대응</p></div>
       <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망 · 엣지</h3><p>망분리 환경 대응 — 현장 엣지에서 통신·<wbr>과금 처리</p></div>
       <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🔀</div><h3>하이브리드</h3><p>클라우드 통합 관제 + 현장 엣지 과금 병행 구성</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔁</div><h3>이중화 · HA</h3><p>관제 서버 이중화 — 무중단 운영 지향</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🧩</div><h3>개방 API</h3><p>OCPP · OCPI 표준 API로 외부 시스템 연동</p></div>
+      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔁</div><h3>이중화 · HA</h3><p>관제 서버 이중화로 장애 시 서비스 영향을 줄이는 구성</p></div>
+      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🧩</div><h3>개방 API</h3><p>OCPP 연동 API를 제공하고, OCPI 연계는 사업 요건에 맞춰 확장</p></div>
     </div>
   </div>
 </section>
 <section id="proof" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Reference</span>
-    <h2>구축·<wbr>운영으로 검증했습니다</h2></div>
+    <h2>구축 경험을 제품 자산으로 전환했습니다</h2></div>
     <div class="hero-stats reveal">
-      <div class="stat"><b>OCPI</b><span>충전 사업자 간 로밍 연동</span></div>
-      <div class="stat"><b>Plug&amp;<wbr>Charge</b><span>스마트 충전 · 부하 분산 제어</span></div>
-      <div class="stat"><b>OCPP 표준</b><span>1.6J · 2.0.1 기반 자체 플랫폼</span></div>
+      <div class="stat"><b>OCPP 1.6J</b><span>충전기 연동·<wbr>관제 운영 경험</span></div>
+      <div class="stat"><b>OCPP 2.0.1</b><span>사업 요건별 기능 적용</span></div>
+      <div class="stat"><b>확장 표준</b><span>OCPI · ISO 15118 연계 설계</span></div>
       <div class="stat"><b>LTE Cat M1</b><span>자체 통신 모듈(2025)</span></div>
     </div>
     <div class="case-grid two">
@@ -319,6 +319,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

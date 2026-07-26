@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AX · AI 전환 — 오큐브</title>
-<meta name="description" content="오큐브 AX — 산업 데이터에서 AI 적용 과제를 발굴하고, 모델 검증·시스템 연동·운영까지 수행해 판단과 실행을 자동화합니다.">
+<meta name="description" content="오큐브 AX — 산업 데이터에서 AI 적용 과제를 발굴하고, 보고를 자동화하며 AI 판단을 담당자 승인 후 현장 조치로 연결합니다.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/business-ax.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="오큐브(주)">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="AX · AI 전환 — 오큐브">
-<meta property="og:description" content="오큐브 AX — 산업 데이터에서 AI 적용 과제를 발굴하고, 모델 검증·시스템 연동·운영까지 수행해 판단과 실행을 자동화합니다.">
+<meta property="og:description" content="오큐브 AX — 산업 데이터에서 AI 적용 과제를 발굴하고, 보고를 자동화하며 AI 판단을 담당자 승인 후 현장 조치로 연결합니다.">
 <meta property="og:url" content="https://www.ocube.co.kr/business-ax.html">
 <meta property="og:image" content="/og-codex.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AX · AI 전환 — 오큐브">
-<meta name="twitter:description" content="오큐브 AX — 산업 데이터에서 AI 적용 과제를 발굴하고, 모델 검증·시스템 연동·운영까지 수행해 판단과 실행을 자동화합니다.">
+<meta name="twitter:description" content="오큐브 AX — 산업 데이터에서 AI 적용 과제를 발굴하고, 보고를 자동화하며 AI 판단을 담당자 승인 후 현장 조치로 연결합니다.">
 <meta name="twitter:image" content="/og-codex.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"비즈니스 · AX","item":"https://www.ocube.co.kr/business-ax.html"}]}</script>
 </head>
@@ -181,7 +181,7 @@
         <ul class="pi-bul">
           <li>설비마다 다른 태그와 코드를 표준 스키마로 정규화하고, 온톨로지로 개체·속성·관계를 정의합니다</li>
           <li>문서·도면·이미지 같은 비정형 자료는 임베딩·벡터DB로, 개체 간 관계는 지식그래프로 연결합니다</li>
-          <li>시계열·이벤트·텍스트를 하나의 의미 체계로 묶어 이후 모든 모델과 에이전트가 공유하는 지식 기반을 만듭니다</li>
+          <li>시계열·이벤트·텍스트를 하나의 의미 체계로 묶어 후속 모델과 에이전트가 함께 참조하는 지식 기반을 만듭니다</li>
         </ul>
       </article>
 
@@ -235,9 +235,9 @@
         <h3>MLOps 운영 · 지속 학습</h3>
         <p>운영 중 모델 성능 변화를 확인하고, 재학습·<wbr>배포·<wbr>롤백으로 품질 저하에 대응합니다.</p>
         <ul class="pi-bul">
-          <li>입력 데이터의 분포 변화(드리프트)와 성능 저하를 감시해 재학습 시점을 자동으로 판단합니다</li>
-          <li>모델 레지스트리로 버전과 배포 이력을 관리하고, 문제가 생기면 이전 버전으로 즉시 롤백합니다</li>
-          <li>현장 피드백과 새 데이터를 재학습 파이프라인으로 되돌려 모델 정확도를 유지·개선합니다</li>
+          <li>입력 데이터의 분포 변화와 성능 저하를 감시해 담당자가 재학습 검토 시점을 판단할 수 있게 알립니다</li>
+          <li>모델 버전과 배포 이력을 관리하고, 문제가 생기면 검증된 이전 버전으로 신속히 복구합니다</li>
+          <li>현장 피드백과 새 데이터를 재학습 과정에 반영해 모델 성능을 지속적으로 점검·개선합니다</li>
         </ul>
       </article>
 
@@ -360,6 +360,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

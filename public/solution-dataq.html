@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QData 산업 데이터 플랫폼 — 오큐브</title>
-<meta name="description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합하는 데이터 플랫폼. 모든 AI 판단의 출발점.">
+<meta name="description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합해 산업 AI가 신뢰할 데이터를 만드는 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/solution-dataq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="오큐브(주)">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="QData 산업 데이터 플랫폼 — 오큐브">
-<meta property="og:description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합하는 데이터 플랫폼. 모든 AI 판단의 출발점.">
+<meta property="og:description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합해 산업 AI가 신뢰할 데이터를 만드는 플랫폼.">
 <meta property="og:url" content="https://www.ocube.co.kr/solution-dataq.html">
 <meta property="og:image" content="/og-codex.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="QData 산업 데이터 플랫폼 — 오큐브">
-<meta name="twitter:description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합하는 데이터 플랫폼. 모든 AI 판단의 출발점.">
+<meta name="twitter:description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합해 산업 AI가 신뢰할 데이터를 만드는 플랫폼.">
 <meta name="twitter:image" content="/og-codex.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.ocube.co.kr/"},{"@type":"ListItem","position":2,"name":"솔루션","item":"https://www.ocube.co.kr/solutions.html"},{"@type":"ListItem","position":3,"name":"QData","item":"https://www.ocube.co.kr/solution-dataq.html"}]}</script>
 </head>
@@ -124,7 +124,7 @@
   </figure>
 </section>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#flow">동작 원리</a><a href="#connectors">커넥터</a><a href="#arch">아키텍처</a><a href="#semantic">시맨틱</a><a href="#spec">스펙</a><a href="#standards">표준·<wbr>거버넌스</a><a href="#deploy">배포</a><a href="#proof">레퍼런스</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#flow">동작 원리</a><a href="#connectors">연결 방식</a><a href="#arch">구조</a><a href="#semantic">의미 체계</a><a href="#spec">기능 범위</a><a href="#standards">표준·<wbr>관리</a><a href="#deploy">배포</a><a href="#proof">적용 사례</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -133,7 +133,7 @@
     <p class="sec-sub">QData는 부서·<wbr>설비마다 다른 데이터를 수집해 형식과 의미를 통일하는 산업 데이터 플랫폼입니다. 정리된 데이터는 관제·<wbr>분석·<wbr>지식 검색에 활용됩니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <div class="feat-list">
-        <div class="feat"><b>Connect</b><span>PLC·<wbr>센서·<wbr>MES·<wbr>ERP 등 이기종 소스 수집 — 프로토콜/포맷 차이 흡수</span></div>
+        <div class="feat"><b>Connect</b><span>PLC·<wbr>센서·<wbr>MES·<wbr>ERP를 연결하고, 서로 다른 프로토콜과 데이터 형식을 공통 입력으로 변환</span></div>
         <div class="feat"><b>Standardize</b><span>공통 스키마·<wbr>온톨로지로 표준화 — 설비마다 다른 데이터를 하나의 언어로</span></div>
         <div class="feat"><b>Serve</b><span>지도·<wbr>대시보드 관제 + 실시간 질의 — QFactory·<wbr>QAgent가 바로 소비</span></div>
       </div>
@@ -150,8 +150,8 @@
       <p class="lead">현장 소스를 연결하고 품질을 확인한 뒤, 공통 의미로 정리해 분석과 에이전트가 사용할 수 있게 제공합니다.</p></div>
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">Connect</span>
-        <h3>프리빌트 커넥터</h3>
-        <p>OPC-UA·Modbus·MQTT 같은 산업 프로토콜부터 MES·ERP 기간계까지, 검증된 커넥터로 수집을 바로 시작합니다. 새 설비가 늘어도 커넥터만 더하면 됩니다.</p>
+        <h3>산업·<wbr>업무 시스템 커넥터</h3>
+        <p>OPC-UA·<wbr>Modbus·<wbr>MQTT 같은 산업 프로토콜부터 MES·<wbr>ERP 업무 시스템까지 준비된 커넥터로 연결합니다. 새 설비는 커넥터를 추가해 확장합니다.</p>
         <a class="duo-cta" href="#connectors">커넥터 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
@@ -162,8 +162,8 @@
     <div class="duo rev">
       <div class="duo-txt rv"><span class="pill">Semantic</span>
         <h3>의미 기반 지식화</h3>
-        <p>설비마다 다른 태그와 코드를 온톨로지로 정규화하고, 문서·이미지 같은 비정형 자료는 지식그래프로 연결합니다. AI가 데이터의 의미를 이해하는 기반입니다.</p>
-        <a class="duo-cta" href="#semantic">시맨틱 모델 자세히 <i aria-hidden="true">→</i></a>
+        <p>설비마다 다른 태그와 코드를 온톨로지로 정규화합니다. 문서·<wbr>이미지는 의미 단위로 구조화하고, 추출한 개체와 관계를 지식그래프로 연결해 AI가 데이터의 맥락을 찾게 합니다.</p>
+        <a class="duo-cta" href="#semantic">의미 모델 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/dataq-knowledge.jpg" alt="지식 관리 화면" loading="lazy" width="1600" height="1005">
@@ -172,9 +172,9 @@
     </div>
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">Serving</span>
-        <h3>벡터 검색과 서빙</h3>
-        <p>임베딩·벡터DB로 비정형 지식을 검색 가능하게 만들고, 정제된 데이터를 API로 서빙합니다. 상위의 판단·에이전트 제품이 바로 소비할 수 있는 형태입니다.</p>
-        <a class="duo-cta" href="#spec">수집·서빙 스펙 자세히 <i aria-hidden="true">→</i></a>
+        <h3>지식 검색과 데이터 제공</h3>
+        <p>문서·<wbr>이미지를 의미 기반으로 검색하고, 정리된 데이터는 API로 제공해 QFactory와 QAgent가 바로 활용하게 합니다.</p>
+        <a class="duo-cta" href="#spec">수집·제공 범위 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/agentq-rag.jpg" alt="지식 검색(RAG) 화면" loading="lazy" width="1600" height="1005">
@@ -187,21 +187,21 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">How it works</span>
     <h2>수집 → 표준화 → 관제·<wbr>질의</h2>
-    <p class="sec-sub">데이터가 흐르는 세 단계 — 각 단계가 다음 AI의 신뢰도를 결정합니다.</p></div>
+    <p class="sec-sub">데이터가 흐르는 네 단계 — 각 단계의 품질이 다음 AI 결과의 신뢰도를 좌우합니다.</p></div>
     <div class="tl">
       <div class="tl-card reveal" data-d="1"><span class="yr">01 · Ingest</span><h3>수집 (Raw)</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>REST 어댑터로 OT/IT 이기종 소스를 실시간 스트림·<wbr>배치로 원본 그대로 적재.</p></div>
       <div class="tl-card reveal" data-d="2"><span class="yr">02 · Refine</span><h3>정합·<wbr>정제 (Clean)</h3><p>중복 제거·<wbr>타입 정합·<wbr>결측 보정·<wbr>이상값 필터 — 품질 규칙으로 신뢰 가능한 정제 데이터로.</p></div>
       <div class="tl-card reveal" data-d="3"><span class="yr">03 · Standardize</span><h3>표준화 (Semantic)</h3><p>공통 스키마·<wbr>온톨로지에 매핑 — 설비마다 다른 데이터를 하나의 의미 모델로 통합.</p></div>
       <div class="tl-card cur reveal" data-d="4"><span class="yr">04 · Serve</span><h3>활용</h3><p>지도·<wbr>대시보드와 실시간 질의 API로 QFactory·<wbr>QAgent가 정리된 데이터를 바로 활용합니다.</p></div>
     </div>
-    <p class="sec-note">상용 레이크하우스의 메달리온 패턴(원시→정제→표준)처럼 각 계층의 품질이 다운스트림 AI의 신뢰도를 결정합니다. QData는 이 4계층 정제 흐름을 파이프라인으로 구성하도록 설계됩니다.</p>
+    <p class="sec-note">원본 데이터를 정제하고 공통 형식으로 표준화한 뒤 활용 시스템에 제공합니다. 앞 단계의 데이터 품질이 이후 분석과 AI 결과의 신뢰도를 좌우합니다.</p>
   </div>
 </section>
 <section id="connectors" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Connectors</span>
-    <h2>산업 프로토콜과 기간계 시스템을 프리빌트 커넥터로 흡수</h2>
-    <p class="sec-sub">OT와 IT의 프로토콜·<wbr>포맷 차이를 어댑터 계층에서 흡수 — 신규 소스는 커넥터 추가로 확장합니다.</p></div>
+    <h2>산업 설비와 업무 시스템을 준비된 커넥터로 연결합니다</h2>
+    <p class="sec-sub">서로 다른 프로토콜과 데이터 형식은 연결 모듈에서 맞추고, 새 설비는 커넥터를 추가해 확장합니다.</p></div>
     <div class="reveal" data-d="1" style="margin-top:10px">
       <span class="pill light">산업 프로토콜</span>
       <div class="mod-grid" role="list" aria-label="산업 프로토콜 커넥터" style="margin-top:10px">
@@ -253,7 +253,7 @@
     <div class="pin-left">
       <span class="pin-num">Semantic Layer</span>
       <h2>설비마다 다른 데이터를 하나의 의미 모델로</h2>
-      <p>단순 스키마 정합을 넘어, 현실의 설비·<wbr>공정·<wbr>자산을 객체·<wbr>속성·<wbr>링크로 모델링하는 온톨로지 기반 표준화를 지향합니다. 온톨로지·<wbr>GraphRAG 구축 이력을 기반으로, 상용 데이터 플랫폼 수준의 의미 표준화·<wbr>거버넌스를 지원하도록 설계합니다.</p>
+      <p>설비·<wbr>공정·<wbr>자산을 객체·<wbr>속성·<wbr>관계로 정의해, 서로 다른 시스템의 데이터가 같은 의미로 해석되게 합니다. 온톨로지와 지식그래프 구축 경험을 바탕으로 데이터의 의미와 관계를 일관되게 관리하도록 설계합니다.</p>
       <div class="pin-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="pin-right">
@@ -320,11 +320,11 @@
             <ellipse cx="55" cy="32" rx="6" ry="8.5" stroke="#0075de" stroke-width="2.4" fill="rgba(0,117,222,.10)"/>
             <path d="M17.5 19.5C22 22 22 28 26 30M17.5 44.5C22 42 22 36 26 34M42 32h7" stroke="#0075de" stroke-width="2.2" stroke-linecap="round"/>
            </svg></div>
-        <h3>수집부터 서빙까지 끊기지 않는 파이프라인</h3>
-        <p>수집·<wbr>정제·<wbr>표준화·<wbr>저장·<wbr>서빙을 하나의 흐름으로 설계해, 단계마다 형식을 다시 맞추는 낭비 없이 데이터가 이동하도록 구성합니다.</p>
+        <h3>수집부터 활용까지 이어지는 데이터 흐름</h3>
+        <p>수집·<wbr>정제·<wbr>표준화·<wbr>저장·<wbr>제공을 하나의 흐름으로 설계해, 단계마다 형식을 다시 맞추는 낭비를 줄입니다.</p>
         <ul class="kt-chk">
           <li>설비 제어기·<wbr>계측기부터 운영 시스템까지 표준 커넥터로 연결</li>
-          <li>통신 단절 구간은 엣지 버퍼링으로 원천 데이터 무손실 확보</li>
+          <li>통신 단절 구간은 엣지 버퍼링으로 데이터 유실을 줄입니다</li>
         </ul>
       </article>
       <article class="kt-card">
@@ -378,15 +378,15 @@
 <section id="spec" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Spec</span>
-    <h2>무엇을 수집하고 어떻게 서빙하는가</h2></div>
+    <h2>무엇을 수집하고 어떻게 제공하는가</h2></div>
     <table class="cmp reveal" data-d="2">
       <thead><tr><th>항목</th><th class="ok">QData 산업 데이터 플랫폼</th></tr></thead>
       <tbody>
         <tr><th>입력 소스</th><td class="ok">PLC · 센서 · SCADA · MES · ERP · Historian · 시계열 DB · 문서</td></tr>
         <tr><th>수집 프로토콜</th><td>OPC-UA · MQTT · Modbus · REST/API (실시간 스트림 + 배치)</td></tr>
         <tr><th>표준화 방식</th><td>공통 스키마 매핑 · 온톨로지 기반 의미 표준화 · 품질검증 · 결측 보정</td></tr>
-        <tr><th>데이터 거버넌스</th><td>데이터 카탈로그 · 리니지(계보) 추적 · 품질 규칙 · 접근제어 (지향)</td></tr>
-        <tr><th>서빙 방식</th><td class="ok">지도(GIS)·<wbr>대시보드 관제 + 실시간 질의 API</td></tr>
+        <tr><th>데이터 관리</th><td>데이터 카탈로그 · 계보 추적 · 품질 규칙 · 접근제어 (프로젝트별 구성)</td></tr>
+        <tr><th>제공 방식</th><td class="ok">지도(GIS)·<wbr>대시보드 관제 + 실시간 질의 API</td></tr>
         <tr><th>배포</th><td>클라우드 · 온프레미스 · 폐쇄망(에어갭)</td></tr>
       </tbody>
     </table>
@@ -400,7 +400,7 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Standards & Governance</span>
     <h2>업계 표준 위에서 데이터를 다룹니다</h2>
-    <p class="sec-sub">산업 데이터 상호운용 표준과 데이터 거버넌스 관행을 준수하도록 설계합니다.</p></div>
+    <p class="sec-sub">산업 데이터 상호운용 표준과 데이터 관리 관행을 참조해 설계합니다.</p></div>
     <div class="reveal" data-d="1" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:9px">
       <span class="pill light">OPC-UA</span>
       <span class="pill light">ISA-95</span>
@@ -414,7 +414,7 @@
       <div class="feat"><b>데이터 거버넌스</b><span>카탈로그·<wbr>리니지·<wbr>품질 규칙으로 '어디서 온 데이터를, 얼마나 믿을 수 있는지'를 추적합니다.</span></div>
       <div class="feat"><b>세분화 접근제어</b><span>데이터·<wbr>질의 단위 권한과 감사 로그를 두어 규제 산업의 데이터 주권을 지원합니다.</span></div>
       <div class="feat"><b>산업 상호운용</b><span>OPC-UA·<wbr>ISA-95 등 국제 표준 모델에 맞춰 설비 데이터의 의미를 정합합니다.</span></div>
-      <div class="feat"><b>품질·<wbr>검증 규칙</b><span>결측·<wbr>이상·<wbr>중복 검증을 표준 규칙으로 자동화해 다운스트림 AI 신뢰도를 확보합니다.</span></div>
+      <div class="feat"><b>품질·<wbr>검증 규칙</b><span>결측·<wbr>이상·<wbr>중복 검증을 공통 규칙으로 자동화해 이후 분석과 AI 결과의 신뢰도를 높입니다.</span></div>
       <div class="feat"><b>개방형 카탈로그</b><span>데이터 자산을 검색·<wbr>발견 가능하게 목록화해 조직 전반의 재사용을 돕습니다.</span></div>
     </div>
   </div>
@@ -426,10 +426,10 @@
     <p class="sec-sub">데이터 반출 정책과 보안 등급에 따라 배포 형태를 선택할 수 있도록 설계합니다.</p></div>
     <div class="dep-grid reveal" data-d="1">
       <div class="dep-card"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드</h3><p>빠른 구축과 확장. 표준화 파이프라인을 관리형으로 운영하며 상용 데이터 서비스와 연계.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스</h3><p>사내 서버에 데이터를 내부화. 민감 공정 데이터를 외부로 내보내지 않고 표준화·<wbr>서빙.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망 (에어갭)</h3><p>망분리 환경 대응. 엣지 수집과 온프레미스 표준화로 완전 격리된 데이터 기반 구성.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스</h3><p>사내 서버에서 민감 공정 데이터를 외부로 내보내지 않고 표준화해 내부 시스템에 제공합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망 (에어갭)</h3><p>망분리 환경에서 데이터를 외부로 반출하지 않고 현장 내부에서 수집·<wbr>표준화합니다.</p></div>
     </div>
-    <p class="sec-note">클라우드↔온프레미스 배포 선택으로 데이터 주권·<wbr>보안 요건을 충족하도록 지원합니다.</p>
+    <p class="sec-note">데이터 반출 정책과 보안 등급에 맞는 클라우드·<wbr>온프레미스·<wbr>폐쇄망 배포 구성을 지원합니다.</p>
     <div class="feat-list reveal" data-d="2" style="margin-top:20px">
       <div class="feat"><b>데이터 반출 정책</b><span>공정 데이터의 외부 반출 가능 여부에 따라 클라우드↔온프레미스를 선택</span></div>
       <div class="feat"><b>보안 등급 · 망분리</b><span>규제·<wbr>국방·<wbr>에너지 등 폐쇄망 요건은 에어갭 엣지 수집으로 대응</span></div>
@@ -452,7 +452,7 @@
       <article class="case-card reveal" data-d="1"><span class="dom">제지 · 한솔제지</span>
         <h3>공정 AI-OT 데이터 허브</h3><p class="csi">분산된 공정 데이터를 통합해 예지보전·<wbr>에너지 최적화의 기반 구축</p></article>
       <article class="case-card reveal" data-d="2"><span class="dom">에너지 · SK에너지</span>
-        <h3>충전 인프라 데이터 관제</h3><p class="csi">전국 충전 인프라의 상태·<wbr>이용 데이터를 표준화·<wbr>관제</p></article>
+        <h3>충전 인프라 데이터 관제</h3><p class="csi">충전 인프라의 상태·<wbr>이용 데이터를 표준화·<wbr>관제</p></article>
       <article class="case-card reveal" data-d="3"><span class="dom">공공안전 · 세이프뱃지</span>
         <h3>중앙 통합관제</h3><p class="csi">영상·<wbr>뱃지·<wbr>환경 센서 융합 데이터를 중앙에서 통합 관제</p></article>
     </div>
@@ -526,6 +526,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <meta name="description" content="Qdrive — 차량 데이터로 주행·에너지·탄소를 잇는 자체 모빌리티 서비스 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-6">
+<link rel="stylesheet" href="assets/site2.css?v=codex-7">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://www.ocube.co.kr/solution-qdrive.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -171,9 +171,9 @@
         <div class="stack-prods"><span>주행 최적화<small>주행·<wbr>경로 분석</small></span><span>충·<wbr>방전 스케줄링<small>EVCP 연계</small></span><span>탄소 산정<small>GHG 저감 로직</small></span></div>
       </div>
       <div class="stack-arrow">▲</div>
-      <div class="stack-layer"><span class="stack-tag">STANDARDIZATION</span><b>데이터 표준화층 · QData 연계</b><small>디지털 클러스터·<wbr>AVN·<wbr>커넥티드 차량 데이터 수집 → 공통 스키마·<wbr>시맨틱 정규화</small></div>
+      <div class="stack-layer"><span class="stack-tag">STANDARDIZATION</span><b>데이터 표준화층 · QData 연계</b><small>디지털 클러스터·<wbr>AVN·<wbr>커넥티드 차량 데이터 수집 → 공통 스키마·<wbr>의미 기준으로 정규화</small></div>
     </div>
-    <p class="sec-note">이기종 차량·<wbr>에너지 데이터를 시맨틱 표준화(QData)하고, EVCP(OCPP)·<wbr>Cubeon과 연계해 모빌리티 데이터를 서비스로 전환하도록 설계합니다.</p>
+    <p class="sec-note">서로 다른 차량·<wbr>에너지 데이터를 QData의 공통 의미 기준으로 표준화하고, EVCP(OCPP)·<wbr>Cubeon과 연결해 서비스에 활용하도록 설계합니다.</p>
   </div>
 </section>
 <section id="flow" class="sec-anchor">
@@ -207,7 +207,7 @@
       <div class="mod">GHG Protocol / ISO 14064<small>온실가스 산정</small></div>
       <div class="mod">TLS 1.2 / 1.3<small>데이터 전송 보안</small></div>
     </div>
-    <p class="sec-note">OCPP·<wbr>LTE Cat M1은 오큐브 실보유(EVCP·<wbr>자체 Mini PCI LTE Cat M1 모듈)이며, ISO 15118·<wbr>GHG Protocol 등은 도메인 표준에 맞춰 대응하도록 구성합니다.</p>
+    <p class="sec-note">OCPP는 EVCP에 적용했고, LTE Cat M1은 자체 통신 모듈 개발 경험을 보유합니다. ISO 15118과 GHG Protocol은 사업 요건에 따라 적용 범위를 정합니다.</p>
     <figure class="shot-fig reveal" data-d="2">
       <img class="shot fit" src="assets/img/proto/qdrive-verify.jpg" alt="성과 검증 예시 화면 — 코칭 효과 반사실 비교·운전 그룹별 A/B 효과·기준선 대비·OBD·DTG 교차검증" loading="lazy" width="1600" height="1005">
       <figcaption class="shot-cap">성과 검증 — 반사실 비교·<wbr>OBD·<wbr>DTG 교차검증 · 실증 데모 예시 화면</figcaption>
@@ -222,8 +222,8 @@
       <thead><tr><th>서비스 축</th><th class="ok">입력 데이터</th><th>표준·<wbr>프로토콜</th><th>산출물</th></tr></thead>
       <tbody>
         <tr><th>차량 데이터</th><td class="ok">디지털 클러스터·<wbr>AVN·<wbr>커넥티드 텔레메트리</td><td>MQTT · LTE Cat M1</td><td>표준화 주행·<wbr>상태 데이터셋</td></tr>
-        <tr><th>에너지·<wbr>충전</th><td class="ok">충전 세션·<wbr>전력·<wbr>SoC</td><td>OCPP 1.6/2.0.1 · ISO 15118</td><td>충·<wbr>방전 예약·<wbr>최적화 스케줄</td></tr>
-        <tr><th>탄소중립</th><td class="ok">주행·<wbr>에너지 소비 데이터</td><td>GHG Protocol · ISO 14064</td><td>탄소 저감량 산정·<wbr>리포트</td></tr>
+        <tr><th>에너지·<wbr>충전</th><td class="ok">충전 세션·<wbr>전력·<wbr>SoC</td><td>OCPP 연계 · ISO 15118 참조(사업별 적용)</td><td>충·<wbr>방전 예약·<wbr>운영 스케줄</td></tr>
+        <tr><th>탄소중립</th><td class="ok">주행·<wbr>에너지 소비 데이터</td><td>GHG Protocol · ISO 14064 참조(사업별 적용)</td><td>산정 기준에 따른 탄소 저감량 리포트</td></tr>
       </tbody>
     </table>
     <figure class="shot-fig reveal" data-d="2">
@@ -236,7 +236,7 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Ecosystem</span>
     <h2>플랫폼 생태계 위에서 동작</h2>
-    <p class="sec-sub">Qdrive는 오큐브 자체 플랫폼·<wbr>솔루션과 연계해 재구축 없이 확장됩니다.</p></div>
+    <p class="sec-sub">Qdrive는 기존 오큐브 플랫폼·<wbr>솔루션 구성을 활용해 필요한 서비스부터 단계적으로 확장할 수 있습니다.</p></div>
     <div class="feat-list reveal" data-d="1" style="max-width:820px">
       <div class="feat"><b>QData</b><span>차량·<wbr>에너지 데이터를 공통 스키마로 표준화하는 입구 계층</span></div>
       <div class="feat"><b>EVCP</b><span>OCPP 기반 충전 인프라 연계 — 충·<wbr>방전 예약·<wbr>관제</span></div>
@@ -264,7 +264,7 @@
         <p class="csi">위험운전 판정·<wbr>탄소배출 산정 로직을 자체 개발해 차종·<wbr>운행 조건에 맞게 조정</p></article>
       <article class="case-card reveal" data-d="4"><span class="dom">표준 연계</span>
         <h3>DTG · OBD 표준 수집</h3>
-        <p class="csi">운행기록·<wbr>차량 진단 표준 데이터를 그대로 수집해 별도 장치 없이 분석에 투입</p></article>
+        <p class="csi">기존 DTG·<wbr>OBD 장치의 표준 데이터를 수집해 운행·<wbr>차량 상태 분석에 활용</p></article>
     </div>
   </div>
 </section>
@@ -320,6 +320,6 @@
   </div>
 </section>
 
-<script src="assets/site2.js?v=codex-1"></script>
+<script src="assets/site2.js?v=codex-2"></script>
 </body>
 </html>

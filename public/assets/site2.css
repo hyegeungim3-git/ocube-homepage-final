@@ -72,7 +72,7 @@ h2{font-size:var(--fz-h2);margin-top:14px}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none}}
 
 /* ---- GNB : 히어로 위 투명 오버레이 → 스크롤 시 라이트 솔리드 (i-bricks 패턴) ---- */
-.gnb{position:fixed;top:0;left:0;right:0;z-index:120;background:transparent;border-bottom:1px solid transparent;transition:background .28s,border-color .28s}
+.gnb{position:fixed;top:0;left:0;right:0;height:72px;z-index:120;background:transparent;border-bottom:1px solid transparent;transition:background .28s,border-color .28s}
 .gnb.scrolled,body.m-lock .gnb{background:rgba(255,255,255,.93);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px);border-bottom:1px solid var(--line-soft)}
 .gnb .nav{display:flex;align-items:center;gap:20px;height:72px;position:relative}
 .logo img{height:25px;width:auto;filter:brightness(0) invert(1);transition:filter .28s}   /* 투명 상태: 흰 로고 */
@@ -89,7 +89,7 @@ h2{font-size:var(--fz-h2);margin-top:14px}
 /* 히어로 없는 페이지: 항상 솔리드 + 본문 오프셋 */
 body.no-hero{padding-top:72px}
 .dropdown{position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh-lg);padding:12px;display:flex;gap:8px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .18s,transform .18s,visibility .18s}
-.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
+html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
 .dd-group{display:flex;flex-direction:column;min-width:230px}
 .dd-h{font-size:12px;font-weight:800;letter-spacing:.13em;color:var(--fg-3);padding:8px 12px 6px}
 .dropdown a{padding:9px 12px;border-radius:10px;font-weight:600;font-size:14.5px;color:var(--fg);display:flex;flex-direction:column;transition:background .14s,color .14s}
@@ -893,6 +893,10 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
   .m-panel.open{display:block}
   .m-panel a{display:block;padding:14px 4px;font-size:17px;font-weight:600;border-bottom:1px solid var(--line-soft)}
   body.m-lock{overflow:hidden}
+  html:not(.js) .gnb{background:#fff;border-bottom:1px solid var(--line-soft)}
+  html:not(.js) .gnb .logo img{filter:none}
+  html:not(.js) .m-toggle{display:none}
+  html:not(.js) .m-panel{display:grid;position:relative;inset:auto;margin-top:72px;padding:10px 20px;background:#fff}
 }
 @media(max-width:560px){.stats{grid-template-columns:1fr 1fr}.f-grid{grid-template-columns:1fr}}
 
@@ -1097,13 +1101,13 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .nav-menu{transition:gap .38s cubic-bezier(.22,.61,.36,1)}
 .gnb.gnb-mega .nav-menu{gap:clamp(10px,3.4vw,62px)}
 /* 헤더는 흰 솔리드로 (히어로 위 투명 상태에서도) */
-.gnb.gnb-mega{background:rgba(255,255,255,.98);border-bottom:1px solid var(--border)}
+.gnb.gnb-mega{height:calc(72px + var(--mega-h,0px));background:rgba(255,255,255,.98);border-bottom:1px solid var(--border)}
 .gnb.gnb-mega .logo img{filter:none}
 .gnb.gnb-mega .nav-item>a{color:var(--fg)}
 .gnb.gnb-mega .nav-item>a:hover{background:var(--soft)}
 .gnb.gnb-mega .badge-caret{color:var(--fg-3)}
 /* 풀와이드 패널 배경 — max-height로 펼침 */
-.gnb::before{content:"";position:absolute;left:0;right:0;top:100%;height:var(--mega-h,0px);max-height:0;
+.gnb::before{content:"";position:absolute;left:0;right:0;top:72px;height:var(--mega-h,0px);max-height:0;
   background:rgba(255,255,255,.98);border-bottom:1px solid var(--border);box-shadow:0 22px 40px rgba(14,22,38,.08);
   transition:max-height .42s cubic-bezier(.22,.61,.36,1);pointer-events:none}
 .gnb.gnb-mega::before{max-height:var(--mega-h,340px);pointer-events:auto}
