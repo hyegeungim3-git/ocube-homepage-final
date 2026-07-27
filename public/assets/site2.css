@@ -1038,6 +1038,11 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 
 /* ══ 솔루션 시연 스테이지 — 대형 헤드라인 + 디바이스 프레임 (ocube-ai-renewal 벤치마크) ══ */
 /* 스테이지는 img / video 어느 쪽이든 동일하게 렌더 → 추후 영상 교체 시 CSS 수정 불필요 */
+/* 솔루션 상단: HERO 고정 → 소개 영역이 이어서 덮으며 올라옴 */
+.sol-open{position:relative}
+.sol-open>.sol-hero{position:sticky;top:0;z-index:0}
+.sol-open>.sol-intro{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.sol-open>.sol-hero{position:relative}}
 .sol-intro{background:var(--soft);text-align:center;padding:clamp(78px,8vw,96px) clamp(20px,5vw,40px) clamp(96px,8vw,140px)}
 .sol-intro .eb{display:block;margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--accent-text)}
 .sol-intro h2{max-width:980px;margin:18px auto 24px;font-size:clamp(34px,4vw,60px);font-weight:800;
