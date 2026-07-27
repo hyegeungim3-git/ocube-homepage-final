@@ -795,10 +795,15 @@
     var copy = document.querySelector(".sol-copy"), body = document.querySelector(".sol-body");
     if (!copy || !body) return;
     var ticking = false;
+    var lessMotion = matchMedia("(prefers-reduced-motion: reduce)");
     function upd() {
       ticking = false;
       var c = copy.getBoundingClientRect(), b = body.getBoundingClientRect();
-      copy.classList.toggle("on-light", b.top < c.top + c.height / 2);
+      var start = c.height, end = c.height / 2;          // 본문 상단이 화면 아래 → 문구 중앙까지
+      var p = start === end ? 1 : (start - b.top) / (start - end);
+      p = p < 0 ? 0 : p > 1 ? 1 : p;
+      copy.style.setProperty("--p", lessMotion.matches ? 1 : p.toFixed(3));
+      copy.classList.toggle("on-light", p >= 1);
     }
     addEventListener("scroll", function () {
       if (!ticking) { ticking = true; requestAnimationFrame(upd); }
