@@ -28,6 +28,9 @@ test("ships the complete reviewed static site", async () => {
     assert.equal((html.match(/href="business-si\.html">SI/g) ?? []).length, 2, `${page}: SI navigation labels`);
     assert.match(html, /href="references\.html">Use Cases<small>/, `${page}: Use Cases mega-menu label`);
     assert.doesNotMatch(html, /href="business-si\.html">Enterprise|href="references\.html">Build Cases/, `${page}: no superseded navigation labels`);
+    assert.match(html, /href="business-license\.html">글로벌 파트너/, `${page}: Korean global partner menu`);
+    assert.match(html, />Global Tech</, `${page}: concise global tech group label`);
+    assert.doesNotMatch(html, />Global Technology Partners</, `${page}: no long global tech group label`);
     assert.doesNotMatch(html, /Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/, `${page}: normalized legal footer`);
     assert.doesNotMatch(html, /KM빌딩 3층|금정역SKV1센터 722호/, `${page}: full office address in footer`);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
