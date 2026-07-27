@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사이버보안 · 차량 SW 보안 — 오큐브</title>
+<meta name="description" content="오큐브 차량 사이버보안 — ISO/SAE 21434·UNECE R155 대응 위협분석(TARA)부터 보안 라이브러리 구현·검증·인증 산출물까지 양산 전장 SW 팀이 수행합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-24">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/business-security.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="사이버보안 · 차량 SW 보안 — 오큐브">
+<meta property="og:description" content="오큐브 차량 사이버보안 — ISO/SAE 21434·UNECE R155 대응 위협분석(TARA)부터 보안 라이브러리 구현·검증·인증 산출물까지 양산 전장 SW 팀이 수행합니다.">
+<meta property="og:url" content="https://ocube-codex-review.issoyeon16.chatgpt.site/business-security.html">
+<meta property="og:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="사이버보안 · 차량 SW 보안 — 오큐브">
+<meta name="twitter:description" content="오큐브 차량 사이버보안 — ISO/SAE 21434·UNECE R155 대응 위협분석(TARA)부터 보안 라이브러리 구현·검증·인증 산출물까지 양산 전장 SW 팀이 수행합니다.">
+<meta name="twitter:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/"},{"@type":"ListItem","position":2,"name":"비즈니스","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/business.html"},{"@type":"ListItem","position":3,"name":"사이버보안","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/business-security.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a href="business.html">비즈니스 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
+            <a href="business-security.html">Cyber Security<small>차량 SW 보안·<wbr>인증 대응</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="solutions.html">솔루션 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>AI 스마트 팩토리</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="business-license.html">글로벌 파트너 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">Global Tech</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="about.html">회사 <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Location<small>서울·<wbr>안양·<wbr>대구</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button type="button" class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business.html">비즈니스</a>
+  <a href="solutions.html">솔루션</a>
+  <a href="business-license.html">글로벌 파트너</a>
+  <a href="company.html">회사</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero page-hero dark">
+  <div class="hero-bg" style="background-image:url('assets/video/sec_autonomous.jpg')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <nav class="hero-crumb" aria-label="현재 위치"><a href="index.html">홈</a><i aria-hidden="true">›</i><a href="business.html">비즈니스</a><i aria-hidden="true">›</i><span aria-current="page">사이버보안</span></nav>
+    <span class="hero-badge">BUSINESS · CYBER SECURITY</span>
+    <h1>규제가 요구하는 차량 보안을, 양산 코드로 구현합니다</h1>
+    <p>ISO/SAE 21434와 UNECE R155가 요구하는 위협 분석(TARA)부터 보안 라이브러리 구현, 기능 검증, 인증 산출물까지 하나의 흐름으로 수행합니다. 전장 소프트웨어를 양산해 온 팀이 보안을 맡기 때문에, 보안 기능이 실제 제어기 위에서 동작하도록 포팅하고 최적화합니다.</p>
+    <ul class="hero-keys">
+      <li><span class="k">대응 표준</span><span class="v">ISO/SAE 21434 · UNECE R155 · CSMS</span></li>
+      <li><span class="k">수행 범위</span><span class="v">위협분석 → 설계 → 구현 → 검증 → 인증 대응</span></li>
+      <li><span class="k">보안 협업</span><span class="v">2021~2025년 10건 수행</span></li>
+    </ul>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<!-- 2. 3대 핵심 역량 -->
+<section id="capability" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Core Capabilities</span>
+    <h2>보안만 하지 않고, 전장 소프트웨어와 함께 다룹니다</h2>
+    <p class="sec-sub">보안 기능은 제어기 소프트웨어 위에서 동작합니다. 통신·<wbr>진단·<wbr>업데이트를 직접 개발해 온 팀이 보안을 맡을 때 포팅과 검증이 실제로 끝까지 갑니다.</p></div>
+    <div class="dep-grid reveal" data-d="1">
+      <div class="dep-card"><div class="ic" aria-hidden="true">🛡️</div><h3>자동차 사이버보안</h3><p>위협분석(TARA) 산출, 보안 라이브러리(Secure Boot·<wbr>Secure Access·<wbr>Secure Flash) 개발, 하드웨어 보안모듈(HSM)·<wbr>보안요소(SE) 적용, 키 관리와 인증 암호화</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">📡</div><h3>커넥티비티 SW</h3><p>무선 업데이트(OTA·<wbr>FOTA)와 USB 업데이트, 스마트폰 연동(Phone Projection), 텔레매틱스·<wbr>통신제어기(CCU), 블루투스·<wbr>WiFi 기능 개발과 인증</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">⚙️</div><h3>임베디드 SW · 진단</h3><p>AUTOSAR 기반 통합제어기 개발(CDD·<wbr>SWC), 제어기 공통 컴포넌트, UDS 진단과 CAN 통신 검증, 메모리 리프로그래밍</p></div>
+    </div>
+    <div class="feat-list reveal" data-d="2" style="margin-top:24px">
+      <div class="feat"><b>칩·모듈 환경 포팅</b><span>차량용 마이크로컨트롤러와 하드웨어 보안모듈 특성에 맞춰 보안 모듈을 포팅하고 최적화합니다</span></div>
+      <div class="feat"><b>운영체제 레벨 하드닝</b><span>SELinux 권한 정책과 Secure Boot 신뢰 체인을 적용해 실행 환경 자체를 잠급니다</span></div>
+      <div class="feat"><b>산출물 · 성적서 관리</b><span>검증 결과를 인증 심사에서 그대로 쓸 수 있는 문서 형태로 정리합니다</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 보안 계층 구조 -->
+<section id="framework" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Security Architecture</span>
+    <h2>외부와 맞닿는 곳에 보안을 모으고, 말단은 가볍게 갑니다</h2>
+    <p class="sec-sub">모든 모듈에 같은 무게의 보안을 넣으면 원가와 성능이 함께 무너집니다. 외부 연결을 담당하는 통신·<wbr>게이트웨이 모듈에 무거운 보안을 집중하고, 말단 모듈에는 공통 경량 계층을 동일하게 배치하는 구조를 제안합니다.</p></div>
+    <div class="stack-diagram reveal" data-d="1">
+      <div class="stack-layer l-op"><span class="stack-tag">앵커 · 통신 &amp; 게이트웨이 모듈</span><b>무거운 보안 집중</b><small>경계 방어·<wbr>TLS · 신뢰 기점(Root of Trust)·<wbr>키 관리 · 보안 업데이트 조율 · 디지털키 인증·<wbr>권한관리 · 내부망 필터링 · 침입탐지 관제 연동</small></div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer l-judge"><span class="stack-tag">말단 모듈 공통 경량 보안</span>
+        <div class="stack-prods"><span>Secure Boot<small>펌웨어 위·<wbr>변조 검사 후 부팅</small></span><span>보안 통신 검증<small>위조된 제어 명령 거부</small></span><span>업데이트 에이전트<small>서명 펌웨어 재검증·<wbr>적용</small></span><span>침입탐지 센서<small>이상 감지 시 앵커에 보고</small></span></div>
+      </div>
+      <div class="stack-arrow" aria-hidden="true">▲</div>
+      <div class="stack-layer l-data"><span class="stack-tag">적용 대상</span><b>파워 · 모터 · 라이트 · 센서 모듈</b><small>4개 모듈에 동일한 경량 보안 계층을 적용해 인증 산출물을 한 번에 정리</small></div>
+    </div>
+    <div class="mod-grid reveal" data-d="2" style="margin-top:26px" role="list">
+      <div class="mod" role="listitem">암호 라이브러리 · HSM 추상화</div>
+      <div class="mod" role="listitem">Secure Boot · Secure Update</div>
+      <div class="mod" role="listitem">보안 통신(SecOC · MACsec)</div>
+      <div class="mod" role="listitem">통합 키관리 · PKI 프로비저닝</div>
+      <div class="mod" role="listitem">침입탐지(IDS) · 보안 게이트웨이</div>
+      <div class="mod" role="listitem">모듈 간 일관된 인증 산출물</div>
+    </div>
+    <p class="sec-note reveal" data-d="3">단계적 확장을 전제로 설계합니다 — ① 통신·<wbr>게이트웨이 모듈에 보안 기점 구축 → ② 파워·<wbr>모터·<wbr>라이트로 공통 스택 확장 → ③ 침입탐지·<wbr>차량 관제(VSOC) 연계로 차량 레벨 대응.</p>
+  </div>
+</section>
+
+<!-- 4. 제공 서비스 -->
+<section id="services" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Services</span>
+    <h2>여섯 가지 형태로 참여합니다</h2>
+    <p class="sec-sub">제품 단계와 인증 일정에 따라 필요한 부분만 맡거나, 설계부터 양산까지 함께 갑니다.</p></div>
+    <div class="dep-grid reveal" data-d="1">
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔑</div><h3>디지털키 보안</h3><p>표준 기반 보안요소·<wbr>하드웨어 보안모듈 적용 아키텍처 설계, 키 관리와 인증 프로토콜 구현·<wbr>검증, 대상 기능의 위협분석 산출</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">📶</div><h3>통신 모듈 보안</h3><p>Secure Boot와 시스템 하드닝, 차량용 암호화 모듈 설계와 보안 API 구현, 펌웨어 보안 기능 개발 및 기능 검증</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">⬆️</div><h3>보안 OTA · FOTA</h3><p>무선·<wbr>USB 업데이트 기능 설계와 검증, 무결성·<wbr>서명 검증 연계, CAN 메시지 검증으로 업데이트 안정화</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">📋</div><h3>CSMS · 인증 대응</h3><p>사이버보안 관리체계 수립 지원, 위협분석 산출과 요구사항·<wbr>아키텍처 문서화, 심사 대응과 정적 분석 대응</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔧</div><h3>AUTOSAR SW · 진단</h3><p>통합제어기 CDD·<wbr>SWC 개발, 제어기 공통 컴포넌트, UDS 진단 기능과 CAN 모니터링, 메모리 리프로그래밍</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🧩</div><h3>통합 보안 프레임워크</h3><p>여러 부품에 공통으로 적용할 보안 계층을 설계·<wbr>구현·<wbr>검증해, 완성차에 일관된 보안 내장 모듈로 공급할 수 있게 정리</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 표준 · 기술 -->
+<section id="standards" class="sec-anchor dark">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Standards &amp; Stack</span>
+    <h2 style="color:#fff">대응하는 표준과 다루는 기술</h2>
+    <p class="sec-sub">규제 대응 문서와 실제 구현을 같은 팀이 맡습니다.</p></div>
+    <div class="mod-grid reveal" data-d="1" role="list">
+      <div class="mod" role="listitem">ISO/SAE 21434</div>
+      <div class="mod" role="listitem">UNECE R155</div>
+      <div class="mod" role="listitem">UNECE R156</div>
+      <div class="mod" role="listitem">CSMS</div>
+      <div class="mod" role="listitem">TARA</div>
+      <div class="mod" role="listitem">ISO 26262</div>
+      <div class="mod" role="listitem">ASPICE</div>
+      <div class="mod" role="listitem">AUTOSAR</div>
+      <div class="mod" role="listitem">Secure Boot</div>
+      <div class="mod" role="listitem">SecOC</div>
+      <div class="mod" role="listitem">MACsec</div>
+      <div class="mod" role="listitem">HSM · SE</div>
+      <div class="mod" role="listitem">PKI 프로비저닝</div>
+      <div class="mod" role="listitem">SELinux</div>
+      <div class="mod" role="listitem">UDS 진단</div>
+      <div class="mod" role="listitem">SBOM</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 협업 모델 -->
+<section id="model" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Engagement Model</span>
+    <h2>포팅에서 시작해 공동 개발까지 넓힙니다</h2>
+    <p class="sec-sub">작게 시작해 검증하고, 신뢰가 쌓이면 핵심 모듈을 함께 설계합니다.</p></div>
+    <div class="tl reveal" data-d="1">
+      <div class="tl-card"><span class="yr">01</span><b>보안 솔루션 포팅</b><span>대상 칩·<wbr>모듈 환경에 보안 라이브러리와 기능을 포팅·<wbr>최적화</span></div>
+      <div class="tl-card"><span class="yr">02</span><b>검증 · 인증 대응</b><span>보안·<wbr>기능 검증, 성적서 관리, 인증 산출물 대응</span></div>
+      <div class="tl-card"><span class="yr">03</span><b>프로세스 컨설팅</b><span>관리체계 수립과 위협분석 등 보안 프로세스 자문</span></div>
+      <div class="tl-card cur"><span class="yr">04</span><b>공동 개발</b><span>핵심 모듈 소프트웨어를 함께 설계·<wbr>개발·<wbr>양산</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 수행 실적 -->
+<section id="proof" class="sec">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Track Record</span>
+    <h2>양산 프로젝트에서 검증한 이력</h2>
+    <p class="sec-sub">완성차·<wbr>부품사 대상 양산 프로젝트에서 보안 기능을 개발하고 인증 산출물을 대응해 왔습니다. 개별 고객사와 프로젝트 세부는 계약 범위에 따라 표기하지 않습니다.</p></div>
+    <div class="hero-stats reveal" data-d="1">
+      <div class="stat"><span data-count="10">10</span><b>건</b><i>사이버보안 협업 (2021~2025)</i></div>
+      <div class="stat"><span data-count="12">12</span><b>건 이상</b><i>양산 전장 SW 프로젝트</i></div>
+      <div class="stat"><span data-count="7">7</span><b>개 그룹</b><i>글로벌 완성차 양산 대응</i></div>
+    </div>
+    <div class="case-grid reveal" data-d="2">
+      <article class="case-card"><span class="dom">보안 라이브러리 · 펌웨어</span>
+        <h3>Secure Boot · Access · Flash 라이브러리</h3>
+        <p class="csi"><b>과제</b> 제어기 부팅·<wbr>접근·<wbr>플래시 경로 전반에 암호 기반 보호 적용</p><p class="csi"><b>해결</b> 보안 전문기업 아우토크립트와 협업해 암호 라이브러리·<wbr>키 관리 기능을 개발하고 펌웨어에 포팅</p><p class="csi"><b>성과</b> 하드웨어 보안모듈 적용 솔루션까지 확장 수행</p></article>
+      <article class="case-card"><span class="dom">인증 대응 · TARA</span>
+        <h3>CSMS · ISO/SAE 21434 산출물 대응</h3>
+        <p class="csi"><b>과제</b> 완성차 요구에 맞춘 관리체계와 위협분석 문서 확보</p><p class="csi"><b>해결</b> 아우토크립트와 협업해 위협분석과 시스템 요구·<wbr>아키텍처 문서를 산출하고 심사 대응</p><p class="csi"><b>성과</b> 인증 심사·<wbr>정적 분석 대응까지 완료</p></article>
+      <article class="case-card"><span class="dom">진단 · 업데이트</span>
+        <h3>UDS 진단 · 메모리 리프로그래밍</h3>
+        <p class="csi"><b>과제</b> 제어기 진단 통신과 필드 업데이트 경로 확보</p><p class="csi"><b>해결</b> UDS 진단 기능과 메모리 리프로그래밍을 개발하고 CAN 통신을 모니터링·<wbr>검증</p><p class="csi"><b>성과</b> 다수 제어기 양산 적용, 무선·<wbr>USB 업데이트로 확장</p></article>
+    </div>
+    <div class="sec-more reveal" data-d="3" style="text-align:center;margin-top:30px"><a class="btn btn-ghost" href="references.html">전체 구축 사례 보기 →</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">대응해야 할 표준과 제품 범위부터 함께 정리합니다</h2>
+          <p class="fcta-p">대상 제어기·<wbr/>적용 표준·<wbr/>인증 일정을 확인해 위협분석부터 검증·<wbr/>산출물까지 수행 범위를 제안합니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 2·3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722·723·710호</dd></div>
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a><a href="business-security.html">Cyber Security</a><a href="business-license.html">글로벌 파트너</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solution-qdrive.html">Qdrive</a><a href="solution-evcp.html">EVCP</a><a href="solution-traffic.html">QVision</a><a href="solutions.html">전체 보기</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site2.js?v=codex-8"></script>
+</body>
+</html>
