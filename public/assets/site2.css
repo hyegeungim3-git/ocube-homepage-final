@@ -1039,6 +1039,13 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* ══ 솔루션 시연 스테이지 — 대형 헤드라인 + 디바이스 프레임 (ocube-ai-renewal 벤치마크) ══ */
 /* 스테이지는 img / video 어느 쪽이든 동일하게 렌더 → 추후 영상 교체 시 CSS 수정 불필요 */
 /* 솔루션 상단: HERO 고정 → 소개 영역이 이어서 덮으며 올라옴 */
+/* 솔루션 HERO: 솔루션명 + 2줄 설명, 가운데 정렬 */
+.sol-hero>.wrap{text-align:center;display:flex;flex-direction:column;align-items:center}
+.sol-hero .hero-crumb{justify-content:center}
+.sol-hero h1{max-width:none}
+.sol-desc{max-width:820px;margin-left:auto;margin-right:auto}
+.sol-desc span{display:block}
+.sol-desc span+span{margin-top:4px}
 .sol-open{position:relative}
 .sol-open>.sol-hero{position:sticky;top:0;z-index:0}
 .sol-open>.sol-intro{position:relative;z-index:1}
