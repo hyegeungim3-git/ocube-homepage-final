@@ -105,11 +105,14 @@
         panel.setAttribute('role', 'region');
         panel.setAttribute('aria-labelledby', triggerId);
         panel.hidden = true;
-        var overview = document.createElement('a');
-        overview.className = 'm-acc-overview';
-        overview.href = top.getAttribute('href');
-        overview.textContent = label + ' 전체 보기';
-        panel.appendChild(overview);
+        var overviewHref = top.getAttribute('href');
+        if (overviewHref) {                       // 대메뉴가 링크가 아니면 전체 보기 항목을 만들지 않는다
+          var overview = document.createElement('a');
+          overview.className = 'm-acc-overview';
+          overview.href = overviewHref;
+          overview.textContent = label + ' 전체 보기';
+          panel.appendChild(overview);
+        }
         dropdown.querySelectorAll('.dd-group').forEach(function (group) {
           var mobileGroup = document.createElement('div');
           mobileGroup.className = 'm-acc-group';
