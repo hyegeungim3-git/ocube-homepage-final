@@ -154,8 +154,8 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
   background:rgba(5,20,43,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 0 0 1px rgba(120,174,255,.08);
   font-size:12px;font-weight:650;letter-spacing:.035em;color:#fff}
-/* max-width 1060 — 4개 배너 헤드라인이 모두 정확히 2줄로 떨어지게(=CTA 세로 위치 고정, .hero-ctrl 겹침 방지) */
-.h-title{font-size:clamp(30px,3.6vw,54px);font-weight:780;line-height:1.22;letter-spacing:-.045em;max-width:1080px;margin:0;color:#fff}
+/* 4개 Hero 설명의 위계를 유지하면서 1–2줄 안에서 안정적으로 읽히도록 조정 */
+.h-title{font-size:clamp(28px,3.35vw,50px);font-weight:780;line-height:1.22;letter-spacing:-.045em;max-width:1080px;margin:0;color:#fff}
 .h-sub{margin-top:20px;font-size:clamp(16px,1.6vw,19px);color:#c3ccdc;max-width:600px;line-height:1.6}
 .h-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .hslide .h-support,.hslide .h-badge,.hslide .h-title,.hslide .h-sub,.hslide .h-cta{opacity:0}
@@ -1087,7 +1087,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 
 /* 저높이 뷰포트: 히어로 콘텐츠·컨트롤 압축 (CTA-페이지네이션 겹침 방지) */
 @media(max-height:660px){
-  .h-title{font-size:clamp(28px,3.2vw,44px)}
+  .h-title{font-size:clamp(26px,3vw,42px)}
   .h-support{margin-bottom:12px}
   .h-badge{margin-top:16px}
   .h-badge span{min-height:34px}

@@ -75,7 +75,7 @@ for (const file of htmlFiles) {
     .replaceAll("<b>GLOBAL</b>", "<b>GLOBAL TECH</b>")
     .replace(/(<a href="business-license\.html">)Global Partners/g, "$1글로벌 파트너")
     .replaceAll("Global Technology Partners", "Global Tech")
-    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-21")
+    .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-22")
     .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-8")
     .replace(
       /(<meta\s+property="og:image"\s+content=")[^"]*(">)/g,

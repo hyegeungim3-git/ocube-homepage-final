@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-21/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-22/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /기술\s*지원|TECH SUPPORT|License Support/i, `${page}: no retired support label`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
@@ -217,6 +217,8 @@ test("keeps content cards readable at production sizes", async () => {
   assert.match(style, /\.stat>span\{[^}]*font-size:15\.5px/);
   assert.match(style, /\.sec-note,[^{]+\{font-size:15\.5px/);
   assert.match(style, /\.shot-cap,[^{]+\{font-size:14\.5px/);
+  assert.match(style, /\.h-title\{font-size:clamp\(28px,3\.35vw,50px\)/);
+  assert.match(style, /@media\(max-height:660px\)\{[\s\S]*?\.h-title\{font-size:clamp\(26px,3vw,42px\)\}/);
 });
 
 test("builds accessible mobile submenu accordions", async () => {
