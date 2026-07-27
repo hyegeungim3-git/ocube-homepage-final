@@ -42,3 +42,6 @@ next-env.d.ts
 /outputs/
 /work/
 /*.tar.gz
+
+# unused stock video assets (kept locally, excluded from public repo)
+*.mp4
