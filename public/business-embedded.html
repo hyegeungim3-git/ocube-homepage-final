@@ -343,33 +343,50 @@
 </section>
 
 <!-- 5. 레퍼런스 -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head rv"><span class="kicker">References</span>
-    <h2>대표 구축 사례</h2></div>
-    <div class="case-grid">
-      <article class="case-card rv"><span class="dom">자동차 전장 · 양산</span>
-        <h3>7개 완성차 그룹 양산 개발·<wbr>검증</h3>
-        <p class="csi"><b>과제</b> 완성차 제조사(OEM) 규격의 고신뢰 차량 임베디드 SW 설계·<wbr>검증</p><p class="csi"><b>해결</b> Linux·<wbr>QNX·<wbr>차량용 Android(AAOS) 적용 · 자동차 SW 개발표준(ASPICE)·<wbr>ISO-26262·<wbr>ISO-21434</p><p class="csi"><b>성과</b> 7개 글로벌 완성차 그룹 규격 양산 개발·<wbr>검증</p></article>
-      <article class="case-card rv d1"><span class="dom">차량 AVN·<wbr>IVI · LG전자</span>
-        <h3>차량 AVN·<wbr>IVI 미들웨어 연간 협력</h3>
-        <p class="csi"><b>과제</b> 차량용 AVN·<wbr>IVI 미들웨어의 지속 개발·<wbr>검증</p><p class="csi"><b>해결</b> 미들웨어·<wbr>HMI 개발과 품질 검증 체계 운영</p><p class="csi"><b>성과</b> 2013년부터 이어지는 연간 협력</p></article>
-      <article class="case-card rv d2"><span class="dom">에너지·<wbr>모빌리티 · LG</span>
-        <h3>EV 충전기 애플리케이션 (북미향)</h3>
-        <p class="csi"><b>과제</b> 북미 시장 EV 충전기의 임베디드 앱 개발</p><p class="csi"><b>해결</b> 충전기 제어·<wbr>UI 애플리케이션 설계·<wbr>구현</p><p class="csi"><b>성과</b> 북미향 양산 제품 공급</p></article>
-    
-      <article class="case-card rv"><span class="dom">보안 라이브러리 · 펌웨어</span>
-        <h3>Secure Boot · Access · Flash 라이브러리</h3>
-        <p class="csi"><b>과제</b> 제어기 부팅·<wbr>접근·<wbr>플래시 경로 전반에 암호 기반 보호 적용</p><p class="csi"><b>해결</b> 보안 전문기업 아우토크립트와 협업해 암호 라이브러리·<wbr>키 관리 기능을 개발하고 펌웨어에 포팅</p><p class="csi"><b>성과</b> 하드웨어 보안모듈 적용 솔루션까지 확장 수행</p></article>
-      <article class="case-card rv"><span class="dom">인증 대응 · TARA</span>
-        <h3>CSMS · ISO/SAE 21434 산출물 대응</h3>
-        <p class="csi"><b>과제</b> 완성차 요구에 맞춘 관리체계와 위협분석 문서 확보</p><p class="csi"><b>해결</b> 아우토크립트와 협업해 위협분석과 시스템 요구·<wbr>아키텍처 문서를 산출하고 심사 대응</p><p class="csi"><b>성과</b> 인증 심사·<wbr>정적 분석 대응까지 완료</p></article>
-      <article class="case-card rv"><span class="dom">진단 · 업데이트</span>
-        <h3>UDS 진단 · 메모리 리프로그래밍</h3>
-        <p class="csi"><b>과제</b> 제어기 진단 통신과 필드 업데이트 경로 확보</p><p class="csi"><b>해결</b> UDS 진단 기능과 메모리 리프로그래밍을 개발하고 CAN 통신을 모니터링·<wbr>검증</p><p class="csi"><b>성과</b> 다수 제어기 양산 적용, 무선·<wbr>USB 업데이트로 확장</p></article>
-    </div>
-    <div class="rv" style="margin-top:34px"><a href="references.html" class="btn btn-ghost">전체 구축 사례 보기 →</a></div>
+<section id="projects" class="bcase">
+  <div class="bcase-head rv">
+    <span class="eb">BUILD CASES</span>
+    <h2>대표 프로젝트</h2>
+    <p>차량 전장 양산과 보안 대응에서 무엇을 어디까지 수행했는지 대표 프로젝트로 확인할 수 있습니다.</p>
   </div>
+  <div class="wrap">
+    <div class="bcase-grid">
+      <article class="bcase-card rv">
+        <div class="bcase-visual"><img src="assets/img/business/steps/embedded-06-production-optimization-v3.webp" alt="완성차 양산 대응 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">MASS PRODUCTION</span>
+        <h3>글로벌 완성차 7개 그룹 양산</h3>
+        <span class="sum">완성차 규격에 맞춰 전장 소프트웨어를 개발·<wbr>검증하고 양산 단계까지 대응했습니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>ASPICE</li>
+          <li><i aria-hidden="true">✓</i>ISO 26262</li>
+          <li><i aria-hidden="true">✓</i>AUTOSAR</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d1">
+        <div class="bcase-visual"><img src="assets/img/business/steps/embedded-04-hmi-middleware-v3.webp" alt="차량 화면·미들웨어 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">IN-VEHICLE HMI</span>
+        <h3>차량 AVN · IVI 플랫폼</h3>
+        <span class="sum">차량 화면과 미들웨어를 개발하고 스마트폰 연동·<wbr>오디오·<wbr>방송 기능을 인증까지 대응했습니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>Qt · HMI</li>
+          <li><i aria-hidden="true">✓</i>SOME/IP</li>
+          <li><i aria-hidden="true">✓</i>Phone Projection</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d2">
+        <div class="bcase-visual"><img src="assets/img/business/steps/embedded-05-hil-safety-v3.webp" alt="기능안전·보안 검증 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">VEHICLE SECURITY</span>
+        <h3>차량 사이버보안 · 인증 대응</h3>
+        <span class="sum">보안 라이브러리와 키 관리를 구현하고, 위협분석 산출부터 진단·<wbr>업데이트 경로까지 대응했습니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>Secure Boot</li>
+          <li><i aria-hidden="true">✓</i>TARA · CSMS</li>
+          <li><i aria-hidden="true">✓</i>UDS 진단</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <a class="bcase-more" href="references.html">전체 구축 사례 보기 <span aria-hidden="true">→</span></a>
 </section>
 
 </main>
