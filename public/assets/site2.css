@@ -1012,7 +1012,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .pcl-logo img{max-width:145px;max-height:46px;filter:grayscale(1);opacity:.72}
 /* 4그룹 구성: 한 주기 = 그룹폭+gap = 25%+gap/4. 역방향(-주기→0) = 좌→우 흐름.
    그룹이 4개라 와이드 화면에서도 트랙 잔여폭이 항상 뷰포트보다 넓어 빈틈이 없다 */
-@keyframes pcl-roll{from{transform:translateX(calc(-25% - 4px))}to{transform:translateX(0)}}
+@keyframes pcl-roll{from{transform:translateX(0)}to{transform:translateX(calc(-25% - 4px))}}
 @media(max-width:720px){
   .pcl-head{display:block}
   .pcl-head p{margin-top:10px;line-height:1.6}
