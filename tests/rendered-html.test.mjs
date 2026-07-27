@@ -109,14 +109,14 @@ test("reflects the reviewed SI message and four-field home flow", async () => {
   assert.match(home, /로봇 조립 라인 이상 조기감지/);
   assert.match(home, /SK에너지 전기차 충전 플랫폼/);
   assert.doesNotMatch(home, /Technology Integration/);
-  assert.match(home, /aria-label="Global Partners 슬라이드"/);
+  assert.match(home, /aria-label="GLOBAL TECH 슬라이드"/);
   assert.match(business, /SI · <em>System Integration<\/em>/);
   assert.match(enterprise, /BUSINESS · SI/);
   assert.match(enterprise, /B2B · B2G · 업무 시스템 · 데이터 연계/);
-  assert.match(home, /Global Partners, Integrated for Production/);
-  assert.match(home, /href="business-license\.html" class="btn btn-primary">글로벌 파트너 역량 보기/);
+  assert.match(home, /GLOBAL TECH, Integrated for Production/);
+  assert.match(home, /href="business-license\.html" class="btn btn-primary">글로벌 기술 역량 보기/);
   assert.equal((home.match(/class="hbar hpag-item/g) ?? []).length, 4);
-  assert.match(home, /<b>GLOBAL<\/b>/);
+  assert.match(home, /<b>GLOBAL TECH<\/b>/);
   assert.doesNotMatch(home, /Enterprise/i);
   const daegu = location.indexOf("오큐브 대구사옥");
   const seoul = location.indexOf("오큐브 서울");

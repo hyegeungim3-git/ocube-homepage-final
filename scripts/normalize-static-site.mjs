@@ -69,6 +69,10 @@ for (const file of htmlFiles) {
     .replaceAll("엔지니어링 지원 · 글로벌 파트너 보기 →", "Global Partners 보기 →")
     .replace(/aria-label="([^"]+) 엔지니어링 지원"/g, 'aria-label="$1 공식 파트너 제품 보기"')
     .replaceAll("<b>LICENSE</b>", "<b>GLOBAL</b>")
+    .replaceAll("Global Partners, Integrated for Production.", "GLOBAL TECH, Integrated for Production.")
+    .replaceAll('aria-label="Global Partners 슬라이드"', 'aria-label="GLOBAL TECH 슬라이드"')
+    .replaceAll("글로벌 파트너 역량 보기", "글로벌 기술 역량 보기")
+    .replaceAll("<b>GLOBAL</b>", "<b>GLOBAL TECH</b>")
     .replace(/site2\.css\?v=[^"']+/g, "site2.css?v=codex-21")
     .replace(/site2\.js\?v=[^"']+/g, "site2.js?v=codex-8")
     .replace(
