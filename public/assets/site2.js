@@ -790,6 +790,22 @@
     window.location.href = 'mailto:sales@ocube.co.kr?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 })();
+  /* --- 솔루션 상단: 이동한 문구가 밝은 영역에 올라오면 색 전환 --- */
+  (function solCopyTravel() {
+    var copy = document.querySelector(".sol-copy"), body = document.querySelector(".sol-body");
+    if (!copy || !body) return;
+    var ticking = false;
+    function upd() {
+      ticking = false;
+      var c = copy.getBoundingClientRect(), b = body.getBoundingClientRect();
+      copy.classList.toggle("on-light", b.top < c.top + c.height / 2);
+    }
+    addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(upd); }
+    }, { passive: true });
+    addEventListener("resize", upd);
+    upd();
+  })();
 
 /* 모션 초기화가 끝난 경우에만 리빌 요소를 숨긴다. 스크립트 실패 시 본문은 기본적으로 보인다. */
 document.documentElement.classList.add('motion-ready');
