@@ -19,7 +19,7 @@ test("ships the complete reviewed static site", async () => {
     const html = await readFile(new URL(page, publicRoot), "utf8");
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${page}: one h1`);
     assert.match(html, /<html\b[^>]*lang="ko"/i, `${page}: Korean document`);
-    assert.match(html, /site2\.css\?v=codex-19/, `${page}: reviewed CSS`);
+    assert.match(html, /site2\.css\?v=codex-20/, `${page}: reviewed CSS`);
     assert.match(html, /site2\.js\?v=codex-8/, `${page}: reviewed JS`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
@@ -93,7 +93,7 @@ test("explains specialist terminology in plain Korean", async () => {
   assert.match(visible, /HITL[^.]{0,60}사람이 검토·승인하는 절차/);
 });
 
-test("reflects the reviewed Enterprise message and benchmarked home flow", async () => {
+test("reflects the reviewed SI message and four-field home flow", async () => {
   const [home, business, enterprise, location] = await Promise.all([
     readFile(new URL("index.html", publicRoot), "utf8"),
     readFile(new URL("business.html", publicRoot), "utf8"),
@@ -101,17 +101,21 @@ test("reflects the reviewed Enterprise message and benchmarked home flow", async
     readFile(new URL("location.html", publicRoot), "utf8"),
   ]);
 
-  assert.equal((home.match(/class="hslide(?: on)?"/g) ?? []).length, 3);
-  assert.match(home, /Enterprise, Engineered for Reliability/);
+  assert.equal((home.match(/class="hslide(?: on)?"/g) ?? []).length, 4);
+  assert.match(home, /SI, Engineered for Reliability/);
   assert.match(home, /복잡한 B2B·B2G 업무/);
   assert.match(home, /class="home-partners"/);
   assert.match(home, /로봇 조립 라인 이상 조기감지/);
   assert.match(home, /SK에너지 전기차 충전 플랫폼/);
   assert.doesNotMatch(home, /Technology Integration/);
   assert.doesNotMatch(home, /Global Partners 슬라이드/);
-  assert.match(business, /Enterprise · <em>System Integration<\/em>/);
-  assert.match(enterprise, /BUSINESS · ENTERPRISE/);
+  assert.match(business, /SI · <em>System Integration<\/em>/);
+  assert.match(enterprise, /BUSINESS · SI/);
   assert.match(enterprise, /B2B · B2G · 업무 시스템 · 데이터 연계/);
+  assert.match(home, /License Support, Integrated for Production/);
+  assert.match(home, /href="business-license\.html" class="btn btn-primary">기술지원 역량 보기/);
+  assert.equal((home.match(/class="hbar hpag-item/g) ?? []).length, 4);
+  assert.doesNotMatch(home, /Enterprise/i);
   const daegu = location.indexOf("오큐브 대구사옥");
   const seoul = location.indexOf("오큐브 서울");
   const anyang = location.indexOf("오큐브 안양사옥");
