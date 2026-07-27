@@ -1051,9 +1051,9 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .sol-copy-zone{position:relative;z-index:3;height:calc(100dvh + var(--travel));margin-top:-100dvh;pointer-events:none}
 .sol-copy{--p:0;position:sticky;top:0;height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:center}
 /* 히어로에서 크게 시작해 소개 영역 크기로 축소 (--p: 0→1) */
-.sol-copy h1{font-size:calc(clamp(29px,4.2vw,52px) * (1 + .42 * (1 - var(--p))))}
-.sol-copy .sol-desc{font-size:calc(clamp(15.5px,1.5vw,18px) * (1 + .20 * (1 - var(--p))))}
-.sol-copy .hero-badge{font-size:calc(13px * (1 + .18 * (1 - var(--p))))}
+.sol-copy h1{font-size:calc(clamp(29px,4.2vw,52px) * (1 + .78 * (1 - var(--p))))}
+.sol-copy .sol-desc{font-size:calc(clamp(15.5px,1.5vw,18px) * (1 + .32 * (1 - var(--p))))}
+.sol-copy .hero-badge{font-size:calc(13px * (1 + .26 * (1 - var(--p))))}
 .sol-copy>.wrap{pointer-events:auto}
 .sol-copy .hero-crumb,.sol-copy .hero-badge,.sol-copy h1,.sol-copy .sol-desc{transition:color .28s ease}
 .sol-copy.on-light .hero-crumb{color:var(--fg-muted)}
