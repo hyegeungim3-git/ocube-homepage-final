@@ -661,6 +661,10 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .feat{background:var(--soft);border:1px solid var(--line-soft);border-radius:12px;padding:17px 18px}
 .feat b{display:block;font-size:15.5px;font-weight:800;color:var(--fg)}
 .feat span{display:block;margin-top:7px;font-size:14px;color:var(--fg-muted);line-height:1.6}
+/* 일부 페이지는 .feat 안에서 <b> 대신 <h3> 를 쓴다 — 섹션 제목 크기(30px)로 커져
+   좁은 카드에서 낱말 단위로 접히므로 .feat b 와 같은 크기로 맞춘다 */
+.feat h3,.duo-txt .feat h3{font-size:15.5px;font-weight:800;line-height:1.4;letter-spacing:-.01em;color:var(--fg)}
+.feat h3 + p,.duo-txt .feat h3 + p{margin-top:7px;font-size:14px;color:var(--fg-muted);line-height:1.6}
 .dark .feat,.platform .feat{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.13)}
 .dark .feat b,.platform .feat b{color:#fff}
 .dark .feat span,.platform .feat span{color:#aeb8c8}
@@ -866,6 +870,8 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .duo-txt p{margin-top:14px;color:var(--fg-muted);font-size:15.5px;line-height:1.68}
 .duo-txt p b{color:var(--fg);font-weight:700}
 .duo-txt .more{margin-top:16px}
+/* 좁은 텍스트 열 안에서는 feat 카드를 세로로 — 3열로 두면 제목이 낱말 단위로 접힌다 */
+.duo .duo-txt .feat-list[class]{grid-template-columns:1fr}
 .duo-media img{width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:var(--sh);display:block}
 .duo-media .fitcap{margin-top:9px;font-size:12.5px;color:var(--fg-3);text-align:center}
 .duo-media.plain img{border:none;box-shadow:none;background:#fff;border-radius:12px;padding:8px}
