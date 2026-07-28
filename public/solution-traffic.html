@@ -121,7 +121,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#detect">돌발검지</a><a href="#proof">국책 실증</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#tms">TMS</a><a href="#detect">돌발검지</a><a href="#proof">국책 실증</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -142,56 +142,63 @@
   </div>
 </section>
 
-<!-- Features -->
+<!-- Features — 실시간 검출 데모 -->
 <section id="features" class="sec-anchor">
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Features</span>
-      <h2>현장 목적에 맞는 영상 검지</h2>
-      <p class="lead">교통·<wbr>노면·<wbr>작업 안전 등 목적에 맞는 검지 모델을 구성하고, 결과를 지도 기반 관제로 잇습니다.</p></div>
+      <h2>딥러닝 기반 정밀 영상 패턴 검출</h2>
+      <p class="lead">카메라 영상에서 차종별 교통량을 자동으로 집계하고, 노면 파손을 실시간으로 찾아 관제로 전달합니다.</p></div>
     <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Traffic</span>
-        <h3>도로 통행을 데이터로</h3>
-        <p>카메라 영상에서 차종을 분류하고 통행량을 계측해, 도로 통행 상황을 데이터로 남깁니다.</p>
+      <div class="duo-txt rv"><span class="pill">TMS</span>
+        <h3>실시간 교통량 검출</h3>
+        <p>도로 영상에서 차량을 검지·<wbr>분류해 차종별 통행량을 자동으로 집계하고 통계로 정리합니다.</p>
         <ul class="pi-bul">
-          <li><b>차종 분류·<wbr>통행량 계측</b> 도로를 지나는 차량을 종류별로 세어 통행 데이터를 만듭니다.</li>
-          <li><b>보행자·<wbr>군중 분석</b> 횡단·<wbr>무단횡단·<wbr>군중 밀집도를 영상으로 판단합니다.</li>
-          <li><b>주정차 관제</b> 불법 주정차와 주차면 점유를 자동으로 판별합니다.</li>
+          <li><b>차종별 자동 조사</b> 지나는 차량을 종류별로 구분해 통행량을 자동으로 집계합니다.</li>
+          <li><b>교차로 방향별 추적</b> 교차로에서 진행 방향별 교통량을 추적해 검출합니다.</li>
+          <li><b>고정식·<wbr>이동식 운용</b> 설치형과 이동형 조사 환경 모두에 맞춰 구성합니다.</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/tms.png" alt="QVision 교통 분석 화면 — 차종 분류·통행량 계측" loading="lazy">
-        <p class="fitcap">교통 분석 — 차종 분류·<wbr>통행량 계측</p>
+        <img src="assets/img/tms.png" alt="TMS 실시간 교통량 검출 화면 — 차종 분류·통행량 계측" loading="lazy">
+        <p class="fitcap">TMS — 실시간 교통량 검출</p>
       </div>
     </div>
     <div class="duo rev">
       <div class="duo-txt rv"><span class="pill">Road Safety</span>
-        <h3>노면 파손을 자동으로 찾아냅니다</h3>
-        <p>포트홀·<wbr>균열 같은 노면 파손을 영상에서 자동 검출하고, 도로 위험 요소까지 함께 검지합니다.</p>
+        <h3>포트홀 실시간 검출</h3>
+        <p>생명을 위협하는 도로 위의 시한폭탄, 포트홀을 영상 인식으로 검출하고 검출 정보를 관제합니다.</p>
         <ul class="pi-bul">
-          <li><b>포트홀·<wbr>균열 검출</b> 노면 파손을 영상에서 자동으로 찾아 관제에 전달합니다.</li>
-          <li><b>환경 위험 검지</b> 저시정·<wbr>연기·<wbr>낙하물 등 도로 위험 요소를 함께 검지합니다.</li>
-          <li><b>오탐 억제</b> 이벤트 신뢰도 점수·<wbr>연속 프레임 확인·<wbr>사람 검수를 거쳐 확정합니다.</li>
+          <li><b>높은 검출율</b> 다양한 형태의 포트홀 학습 데이터로 검출율을 높였습니다.</li>
+          <li><b>실시간 검출·<wbr>전송</b> 주행 중 실시간으로 검출하고 검출 정보를 전송하는 시스템입니다.</li>
+          <li><b>관제·<wbr>관리</b> 수집한 검출 정보를 관제하고 관리하는 시스템을 함께 제공합니다.</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/pothole.png" alt="QVision 노면 안전 화면 — 포트홀 자동 검출" loading="lazy">
-        <p class="fitcap">노면 안전 — 포트홀 자동 검출</p>
+        <img src="assets/img/pothole.png" alt="포트홀 실시간 검출 데모 화면 — 차량 영상 인식 모듈과 관제 서버" loading="lazy">
+        <p class="fitcap">포트홀 — 실시간 검출 데모 (차량 영상 인식 · 관제 서버)</p>
       </div>
     </div>
-    <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Control</span>
-        <h3>여러 현장을 지도 위 한 화면에서</h3>
-        <p>카메라에 인접한 현장 엣지에서 추론하고 검지 이벤트만 중앙으로 보내, 다수 현장을 지도 기반으로 통합 관제합니다.</p>
-        <ul class="pi-bul">
-          <li><b>엣지-투-클라우드</b> IP 카메라(ONVIF)·<wbr>RTSP 수집 → 현장 엣지 추론 → 중앙 통합관제로 잇습니다.</li>
-          <li><b>대역 절감</b> 원본 영상 대신 검지 이벤트와 썸네일만 센터로 보내 회선 부담을 낮춥니다.</li>
-          <li><b>배포 3형태</b> 클라우드·<wbr>온프레미스·<wbr>폐쇄망 엣지 중 선택하며, 반출 불가 현장은 영상 없이 이벤트만 전송합니다.</li>
-        </ul>
-      </div>
-      <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/qdrive-city.jpg" alt="교통·안전 통합 관제 화면 — 위험운전 히트맵·돌발상황 표출" loading="lazy">
-        <p class="fitcap">교통·<wbr>안전 통합 관제 — 프로토타입 예시 화면</p>
-      </div>
+  </div>
+</section>
+
+<!-- TMS 상세 -->
+<section id="tms" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="kicker">TMS · Traffic Measurement Solution</span>
+      <h2>차종별 교통량을 자동으로 조사·<wbr>통계합니다</h2>
+      <p class="lead">AI Vision 기술을 이용한 차종별 교통량 자동 조사 시스템입니다.</p></div>
+    <div class="feat-list reveal" data-d="1">
+      <div class="feat"><b>학습 데이터</b><span>60만 건 규모의 학습 데이터를 기반으로 검출 정확도를 확보합니다.</span></div>
+      <div class="feat"><b>차종 구분</b><span>국토교통부 기준 12차종에 버스를 더해 총 13차종으로 구분합니다.</span></div>
+      <div class="feat"><b>방향별 추적</b><span>교차로에서 진행 방향별 교통량을 추적해 검출합니다.</span></div>
+    </div>
+    <div class="dep-grid reveal" data-d="2" style="margin-top:clamp(24px,2.6vw,36px)">
+      <div class="dep-card"><div class="ic" aria-hidden="true">🚦</div><h3>교통량 조사 시스템</h3>
+        <p>고정식과 이동식 두 형태로 도로 교통량 조사에 활용합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🚥</div><h3>자동 신호등 제어</h3>
+        <p>측정한 교통량을 기준으로 신호 제어에 연계하도록 구성합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🅿️</div><h3>AI 주차 관제</h3>
+        <p>주차면 점유와 진출입 차량을 영상으로 판별해 관제에 활용합니다.</p></div>
     </div>
   </div>
 </section>
@@ -219,10 +226,6 @@
       <div class="feat"><b>야간·<wbr>악천후 대응</b><span>저조도·<wbr>역광·<wbr>우천 환경의 검지 성능을 현장 데이터로 보정하는 접근을 취합니다.</span></div>
       <div class="feat"><b>개인영상정보 보호</b><span>비식별(블러) 처리·<wbr>접근 권한 분리·<wbr>보관 기한 관리로 영상정보 규정을 준수하도록 설계합니다.</span></div>
     </div>
-    <figure class="shot-fig reveal" data-d="3" style="margin-top:20px">
-      <img class="shot fit" style="max-height:22vh" src="assets/img/proto/qdrive-city.jpg" alt="교통·안전 통합 관제 예시 화면 — 위험운전 히트맵 지도·돌발상황·실시간 관제" loading="lazy" width="1600" height="1005">
-      <figcaption class="shot-cap">교통·<wbr>안전 통합 관제(위험운전 히트맵·<wbr>돌발상황) — 프로토타입 예시 화면</figcaption>
-    </figure>
   </div>
 </section>
 

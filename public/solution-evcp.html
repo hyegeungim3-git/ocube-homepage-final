@@ -121,7 +121,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#standards">표준</a><a href="#proof">레퍼런스</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#msa">서비스 구조</a><a href="#proof">레퍼런스</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -140,72 +140,98 @@
   </div>
 </section>
 
-<!-- Features -->
+<!-- Features — 운영 화면 -->
 <section id="features" class="sec-anchor">
   <div class="wrap">
-    <div class="sec-head rv"><span class="kicker">Features</span>
-      <h2>충전 사업 운영에 필요한 기능</h2>
-      <p class="lead">충전기 연동부터 회원·<wbr>결제·<wbr>관제까지, 사업 범위에 맞춰 필요한 기능부터 조합해 운영합니다.</p></div>
+    <div class="sec-head rv"><span class="kicker">Operations Console</span>
+      <h2>운영자가 실제로 보는 화면</h2>
+      <p class="lead">충전소·<wbr>충전기 상태를 지도 기반 그래픽 화면으로 보여주고, 충전 관련 상세 정보를 한 화면에서 확인할 수 있게 구성합니다.</p></div>
     <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Operations</span>
-        <h3>충전소 상태를 지도 위에서 운영</h3>
-        <p>운영 중인 충전소와 충전기 상태를 지도 기반 화면에 실시간으로 표시하고, 필요한 지표만 골라 배치한 대시보드로 운영합니다.</p>
+      <div class="duo-txt rv"><span class="pill">Monitoring</span>
+        <h3>충전소 관제</h3>
+        <p>지도 기반의 운영 충전소·<wbr>충전기 정보를 그래픽 화면으로 보여주고, 충전 관련 상세 정보를 한눈에 볼 수 있는 화면을 제공합니다.</p>
         <ul class="pi-bul">
-          <li><b>충전소 실시간 관제</b> 어느 지점이 멈춰 있는지 지도 화면에서 한눈에 확인합니다.</li>
-          <li><b>다이나믹 대시보드</b> 월별 매출·<wbr>가동 충전기 수·<wbr>충전량 통계를 필요한 차트만 골라 배치합니다.</li>
-          <li><b>실시간 이벤트 관제</b> 충전기 상태 이벤트를 지도에 표시하고 발생 이력을 추적해 대응 순서를 정합니다.</li>
+          <li><b>사업자·<wbr>지역별 선택</b> 사업자별·<wbr>지역별 목록에서 운영 충전소를 선택할 수 있습니다.</li>
+          <li><b>충전기별 상태·<wbr>이력</b> 충전기별 상태 정보와 최신 이력 정보를 한 화면에서 볼 수 있습니다.</li>
+          <li><b>지도에서 직접 선택</b> 지도 기반으로 충전소를 직접 선택할 수 있습니다.</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/evcp.png" alt="EVCP 지도 기반 충전소 실시간 관제 화면" loading="lazy">
-        <p class="fitcap">EVCP — 지도 기반 충전소 실시간 관제 (자체 제품)</p>
+        <img src="assets/img/evcp.png" alt="EVCP 충전소 관제 화면 — 지도 기반 운영 충전소·충전기 상태" loading="lazy">
+        <p class="fitcap">EVCP — 지도 기반 충전소 관제 (자체 제품)</p>
       </div>
     </div>
-    <div class="dep-grid reveal" data-d="1" style="margin-top:clamp(28px,3vw,44px)">
-      <div class="dep-card"><div class="ic" aria-hidden="true">👤</div><h3>회원·<wbr>결제·<wbr>정산</h3><p>가입·<wbr>인증·<wbr>요금제·<wbr>이용 이력과 충전 세션 단위 과금·<wbr>정산·<wbr>결제대행(PG) 연동을 각각 배포하고 확장합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🔌</div><h3>충전기 연동(OCPP)</h3><p>충전기별 OCPP 버전과 호환성을 확인해 게이트웨이로 연동하고, 사업자 간 충전 로밍(OCPI)까지 확장하도록 설계합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">⚡</div><h3>스마트 에너지</h3><p>가용 전력을 충전기 우선순위로 실시간 분배(DLM)하고, 전력 요금·<wbr>시장 신호에 따라 충전 시간을 조정하도록 구성합니다.</p></div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Dashboard</span>
+        <h3>다이나믹 대시보드</h3>
+        <p>원하는 차트만 선별적으로 표시할 수 있고, 충전기에서 전달되는 상태 정보를 실시간으로 표시합니다.</p>
+        <ul class="pi-bul">
+          <li><b>월별 매출</b> 기간별 매출 추이를 차트로 확인합니다.</li>
+          <li><b>충전량 통계</b> 월별 충전량을 집계해 운영 규모를 파악합니다.</li>
+          <li><b>가동 충전기 수</b> 지역별로 충전가능·<wbr>충전중·<wbr>통신오류·<wbr>고장 상태를 나눠 집계합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/evcp-dash.jpg" alt="EVCP 다이나믹 대시보드 — 월별 매출·충전량·가동 충전기 수 차트" loading="lazy">
+        <p class="fitcap">다이나믹 대시보드 — 월별 매출 · 충전량 · 가동 충전기 수</p>
+      </div>
     </div>
-    <p class="sec-note">클라우드·<wbr>온프레미스·<wbr>폐쇄망(현장 엣지) 중 사업 규모와 보안 요건에 맞는 배포 형태를 선택하고, 관제 서버 이중화로 장애 영향을 줄이도록 구성합니다.</p>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Event</span>
+        <h3>실시간 이벤트 관제</h3>
+        <p>충전기 상태 이벤트를 실시간으로 수집해 목록과 지도에 함께 표시하고, 상태 변경 시각까지 추적합니다.</p>
+        <ul class="pi-bul">
+          <li><b>이벤트 실시간 표시</b> 충전 시작·<wbr>대기·<wbr>연결 해제 등 상태 변경을 발생 순서대로 남깁니다.</li>
+          <li><b>지도 기반 위치 확인</b> 이벤트가 발생한 충전소 위치를 지도에서 함께 확인합니다.</li>
+          <li><b>상태 변경 이력 추적</b> 충전기 아이디·<wbr>충전소명·<wbr>변경 시각을 함께 기록합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/evcp-event.jpg" alt="EVCP 실시간 이벤트 관제 — 충전기 상태 이벤트 목록과 지도 표시" loading="lazy">
+        <p class="fitcap">실시간 이벤트 관제 — 충전기 상태 이벤트 지도 기반 표시</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Search</span>
+        <h3>지도 기반 충전소 검색</h3>
+        <p>공공 로밍을 체결한 충전사업자의 충전소·<wbr>충전기 상세 정보를 지도에서 보여주며, 사용자 앱과 관리자 앱에서 같은 모듈을 활용합니다.</p>
+        <ul class="pi-bul">
+          <li><b>충전소·<wbr>충전기 상세</b> 지도 기반으로 충전소와 충전기 상세 정보를 제공합니다.</li>
+          <li><b>주소 기반 검색</b> 주소로 충전소를 찾을 수 있는 검색 기능을 제공합니다.</li>
+          <li><b>운영기관·<wbr>종류별 필터</b> 운영기관과 충전기 종류(완속·<wbr>급속·<wbr>초급속)별로 필터링합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/evcp-search.jpg" alt="EVCP 지도 기반 충전소 검색 — 충전소·충전기 상세 정보와 주소 검색" loading="lazy">
+        <p class="fitcap">지도 기반 충전소 검색 — 사용자 앱·<wbr>관리자 앱 공용 모듈</p>
+      </div>
+    </div>
   </div>
 </section>
 
-
-
-<section id="standards" class="sec-anchor dark">
+<!-- 서비스 구조 -->
+<section id="msa" class="sec-anchor deploy">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">Standards &amp; Protocols</span>
-    <h2>구축 경험과 확장 표준을 구분합니다</h2>
-    <p class="sec-sub">OCPP 1.6J 구축 경험을 기반으로 2.0.1과 로밍·<wbr>스마트 충전 표준을 사업 범위에 맞춰 확장해, 특정 제조사·<wbr>사업자 의존을 줄입니다.</p></div>
-    <div class="mod-grid reveal" data-d="1">
-      <div class="mod">OCPP 1.6J</div>
-      <div class="mod">OCPP 2.0.1 (확장)</div>
-      <div class="mod">OCPI 로밍 (사업별)</div>
-      <div class="mod">ISO 15118 Plug&amp;<wbr>Charge (사업별)</div>
-      <div class="mod">ISO 15118-20 V2G (참조)</div>
-      <div class="mod">OpenADR 2.0 (참조)</div>
-      <div class="mod">IEC 61851</div>
-      <div class="mod">LTE Cat M1 / LTE-M</div>
+    <div class="sec-head rv"><span class="kicker">Service Architecture</span>
+      <h2>서비스가 분리돼 장애 대응이 원활합니다</h2>
+      <p class="lead">회원관리·<wbr>충전기 연동(OCPP)·<wbr>결제·<wbr>로밍을 각각 독립된 서비스로 나눈 마이크로서비스 구조(MSA)입니다. 한 서비스의 장애가 전체로 번지지 않고, 사업 범위에 맞춰 필요한 기능부터 조합해 확장할 수 있습니다.</p></div>
+    <div class="dep-grid reveal" data-d="1">
+      <div class="dep-card"><div class="ic" aria-hidden="true">👤</div><h3>회원관리</h3>
+        <p>가입·<wbr>인증·<wbr>요금제·<wbr>이용 이력을 독립 서비스로 운영합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔌</div><h3>충전기 연동(OCPP)</h3>
+        <p>충전기별 OCPP 버전과 호환성을 확인해 게이트웨이로 연동합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">💳</div><h3>결제</h3>
+        <p>충전 세션 단위 과금·<wbr>정산과 결제대행(PG) 연동을 처리합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔗</div><h3>로밍</h3>
+        <p>사업자 간 충전 로밍으로 이용 가능한 충전소 범위를 넓힙니다.</p></div>
     </div>
-    <p class="sec-note">OCPP 1.6J 구축 경험을 기반으로 합니다. OCPP 2.0.1 기능과 OCPI·<wbr>ISO 15118·<wbr>OpenADR 연계는 사업 요건과 충전기 호환성에 따라 적용 범위를 정합니다.</p>
-    <table class="cmp reveal" data-d="1">
-      <caption class="sr-only">프로토콜 버전별 지원 범위 비교표</caption>
-      <thead><tr><th scope="col">기능</th><th scope="col">OCPP 1.6J</th><th scope="col" class="ok">OCPP 2.0.1</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">보안</th><td>TLS 옵션</td><td class="ok">보안 프로파일(인증서 기반)</td></tr>
-        <tr><th scope="row">디바이스 관리</th><td>기본</td><td class="ok">원격 진단·<wbr>설정·<wbr>펌웨어 관리 강화</td></tr>
-        <tr><th scope="row">ISO 15118 Plug&amp;<wbr>Charge</th><td>제한적</td><td class="ok">사업 요건·<wbr>충전기 호환성에 따라 적용</td></tr>
-        <tr><th scope="row">스마트 차징</th><td>기본 프로파일</td><td class="ok">동적 부하분산·<wbr>시장신호 시프팅</td></tr>
-        <tr><th scope="row">트랜잭션</th><td>StartTransaction 계열</td><td class="ok">TransactionEvent·<wbr>MeterValues 세분화</td></tr>
-      </tbody>
-    </table>
-    <div class="feat-list reveal" data-d="2" style="margin-top:20px">
-      <div class="feat"><b>OCPP 1.6J 구축 기반</b><span>자체 EV 충전 플랫폼의 충전기 제어·<wbr>과금·<wbr>상태 관리 경험을 2.0.1 확장 설계에 반영합니다.</span></div>
-      <div class="feat"><b>스마트 충전 확장</b><span>전력 피크 분산·<wbr>충전 스케줄링 등 스마트 충전 프로파일을 지원하는 방향으로 설계합니다.</span></div>
-      <div class="feat"><b>로밍 · PnC 로드맵</b><span>OCPI 로밍, ISO 15118 Plug&amp;<wbr>Charge는 표준 성숙도에 맞춰 단계 도입하는 접근입니다.</span></div>
-    </div>
+    <figure class="shot-fig reveal" data-d="2" style="margin-top:clamp(26px,3vw,42px)">
+      <img class="shot fit" src="assets/img/evcp-msa.jpg" alt="EVCP 서비스 구조도 — 클라이언트(WEB·WAS)와 퍼블릭 클라우드의 회원·충전기연동(OCPP)·App·결제·로밍 서비스" loading="lazy">
+      <figcaption class="shot-cap">EVCP 서비스 구조 — 회원·<wbr>충전기 연동(OCPP)·<wbr>결제·<wbr>로밍 서비스 분리</figcaption>
+    </figure>
   </div>
 </section>
+
 
 
 
