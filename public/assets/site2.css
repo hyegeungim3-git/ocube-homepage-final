@@ -1199,11 +1199,14 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .gnb.gnb-mega .dropdown{flex-direction:column;gap:2px;min-width:0}
 .gnb.gnb-mega .dropdown .dd-group{min-width:0}
 .gnb.gnb-mega .dd-group+.dd-group .dd-h{margin-top:10px}
-.gnb.gnb-mega .dropdown a{padding:8px 12px 8px 0;white-space:nowrap}
+/* 중메뉴를 대메뉴와 같은 중심선에 정렬 */
+.gnb.gnb-mega .dropdown{left:50%;transform:translateX(-50%);align-items:center}
+.gnb.gnb-mega .dropdown .dd-group{align-items:center}
+.gnb.gnb-mega .dropdown a{padding:8px 0;white-space:nowrap;align-items:center;text-align:center}
 .gnb.gnb-mega .dropdown a:hover{background:none;color:var(--accent-ink)}
 /* 메가에서는 서브 설명(small) 숨겨 세로 리스트를 간결하게 — Seegene 문법 */
 .gnb.gnb-mega .dropdown a small{display:none}
-.gnb.gnb-mega .dd-h{padding-left:0}
+.gnb.gnb-mega .dd-h{padding:8px 0 6px;text-align:center;white-space:nowrap}
 @media(prefers-reduced-motion:reduce){.nav-menu{transition:none}.gnb::before{transition:none}}
 
 /* ── CI 웅장화: 넓은 무대 + 축소 로고 + 한 줄 헤드라인 + 아웃라인 워터마크 ── */
