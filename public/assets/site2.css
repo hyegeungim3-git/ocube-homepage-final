@@ -812,6 +812,24 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .kt-chk li::after{content:"";position:absolute;left:6px;top:.42em;width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
 @media(max-width:600px){.kt-card{flex-basis:min(300px,82vw)}}
 
+/* ── 도입효과: 블루 섹션(.keytech 재사용) 위 번호 배지 흰 카드 4장 ── */
+.qeff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,22px);margin-top:clamp(40px,4.4vw,60px)}
+.qeff-card{position:relative;background:#fff;color:var(--fg);border-radius:16px;
+  padding:clamp(38px,3.4vw,46px) clamp(16px,1.6vw,22px) clamp(22px,2.4vw,30px);
+  box-shadow:0 14px 38px rgba(0,39,108,.18);text-align:center}
+/* 번호 배지 — 카드 상단 가운데에 걸치는 원 (배경색은 rbadge 팔레트의 진한 톤 = 흰 글자 AA 통과) */
+.qeff-no{position:absolute;top:-17px;left:50%;transform:translateX(-50%);
+  width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:#fff;box-shadow:0 4px 12px rgba(0,39,108,.22)}
+.qeff-card:nth-child(1) .qeff-no{background:#14666f}
+.qeff-card:nth-child(2) .qeff-no{background:#9a5b00}
+.qeff-card:nth-child(3) .qeff-no{background:#973054}
+.qeff-card:nth-child(4) .qeff-no{background:#2c6b45}
+.qeff-card h3{font-size:clamp(16px,1.5vw,19px);font-weight:800;line-height:1.4;letter-spacing:-.02em}
+.qeff-card p{margin-top:12px;font-size:13.5px;line-height:1.74;color:var(--fg-muted)}
+@media(max-width:1000px){.qeff-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.qeff-grid{grid-template-columns:1fr}}
+
 /* 기타 */
 .sec-more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;color:var(--accent-text);transition:gap .18s}
 .sec-more:hover{gap:11px}
