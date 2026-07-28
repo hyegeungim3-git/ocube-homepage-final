@@ -45,3 +45,4 @@ next-env.d.ts
 
 # unused stock video assets (kept locally, excluded from public repo)
 *.mp4
+!public/assets/media/demo/**/*.mp4   # 자체 제작 시연 영상은 배포 대상
