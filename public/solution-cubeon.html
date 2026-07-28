@@ -156,7 +156,7 @@
                 <ul class="pi-bul">
           <li><b>3단계 자율화</b> 실행 전 승인 · 감시 중 개입 · 정책 내 자동 실행을 위험도와 가역성으로 구분</li>
           <li><b>정책 기반 승인 라우팅</b> 위험도·<wbr>가역성 기준을 정책으로 코드화해 승인자 자동 배정, 자동 실행 범위 통제</li>
-          <li><b>단계적 롤아웃</b> 섀도 모드(관찰) → 권고 → 자동 실행 순으로 넓히고, 실행 이력은 되돌릴 수 있게 남깁니다.</li>
+          <li><b>단계적 롤아웃</b> 섀도 모드(관찰) → 권고 → 자동 실행 순으로 확대, 실행 이력은 되돌릴 수 있게 기록</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
@@ -171,7 +171,7 @@
                 <ul class="pi-bul">
           <li><b>지속 재학습 루프</b> 학습 → 배포 → 성능 감시 → 재학습을 자동화된 운영 과정으로</li>
           <li><b>데이터 변화 탐지</b> PSI·<wbr>KL divergence 등으로 예측 분포 변화를 감지해 재학습 시점 판단</li>
-          <li><b>버전 관리·<wbr>복구</b> 모델 버전과 승인 이력을 남기고, 품질 저하가 확인되면 검증된 직전 버전으로 되돌립니다.</li>
+          <li><b>버전 관리·<wbr>복구</b> 모델 버전과 승인 이력 기록 — 품질 저하 시 검증된 직전 버전으로 복구</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
@@ -184,9 +184,9 @@
         <h3>산업 지식그래프</h3>
         <p>설비·센서·작업지시·이벤트를 하나의 그래프로 연결해 AI 판단에 현장의 맥락을 부여합니다. 같은 알람이라도 어떤 설비·어떤 공정인지에 따라 다른 조치가 나옵니다.</p>
                 <ul class="pi-bul">
-          <li><b>표준 프로토콜 수집</b> OPC-UA · MQTT · Modbus · CAN 등으로 이기종 설비 데이터를 하나의 파이프라인에 모읍니다.</li>
+          <li><b>표준 프로토콜 수집</b> OPC-UA · MQTT · Modbus · CAN 등으로 이기종 설비 데이터를 하나의 파이프라인에 수집</li>
           <li><b>업무 시스템 연동</b> 설비제어(PLC)·<wbr>설비감시(SCADA)·<wbr>생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>시계열 DB를 어댑터 계층으로 통합</li>
-          <li><b>의미·<wbr>관계 정의</b> 설비와 공정을 객체·<wbr>속성·<wbr>관계로 정리해, 같은 알람도 맥락에 따라 다른 조치로 이어집니다.</li>
+          <li><b>의미·<wbr>관계 정의</b> 설비·<wbr>공정을 객체·<wbr>속성·<wbr>관계로 정리 — 같은 알람도 맥락에 따라 다른 조치로</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
@@ -221,7 +221,7 @@
         <h3>데이터 파이프라인</h3>
         <p>실시간 스트림·<wbr>배치 데이터를 저장·<wbr>처리하는 파이프라인 계층입니다.</p>
         <ul class="pi-bul">
-          <li><b>운영 상태 추적</b> 수집부터 제어까지 각 단계의 지연·<wbr>오류율을 측정해 병목을 추적합니다(Observability).</li>
+          <li><b>운영 상태 추적</b> 수집부터 제어까지 각 단계의 지연·<wbr>오류율 측정으로 병목 추적(Observability)</li>
           <li><b>단계적 확장</b> 라인 1개 검증에서 전사 확산까지 검증된 처리 구조 재사용</li>
         </ul>
         <div class="pi-tags"><span class="pill light">Stream</span><span class="pill light">Batch</span></div>
@@ -233,7 +233,7 @@
         <p>공통 스키마·<wbr>온톨로지로 설비·<wbr>공정 데이터의 의미를 표준화합니다.</p>
         <ul class="pi-bul">
           <li><b>품질 정합</b> 공통 스키마 정합·<wbr>품질 검증·<wbr>결측 보정으로 분석 가능한 상태로</li>
-          <li><b>표준 참조</b> OPC-UA · ISA-95 산업 자동화 계층 모델을 기준으로 의미를 맞춥니다.</li>
+          <li><b>표준 참조</b> OPC-UA · ISA-95 산업 자동화 계층 모델을 기준으로 의미 정합</li>
         </ul>
         <div class="pi-tags"><span class="pill light">온톨로지</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/dataq-knowledge.jpg" data-shot-alt="의미 표준화·지식 관리 프로토타입 화면" data-shot-cap="의미 표준화·지식 관리 — 프로토타입 예시 화면">화면 보기</button>
@@ -254,7 +254,7 @@
         <h3>AI 에이전트</h3>
         <p>현장·<wbr>업무 AI 에이전트를 실행합니다.</p>
         <ul class="pi-bul">
-          <li><b>근거 제시</b> 검색한 문서·<wbr>데이터를 근거로 답하고 출처를 함께 남깁니다.</li>
+          <li><b>근거 제시</b> 검색한 문서·<wbr>데이터를 근거로 답변, 출처도 함께 기록</li>
           <li><b>권한 인지</b> 역할 기반 접근 제어로 사용자별 참조 가능한 지식·<wbr>기능 범위 분리</li>
         </ul>
         <div class="pi-tags"><span class="pill light">근거 검색(RAG)</span><span class="pill light">사내 소형 언어모델(sLLM)</span></div>
