@@ -121,7 +121,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#applications">적용 범위</a><a href="#features">핵심 기능</a><a href="#spec">대상·<wbr>기법</a><a href="#caps">핵심 기능</a><a href="#stack">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#protocols">프로토콜·<wbr>표준</a><a href="#modelops">ModelOps</a><a href="#why">왜 AI</a><a href="#proof">실증 사례</a><a href="#deploy">배포</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#applications">적용 범위</a><a href="#features">핵심 기능</a><a href="#why">왜 AI</a><a href="#proof">실증 사례</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -146,6 +146,7 @@
       <h2>공장 전주기를 여섯 가지 AI로 연결합니다</h2>
       <p class="lead">QFactory는 단일 분석 모델이 아닙니다. 데이터 통합부터 에너지·설비·품질·안전·운영까지, 현장 과제에 맞춰 확장하는 제조 AI 체계입니다.</p>
     </div>
+    <p class="factory-note rv d1"><b>단계적 도입</b> 기존 설비를 전면 교체하지 않고, 기존 설비 보완용 센서와 현장 엣지 연계를 활용해 필요한 공정부터 확장합니다.</p>
     <div class="factory-app-grid">
       <article class="factory-app rv"><div class="factory-app-top"><span>01</span><b>Data Foundation</b></div><h3>AI–현장 운영기술(AI-OT) 통합·표준화</h3><p>분산제어·품질관리·설비제어·생산관리 데이터와 센서 정보를 시간·생산 작업 단위·설비 기준으로 정렬합니다.</p><dl><div><dt>연결 데이터</dt><dd>공정·설비·품질·에너지·물류</dd></div><div><dt>현장 활용</dt><dd>정합성 검증, 원인 추적, AI 학습용 표준 데이터</dd></div></dl></article>
       <article class="factory-app rv d1"><div class="factory-app-top"><span>02</span><b>Energy AI</b></div><h3>열에너지 생산·사용 최적화</h3><p>열원 생산과 스팀 소비를 함께 분석해 과열·과소 공급을 줄일 운전 조건을 권고합니다.</p><dl><div><dt>연결 데이터</dt><dd>연소 상태·스팀·연료·공기·온습도</dd></div><div><dt>현장 활용</dt><dd>소각로·보일러·Dryer 생산–사용 밸런싱</dd></div></dl></article>
@@ -154,7 +155,6 @@
       <article class="factory-app rv d1"><div class="factory-app-top"><span>05</span><b>Safety AI</b></div><h3>Vision AI 안전 관제</h3><p>영상과 설비 이벤트를 결합해 위험 행동·구역 접근·화재·이상 상황을 감지합니다.</p><dl><div><dt>연결 데이터</dt><dd>실시간 영상 스트림(RTSP)·작업 구역·설비 알람</dd></div><div><dt>현장 활용</dt><dd>위험도별 알림, 이력 조회, 오탐 피드백</dd></div></dl></article>
       <article class="factory-app rv d2"><div class="factory-app-top"><span>06</span><b>AI Operations</b></div><h3>MLOps·자율운영 지원</h3><p><b>MLOps</b>(모델 학습·배포·성능을 관리하는 운영 체계)로 모델을 학습·배포·감시하고 권고–승인–조치–결과 확인을 하나의 운영 흐름으로 만듭니다.</p><dl><div><dt>운영 정보</dt><dd>모델·데이터 버전·성능·데이터 변화</dd></div><div><dt>현장 활용</dt><dd>지속적 재학습·이전 모델 복구, 현장 엣지 연계, 단계적 자율운영</dd></div></dl></article>
     </div>
-    <p class="factory-note rv d3"><b>단계적 도입</b> 기존 설비를 전면 교체하지 않고, 기존 설비 보완용 센서와 현장 엣지 연계를 활용해 필요한 공정부터 확장합니다.</p>
   </div>
 </section>
 
@@ -167,7 +167,11 @@
       <div class="duo-txt rv"><span class="pill">Detect</span>
         <h3>이상탐지 · 예지보전</h3>
         <p>설비 신호의 미세한 변화를 학습해 불량과 고장의 전조를 조기에 포착하고, 잔존수명(RUL)을 추정합니다. 임계 알람이 놓치는 복합 패턴을 잡습니다.</p>
-        <a class="duo-cta" href="#caps">세 가지 지능화 자세히 <i aria-hidden="true">→</i></a>
+                <ul class="pi-bul">
+          <li><b>정상 패턴 학습</b> 정상 패턴을 학습해 미세한 이탈을 조기에 감지하고, 단순 통보가 아니라 원인과 조치를 함께 제시합니다.</li>
+          <li><b>잠재 불량 식별</b> 설비 통신 표준(OPC-UA)으로 사이클 구간을 0.1초 단위로 모아, 정상 판정된 사이클에서도 패턴 이탈을 찾습니다.</li>
+          <li><b>잔존수명 예측</b> 설비 부하·<wbr>마모·<wbr>가동 이력으로 남은 사용 가능 기간과 정비 시점을 산정해 비계획 정지에 대응합니다.</li>
+        </ul>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/agentq-analysis.jpg" alt="데이터 분석·이상치 탐지 화면" loading="lazy" width="1100" height="691">
@@ -189,7 +193,11 @@
       <div class="duo-txt rv"><span class="pill">Sustain</span>
         <h3>지속 학습 운영</h3>
         <p>공정 변화에 따른 모델 성능 저하를 감시하고 재학습 시점을 판단합니다. 새 모델은 검증과 배포 절차를 거쳐 운영에 반영합니다.</p>
-        <a class="duo-cta" href="#modelops">ModelOps 자세히 <i aria-hidden="true">→</i></a>
+                <ul class="pi-bul">
+          <li><b>학습 → 배포 → 감시 → 재학습</b> 모델 레지스트리·<wbr>버전 관리·<wbr>승인 워크플로로 운영 중 성능 저하를 확인하고 대응합니다.</li>
+          <li><b>데이터 변화 탐지</b> PSI · KL divergence 등 통계 지표로 데이터·<wbr>개념 변화를 감지해 재학습 시점을 판단합니다.</li>
+          <li><b>배포 3옵션</b> 클라우드 · 온프레미스 · 폐쇄망(에어갭) 중 현장 보안·<wbr>규제에 맞춰 선택하고, 형태가 달라도 같은 모델·<wbr>API로 운영합니다.</li>
+        </ul>
       </div>
       <div class="duo-media stage rv d1">
         <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
@@ -198,123 +206,12 @@
     </div>
   </div>
 </section>
-<section id="spec" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Coverage</span>
-    <h2>무엇을, 어떤 데이터로 다루나</h2>
-    <p class="sec-sub">설비·<wbr>공정 시계열을 입력받아 이상·<wbr>품질·<wbr>정비를 지능화합니다. <span class="pill light">OPC-UA</span> <span class="pill light">MQTT</span> <span class="pill light">Modbus</span> <span class="pill light">CAN</span></p></div>
-    <table class="cmp reveal" data-d="1">
-      <caption class="sr-only">무엇을, 어떤 데이터로 다루나 비교표</caption>
-      <thead><tr><th scope="col">기능 축</th><th scope="col" class="ok">대상 설비·<wbr>데이터</th><th scope="col" class="ok">핵심 기법</th><th scope="col" class="ok">산출물</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">이상 조기감지</th><td>회전기·<wbr>모터·<wbr>로봇, 체결·<wbr>흡착 공정의 시계열(진동·<wbr>전류·<wbr>온도)</td><td class="ok">시계열 이상탐지(정상 패턴 학습) + LLM 원인 질의응답</td><td>이탈 알람 · 근거 · 조치 가이드</td></tr>
-        <tr><th scope="row">공정 조건 권고</th><td>열처리·<wbr>브레이징·<wbr>성형 등 공정 조건·<wbr>프로파일</td><td class="ok">상태진단 · 품질 데이터 기반 프로파일 권고</td><td>권고 공정 조건 · 품질 편차 리포트</td></tr>
-        <tr><th scope="row">예지보전</th><td>설비 부하·<wbr>마모·<wbr>가동 이력</td><td class="ok">잔존수명(RUL) 예측 · 정비 시점 산정</td><td>RUL · 정비 권고 · 비계획 정지 위험에 사전 대응</td></tr>
-      </tbody>
-    </table>
-    <p class="sec-note">수집 프로토콜·<wbr>표준은 현장 설비 환경에 맞춰 연결하도록 설계합니다(아래 참조).</p>
-    <div class="hero-stats reveal" data-d="2">
-      <div class="stat"><b><span data-count="3">0</span><i class="u">기능 축</i></b><span>이상 조기감지 · 공정 최적화 · 예지보전</span></div>
-      <div class="stat"><b><span data-count="8">0</span><i class="u">연결 대상</i></b><span>프로토콜·<wbr>제어기·<wbr>시스템 커넥터</span></div>
-      <div class="stat"><b><span data-count="6">0</span><i class="u">단계</i></b><span>수집→조치 파이프라인</span></div>
-      <div class="stat"><b><span data-count="3">0</span><i class="u">현장</i></b><span>제조 실증 · 자동차부품·<wbr>EV열처리·<wbr>제지</span></div>
-    </div>
-  </div>
-</section>
-<section id="caps" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Capabilities</span>
-    <h2>세 가지로 제조를 지능화합니다</h2></div>
-    <div class="dep-grid">
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🚨</div><h3>이상탐지</h3><p>정상 패턴 학습 후 미세 이탈 조기 감지 — 근거와 함께</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🎛️</div><h3>공정 최적화</h3><p>운전 이력·<wbr>품질 데이터 기반 공정 조건과 프로파일 권고</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔧</div><h3>예지보전</h3><p>설비 잔존수명 예측·<wbr>정비 시점 권고로 비계획 정지에 사전 대응</p></div>
-    </div>
-    <div class="feat-list reveal" data-d="4" style="margin-top:24px">
-      <div class="feat"><b>근거 기반 알람</b><span>단순 이탈 통보가 아니라 원인·<wbr>조치를 함께 제시 — 블랙박스가 아닌 설명 가능한 판단</span></div>
-      <div class="feat"><b>엣지·<wbr>서버 선택 추론</b><span>현장 지연·<wbr>보안 요건에 맞춰 설비 근접(엣지) 또는 서버에서 추론하도록 배치</span></div>
-      <div class="feat"><b>공정 조건의 데이터화</b><span>상태·<wbr>품질 데이터를 바탕으로 프로파일을 권고해 반복 판단의 기준을 축적</span></div>
-    </div>
-  </div>
-</section>
-<section id="stack" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Architecture</span>
-    <h2>판단 계층 제품, 한 스택 위에서</h2>
-    <p class="sec-sub">QFactory는 <b>QData가 표준화한 데이터</b>를 입력받아 판단하고, <b>Cubeon</b> 운영 계층에서 관제·<wbr>자율화됩니다.</p></div>
-    <div class="stack-diagram reveal" data-d="1">
-      <div class="stack-layer l-op"><span class="stack-tag">운영 · 행동</span><b>Cubeon · Manufacturing 도메인팩</b><small>통합 관제 · AI 모델 지속적 재학습 · 자율화 L1→L3(탐지 → 원인분석·<wbr>담당자 승인 → 제한된 자동 실행)</small></div>
-      <div class="stack-arrow" aria-hidden="true">▲</div>
-      <div class="stack-layer l-judge"><span class="stack-tag">판단 · 분석 (QFactory)</span>
-        <div class="stack-prods"><span>이상탐지<small>시계열 이상</small></span><span>공정 최적화<small>프로파일 권고</small></span><span>예지보전<small>잔존수명 예측</small></span></div>
-      </div>
-      <div class="stack-arrow" aria-hidden="true">▲</div>
-      <div class="stack-layer l-data"><span class="stack-tag">표준화</span><b>QData</b><small>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>CAN 설비 데이터를 공통 스키마·<wbr>온톨로지로</small></div>
-    </div>
-  </div>
-</section>
-<section id="pipeline" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Pipeline</span>
-    <h2>신호에서 조치까지, 여섯 단계</h2>
-    <p class="sec-sub">설비 신호를 표준화·<wbr>분석해 <b>담당자가 검토할 수 있는 원인 후보와 조치 권고</b>로 제공합니다.</p></div>
-    <div class="tl reveal" data-d="1">
-      <div class="tl-card"><span class="yr">01 수집</span><h3>설비 신호 수집</h3><p>OPC-UA·<wbr>MQTT·<wbr>Modbus·<wbr>CAN으로 진동·<wbr>전류·<wbr>온도·<wbr>공정값을 실시간 수집</p></div>
-      <div class="tl-card"><span class="yr">02 표준화</span><h3>형식·<wbr>의미 통일</h3><p>QData 공통 스키마·<wbr>온톨로지로 결측 보정·<wbr>품질 검증</p></div>
-      <div class="tl-card"><span class="yr">03 모델링</span><h3>특징값·<wbr>정상 기준</h3><p>시계열 특징값을 추출하고 정상 패턴을 학습해 이상탐지 기준선을 만듭니다.</p></div>
-      <div class="tl-card cur"><span class="yr">04 추론</span><h3>이상·<wbr>잔존수명 예측</h3><p>미세한 이탈을 조기에 찾고 설비의 남은 사용 가능 기간을 예측합니다.</p></div>
-      <div class="tl-card"><span class="yr">05 권고</span><h3>원인·<wbr>조치 권고</h3><p>생성형 AI 질의응답으로 원인·<wbr>조치를 현장 언어로 제시</p></div>
-      <div class="tl-card"><span class="yr">06 피드백</span><h3>지속적 재학습</h3><p>현장 피드백과 데이터 변화를 반영해 AI 모델을 주기적으로 다시 학습</p></div>
-    </div>
-    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
-      <div class="feat"><b>검토 가능한 조치 권고</b><span>단순 알람이 아니라 원인 후보와 권고 내용을 제공해, 담당자가 검토한 뒤 작업지시로 이어갈 수 있게 합니다.</span></div>
-      <div class="feat"><b>기준선 버전 관리</b><span>정상 프로파일을 제품·<wbr>라인별로 버전 관리해 공정 변경에도 기준선을 유지합니다.</span></div>
-    </div>
-  </div>
-</section>
-<section id="protocols" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Connectivity &amp; Standards</span>
-    <h2>현장 데이터를 연결하도록 설계</h2>
-    <p class="sec-sub">서로 다른 설비·<wbr>제어기·<wbr>업무 시스템을 표준 프로토콜로 연결하도록 커넥터를 구성합니다.</p></div>
-    <div class="mod-grid reveal" data-d="1">
-      <div class="mod">OPC-UA</div><div class="mod">MQTT</div><div class="mod">Modbus (RTU/TCP)</div><div class="mod">CAN / CAN-FD</div>
-      <div class="mod">PLC</div><div class="mod">SCADA</div><div class="mod">MES</div><div class="mod">Historian</div>
-    </div>
-    <p class="sec-note reveal" data-d="2"><b>예지보전·<wbr>상태감시 표준을 지향합니다.</b> <span class="pill light">ISO 10816</span> <span class="pill light">ISO 13373</span> <span class="pill light">ISA-95</span> — 설비 진동·<wbr>상태감시·<wbr>제조 정보 계층 참조. 실제 현장 설비 구성에 맞춰 커넥터를 구성합니다.</p>
-    <div class="feat-list reveal" data-d="2" style="margin-top:20px">
-      <div class="feat"><b>수집 주기 · 해상도 설계</b><span>진동 고주파 샘플링부터 공정값 저주기 수집까지, 신호 특성에 맞춰 수집 정책을 설계합니다.</span></div>
-      <div class="feat"><b>엣지 전처리</b><span>FFT·<wbr>특징 추출을 설비 근접에서 수행해 전송량을 줄이고 응답성을 높이도록 구성합니다.</span></div>
-      <div class="feat"><b>표준 태그 매핑</b><span>설비별 상이한 태그를 ISA-95 계층·<wbr>공통 스키마로 매핑해 모델 재사용성을 확보합니다.</span></div>
-    </div>
-  </div>
-</section>
-<section id="modelops" class="sec-anchor dark">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">ModelOps</span>
-    <h2>모델을 지속 학습·<wbr>감시하도록 설계</h2>
-    <p class="sec-sub">현장은 계속 변합니다. <b>학습 → 배포 → 감시 → 재학습</b> 흐름으로 운영 중 성능 저하를 확인하고 대응하도록 구성합니다.</p></div>
-    <div class="kmod-grid reveal" data-d="1">
-      <div class="kmod"><b>학습 · 등록</b><span>모델 레지스트리 · 버전관리 · 승인 워크플로</span></div>
-      <div class="kmod"><b>배포</b><span>클라우드 · 온프레미스 · 엣지 추론 자동 통합·배포</span></div>
-      <div class="kmod"><b>모니터링</b><span>예측 분포 · 성능·상태 관측 · 감사 추적</span></div>
-      <div class="kmod"><b>데이터 변화 탐지</b><span>통계 지표(PSI·KL divergence)로 데이터·<wbr>개념 변화 감지</span></div>
-      <div class="kmod"><b>지속적 재학습</b><span>데이터 변화·<wbr>현장 피드백 반영 지속적 재학습</span></div>
-      <div class="kmod"><b>거버넌스</b><span>모델 관리정책 · 감사 로그 · 사람 승인 절차</span></div>
-    </div>
-    <p class="sec-note">Cubeon의 <b>ModelOps</b>(배포 모델의 버전·성능·승인 이력을 관리하는 운영 체계) 기능과 연동합니다. 모델 자동 배포·지속적 재학습·버전 관리 체계를 적용합니다.</p>
-    <div class="mod-grid reveal" data-d="2" style="margin-top:18px">
-      <div class="mod">데이터 변화 지표<small>PSI · KL divergence</small></div>
-      <div class="mod">성능 관측<small>지연·<wbr>정확도 모니터링</small></div>
-      <div class="mod">재학습 트리거<small>임계·<wbr>주기·<wbr>피드백 기반</small></div>
-      <div class="mod">이전 모델 복구<small>버전 이력 기반 즉시 복귀</small></div>
-    </div>
-    <figure class="shot-fig reveal" data-d="3" style="margin-top:22px">
-      <img class="shot fit" style="max-height:24vh" src="assets/img/proto/factoryq-analysis.jpg" alt="데이터 분석·이상 탐지 에이전트 예시 화면 — 데이터 업로드·종합 분석·이상치 탐지(Z-score·IQR)" loading="lazy" width="1500" height="942">
-      <figcaption class="shot-cap">데이터 분석·<wbr>이상 탐지(종합 분석·<wbr>Z-score·<wbr>IQR) — 프로토타입 예시 화면</figcaption>
-    </figure>
-  </div>
-</section>
+
+
+
+
+
+
 <section id="why" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Why AI</span>
@@ -368,76 +265,8 @@
   </div>
 </section>
 
-<section id="anomaly" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Anomaly Detection</span>
-    <h2>정상 판정된 사이클에서 불량의 전조를 찾습니다</h2>
-    <p class="sec-sub">설비 사이클 데이터를 0.1초 단위로 모아 정상 패턴을 학습합니다. 완성 판정을 받은 사이클 안에서도 패턴이 어긋난 구간을 골라내 후공정으로 넘어가기 전에 알립니다.</p></div>
-    <div class="feat-list reveal" data-d="1">
-      <div class="feat"><b>0.1초 고속 수집</b><span>설비 통신 표준(OPC-UA)으로 사이클 구간을 0.1초 단위로 수집해 짧게 스치는 이상 구간까지 남깁니다</span></div>
-      <div class="feat"><b>잠재 불량 식별</b><span>정상으로 판정된 사이클에서도 패턴 이탈을 찾아 후공정 유출 전에 확인할 수 있게 합니다</span></div>
-      <div class="feat"><b>이상 구간 이력 추적</b><span>이상 발생 전후 구간을 되짚어 어떤 변수가 먼저 흔들렸는지 확인합니다</span></div>
-      <div class="feat"><b>품질 예측 · 조건 추천</b><span>설정값을 기준으로 불량률·<wbr>사이클 시간·<wbr>산포를 예측하고 운전 조건을 추천합니다</span></div>
-    </div>
-    <div class="dep-grid g2 reveal" data-d="2" style="margin-top:26px">
-      <div class="dep-card"><div class="ic" aria-hidden="true">🦾</div><h3>흡착 · 이송 설비</h3><p>흡착 압력과 동작 시간을 기준으로 그리퍼·<wbr>이송 동작의 이탈을 판단합니다. 흡착 실패처럼 눈에 잘 띄지 않는 실패를 데이터로 잡습니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">⚙️</div><h3>산업용 로봇</h3><p>축별 전류·<wbr>토크·<wbr>속도·<wbr>위치를 분석해 체결·<wbr>이송 이상을 조기에 감지합니다.</p></div>
-    </div>
-    <div class="mod-grid reveal" data-d="3" style="margin-top:24px" role="list">
-      <div class="mod" role="listitem">Autoencoder</div>
-      <div class="mod" role="listitem">Isolation Forest</div>
-      <div class="mod" role="listitem">LSTM Autoencoder</div>
-      <div class="mod" role="listitem">XGBoost</div>
-    </div>
-    <p class="sec-note reveal" data-d="4">분석 결과는 정상·<wbr>이상 비교, 변수별 영향도, 이상 구간 추적 화면으로 제공하고, 사내에 설치한 소형 언어모델 챗봇으로 설비 데이터를 자연어로 물어볼 수 있게 구성합니다.</p>
-  </div>
-</section>
-<section id="inspect" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Vision Inspection</span>
-    <h2>사람이 나눠 보던 검사 항목을 카메라 한 대로 모읍니다</h2>
-    <p class="sec-sub">봉제·<wbr>부품·<wbr>마킹·<wbr>바코드처럼 성격이 다른 검사 항목을 한 번의 촬영으로 함께 판정하도록 검사 시스템을 구성합니다.</p></div>
-    <div class="dep-grid reveal" data-d="1">
-      <div class="dep-card"><div class="ic" aria-hidden="true">🎯</div><h3>다항목 동시 판정</h3><p>카메라 한 대로 20개가 넘는 검사 항목을 약 3초 안에 자동으로 합격·<wbr>불합격 판정합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">📐</div><h3>정렬 보정</h3><p>촬영 후 위치를 보정해, 제품이 조금 틀어져 놓여도 같은 기준으로 검사합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🔠</div><h3>문자 · 코드 인식</h3><p>문자 인식과 바코드 판독을 함께 수행해 마킹·<wbr>라벨 오류까지 한 화면에서 확인합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🖥️</div><h3>현장 장비 탑재</h3><p>검출 모델을 가속·<wbr>경량화해 무인 검사 키오스크 같은 현장 장비에서 동작하도록 구성합니다.</p></div>
-    </div>
-    <div class="mod-grid reveal" data-d="2" style="margin-top:24px" role="list">
-      <div class="mod" role="listitem">객체 검출(YOLO)</div>
-      <div class="mod" role="listitem">문자 인식(OCR)</div>
-      <div class="mod" role="listitem">바코드 판독</div>
-      <div class="mod" role="listitem">촬영 후 정렬 보정</div>
-      <div class="mod" role="listitem">GPU 가속 추론</div>
-      <div class="mod" role="listitem">엣지 경량화</div>
-      <div class="mod" role="listitem">고해상 카메라 · 조명</div>
-      <div class="mod" role="listitem">무인 검사 키오스크</div>
-    </div>
-    <div class="case-grid reveal" data-d="3" style="margin-top:28px">
-      <article class="case-card"><span class="dom">자동차 부품 · 대흥돌핀</span>
-        <h3>에어백 부품 비전 검사</h3>
-        <p class="csi"><b>과제</b> 봉제·<wbr>부품·<wbr>마킹·<wbr>바코드를 검사자가 나눠 확인해 판정 시간과 기준이 흔들림</p><p class="csi"><b>해결</b> 단일 카메라 검사 구성 — 객체 검출·<wbr>정렬 보정·<wbr>문자/바코드 인식을 하나의 판정 흐름으로 통합</p><p class="csi"><b>성과</b> 카메라 한 대로 20개 이상 항목을 약 3초에 자동 판정하는 무인 검사 구성</p></article>
-    </div>
-  </div>
-</section>
-<section id="deploy" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Deployment</span>
-    <h2>현장 규제에 맞춘 배포 3옵션</h2>
-    <p class="sec-sub">데이터 반출이 어려운 제조 현장까지 — 동일 제품을 세 형태로 배포하도록 설계합니다.</p></div>
-    <div class="dep-grid reveal" data-d="1">
-      <div class="dep-card"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드</h3><p>상용 LLM API·<wbr>빠른 구축. 다거점 통합 관제에 적합</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🏭</div><h3>온프레미스</h3><p>사내 서버 sLLM·<wbr>데이터 내부화. 엣지 추론으로 현장 근접 처리</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망(에어갭)</h3><p>망분리 대응. 반출 불가 데이터도 현장 내에서 추론</p></div>
-    </div>
-    <p class="sec-note">상용 대규모 언어모델(LLM) API와 사내 소형 언어모델(sLLM)을 현장 보안·<wbr>규제에 맞춰 선택하도록 구성합니다.</p>
-    <div class="feat-list reveal" data-d="2">
-      <div class="feat"><b>동일 제품·<wbr>모델 일관성</b><span>배포 형태가 달라도 같은 모델·<wbr>API로 운영하도록 설계 — 이관 비용 최소화</span></div>
-      <div class="feat"><b>현장 내부 데이터 처리</b><span>민감 공정 데이터를 현장 밖으로 반출하지 않고 내부에서 분석하도록 구성</span></div>
-      <div class="feat"><b>단계적 확장</b><span>기존 운영 영향을 줄이며 단일 설비 PoC(도입 전 효과를 확인하는 사전 검증)에서 다거점 통합 관제까지 단계적으로 확장</span></div>
-    </div>
-  </div>
-</section>
+
+
 
 </main>
 
