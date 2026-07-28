@@ -154,8 +154,8 @@
         <h3>승인과 현장 조치를 잇는 워크플로</h3>
         <p>이상 징후가 발견되면 조치안을 제시하고, 담당자 승인 후 실행한 뒤 결과를 확인합니다. 누가 무엇을 판단하고 실행했는지도 기록으로 남깁니다.</p>
                 <ul class="pi-bul">
-          <li><b>3단계 자율화</b> 실행 전 승인 · 감시 중 개입 · 정책 내 자동 실행을 위험도와 되돌릴 수 있는지 기준으로 구분합니다.</li>
-          <li><b>정책 기반 승인 라우팅</b> 위험도·<wbr>가역성 기준을 정책으로 코드화해 승인자를 자동 배정하고, 자동 실행 범위를 통제합니다.</li>
+          <li><b>3단계 자율화</b> 실행 전 승인 · 감시 중 개입 · 정책 내 자동 실행을 위험도와 가역성으로 구분</li>
+          <li><b>정책 기반 승인 라우팅</b> 위험도·<wbr>가역성 기준을 정책으로 코드화해 승인자 자동 배정, 자동 실행 범위 통제</li>
           <li><b>단계적 롤아웃</b> 섀도 모드(관찰) → 권고 → 자동 실행 순으로 넓히고, 실행 이력은 되돌릴 수 있게 남깁니다.</li>
         </ul>
       </div>
@@ -169,8 +169,8 @@
         <h3>모델 레지스트리 · 지속 운영</h3>
         <p>모델의 버전과 배포 상태를 한곳에서 관리하고, 성능 변화를 감시해 재학습 시점을 판단합니다. 운영 중 품질 저하를 조기에 확인하고 대응할 수 있는 구조입니다.</p>
                 <ul class="pi-bul">
-          <li><b>지속 재학습 루프</b> 학습 → 배포 → 성능 감시 → 재학습을 자동화된 운영 과정으로 관리합니다.</li>
-          <li><b>데이터 변화 탐지</b> PSI·<wbr>KL divergence 등으로 예측 분포 변화를 감지해 재학습 시점을 판단합니다.</li>
+          <li><b>지속 재학습 루프</b> 학습 → 배포 → 성능 감시 → 재학습을 자동화된 운영 과정으로</li>
+          <li><b>데이터 변화 탐지</b> PSI·<wbr>KL divergence 등으로 예측 분포 변화를 감지해 재학습 시점 판단</li>
           <li><b>버전 관리·<wbr>복구</b> 모델 버전과 승인 이력을 남기고, 품질 저하가 확인되면 검증된 직전 버전으로 되돌립니다.</li>
         </ul>
       </div>
@@ -185,7 +185,7 @@
         <p>설비·센서·작업지시·이벤트를 하나의 그래프로 연결해 AI 판단에 현장의 맥락을 부여합니다. 같은 알람이라도 어떤 설비·어떤 공정인지에 따라 다른 조치가 나옵니다.</p>
                 <ul class="pi-bul">
           <li><b>표준 프로토콜 수집</b> OPC-UA · MQTT · Modbus · CAN 등으로 이기종 설비 데이터를 하나의 파이프라인에 모읍니다.</li>
-          <li><b>업무 시스템 연동</b> 설비제어(PLC)·<wbr>설비감시(SCADA)·<wbr>생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>시계열 DB를 어댑터 계층으로 통합합니다.</li>
+          <li><b>업무 시스템 연동</b> 설비제어(PLC)·<wbr>설비감시(SCADA)·<wbr>생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>시계열 DB를 어댑터 계층으로 통합</li>
           <li><b>의미·<wbr>관계 정의</b> 설비와 공정을 객체·<wbr>속성·<wbr>관계로 정리해, 같은 알람도 맥락에 따라 다른 조치로 이어집니다.</li>
         </ul>
       </div>
@@ -210,8 +210,8 @@
         <h3>이기종 데이터 연결</h3>
         <p>PLC·<wbr>센서·<wbr>MES·<wbr>ERP 등 이기종 설비·<wbr>시스템 데이터를 산업 표준 프로토콜로 수집·<wbr>연결합니다.</p>
         <ul class="pi-bul">
-          <li><b>엣지 수집·<wbr>전송 복구</b> 네트워크가 끊기면 현장 데이터를 임시 저장하고, 연결 복구 후 다시 전송합니다.</li>
-          <li><b>보안 연결</b> TLS 암호화 · 디바이스 인증 · 역할 기반 접근제어(RBAC)로 OT/IT 경계를 보호합니다.</li>
+          <li><b>엣지 수집·<wbr>전송 복구</b> 네트워크 단절 시 현장 데이터 임시 저장, 복구 후 재전송</li>
+          <li><b>보안 연결</b> TLS 암호화 · 디바이스 인증 · 역할 기반 접근제어(RBAC)로 OT/<wbr>IT 경계 보호</li>
         </ul>
         <div class="pi-tags"><span class="pill light">OPC-UA</span><span class="pill light">MQTT</span><span class="pill light">Modbus</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-connect.jpg" data-shot-alt="Cubeon Connect — 이기종 데이터 연결 콘솔 개념 화면(소스·프로토콜 어댑터·태그 표준 매핑)" data-shot-cap="이기종 데이터 연결 콘솔 — 개념 예시 화면 (실제 UI 아님)">화면 보기</button>
@@ -222,7 +222,7 @@
         <p>실시간 스트림·<wbr>배치 데이터를 저장·<wbr>처리하는 파이프라인 계층입니다.</p>
         <ul class="pi-bul">
           <li><b>운영 상태 추적</b> 수집부터 제어까지 각 단계의 지연·<wbr>오류율을 측정해 병목을 추적합니다(Observability).</li>
-          <li><b>단계적 확장</b> 라인 1개 검증에서 전사 확산까지, 검증된 처리 구조를 최대한 재사용합니다.</li>
+          <li><b>단계적 확장</b> 라인 1개 검증에서 전사 확산까지 검증된 처리 구조 재사용</li>
         </ul>
         <div class="pi-tags"><span class="pill light">Stream</span><span class="pill light">Batch</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-fabric.jpg" data-shot-alt="Cubeon Fabric — 데이터 처리 흐름 개념 화면(수집→임시 저장→정제→저장→활용)" data-shot-cap="데이터 처리 흐름 — 개념 예시 화면 (실제 UI 아님)">화면 보기</button>
@@ -232,7 +232,7 @@
         <h3>의미 표준화</h3>
         <p>공통 스키마·<wbr>온톨로지로 설비·<wbr>공정 데이터의 의미를 표준화합니다.</p>
         <ul class="pi-bul">
-          <li><b>품질 정합</b> 공통 스키마 정합·<wbr>품질 검증·<wbr>결측 보정으로 분석 가능한 상태로 정리합니다.</li>
+          <li><b>품질 정합</b> 공통 스키마 정합·<wbr>품질 검증·<wbr>결측 보정으로 분석 가능한 상태로</li>
           <li><b>표준 참조</b> OPC-UA · ISA-95 산업 자동화 계층 모델을 기준으로 의미를 맞춥니다.</li>
         </ul>
         <div class="pi-tags"><span class="pill light">온톨로지</span></div>
@@ -243,8 +243,8 @@
         <h3>모델 거버넌스</h3>
         <p>모델의 학습·<wbr>배포 이력을 관리하고, 운영 중 성능을 감시해 필요할 때 재학습합니다.</p>
         <ul class="pi-bul">
-          <li><b>데이터 변화 탐지</b> PSI·<wbr>KL divergence 등 예측 분포 변화를 감지해 재학습 시점을 판단합니다.</li>
-          <li><b>감사추적(Audit Trail)</b> 추론과 액션 전 구간을 로그로 남겨 규제·<wbr>품질 대응에 활용합니다.</li>
+          <li><b>데이터 변화 탐지</b> PSI·<wbr>KL divergence 등 예측 분포 변화 감지로 재학습 시점 판단</li>
+          <li><b>감사추적(Audit Trail)</b> 추론과 액션 전 구간 로그 — 규제·<wbr>품질 대응</li>
         </ul>
         <div class="pi-tags"><span class="pill light">자동 통합·배포·지속적 재학습</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-modelreg.jpg" data-shot-alt="모델 레지스트리·거버넌스 프로토타입 화면" data-shot-cap="모델 레지스트리·거버넌스 — 프로토타입 예시 화면">화면 보기</button>
@@ -255,7 +255,7 @@
         <p>현장·<wbr>업무 AI 에이전트를 실행합니다.</p>
         <ul class="pi-bul">
           <li><b>근거 제시</b> 검색한 문서·<wbr>데이터를 근거로 답하고 출처를 함께 남깁니다.</li>
-          <li><b>권한 인지</b> 역할 기반 접근 제어로 사용자별 참조 가능한 지식과 기능 범위를 분리합니다.</li>
+          <li><b>권한 인지</b> 역할 기반 접근 제어로 사용자별 참조 가능한 지식·<wbr>기능 범위 분리</li>
         </ul>
         <div class="pi-tags"><span class="pill light">근거 검색(RAG)</span><span class="pill light">사내 소형 언어모델(sLLM)</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/agentq-hub.jpg" data-shot-alt="AI 에이전트 허브 프로토타입 화면" data-shot-cap="AI 에이전트 허브 — 프로토타입 예시 화면">화면 보기</button>
@@ -265,8 +265,8 @@
         <h3>서비스 조정</h3>
         <p>여러 AI 에이전트가 정해진 순서와 역할에 따라 협업하도록 조정합니다.</p>
         <ul class="pi-bul">
-          <li><b>판단·<wbr>권고 통합</b> 여러 AI 에이전트의 판단과 권고를 하나의 흐름으로 조정합니다.</li>
-          <li><b>승인 경로 분기</b> 위험도·<wbr>가역성 정책에 따라 실행 전 승인 경로를 자동으로 분기합니다.</li>
+          <li><b>판단·<wbr>권고 통합</b> 여러 AI 에이전트의 판단과 권고를 하나의 흐름으로 조정</li>
+          <li><b>승인 경로 분기</b> 위험도·<wbr>가역성 정책에 따라 실행 전 승인 경로 자동 분기</li>
         </ul>
         <div class="pi-tags"><span class="pill light">MCP</span></div>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-builder.jpg" data-shot-alt="노코드 에이전트 빌더·서비스 조정 프로토타입 화면" data-shot-cap="노코드 에이전트 빌더·서비스 조정 — 프로토타입 예시 화면">화면 보기</button>
@@ -276,8 +276,8 @@
         <h3>통합 관제</h3>
         <p>탐지·<wbr>판단·<wbr>현장 조치를 하나의 화면에서 관리합니다.</p>
         <ul class="pi-bul">
-          <li><b>통합 운영 대시보드</b> 노드·<wbr>GPU·<wbr>파드 자원 현황과 응답 지연·<wbr>처리량·<wbr>오류율을 한 화면에서 추적합니다.</li>
-          <li><b>변경 관리·<wbr>복구</b> 프롬프트·<wbr>모델·<wbr>지식 변경을 배포 단위로 이력화하고, 문제 시 직전 버전으로 복구합니다.</li>
+          <li><b>통합 운영 대시보드</b> 노드·<wbr>GPU·<wbr>파드 자원 현황과 응답 지연·<wbr>처리량·<wbr>오류율을 한 화면에서 추적</li>
+          <li><b>변경 관리·<wbr>복구</b> 프롬프트·<wbr>모델·<wbr>지식 변경을 배포 단위로 이력화, 문제 시 직전 버전 복구</li>
         </ul>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/cubeon-infra.jpg" data-shot-alt="통합 관제·인프라 콘솔 프로토타입 화면" data-shot-cap="통합 관제·인프라 콘솔 — 프로토타입 예시 화면">화면 보기</button>
       </article>
@@ -286,8 +286,8 @@
         <h3>현장 코파일럿</h3>
         <p>자연어 질의·<wbr>현장 보조 — 상용 LLM API부터 온프레미스 sLLM까지 선택합니다.</p>
         <ul class="pi-bul">
-          <li><b>배포 방식 선택</b> 클라우드(상용 LLM API) · 온프레미스(사내 sLLM) · 폐쇄망 중 보안 요건에 맞게 선택합니다.</li>
-          <li><b>데이터 경계 고정</b> 외부 반출이 제한된 데이터가 경계를 넘지 않도록 처리 위치를 정책으로 고정합니다.</li>
+          <li><b>배포 방식 선택</b> 클라우드(상용 LLM API) · 온프레미스(사내 sLLM) · 폐쇄망 중 보안 요건에 맞게</li>
+          <li><b>데이터 경계 고정</b> 외부 반출 제한 데이터가 경계를 넘지 않도록 처리 위치를 정책으로 고정</li>
         </ul>
         <button type="button" class="pi-shot" data-shot="assets/img/proto/agentq-chat.jpg" data-shot-alt="현장 코파일럿·자연어 질의 프로토타입 화면" data-shot-cap="현장 코파일럿·자연어 질의 — 프로토타입 예시 화면">화면 보기</button>
       </article>
