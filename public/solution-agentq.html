@@ -7,7 +7,7 @@
 <meta name="description" content="QAgent — 흩어진 사내 데이터와 지식을 자연어로 조회·분석하고, 실행 작업은 담당자 승인 후 처리하는 산업 AI 에이전트.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-47">
+<link rel="stylesheet" href="assets/site2.css?v=codex-48">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-agentq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -109,7 +109,7 @@
       <div class="wrap">
     <span class="hero-badge">SOLUTION · AI 플랫폼</span>
     <h1>QAgent</h1>
-    <p class="sol-desc"><span>여러 시스템에 흩어진 데이터를 한 곳에서 대화로 찾습니다.</span><span>답변에는 근거를 함께 제시하고, 실행은 승인을 거쳐 처리합니다.</span></p>
+    <p class="sol-desc"><span>여러 시스템에 흩어진 데이터를 한 곳에서 대화로 찾습니다.</span><span>답변에 근거를 붙이고, 실행은 승인을 거칩니다.</span></p>
       </div>
     </div>
   </div>
@@ -200,10 +200,10 @@
     <div class="tl reveal" data-d="1">
       <div class="tl-card"><div class="yr">STEP 1</div><h3>질의 이해</h3><p>자연어 질문을 데이터 조회문으로 변환(NL2SQL)</p></div>
       <div class="tl-card"><div class="yr">STEP 2</div><h3>문서 검색</h3><p>문서를 의미 기반으로 검색하고 관련도가 높은 순서로 재정렬</p></div>
-      <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>근거 검색(RAG·<wbr>GraphRAG)로 근거 경로를 답변에 결합 · 지식그래프(개체 사이의 관계를 잇는 지도) 관계 추론</p></div>
+      <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>근거 검색(RAG·<wbr>GraphRAG)로 근거 경로를 답변에 결합 · 지식그래프 관계 추론</p></div>
       <div class="tl-card"><div class="yr">STEP 4</div><h3>추론 · 생성</h3><p>상용 대규모 언어모델(LLM) API 또는 온프레미스 소형&nbsp;언어모델(sLLM)으로 분석·<wbr>리포트 생성</p></div>
       <div class="tl-card"><div class="yr">STEP 5</div><h3>근거 검증 · 안전장치</h3><p>검색한 자료와 답변이 일치하는지 확인하고 개인정보를 가려 안전성을 점검</p></div>
-      <div class="tl-card cur"><div class="yr">STEP 6</div><h3>실행 · HITL</h3><p>HITL(사람이 검토·승인하는 절차)을 거친 후 생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커로 액션 실행</p></div>
+      <div class="tl-card cur"><div class="yr">STEP 6</div><h3>실행 · HITL</h3><p>담당자 검토·<wbr>승인을 거친 후 생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커로 액션 실행</p></div>
     </div>
     <div class="feat-list reveal" data-d="2" style="margin-top:22px">
       <div class="feat"><b>근거가 부족하면 답변 보류</b><span>일치도가 기준에 못 미치면 답변 보류 후 재검색</span></div>

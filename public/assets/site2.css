@@ -219,7 +219,7 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
 .stat{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px;text-align:center;box-shadow:var(--sh-sm)}
 .stat b{display:block;font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;color:var(--fg)}
 .stat b .u{font-size:.55em;font-weight:700;color:var(--fg-muted);margin-left:2px}
-.stat span{display:block;margin-top:6px;font-size:13px;color:var(--fg-3);font-weight:500}
+.stat>span{display:block;margin-top:6px;font-size:13px;color:var(--fg-3);font-weight:500}
 
 /* ---- business cards (3역량) ---- */
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
@@ -848,7 +848,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* 다크 섹션 안의 스탯 카드 */
 .dark .stat,.platform .stat{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);box-shadow:none}
 .dark .stat b,.platform .stat b{color:#fff}
-.dark .stat span,.platform .stat span{color:#aeb8c8}
+.dark .stat>span,.platform .stat>span{color:#aeb8c8}
 .dark .stat b .u,.platform .stat b .u{color:#aeb8c8}
 
 
@@ -1504,7 +1504,7 @@ body.lb-open{overflow:hidden}
 
 /* Production readability QA — 숫자·설명 위계를 분리하고 본문성 텍스트를 15px 이상으로 유지 */
 .stat b>span{display:inline;margin:0;font:inherit;color:inherit}
-.stat b .u{display:block;margin:8px 0 0;font-size:16px;font-style:normal;line-height:1.35}
+.stat b .u{display:inline;margin:0 0 0 3px;font-size:.52em;font-style:normal;line-height:1;vertical-align:baseline}
 .stat>span{margin-top:12px;font-size:15.5px;line-height:1.55}
 .dropdown a small,.m-acc-panel a small{font-size:13.5px;line-height:1.45}
 .h-badge span,.hpag-item{font-size:13.5px}
