@@ -7,7 +7,7 @@
 <meta name="description" content="Cubeon — 산업 데이터를 표준화하고 AI 판단을 담당자 승인과 검증된 범위의 제한적 자동 실행으로 연결하는 산업 AI 운영 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-48">
+<link rel="stylesheet" href="assets/site2.css?v=codex-49">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-cubeon.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -167,7 +167,7 @@
     <div class="duo rev">
       <div class="duo-txt rv"><span class="pill">ModelOps</span>
         <h3>모델 레지스트리 · 지속 운영</h3>
-        <p>모델의 버전과 배포 상태를 한곳에서 관리하고, 성능 변화를 감시해 재학습 시점을 판단합니다.<br class="sb"> 운영 중 품질 저하를 조기에 확인하고 대응할 수 있는 구조입니다.</p>
+        <p>모델 버전과 배포 상태를 한곳에서 관리하고, 성능 변화를 감시해 재학습 시점을 판단합니다.</p>
                 <ul class="pi-bul">
           <li><b>지속 재학습 루프</b> 학습 → 배포 → 성능 감시 → 재학습을 자동화된 운영 과정으로</li>
           <li><b>데이터 변화 탐지</b> PSI·<wbr>KL divergence 등으로 예측 분포 변화를 감지해 재학습 시점 판단</li>
@@ -182,7 +182,7 @@
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">Knowledge</span>
         <h3>산업 지식그래프</h3>
-        <p>설비·센서·작업지시·이벤트를 하나의 그래프로 연결해 AI 판단에 현장의 맥락을 부여합니다.<br class="sb"> 같은 알람이라도 어떤 설비·어떤 공정인지에 따라 다른 조치가 나옵니다.</p>
+        <p>설비·<wbr>센서·<wbr>작업지시를 하나로 연결해 AI 판단에 현장 맥락을 더합니다.<br class="sb"> 같은 알람도 설비·<wbr>공정에 따라 조치가 달라집니다.</p>
                 <ul class="pi-bul">
           <li><b>표준 프로토콜 수집</b> OPC-UA · MQTT · Modbus · CAN 등으로 이기종 설비 데이터를 하나의 파이프라인에 수집</li>
           <li><b>업무 시스템 연동</b> 설비제어(PLC)·<wbr>설비감시(SCADA)·<wbr>생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>시계열 DB를 어댑터 계층으로 통합</li>
@@ -201,7 +201,7 @@
     <div class="pin-left">
       <span class="pin-num">Architecture</span>
       <h2>공통 커널 8모듈</h2>
-      <p>데이터 연결·<wbr>모델 운영·<wbr>에이전트 협업 기능을 8개 모듈로 나눠 제공합니다.<br class="sb"> 각 모듈은 필요한 만큼 독립적으로 확장할 수 있고, 상용 LLM API와 사내 설치형 sLLM 중 보안·<wbr>성능 요건에 맞는 모델을 선택합니다. 제조·<wbr>안전 등 산업별 기능은 도메인팩으로 더하고, 클라우드·<wbr>온프레미스·<wbr>폐쇄망 중 데이터 보안과 규제 요건에 맞는 방식으로 배포합니다.</p>
+      <p>데이터 연결·<wbr>모델 운영·<wbr>에이전트 협업을 8개 모듈로 나눠 제공합니다.<br class="sb"> 필요한 만큼 확장하고, 모델과 배포 형태는 보안 요건에 맞춰 고릅니다.</p>
       <div class="pin-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="pin-right">

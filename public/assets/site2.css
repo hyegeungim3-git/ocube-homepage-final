@@ -1075,7 +1075,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* ── 글로벌 완성차 양산 경험: 흰 로고 타일 + 수행 영역 캡션 ── */
 /* ── 3대 핵심 역량: 번호 + 대형 헤드라인 + 태그 pill 카드 ── */
 .cap-list{list-style:none;margin:clamp(28px,3.4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,18px)}
-.cap-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;
+.cap-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
   min-height:clamp(340px,28vw,440px);border-radius:20px;background:var(--soft);
   padding:clamp(24px,2.4vw,32px);transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s}
 .cap-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
@@ -1090,7 +1090,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
   display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;
   border:1px solid var(--border);font-size:17px;font-weight:600;color:var(--fg);background:transparent}
 .cap-card.on .cap-arrow{border-color:transparent;background:var(--accent);color:#fff}
-.cap-card h3{margin:auto 0 clamp(14px,1.5vw,20px);font-size:clamp(23px,2.2vw,31px);font-weight:700;
+.cap-card h3{margin:0 0 clamp(14px,1.5vw,20px);font-size:clamp(23px,2.2vw,31px);font-weight:700;
   line-height:1.14;letter-spacing:-.035em;color:var(--fg)}
 .cap-card.on h3{color:#fff}
 .cap-desc{margin:0 0 clamp(18px,2vw,26px);font-size:clamp(14px,1.3vw,15px);line-height:1.65;color:var(--fg-muted)}
@@ -1099,7 +1099,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .cap-tags li{padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:#fff;
   font-size:12.5px;font-weight:600;color:var(--fg-muted)}
 .cap-card.on .cap-tags li{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff}
-@media(max-width:900px){.cap-list{grid-template-columns:1fr}.cap-card{min-height:0}.cap-card h3{margin-top:clamp(28px,7vw,44px)}}
+@media(max-width:900px){.cap-list{grid-template-columns:1fr}.cap-card{min-height:0}.cap-card h3{margin-top:0}}
 
 /* 솔루션 상단: HERO 문구가 스크롤에 따라 소개 영역으로 이동 */
 .sol-open>.sol-intro{--travel:80dvh;--stage-gap:-100px;background:transparent;padding:0}

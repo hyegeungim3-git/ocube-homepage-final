@@ -7,7 +7,7 @@
 <meta name="description" content="오큐브(주) 주요 구축 사례 — 제조 AI·자동차 전장·에너지·공공안전·금융·홈 AIoT 플랫폼. 산업 도메인별 레퍼런스와 AX·임베디드·SI 역량을 과제-해결-성과로 정리했습니다.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-48">
+<link rel="stylesheet" href="assets/site2.css?v=codex-49">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/references.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -121,7 +121,7 @@
         <div class="ref-tags"><span class="rbadge t-public">공공 · 국책 주관</span><span class="rbadge t-own">자체 솔루션 연계</span></div>
         <h3>영상 AI(CCTV) × 세이프뱃지 작업자 안전 실증</h3>
         <span class="client">공공안전 · 국책 주관 과제 (KT 실증) · 4개 현장</span>
-        <p>단독·<wbr>밀폐 작업의 위험은 영상만으로 판단하기 어렵습니다. <b>CCTV 영상과 작업자 뱃지(위치·<wbr>모션), 환경센서</b>를 함께 보고 위험도로 환산합니다.<br class="sb"> 위험 알림을 담당자 승인과 현장 대응 절차로 연결하는 구조를 오큐브가 주관기관으로 검증하고 있습니다.</p>
+        <p>단독·<wbr>밀폐 작업의 위험은 영상만으로 판단하기 어렵습니다.<br class="sb"> <b>CCTV 영상과 작업자 뱃지, 환경센서</b>를 함께 보고 위험도로 환산해 알림과 현장 대응까지 잇습니다. 오큐브가 주관기관으로 검증하고 있습니다.</p>
       </div>
       <div class="ref-feat-media">
         <img src="assets/img/case/safety-ai-monitoring-codex.webp" alt="영상 AI(CCTV)와 작업자 스마트 안전뱃지를 연계한 제조 현장 안전관제 예시" loading="lazy" width="1586" height="992">
@@ -143,79 +143,79 @@
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>로봇 조립 라인 이상 조기감지</h3>
         <span class="client">자동차 부품 · SL</span>
-        <p>설비 신호(토크·각도·진공압) 시계열 이상탐지와 LLM 질의응답으로, 후공정에서야 드러나던 체결 불량을 발생 시점에 포착합니다.</p>
+        <p>체결 신호를 실시간으로 읽어, 후공정에서야 드러나던 불량을 발생 시점에 잡습니다.</p>
       </article>
       <article class="ref-card rv d1" data-cat="mfg">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>진공 브레이징 열처리 최적화</h3>
         <span class="client">EV 부품 열처리 · 하이박</span>
-        <p>상태진단 → 열응답 이상감지 → 프로파일 권고 3단 AI로 숙련자 경험을 데이터로 표준화합니다. <em>(과제 진행 중)</em></p>
+        <p>열처리 상태를 진단해 이상을 감지하고, 숙련자의 판단 기준을 데이터로 남깁니다. <em>(과제 진행 중)</em></p>
       </article>
       <article class="ref-card rv d2" data-cat="mfg">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>제지 공정 AI-OT 자율운영</h3>
         <span class="client">제지 · 한솔제지</span>
-        <p>분산제어(DCS)·품질관리(QCS)·설비제어(PLC)로 분산된 공정 데이터를 AI–현장 운영기술(AI-OT) 허브로 통합해 에너지를 최적화하고 잔존수명(RUL)을 예측합니다. AI 판단이 현장 제어와 결과 확인으로 이어지는 자율운영도 구현합니다.</p>
+        <p>흩어진 공정 데이터를 하나로 모아 에너지를 줄이고, 설비 교체 시점을 예측합니다.</p>
       </article>
       <article class="ref-card rv d3" data-cat="mfg">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>자재 의사결정 AI Agent</h3>
         <span class="client">대기업 제조 · LG전자</span>
-        <p>자연어→SQL(NL2SQL)과 사내 문서·지식 근거 검색(RAG)을 결합해, 여러 시스템에 흩어진 자재 조회를 대화형 단일 창구로 통합했습니다.</p>
+        <p>여러 시스템에 흩어진 자재 정보를 대화 한 번으로 찾도록 통합했습니다.</p>
       </article>
       <article class="ref-card rv" data-cat="auto">
         <div class="ref-tags"><span class="rbadge t-oem">글로벌 OEM</span></div>
         <h3>7개 완성차 그룹 양산 개발·검증</h3>
         <span class="client">글로벌 완성차 · 양산</span>
-        <p>Linux·QNX·차량용 Android(AAOS) 적용과 원격 업데이트(OTA), 자동차&nbsp;SW&nbsp;개발표준(ASPICE)·ISO 26262·ISO 21434 프로세스로 OEM 규격의 고신뢰 임베디드 SW를 설계·검증했습니다.</p>
+        <p>Linux·<wbr>QNX·<wbr>차량용 Android를 적용하고, 완성차 규격에 맞춰 설계·<wbr>검증했습니다.</p>
       </article>
       <article class="ref-card rv d1" data-cat="auto">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>차량 인포테인먼트(AVN)·클러스터 SW 양산</h3>
         <span class="client">국내 완성차·부품사 · 양산</span>
-        <p>연간계약 기반으로 인포테인먼트(AVN)·클러스터 SW의 설계·개발·검증 체계를 운영하며 다년간 양산 SW를 공급했습니다.</p>
+        <p>인포테인먼트와 계기판 소프트웨어를 다년간 양산 공급했습니다.</p>
       </article>
       <article class="ref-card rv d2" data-cat="energy">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>전기차 충전 플랫폼 구축·운영</h3>
         <span class="client">에너지 · SK에너지</span>
-        <p>국제 충전 통신 표준(OCPP) 충전기 연동부터 지도 기반 실시간 관제, 회원·결제 시스템까지 통합 구축했습니다. 운영 노하우는 자체 제품 EVCP에 반영했습니다.</p>
+        <p>충전기 연동부터 지도 관제, 회원·<wbr>결제까지 하나로 구축했습니다. 그 경험은 자체 제품 EVCP에 담았습니다.</p>
       </article>
       <article class="ref-card rv d3" data-cat="energy">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>EV 충전기 앱 (북미·유럽향)</h3>
         <span class="client">홈 AIoT·모빌리티 · LG전자</span>
-        <p>급속(북미향)·완속 충전기용 사용자·엔지니어 앱을 다국가 대응으로 개발해 공급했습니다.</p>
+        <p>급속·<wbr>완속 충전기용 사용자·<wbr>엔지니어 앱을 여러 나라에 맞춰 공급했습니다.</p>
       </article>
       <article class="ref-card rv" data-cat="energy">
         <div class="ref-tags"><span class="rbadge t-local">지자체 · 클러스터</span></div>
         <h3>클라우드 인포테인먼트 관제</h3>
         <span class="client">모빌리티 · 지역혁신클러스터</span>
-        <p>컨테이너 기반 클라우드 인포테인먼트 관제 플랫폼을 파트너와 공동 개발해 대구 지역혁신클러스터에서 실증했습니다. (FIX 2025 전시)</p>
+        <p>클라우드 관제 플랫폼을 파트너와 함께 개발해 대구에서 실증했습니다. <em>(FIX 2025 전시)</em></p>
       </article>
       <article class="ref-card rv d1" data-cat="public">
         <div class="ref-tags"><span class="rbadge t-public">공공 · 국책 주관</span></div>
         <h3>영상 AI(CCTV) × 세이프뱃지 작업자 안전</h3>
         <span class="client">공공안전 · 국책 주관 (KT 실증)</span>
-        <p>영상 AI(CCTV) 영상 + 작업자 뱃지(위치·<wbr>모션) + 환경센서를 결합해 위험도를 판단하고, 담당자 알림·<wbr>승인·<wbr>현장 대응 절차로 연결합니다. 오큐브 주관 국책과제 · 4개 현장 검증 중.</p>
+        <p>CCTV 영상과 작업자 뱃지, 환경센서를 함께 보고 위험을 알립니다. 오큐브 주관 국책과제 · 4개 현장 검증 중.</p>
       </article>
       <article class="ref-card rv d2" data-cat="fin">
         <div class="ref-tags"><span class="rbadge t-fin">금융</span></div>
         <h3>통합 금융 SI · 그룹 소통앱</h3>
         <span class="client">금융 · DGB금융그룹</span>
-        <p>HCE 모바일 선불카드, 그룹 소통앱(계열 8개사), 유페이 홈페이지 고도화까지 다년간 금융 그룹 SI 파트너로 운영·확장했습니다.</p>
+        <p>모바일 선불카드와 계열 8개사 소통앱까지, 다년간 금융 그룹의 SI 파트너로 함께했습니다.</p>
       </article>
       <article class="ref-card rv d3" data-cat="svc">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>ThinQ 홈 AIoT 플랫폼 · webOS · B2B Cloud</h3>
         <span class="client">홈 AIoT 플랫폼 · LG전자</span>
-        <p>ThinQ 앱(레시피·반려·홈 IoT), webOS 앱·베타 고도화, Pro:Centric·SuperSign 클라우드를 다년간 연간협력사로 공급했습니다.</p>
+        <p>ThinQ 앱과 webOS 앱, 기업용 클라우드를 다년간 연간협력사로 공급했습니다.</p>
       </article>
       <article class="ref-card rv" data-cat="svc">
         <div class="ref-tags"><span class="rbadge t-corp">민간 대기업</span></div>
         <h3>AI 고객상담(CS) 지원 시스템</h3>
         <span class="client">서비스 AI · LG전자</span>
-        <p>생성형 AI 기반 상담 지원 체계 — 질문과 관련된 상담 지식을 먼저 찾아 응대 초안 작성을 지원하고, 기존 업무 시스템과 연동합니다.</p>
+        <p>질문과 관련된 상담 지식을 먼저 찾아 응대 초안 작성을 돕습니다.</p>
       </article>
     </div>
     <p class="ref-note rv" style="text-align:center">표시 중 <b data-cert-count>13</b>건 · 고객사 표기는 계약·실적확인서 기준이며, 진행 중 과제는 별도 표기했습니다.</p>
