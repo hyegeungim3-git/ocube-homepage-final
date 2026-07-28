@@ -1566,3 +1566,11 @@ body.lb-open{overflow:hidden}
   .factory-note{display:block;padding:17px 18px}
   .factory-note b{display:block;margin-bottom:5px}
 }
+
+/* 문장 경계 줄바꿈 — 데스크톱에서만 적용(모바일은 자연 줄바꿈) */
+br.sb{display:block}
+@media(max-width:900px){br.sb{display:none}}
+
+/* 카드·요약 텍스트는 줄을 고르게 나눠 마지막 줄에 한 단어만 남는 것을 방지 */
+.ref-card p,.ref-feat p,.ref-sum,.sum,.bcase-card p,.dep-card p,.feat span,.ktsum-card p,.cap-desc,.kmod p,
+.pi-bul li,.qeff-card p,.loc-card .note,.case-card p,.mis-card p,.tl-card p{text-wrap:balance}

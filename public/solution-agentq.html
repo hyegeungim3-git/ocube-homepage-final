@@ -109,7 +109,7 @@
       <div class="wrap">
     <span class="hero-badge">SOLUTION · AI 플랫폼</span>
     <h1>QAgent</h1>
-    <p class="sol-desc"><span>여러 시스템에 흩어진 데이터를 대화형 단일 창구로 통합합니다.</span><span>답변에는 근거를 함께 제시하고, 실행은 승인을 거쳐 처리합니다.</span></p>
+    <p class="sol-desc"><span>여러 시스템에 흩어진 데이터를 한 곳에서 대화로 찾습니다.</span><span>답변에는 근거를 함께 제시하고, 실행은 승인을 거쳐 처리합니다.</span></p>
       </div>
     </div>
   </div>
@@ -129,7 +129,7 @@
   <div class="wrap">
     <div class="reveal"><span class="kicker">Overview</span>
     <h2>여러 시스템을 오가며 데이터를 찾는 시간을 줄입니다</h2>
-    <p class="sec-sub">QAgent는 업무 시스템과 사내 문서를 자연어로 조회·<wbr>분석하는 AI 에이전트입니다. 답변을 리포트로 정리하고, 필요한 작업은 담당자 승인 후 실행합니다.</p></div>
+    <p class="sec-sub">QAgent는 업무 시스템과 사내 문서를 자연어로 조회·<wbr>분석하는 AI 에이전트입니다.<br class="sb"> 답변을 리포트로 정리하고, 필요한 작업은 담당자 승인 후 실행합니다.</p></div>
     <div class="media-duo reveal" data-d="1">
       <figure><img class="shot" src="assets/img/proto/agentq-analysis.jpg" alt="QAgent 데이터 분석 에이전트 화면 — 업무 데이터를 자연어로 분석" loading="lazy" width="1100" height="691">
         <figcaption class="shot-cap">QAgent — 자연어 기반 업무 데이터 분석 (예시 화면)</figcaption></figure>
@@ -151,7 +151,7 @@
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">NL2SQL</span>
         <h3>자연어 데이터 조회</h3>
-        <p>자연어 질문을 SQL로 변환해 여러 시스템에 흩어진 데이터를 한 번에 조회합니다. SQL을 몰라도 필요한 데이터를 직접 찾을 수 있습니다.</p>
+        <p>자연어 질문을 SQL로 변환해 여러 시스템에 흩어진 데이터를 한 번에 조회합니다.<br class="sb"> SQL을 몰라도 필요한 데이터를 직접 찾을 수 있습니다.</p>
                 <ul class="pi-bul">
           <li><b>TAG · 테이블 증강 생성</b> 자연어 질문을 질의문으로 바꿔 데이터베이스에서 직접 집계·<wbr>계산 — 문서 검색으로는 못 푸는 수치 질문 대응</li>
           <li><b>분산 시스템 동시 조회</b> SQL·<wbr>시계열 DB와 생산관리(MES)·<wbr>전사자원관리(ERP)를 표준 커넥터로 연결해 한 번에 조회</li>
@@ -166,7 +166,7 @@
     <div class="duo rev">
       <div class="duo-txt rv"><span class="pill">근거 검색(RAG·GraphRAG)</span>
         <h3>근거를 제시하는 답변</h3>
-        <p>사내 문서와 지식을 검색 증강(RAG·GraphRAG)으로 활용하고, 답변마다 출처를 함께 인용합니다. 어디서 온 답인지 확인할 수 있어야 업무에 쓸 수 있습니다.</p>
+        <p>사내 문서와 지식을 검색 증강(RAG·GraphRAG)으로 활용하고, 답변마다 출처를 함께 인용합니다.<br class="sb"> 어디서 온 답인지 확인할 수 있어야 업무에 쓸 수 있습니다.</p>
         <a class="duo-cta" href="#pipeline">판단 파이프라인 자세히 <i aria-hidden="true">→</i></a>
       </div>
       <div class="duo-media stage rv d1">
@@ -177,7 +177,7 @@
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">Guardrails</span>
         <h3>승인 기반 실행 통제</h3>
-        <p>민감한 작업은 안전정책 정책과 사람의 승인을 거쳐 실행합니다. 에이전트에게 일을 맡기되, 통제권은 사람에게 남깁니다.</p>
+        <p>민감한 작업은 안전정책 정책과 사람의 승인을 거쳐 실행합니다.<br class="sb"> 에이전트에게 일을 맡기되, 통제권은 사람에게 남깁니다.</p>
                 <ul class="pi-bul">
           <li><b>3단계 사람 개입</b> 실행 직전 승인(HITL) · 감시 중 개입(HOTL) · 정책 내 자동 실행을 위험도와 가역성으로 구분</li>
           <li><b>권한·<wbr>역할 기반 승인</b> 업무·<wbr>위험도별 승인권자 라우팅으로 무단 실행 차단, 조회·<wbr>실행 이력은 감사 기록으로</li>
@@ -200,8 +200,8 @@
     <div class="tl reveal" data-d="1">
       <div class="tl-card"><div class="yr">STEP 1</div><h3>질의 이해</h3><p>자연어 질문을 데이터 조회문으로 변환(NL2SQL)</p></div>
       <div class="tl-card"><div class="yr">STEP 2</div><h3>문서 검색</h3><p>문서를 의미 기반으로 검색하고 관련도가 높은 순서로 재정렬</p></div>
-      <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>근거 검색(RAG·<wbr>GraphRAG)로 근거 경로를 답변에 결합 · 지식그래프 관계 추론</p></div>
-      <div class="tl-card"><div class="yr">STEP 4</div><h3>추론 · 생성</h3><p>상용 대규모 언어모델(LLM) API 또는 온프레미스 소형 언어모델(sLLM)으로 분석·<wbr>리포트 생성</p></div>
+      <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>근거 검색(RAG·<wbr>GraphRAG)로 근거 경로를 답변에 결합 · 지식그래프(개체 사이의 관계를 잇는 지도) 관계 추론</p></div>
+      <div class="tl-card"><div class="yr">STEP 4</div><h3>추론 · 생성</h3><p>상용 대규모 언어모델(LLM) API 또는 온프레미스 소형&nbsp;언어모델(sLLM)으로 분석·<wbr>리포트 생성</p></div>
       <div class="tl-card"><div class="yr">STEP 5</div><h3>근거 검증 · 안전장치</h3><p>검색한 자료와 답변이 일치하는지 확인하고 개인정보를 가려 안전성을 점검</p></div>
       <div class="tl-card cur"><div class="yr">STEP 6</div><h3>실행 · HITL</h3><p>HITL(사람이 검토·승인하는 절차)을 거친 후 생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커로 액션 실행</p></div>
     </div>
