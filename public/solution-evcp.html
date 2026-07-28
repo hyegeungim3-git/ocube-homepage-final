@@ -121,7 +121,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#arch">아키텍처</a><a href="#struct">마이크로서비스 구조(MSA)</a><a href="#standards">표준</a><a href="#ocpp">OCPP</a><a href="#energy">스마트 에너지</a><a href="#deploy">배포</a><a href="#proof">레퍼런스</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#standards">표준</a><a href="#proof">레퍼런스</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -139,51 +139,39 @@
     </div>
   </div>
 </section>
-<section id="arch" class="sec-anchor deploy">
+
+<!-- Features -->
+<section id="features" class="sec-anchor">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">Architecture</span>
-    <h2>충전기 통신부터 회원·<wbr>결제·<wbr>관제까지 연결합니다</h2>
-    <p class="sec-sub">충전기와 통신 모듈에서 받은 정보를 충전 관리 시스템(CSMS)이 처리하고, 회원·<wbr>결제·<wbr>로밍·<wbr>에너지 관리 서비스가 함께 사용하도록 구성합니다.</p></div>
-    <div class="stack-diagram reveal" data-d="1">
-      <div class="stack-layer l-op"><span class="stack-tag">서비스 · 확장</span><b>로밍 · 스마트 에너지</b><small>충전 로밍 표준(OCPI) 연동 · 동적 부하분산(DLM) · 차량–전력망 양방향 충전(V2G) — 지원하도록 설계</small></div>
-      <div class="stack-arrow" aria-hidden="true">▲</div>
-      <div class="stack-layer l-judge"><span class="stack-tag">충전 관제 핵심 서비스</span>
-        <div class="stack-prods"><span>회원<small>인증·<wbr>요금</small></span><span>결제·<wbr>정산<small>세션 과금</small></span><span>연동<small>OCPP 게이트웨이</small></span><span>관제<small>GIS 대시보드</small></span></div>
+    <div class="sec-head rv"><span class="kicker">Features</span>
+      <h2>충전 사업 운영에 필요한 기능</h2>
+      <p class="lead">충전기 연동부터 회원·<wbr>결제·<wbr>관제까지, 사업 범위에 맞춰 필요한 기능부터 조합해 운영합니다.</p></div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Operations</span>
+        <h3>충전소 상태를 지도 위에서 운영</h3>
+        <p>운영 중인 충전소와 충전기 상태를 지도 기반 화면에 실시간으로 표시하고, 필요한 지표만 골라 배치한 대시보드로 운영합니다.</p>
+        <ul class="pi-bul">
+          <li><b>충전소 실시간 관제</b> 어느 지점이 멈춰 있는지 지도 화면에서 한눈에 확인합니다.</li>
+          <li><b>다이나믹 대시보드</b> 월별 매출·<wbr>가동 충전기 수·<wbr>충전량 통계를 필요한 차트만 골라 배치합니다.</li>
+          <li><b>실시간 이벤트 관제</b> 충전기 상태 이벤트를 지도에 표시하고 발생 이력을 추적해 대응 순서를 정합니다.</li>
+        </ul>
       </div>
-      <div class="stack-arrow" aria-hidden="true">▲</div>
-      <div class="stack-layer l-data"><span class="stack-tag">충전 인프라</span><b>충전기 · 통신 모듈</b><small>OCPP 호환 충전기 · 자체 Mini PCI LTE Cat M1 통신 모듈</small></div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/evcp.png" alt="EVCP 지도 기반 충전소 실시간 관제 화면" loading="lazy">
+        <p class="fitcap">EVCP — 지도 기반 충전소 실시간 관제 (자체 제품)</p>
+      </div>
     </div>
+    <div class="dep-grid reveal" data-d="1" style="margin-top:clamp(28px,3vw,44px)">
+      <div class="dep-card"><div class="ic" aria-hidden="true">👤</div><h3>회원·<wbr>결제·<wbr>정산</h3><p>가입·<wbr>인증·<wbr>요금제·<wbr>이용 이력과 충전 세션 단위 과금·<wbr>정산·<wbr>결제대행(PG) 연동을 각각 배포하고 확장합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🔌</div><h3>충전기 연동(OCPP)</h3><p>충전기별 OCPP 버전과 호환성을 확인해 게이트웨이로 연동하고, 사업자 간 충전 로밍(OCPI)까지 확장하도록 설계합니다.</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">⚡</div><h3>스마트 에너지</h3><p>가용 전력을 충전기 우선순위로 실시간 분배(DLM)하고, 전력 요금·<wbr>시장 신호에 따라 충전 시간을 조정하도록 구성합니다.</p></div>
+    </div>
+    <p class="sec-note">클라우드·<wbr>온프레미스·<wbr>폐쇄망(현장 엣지) 중 사업 규모와 보안 요건에 맞는 배포 형태를 선택하고, 관제 서버 이중화로 장애 영향을 줄이도록 구성합니다.</p>
   </div>
 </section>
-<section id="struct" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">MSA Modules</span>
-    <h2>필요한 기능부터 조합하고, 서비스별로 확장합니다</h2>
-    <p class="sec-sub">회원·<wbr>결제·<wbr>충전기 연동·<wbr>관제를 각각 배포하고 확장할 수 있어, 사업 범위와 운영 규모에 맞춰 구성합니다.</p></div>
-    <div class="dep-grid">
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">👤</div><h3>회원</h3><p>가입·<wbr>인증·<wbr>요금제·<wbr>이용 이력</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">💳</div><h3>결제·<wbr>정산</h3><p>충전 세션 단위 과금·<wbr>정산·<wbr>PG 연동</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔌</div><h3>연동(OCPP)</h3><p>충전기별 OCPP 버전과 호환성을 확인해 게이트웨이 연동</p></div>
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🗺️</div><h3>관제(GIS)</h3><p>지도 기반 실시간 상태·<wbr>이용률·<wbr>장애 관제</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔗</div><h3>사업자 간 충전 로밍(OCPI)</h3><p>사업자 간 로밍·<wbr>데이터 교환 — 지원 설계</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">⚡</div><h3>스마트 에너지</h3><p>동적 부하분산(DLM)·<wbr>V2G — 지원 설계</p></div>
-    </div>
-  </div>
-</section>
-<section id="screens" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Operations Console</span>
-    <h2>운영자가 실제로 보는 화면</h2>
-    <p class="sec-sub">충전소 상태는 지도 위에서 확인하고, 필요한 지표만 골라 배치한 대시보드로 운영합니다. 화면은 운영 규모와 담당 업무에 맞춰 구성합니다.</p></div>
-    <div class="dep-grid reveal" data-d="1">
-      <div class="dep-card"><div class="ic" aria-hidden="true">📍</div><h3>충전소 실시간 관제</h3><p>운영 중인 충전소와 충전기 상태를 지도 기반 화면에 실시간으로 표시해, 어느 지점이 멈춰 있는지 한눈에 보이도록 합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">📊</div><h3>다이나믹 대시보드</h3><p>필요한 차트만 골라 배치합니다. 월별 매출·<wbr>가동 충전기 수·<wbr>충전량 통계를 실시간으로 확인합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🔎</div><h3>지도 기반 충전소 검색</h3><p>공공 로밍 충전소·<wbr>충전기 상세 정보를 주소로 검색하고, 운영기관·<wbr>충전기 종류별로 필터링합니다.</p></div>
-      <div class="dep-card"><div class="ic" aria-hidden="true">🔔</div><h3>실시간 이벤트 관제</h3><p>충전기 상태 이벤트를 지도 위에 실시간으로 표시하고 발생 이력을 추적해 대응 순서를 정합니다.</p></div>
-    </div>
-    <p class="sec-note reveal" data-d="2">회원 관리·<wbr>충전기 연동·<wbr>결제·<wbr>로밍 서비스를 각각 분리한 마이크로서비스 구조로 설계해, 한 서비스의 장애가 운영 전체로 번지지 않도록 했습니다.</p>
-  </div>
-</section>
+
+
+
 <section id="standards" class="sec-anchor dark">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Standards &amp; Protocols</span>
@@ -200,18 +188,6 @@
       <div class="mod">LTE Cat M1 / LTE-M</div>
     </div>
     <p class="sec-note">OCPP 1.6J 구축 경험을 기반으로 합니다. OCPP 2.0.1 기능과 OCPI·<wbr>ISO 15118·<wbr>OpenADR 연계는 사업 요건과 충전기 호환성에 따라 적용 범위를 정합니다.</p>
-    <div class="feat-list reveal" data-d="2" style="margin-top:20px">
-      <div class="feat"><b>OCPP 1.6J 구축 기반</b><span>자체 EV 충전 플랫폼의 충전기 제어·<wbr>과금·<wbr>상태 관리 경험을 2.0.1 확장 설계에 반영합니다.</span></div>
-      <div class="feat"><b>스마트 충전 확장</b><span>전력 피크 분산·<wbr>충전 스케줄링 등 스마트 충전 프로파일을 지원하는 방향으로 설계합니다.</span></div>
-      <div class="feat"><b>로밍 · PnC 로드맵</b><span>OCPI 로밍, ISO 15118 Plug&amp;<wbr>Charge는 표준 성숙도에 맞춰 단계 도입하는 접근입니다.</span></div>
-    </div>
-  </div>
-</section>
-<section id="ocpp" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">OCPP 1.6 vs 2.0.1</span>
-    <h2>프로토콜 버전별 지원 범위</h2>
-    <p class="sec-sub">사업 요건에 맞춰 OCPP 1.6J에서 2.0.1로 단계적 마이그레이션을 지원하도록 설계합니다.</p></div>
     <table class="cmp reveal" data-d="1">
       <caption class="sr-only">프로토콜 버전별 지원 범위 비교표</caption>
       <thead><tr><th scope="col">기능</th><th scope="col">OCPP 1.6J</th><th scope="col" class="ok">OCPP 2.0.1</th></tr></thead>
@@ -223,39 +199,16 @@
         <tr><th scope="row">트랜잭션</th><td>StartTransaction 계열</td><td class="ok">TransactionEvent·<wbr>MeterValues 세분화</td></tr>
       </tbody>
     </table>
-    <p class="sec-note">OCPP 2.0.1 고급 기능은 사업 요건과 충전기 호환성에 따라 단계적으로 적용합니다.</p>
-  </div>
-</section>
-<section id="energy" class="sec-anchor dark">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Smart Energy</span>
-    <h2>충전소의 가용 전력에 맞춰 충전량을 배분하도록 설계합니다</h2>
-    <p class="sec-sub">충전기별 우선순위와 가용 전력을 기준으로 충전 부하를 나누고, 전력 신호에 따라 충전 시간을 조정하도록 구성합니다.</p></div>
-    <div class="feat-list reveal" data-d="1">
-      <div class="feat"><b>동적 부하분산 (DLM)</b><span>충전소 내 가용 전력을 충전기별 우선순위로 실시간 분배 — 계약 전력 초과 방지</span></div>
-      <div class="feat"><b>스마트 차징</b><span>전력 요금·<wbr>시장 신호(OpenADR) 기반 충전 시프팅으로 피크 회피·<wbr>비용 최적화</span></div>
-      <div class="feat"><b>V2G 양방향 충전</b><span>ISO 15118-20 기반 차량→그리드 역송전 — 지원하도록 설계</span></div>
-      <div class="feat"><b>재생에너지 · ESS 연계</b><span>태양광·<wbr>ESS와 연계해 잉여 전력으로 충전 배분 — 연계하도록 설계</span></div>
-      <div class="feat"><b>예약 · 스케줄 충전</b><span>저요금 시간대 자동 충전 예약으로 운영 비용 절감 — 지원 방향</span></div>
-      <div class="feat"><b>계약전력 관리</b><span>충전소 계약전력 한도 내에서 충전 총량 제어 — 초과 수요요금 방지</span></div>
+    <div class="feat-list reveal" data-d="2" style="margin-top:20px">
+      <div class="feat"><b>OCPP 1.6J 구축 기반</b><span>자체 EV 충전 플랫폼의 충전기 제어·<wbr>과금·<wbr>상태 관리 경험을 2.0.1 확장 설계에 반영합니다.</span></div>
+      <div class="feat"><b>스마트 충전 확장</b><span>전력 피크 분산·<wbr>충전 스케줄링 등 스마트 충전 프로파일을 지원하는 방향으로 설계합니다.</span></div>
+      <div class="feat"><b>로밍 · PnC 로드맵</b><span>OCPI 로밍, ISO 15118 Plug&amp;<wbr>Charge는 표준 성숙도에 맞춰 단계 도입하는 접근입니다.</span></div>
     </div>
   </div>
 </section>
-<section id="deploy" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Deployment</span>
-    <h2>세 가지 배포 형태</h2>
-    <p class="sec-sub">사업 규모·<wbr>보안 요건에 맞춰 동일 플랫폼을 세 형태로 배포하도록 구성합니다.</p></div>
-    <div class="dep-grid">
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드 CSMS</h3><p>빠른 구축·<wbr>탄력 확장 — 다거점 충전소 통합 관제</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스 관제</h3><p>사내 서버 배치 — 데이터 내부화·<wbr>보안 요건 대응</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망 · 엣지</h3><p>망분리 환경 대응 — 현장 엣지에서 통신·<wbr>과금 처리</p></div>
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🔀</div><h3>하이브리드</h3><p>클라우드 통합 관제 + 현장 엣지 과금 병행 구성</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🔁</div><h3>이중화 · HA</h3><p>관제 서버 이중화로 장애 시 서비스 영향을 줄이는 구성</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🧩</div><h3>개방 API</h3><p>OCPP 연동 API를 제공하고, OCPI 연계는 사업 요건에 맞춰 확장</p></div>
-    </div>
-  </div>
-</section>
+
+
+
 <section id="proof" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Reference</span>

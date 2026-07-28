@@ -121,7 +121,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#arch">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#caps">기능</a><a href="#detect">돌발검지</a><a href="#spec">스펙</a><a href="#deploy">배포</a><a href="#proof">국책 실증</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#detect">돌발검지</a><a href="#proof">국책 실증</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -141,54 +141,63 @@
     </div>
   </div>
 </section>
-<section id="arch" class="sec-anchor">
+
+<!-- Features -->
+<section id="features" class="sec-anchor">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">Architecture</span>
-    <h2>카메라에서 관제까지, 3계층으로</h2>
-    <p class="sec-sub">현장 카메라의 영상을 <b>엣지에서 추론</b>하고, 표준 프로토콜로 수집해 <b>중앙 관제</b>로 잇는 엣지-투-클라우드 구조로 설계합니다.</p></div>
-    <div class="stack-diagram reveal" data-d="1">
-      <div class="stack-layer"><span class="stack-tag">EDGE · 현장</span><b>엣지 카메라 · 영상 수집</b><small>IP 카메라(ONVIF)·<wbr>RTSP 스트림 — 이기종 CCTV를 표준 인터페이스로 연결하도록 설계</small></div>
-      <div class="stack-arrow">▼</div>
-      <div class="stack-layer l-op"><span class="stack-tag">INFERENCE · 추론</span><b>현장 엣지 AI 분석 · 영상 파이프라인</b><small>영상 처리도구(GStreamer) 디코딩·<wbr>전처리 + 영상 인식 신경망(CNN) 기반 객체 검출·<wbr>분류·<wbr>추적 — 카메라 인접 엣지에서 실시간 처리</small></div>
-      <div class="stack-arrow">▼</div>
-      <div class="stack-layer"><span class="stack-tag">CONTROL · 관제</span><b>지도정보(GIS) 기반 중앙 통합관제</b><small>다수 현장 이벤트를 지도 기반으로 통합 관제 — Cubeon 안전 도메인팩 위에서 결합</small></div>
+    <div class="sec-head rv"><span class="kicker">Features</span>
+      <h2>현장 목적에 맞는 영상 검지</h2>
+      <p class="lead">교통·<wbr>노면·<wbr>작업 안전 등 목적에 맞는 검지 모델을 구성하고, 결과를 지도 기반 관제로 잇습니다.</p></div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Traffic</span>
+        <h3>도로 통행을 데이터로</h3>
+        <p>카메라 영상에서 차종을 분류하고 통행량을 계측해, 도로 통행 상황을 데이터로 남깁니다.</p>
+        <ul class="pi-bul">
+          <li><b>차종 분류·<wbr>통행량 계측</b> 도로를 지나는 차량을 종류별로 세어 통행 데이터를 만듭니다.</li>
+          <li><b>보행자·<wbr>군중 분석</b> 횡단·<wbr>무단횡단·<wbr>군중 밀집도를 영상으로 판단합니다.</li>
+          <li><b>주정차 관제</b> 불법 주정차와 주차면 점유를 자동으로 판별합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/tms.png" alt="QVision 교통 분석 화면 — 차종 분류·통행량 계측" loading="lazy">
+        <p class="fitcap">교통 분석 — 차종 분류·<wbr>통행량 계측</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Road Safety</span>
+        <h3>노면 파손을 자동으로 찾아냅니다</h3>
+        <p>포트홀·<wbr>균열 같은 노면 파손을 영상에서 자동 검출하고, 도로 위험 요소까지 함께 검지합니다.</p>
+        <ul class="pi-bul">
+          <li><b>포트홀·<wbr>균열 검출</b> 노면 파손을 영상에서 자동으로 찾아 관제에 전달합니다.</li>
+          <li><b>환경 위험 검지</b> 저시정·<wbr>연기·<wbr>낙하물 등 도로 위험 요소를 함께 검지합니다.</li>
+          <li><b>오탐 억제</b> 이벤트 신뢰도 점수·<wbr>연속 프레임 확인·<wbr>사람 검수를 거쳐 확정합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/pothole.png" alt="QVision 노면 안전 화면 — 포트홀 자동 검출" loading="lazy">
+        <p class="fitcap">노면 안전 — 포트홀 자동 검출</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Control</span>
+        <h3>여러 현장을 지도 위 한 화면에서</h3>
+        <p>카메라에 인접한 현장 엣지에서 추론하고 검지 이벤트만 중앙으로 보내, 다수 현장을 지도 기반으로 통합 관제합니다.</p>
+        <ul class="pi-bul">
+          <li><b>엣지-투-클라우드</b> IP 카메라(ONVIF)·<wbr>RTSP 수집 → 현장 엣지 추론 → 중앙 통합관제로 잇습니다.</li>
+          <li><b>대역 절감</b> 원본 영상 대신 검지 이벤트와 썸네일만 센터로 보내 회선 부담을 낮춥니다.</li>
+          <li><b>배포 3형태</b> 클라우드·<wbr>온프레미스·<wbr>폐쇄망 엣지 중 선택하며, 반출 불가 현장은 영상 없이 이벤트만 전송합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/qdrive-city.jpg" alt="교통·안전 통합 관제 화면 — 위험운전 히트맵·돌발상황 표출" loading="lazy">
+        <p class="fitcap">교통·<wbr>안전 통합 관제 — 프로토타입 예시 화면</p>
+      </div>
     </div>
   </div>
 </section>
-<section id="pipeline" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Pipeline</span>
-    <h2>영상 한 프레임이 이벤트가 되기까지</h2>
-    <p class="sec-sub">수집부터 관제까지 6단계 영상 분석 파이프라인으로 구성합니다.</p></div>
-    <div class="tl reveal" data-d="1">
-      <div class="tl-card"><span class="yr">01</span><h3>영상 수집</h3><p>RTSP·<wbr>ONVIF로 IP 카메라 스트림 수집</p></div>
-      <div class="tl-card"><span class="yr">02</span><h3>디코딩·<wbr>전처리</h3><p>GStreamer 파이프라인으로 디코드·<wbr>프레임 정규화</p></div>
-      <div class="tl-card"><span class="yr">03</span><h3>객체 추론</h3><p>CNN 기반 검출·<wbr>분류 — 차종·<wbr>보행자·<wbr>노면 파손</p></div>
-      <div class="tl-card"><span class="yr">04</span><h3>객체 추적</h3><p>다중 객체 추적(multi-object tracking)으로 이동 경로 산출</p></div>
-      <div class="tl-card"><span class="yr">05</span><h3>이벤트 판단</h3><p>자동 돌발상황 감지(AID)·<wbr>오탐 억제(사람 검수)</p></div>
-      <div class="tl-card cur"><span class="yr">06</span><h3>GIS 관제</h3><p>지도 기반 실시간 이벤트 표출·<wbr>현장 통합 관제</p></div>
-    </div>
-    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
-      <div class="feat"><b>엣지 전처리로 대역 절감</b><span>원본 영상 대신 검지 이벤트·<wbr>썸네일만 센터로 보내 회선 부담을 낮추도록 설계합니다.</span></div>
-      <div class="feat"><b>이벤트 중심 아카이빙</b><span>상시 저장 대신 이벤트 전후 구간 중심으로 보관해 저장 비용과 개인정보 노출을 줄입니다.</span></div>
-    </div>
-  </div>
-</section>
-<section id="caps" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Capabilities</span>
-    <h2>도로에서 현장까지</h2></div>
-    <p class="sec-sub reveal">교통·<wbr>노면·<wbr>작업 안전 등 현장 목적에 맞는 영상 검지 모델을 구성합니다.</p>
-    <div class="dep-grid">
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">🚦</div><h3>교통 분석</h3><p>차종 분류·<wbr>통행량 계측 — 도로 통행 데이터 분석</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🕳️</div><h3>노면 안전</h3><p>포트홀·<wbr>균열 등 노면 파손 영상 자동 검출</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🦺</div><h3>작업 안전</h3><p>영상+센서 융합 위험 추론 — 작업자별 위험도 산출</p></div>
-      <div class="dep-card reveal" data-d="4"><div class="ic" aria-hidden="true">🚶</div><h3>보행자·<wbr>군중</h3><p>횡단·<wbr>무단횡단·<wbr>군중 밀집도 영상 분석</p></div>
-      <div class="dep-card reveal" data-d="5"><div class="ic" aria-hidden="true">🅿️</div><h3>주정차 관제</h3><p>불법 주정차·<wbr>주차면 점유 자동 판별</p></div>
-      <div class="dep-card reveal" data-d="6"><div class="ic" aria-hidden="true">🌫️</div><h3>환경 위험</h3><p>저시정·<wbr>연기·<wbr>낙하물 등 도로 위험 요소 검지</p></div>
-    </div>
-  </div>
-</section>
+
+
+
 <section id="detect" class="sec-anchor dark">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Incident Detection</span>
@@ -216,48 +225,8 @@
     </figure>
   </div>
 </section>
-<section id="spec" class="sec-anchor">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Specification</span>
-    <h2>카메라 영상을 받아 위험 이벤트와 관제 정보를 제공합니다</h2></div>
-    <table class="cmp reveal" data-d="1">
-      <caption class="sr-only">카메라 영상을 받아 위험 이벤트와 관제 정보를 제공합니다 비교표</caption>
-      <thead><tr><th scope="col">구분</th><th scope="col" class="ok">QVision</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">영상 입력</th><td class="ok">IP 카메라(ONVIF)·<wbr>RTSP 스트림 — 이기종 CCTV 연동 설계</td></tr>
-        <tr><th scope="row">추론 방식</th><td>현장 엣지 AI 분석(카메라 인접) + 중앙 AI 추론 서버 2티어 구성</td></tr>
-        <tr><th scope="row">영상 처리</th><td>GStreamer 파이프라인 · 영상 인식 신경망(CNN) 기반 객체 검출·<wbr>분류·<wbr>다중 추적</td></tr>
-        <tr><th scope="row">융합 입력</th><td>영상 + 뱃지 + 환경 센서 멀티모달 융합(작업 안전)</td></tr>
-        <tr><th scope="row">산출물</th><td>자동 돌발상황 감지(AID) 이벤트 · 작업자별 위험도 · 통행·<wbr>차종 통계</td></tr>
-        <tr><th scope="row">관제</th><td class="ok">GIS 지도 기반 중앙 통합관제 · Cubeon Safety Pack 연계</td></tr>
-      </tbody>
-    </table>
-    <div class="reveal" data-d="2" style="margin-top:20px">
-      <span class="pill light">ONVIF</span> <span class="pill light">RTSP</span>
-      <span class="pill light">GStreamer</span> <span class="pill light">CNN 객체검출</span>
-      <span class="pill light">멀티모달 융합</span> <span class="pill light">현장 엣지 AI 분석</span>
-      <span class="pill light">MQTT</span> <span class="pill light">GIS 관제</span>
-    </div>
-    <p class="sec-note">ONVIF·<wbr>RTSP 등 표준 프로토콜로 서로 다른 카메라와 연동하고, 주요 영상 관리 시스템(VMS)의 연계 범위는 현장 환경에 맞춰 정합니다.</p>
-  </div>
-</section>
-<section id="deploy" class="sec-anchor deploy">
-  <div class="wrap">
-    <div class="reveal"><span class="kicker">Deployment</span>
-    <h2>클라우드부터 폐쇄망까지</h2>
-    <p class="sec-sub">데이터 규제·<wbr>영상정보 보안 환경에 맞춰 동일 솔루션을 세 가지 형태로 배포하도록 구성합니다.</p></div>
-    <div class="dep-grid">
-      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드 관제</h3><p>중앙 관제·<wbr>통계를 클라우드에 배치 — 빠른 구축·<wbr>다현장 통합</p></div>
-      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스</h3><p>사내 서버에서 영상·<wbr>데이터 내부화 — 데이터 주권 확보</p></div>
-      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망 엣지</h3><p>망분리 현장에서 현장 엣지 AI 분석만으로 운영 — 영상 반출 없이 검지</p></div>
-    </div>
-    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
-      <div class="feat"><b>영상 반출 가능 여부</b><span>반출 불가 현장은 현장 엣지 AI 분석만으로 운영 — 이벤트 메타데이터만 센터로 전송합니다.</span></div>
-      <div class="feat"><b>현장 수 · 관제 범위</b><span>다지점 통합 관제가 필요하면 클라우드 중앙 관제, 단일 현장은 온프레미스가 유리합니다.</span></div>
-      <div class="feat"><b>회선 대역 · 지연</b><span>대역이 제한된 현장은 엣지 전처리로 전송량을 줄이는 구성을 권장합니다.</span></div>
-    </div>
-  </div>
-</section>
+
+
 <section id="proof" class="sec-anchor">
   <div class="wrap">
     <div class="reveal"><span class="kicker">National Project</span>
