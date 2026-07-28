@@ -123,7 +123,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#comp">구성</a><a href="#standards">표준</a><a href="#spec">스펙</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#standards">표준</a><a href="#spec">스펙</a></div></nav>
 
 <section id="overview" class="sec-anchor dark">
   <div class="wrap">
@@ -145,17 +145,75 @@
   </div>
 </section>
 
-
-<section id="comp" class="sec-anchor">
+<!-- Features — 실증 데모 화면 -->
+<section id="features" class="sec-anchor">
   <div class="wrap">
-    <div class="reveal"><span class="kicker">Composition</span>
-    <h2>차량 데이터 수집을 기반으로 에너지·<wbr>충전·<wbr>탄소 서비스를 연결합니다</h2></div>
-    <figure class="shot-fig reveal" data-d="2">
-      <img class="shot fit" src="assets/img/proto/qdrive-city.jpg" alt="모빌리티 통합 관제 대시보드 예시 화면 — 실시간 차량 위치·연료 절감·안전점수·위험운전 히트맵" loading="lazy" width="1600" height="1005">
-      <figcaption class="shot-cap">모빌리티 통합 관제 대시보드 — 실증 데모 예시 화면</figcaption>
-    </figure>
+    <div class="sec-head rv"><span class="kicker">Features</span>
+      <h2>차량 데이터로 무엇을 보는가</h2>
+      <p class="lead">운행 관제부터 탄소·<wbr>연료 절감, 성과 검증, 운수사 운영까지 실증 데모 화면으로 확인할 수 있습니다.</p></div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Fleet</span>
+        <h3>운행 중인 차량을 한 화면에서</h3>
+        <p>차량 위치와 운행 상태를 지도에 모아 보여주고, 위험운전이 잦은 구간과 연료·<wbr>안전 지표를 같은 화면에서 확인합니다.</p>
+        <ul class="pi-bul">
+          <li><b>실시간 위치·<wbr>상태</b> 운행 중인 차량의 위치와 상태를 지도에서 확인합니다.</li>
+          <li><b>위험운전 히트맵</b> 급가속·<wbr>급감속·<wbr>급회전이 잦은 구간을 지도 위에 모아 보여줍니다.</li>
+          <li><b>연료·<wbr>안전 지표</b> 연료 절감과 안전점수를 한 화면에서 함께 비교합니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/qdrive-city.jpg" alt="모빌리티 통합 관제 대시보드 예시 화면 — 실시간 차량 위치·운행 상태·위험운전 히트맵" loading="lazy" width="1600" height="1005">
+        <p class="fitcap">모빌리티 통합 관제 대시보드 — 실증 데모 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Carbon</span>
+        <h3>탄소·<wbr>연료 절감을 수치로</h3>
+        <p>운행기록(DTG)의 주행거리와 연비를 기준으로 배출 절감량을 산정하고, 운전 습관이 연비에 미치는 영향까지 함께 봅니다.</p>
+        <ul class="pi-bul">
+          <li><b>주행·<wbr>연비 기준 산정</b> 운행기록(DTG)의 주행거리와 연비로 배출 절감량을 계산합니다.</li>
+          <li><b>안전운전 ↔ 연비 상관</b> 운전 습관이 연비에 미치는 영향을 지표로 확인합니다.</li>
+          <li><b>기간별 추이</b> 개선 효과를 기간 단위로 누적해 보여줍니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/qdrive-carbon.jpg" alt="탄소중립 분석 예시 화면 — 주행거리·연비 개선·CO2 절감량·안전운전↔연비 상관 분석" loading="lazy" width="1600" height="1005">
+        <p class="fitcap">탄소·<wbr>연료 절감 분석 — 실증 데모 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Verification</span>
+        <h3>도입 효과를 주장 대신 비교로</h3>
+        <p>같은 조건에서 AI를 쓰지 않았을 때와 견주고, 운전 그룹을 나눠 코칭 전후를 비교해 수치의 근거를 남깁니다.</p>
+        <ul class="pi-bul">
+          <li><b>미적용 가정과 비교</b> 같은 조건에서 AI를 적용하지 않았을 때와 견주어 효과를 확인합니다.</li>
+          <li><b>그룹별 코칭 효과</b> 운전 그룹을 나눠 코칭 적용 전후를 비교합니다.</li>
+          <li><b>교차 검증</b> 차량진단(OBD)과 운행기록(DTG)을 대조해 수치의 근거를 남깁니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/qdrive-verify.jpg" alt="성과 검증 예시 화면 — AI 미적용 가정과 비교·운전 그룹별 코칭 효과·차량진단(OBD)·운행기록(DTG) 교차검증" loading="lazy" width="1600" height="1005">
+        <p class="fitcap">성과 검증 — AI 미적용 가정과 비교·<wbr>차량진단(OBD)·<wbr>운행기록(DTG) 교차검증 · 실증 데모 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Operations</span>
+        <h3>차량과 기사 단위로 운영</h3>
+        <p>운행 현황을 차량·<wbr>기사 단위로 정리하고, 정비 시점 예측과 운행기록 제출까지 하나의 흐름으로 잇습니다.</p>
+        <ul class="pi-bul">
+          <li><b>차량·<wbr>기사별 현황</b> 운전점수·<wbr>연료·<wbr>재차율·<wbr>배차 간격을 단위별로 정리합니다.</li>
+          <li><b>정비 시점 예측</b> 차량진단(OBD)·<wbr>CAN 신호로 정비 시점과 비용을 미리 가늠합니다.</li>
+          <li><b>운행기록 제출</b> 운행기록 자동 제출까지 연결해 반복 업무를 줄입니다.</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/qdrive-ops.jpg" alt="운수사 관제 예시 화면 — 차량·기사별 운전점수·연료·재차율·배차 간격, 정비비 예측(OBD/CAN)" loading="lazy" width="1600" height="1005">
+        <p class="fitcap">운수사 관제 — 차량·<wbr>기사별 운행 현황 · 실증 데모 예시 화면</p>
+      </div>
+    </div>
   </div>
 </section>
+
 
 
 <section id="standards" class="sec-anchor dark">
@@ -174,10 +232,6 @@
       <div class="mod">TLS 1.2 / 1.3<small>데이터 전송 보안</small></div>
     </div>
     <p class="sec-note">OCPP는 EVCP에 적용했고, LTE Cat M1은 자체 통신 모듈 개발 경험을 보유합니다. ISO 15118과 GHG Protocol은 사업 요건에 따라 적용 범위를 정합니다.</p>
-    <figure class="shot-fig reveal" data-d="2">
-      <img class="shot fit" src="assets/img/proto/qdrive-verify.jpg" alt="성과 검증 예시 화면 — 코칭 효과 AI 미적용 가정과 비교·운전 그룹별 A/B 효과·기준선 대비·OBD·DTG 교차검증" loading="lazy" width="1600" height="1005">
-      <figcaption class="shot-cap">성과 검증 — AI 미적용 가정과 비교·<wbr>차량진단(OBD)·<wbr>운행기록(DTG) 교차검증 · 실증 데모 예시 화면</figcaption>
-    </figure>
   </div>
 </section>
 <section id="spec" class="sec-anchor">
@@ -193,10 +247,6 @@
         <tr><th scope="row">탄소중립</th><td class="ok">주행·<wbr>에너지 소비 데이터</td><td>온실가스 산정 기준(GHG Protocol·ISO 14064) 참조(사업별 적용)</td><td>산정 기준에 따른 탄소 저감량 리포트</td></tr>
       </tbody>
     </table>
-    <figure class="shot-fig reveal" data-d="2">
-      <img class="shot fit" src="assets/img/proto/qdrive-ops.jpg" alt="운수사 관제 예시 화면 — 차량·기사별 운전점수·연료·재차율·배차간격, 정비비 예측(OBD/CAN)·eTAS 자동제출" loading="lazy" width="1600" height="1005">
-      <figcaption class="shot-cap">운수사 관제 — 차량·<wbr>기사별 운행 현황 · 실증 데모 예시 화면</figcaption>
-    </figure>
   </div>
 </section>
 
