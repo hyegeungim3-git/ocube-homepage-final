@@ -1047,22 +1047,6 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .sol-desc span{display:block}
 .sol-desc span+span{margin-top:4px}
 /* ── 글로벌 완성차 양산 경험: 흰 로고 타일 + 수행 영역 캡션 ── */
-.oem-mq{margin:clamp(28px,3.4vw,44px) 0 0;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.oem-track{display:flex;width:max-content;gap:clamp(14px,1.6vw,20px);margin-left:clamp(14px,1.6vw,20px);
-  animation:oem-roll 46s linear infinite}
-.oem-group{display:flex;gap:clamp(14px,1.6vw,20px)}
-@keyframes oem-roll{from{transform:translateX(0)}to{transform:translateX(calc(-33.3333% - clamp(14px,1.6vw,20px) / 3))}}
-.oem-mq:hover .oem-track,.oem-mq:focus-within .oem-track{animation-play-state:paused}
-.oem-card{flex:0 0 auto;width:clamp(210px,19vw,268px);background:rgba(255,255,255,.055);
-  border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:clamp(14px,1.6vw,20px);text-align:center}
-.oem-logo{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.2vw,18px);background:#fff;border-radius:12px;padding:clamp(14px,1.6vw,22px) clamp(12px,1.4vw,18px);min-height:clamp(74px,6.6vw,96px)}
-.oem-logo img{display:block;width:auto;max-width:100%;max-height:clamp(28px,2.9vw,42px);object-fit:contain}
-.oem-cap{margin:clamp(12px,1.3vw,16px) 0 0;font-size:clamp(13.5px,1.25vw,15px);font-weight:700;line-height:1.5;color:#fff}
-.oem-cap span{display:block;font-weight:600;color:rgba(255,255,255,.82)}
-@media(prefers-reduced-motion:reduce){.oem-track{animation:none}.oem-mq{overflow-x:auto}}
-
 /* ── 3대 핵심 역량: 번호 + 대형 헤드라인 + 태그 pill 카드 ── */
 .cap-list{list-style:none;margin:clamp(28px,3.4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,18px)}
 .cap-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;
