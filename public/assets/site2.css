@@ -1150,6 +1150,19 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* 그라디언트 프레임(밝은 하늘색) 위라 --fg-3(4.46:1)는 AA 미달 → --fg-muted(5.5:1) */
 .duo-media.stage .fitcap{margin-top:10px;margin-bottom:-2px;color:var(--fg-muted)}
 
+/* ── 대표 소개 하단 요약 카드(아이콘 + 컬러 제목 + 부제 + 본문) ── */
+.ktsum{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px);
+  margin-top:clamp(30px,3.4vw,48px);text-align:left}
+.ktsum-card{background:var(--soft);border:1px solid var(--border);border-radius:16px;
+  padding:clamp(20px,2vw,26px)}
+.ktsum-ic{display:block;width:34px;height:34px;margin-bottom:14px;color:var(--accent)}
+.ktsum-ic svg{width:100%;height:100%;display:block}
+.ktsum-card h3{font-size:16.5px;font-weight:800;line-height:1.35;letter-spacing:-.02em;color:var(--accent-text)}
+.ktsum-card .sub{display:block;margin-top:5px;font-size:12.5px;color:var(--fg-3)}
+.ktsum-card p{margin-top:14px;font-size:13.5px;line-height:1.72;color:var(--fg-muted)}
+@media(max-width:1000px){.ktsum{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.ktsum{grid-template-columns:1fr}}
+
 /* ══ 시연 영상 지원 — duo-media에서 video를 img와 동일하게 렌더 ══ */
 /* 영상 교체 시 마크업만 img→video로 바꾸면 됨(CSS 무수정 원칙, sol-stage와 동일) */
 .duo-media video{width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:var(--sh);display:block}
