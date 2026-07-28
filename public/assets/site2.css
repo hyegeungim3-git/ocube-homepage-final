@@ -730,6 +730,8 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .cmp th,.cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
 .cmp thead th{background:var(--soft);font-weight:800;font-size:13.5px;color:var(--fg)}
 .cmp tbody th{font-weight:700;color:var(--fg);width:26%}
+/* 열이 많은 표(5열 이상)는 행 머리 26%가 과해 본문 열을 압박 → 좁게 */
+.cmp.th-narrow tbody th{width:13%}
 .cmp td{color:var(--fg-muted)}
 .cmp .ok{color:var(--accent-ink);font-weight:600}
 .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
