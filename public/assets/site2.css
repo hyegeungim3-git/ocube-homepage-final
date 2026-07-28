@@ -1046,6 +1046,29 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .sol-desc{max-width:820px;margin-left:auto;margin-right:auto}
 .sol-desc span{display:block}
 .sol-desc span+span{margin-top:4px}
+/* ── 글로벌 완성차 양산 경험: 흰 로고 타일 + 수행 영역 캡션 ── */
+.oem-grid{list-style:none;margin:clamp(28px,3.4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+.oem-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:clamp(16px,1.8vw,24px);text-align:center}
+.oem-logo{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.4vw,20px);background:#fff;border-radius:12px;padding:clamp(14px,1.8vw,24px) clamp(12px,1.6vw,22px);min-height:clamp(78px,7.4vw,104px)}
+.oem-logo img{display:block;width:auto;max-width:100%;max-height:clamp(30px,3.2vw,46px);object-fit:contain}
+.oem-cap{margin:clamp(12px,1.4vw,18px) 0 0;font-size:clamp(14px,1.35vw,16px);font-weight:700;line-height:1.5;color:#fff}
+.oem-cap span{display:block;font-weight:600;color:rgba(255,255,255,.82)}
+@media(max-width:900px){.oem-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.oem-grid{grid-template-columns:1fr}}
+
+/* ── 3대 핵심 역량: 원형 알파벳 배지 + 불릿 카드 ── */
+.cc-grid{list-style:none;margin:clamp(28px,3.4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,24px)}
+.cc-card{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh-md);padding:clamp(24px,2.6vw,36px)}
+.cc-badge{display:flex;align-items:center;justify-content:center;width:clamp(46px,4.4vw,60px);height:clamp(46px,4.4vw,60px);border-radius:50%;font-size:clamp(19px,1.9vw,24px);font-weight:800;color:#fff}
+.cc-a{background:var(--ink)}
+.cc-b{background:var(--accent)}
+.cc-c{background:#12a4b8}
+.cc-card h3{margin:clamp(16px,1.8vw,24px) 0 clamp(12px,1.4vw,18px);font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em;color:var(--fg)}
+.cc-list{list-style:none;margin:0;padding:0;display:grid;gap:clamp(8px,1vw,12px)}
+.cc-list li{position:relative;padding-left:16px;font-size:clamp(14px,1.35vw,15.5px);line-height:1.6;color:var(--fg-muted)}
+.cc-list li::before{content:"";position:absolute;left:2px;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+@media(max-width:900px){.cc-grid{grid-template-columns:1fr}}
+
 /* 솔루션 상단: HERO 문구가 스크롤에 따라 소개 영역으로 이동 */
 .sol-open>.sol-intro{--travel:80dvh;--stage-gap:-100px;background:transparent;padding:0}
 .sol-copy-zone{position:relative;z-index:3;height:calc(100dvh + var(--travel));margin-top:-100dvh;pointer-events:none}
