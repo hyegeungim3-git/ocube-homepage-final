@@ -1047,7 +1047,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .sol-desc span{display:block}
 .sol-desc span+span{margin-top:4px}
 /* 솔루션 상단: HERO 문구가 스크롤에 따라 소개 영역으로 이동 */
-.sol-open>.sol-intro{--travel:80dvh;background:transparent;padding:0}
+.sol-open>.sol-intro{--travel:80dvh;--stage-gap:-100px;background:transparent;padding:0}
 .sol-copy-zone{position:relative;z-index:3;height:calc(100dvh + var(--travel));margin-top:-100dvh;pointer-events:none}
 .sol-copy{--p:0;position:sticky;top:0;height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:center}
 /* 히어로에서 크게 시작해 소개 영역 크기로 축소 (--p: 0→1) */
@@ -1062,8 +1062,8 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .sol-copy.on-light .hero-badge{color:var(--accent-text)}
 .sol-copy.on-light h1{color:var(--fg)}
 .sol-copy.on-light .sol-desc{color:var(--fg-muted)}
-.sol-body{position:relative;background:var(--soft);text-align:center;margin-top:calc(-1 * var(--travel));padding:calc(50dvh + 34px) clamp(20px,5vw,40px) clamp(96px,8vw,140px)}
-@media(max-width:900px){.sol-open>.sol-intro{--travel:52dvh}}
+.sol-body{position:relative;background:var(--soft);text-align:center;margin-top:calc(-1 * var(--travel));padding:calc(50dvh + var(--stage-gap)) clamp(20px,5vw,40px) clamp(96px,8vw,140px)}
+@media(max-width:900px){.sol-open>.sol-intro{--travel:52dvh;--stage-gap:-209px}}
 @media(prefers-reduced-motion:reduce){.sol-open>.sol-intro{--travel:0dvh}}
 .sol-open{position:relative}
 .sol-open>.sol-hero{position:sticky;top:0;z-index:0}
