@@ -1129,7 +1129,8 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
   border:1px solid #adc9ec;border-radius:18px;padding:clamp(12px,1.6vw,22px);
   box-shadow:0 20px 55px rgba(28,76,133,.10)}
 .duo-media.stage img{border:1px solid #1e3f66;border-radius:10px;background:#07182f;box-shadow:none}
-.duo-media.stage .fitcap{margin-top:10px;margin-bottom:-2px}
+/* 그라디언트 프레임(밝은 하늘색) 위라 --fg-3(4.46:1)는 AA 미달 → --fg-muted(5.5:1) */
+.duo-media.stage .fitcap{margin-top:10px;margin-bottom:-2px;color:var(--fg-muted)}
 
 /* ══ 시연 영상 지원 — duo-media에서 video를 img와 동일하게 렌더 ══ */
 /* 영상 교체 시 마크업만 img→video로 바꾸면 됨(CSS 무수정 원칙, sol-stage와 동일) */
