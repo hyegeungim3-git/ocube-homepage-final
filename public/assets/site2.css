@@ -1050,7 +1050,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* ── 3대 핵심 역량: 번호 + 대형 헤드라인 + 태그 pill 카드 ── */
 .cap-list{list-style:none;margin:clamp(28px,3.4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,18px)}
 .cap-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;
-  min-height:clamp(460px,44vw,600px);border-radius:20px;background:var(--soft);
+  min-height:clamp(340px,28vw,440px);border-radius:20px;background:var(--soft);
   padding:clamp(24px,2.4vw,32px);transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s}
 .cap-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
 .cap-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;opacity:.09;filter:grayscale(1)}
