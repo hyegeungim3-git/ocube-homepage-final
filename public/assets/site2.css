@@ -857,6 +857,8 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* ===== genos식 교차 행(텍스트 ↔ 미디어) ===== */
 .duo{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,70px);align-items:center;padding:clamp(34px,4.5vw,60px) 0}
 .duo+.duo{border-top:1px solid var(--line-soft)}
+/* 지그재그 교차 시 미디어 열 폭이 좌우로 달라지지 않도록 비율도 함께 뒤집는다 */
+.duo.rev{grid-template-columns:1.15fr 1fr}
 .duo.rev .duo-txt{order:2}
 .duo.rev .duo-media{order:1}
 .duo-txt .pill{margin-bottom:14px}
@@ -1150,15 +1152,25 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* 그라디언트 프레임(밝은 하늘색) 위라 --fg-3(4.46:1)는 AA 미달 → --fg-muted(5.5:1) */
 .duo-media.stage .fitcap{margin-top:10px;margin-bottom:-2px;color:var(--fg-muted)}
 
-/* ── 대표 소개 하단 요약 카드(아이콘 + 컬러 제목 + 부제 + 본문) ── */
+/* ── 대표 소개 하단 요약 카드(아이콘 + 컬러 제목 + 부제 + 본문) ──
+   .sol-body 는 --soft 배경이므로 카드는 흰색(--canvas)이어야 떠 보인다.
+   좌우 기준선은 본문과 같아야 해 .wrap 으로 감싸 쓴다. */
+/* .sol-body 자체 패딩 위에 .wrap 을 겹치면 좌우가 이중이 된다.
+   본문 .wrap 과 같은 기준선이 되도록 안쪽 wrap 의 패딩을 계산식으로 맞춘다.
+   (50% 는 .sol-body 콘텐츠 폭 기준 → 50% + 패딩 - 640px = (100vw - 1280px)/2)
+   ⚠️ 640px 는 --wrap(1280) 의 절반 — --wrap 변경 시 함께 고쳐야 함 */
+.sol-body > .wrap{max-width:none;padding-inline:max(0px, calc(50% + clamp(20px,5vw,40px) - 640px))}
 .ktsum{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px);
   margin-top:clamp(30px,3.4vw,48px);text-align:left}
-.ktsum-card{background:var(--soft);border:1px solid var(--border);border-radius:16px;
-  padding:clamp(20px,2vw,26px)}
-.ktsum-ic{display:block;width:34px;height:34px;margin-bottom:14px;color:var(--accent)}
+.ktsum-card{display:flex;flex-direction:column;background:var(--canvas);
+  border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-sm);
+  padding:clamp(22px,2.1vw,28px);transition:transform .2s,box-shadow .2s}
+.ktsum-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.ktsum-ic{display:block;width:30px;height:30px;margin-bottom:16px;color:var(--accent)}
 .ktsum-ic svg{width:100%;height:100%;display:block}
 .ktsum-card h3{font-size:16.5px;font-weight:800;line-height:1.35;letter-spacing:-.02em;color:var(--accent-text)}
-.ktsum-card .sub{display:block;margin-top:5px;font-size:12.5px;color:var(--fg-3)}
+.ktsum-card .sub{display:block;margin-top:6px;padding-bottom:14px;border-bottom:1px solid var(--line-soft);
+  font-size:12.5px;color:var(--fg-3)}
 .ktsum-card p{margin-top:14px;font-size:13.5px;line-height:1.72;color:var(--fg-muted)}
 @media(max-width:1000px){.ktsum{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.ktsum{grid-template-columns:1fr}}
