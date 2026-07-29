@@ -812,5 +812,84 @@
     upd();
   })();
 
+/* 회사소개: Hero 포인터 시차 + 스크롤 연동 비전 장면 */
+(function aboutExperience() {
+  var hero = document.querySelector('.about-hero');
+  var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (hero && !reduceMotion.matches) {
+    var orbit = hero.querySelector('.about-hero-orbit');
+    if (orbit) {
+      var heroTicking = false;
+      var heroPoint = { x: 0, y: 0 };
+      function paintHero() {
+        heroTicking = false;
+        orbit.style.setProperty('--about-x', heroPoint.x.toFixed(1) + 'px');
+        orbit.style.setProperty('--about-y', heroPoint.y.toFixed(1) + 'px');
+      }
+      hero.addEventListener('pointermove', function (e) {
+        var r = hero.getBoundingClientRect();
+        heroPoint.x = ((e.clientX - r.left) / r.width - .5) * 28;
+        heroPoint.y = ((e.clientY - r.top) / r.height - .5) * 20;
+        if (!heroTicking) {
+          heroTicking = true;
+          requestAnimationFrame(paintHero);
+        }
+      }, { passive: true });
+      hero.addEventListener('pointerleave', function () {
+        heroPoint.x = 0;
+        heroPoint.y = 0;
+        paintHero();
+      }, { passive: true });
+    }
+  }
+
+  var vision = document.querySelector('.about-vision');
+  if (!vision || reduceMotion.matches) return;
+  var panels = [].slice.call(vision.querySelectorAll('[data-vision-panel]'));
+  var buttons = [].slice.call(vision.querySelectorAll('[data-vision-jump]'));
+  if (!panels.length) return;
+  var active = -1;
+  var visionTicking = false;
+
+  function setVision(index) {
+    index = Math.max(0, Math.min(panels.length - 1, index));
+    if (index === active) return;
+    active = index;
+    panels.forEach(function (panel, i) {
+      panel.classList.toggle('is-active', i === index);
+      panel.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+    });
+    buttons.forEach(function (button, i) {
+      button.classList.toggle('is-active', i === index);
+      button.setAttribute('aria-pressed', i === index ? 'true' : 'false');
+    });
+  }
+
+  function updateVision() {
+    visionTicking = false;
+    var rect = vision.getBoundingClientRect();
+    var travel = Math.max(1, vision.offsetHeight - innerHeight);
+    var progress = Math.max(0, Math.min(1, -rect.top / travel));
+    setVision(Math.min(panels.length - 1, Math.floor(progress * panels.length)));
+  }
+
+  buttons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      var top = scrollY + vision.getBoundingClientRect().top;
+      var travel = Math.max(1, vision.offsetHeight - innerHeight);
+      var target = index === panels.length - 1 ? .92 : index / panels.length;
+      scrollTo({ top: top + travel * target, behavior: 'smooth' });
+    });
+  });
+  addEventListener('scroll', function () {
+    if (!visionTicking) {
+      visionTicking = true;
+      requestAnimationFrame(updateVision);
+    }
+  }, { passive: true });
+  addEventListener('resize', updateVision, { passive: true });
+  updateVision();
+})();
+
 /* 모션 초기화가 끝난 경우에만 리빌 요소를 숨긴다. 스크립트 실패 시 본문은 기본적으로 보인다. */
 document.documentElement.classList.add('motion-ready');
