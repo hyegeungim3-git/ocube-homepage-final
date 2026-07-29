@@ -2,6 +2,19 @@
 (function () {
   'use strict';
 
+  /* --- 0) 전 페이지 본문 바로가기 + main 기준점 보강 --- */
+  (function pageAccessibility() {
+    var main = document.querySelector('main');
+    if (!main) return;
+    if (!main.id) main.id = 'main-content';
+    if (document.querySelector('.skip')) return;
+    var skip = document.createElement('a');
+    skip.className = 'skip';
+    skip.href = '#' + main.id;
+    skip.textContent = '본문으로 바로가기';
+    document.body.insertBefore(skip, document.body.firstChild);
+  })();
+
   /* --- 1) 스크롤 리빌 : IO 우선 + 스크롤 폴백 (IO 미발동 환경에서도 콘텐츠가 숨겨지지 않도록) --- */
   (function reveal() {
     var els = [].slice.call(document.querySelectorAll('.rv, .reveal'));
@@ -621,6 +634,84 @@
   }
   addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }, { passive: true });
   paint();
+})();
+
+/* --- 긴 페이지 섹션 내비게이션: 현재 위치 표시 + 바로가기 --- */
+(function pageRail() {
+  var main = document.querySelector('main');
+  if (!main) return;
+  var source = document.querySelector('.subnav');
+  var items = [];
+
+  if (source) {
+    source.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (target) items.push({ id: id, label: link.textContent.trim(), target: target });
+    });
+  }
+
+  if (items.length < 3) {
+    items = [];
+    main.querySelectorAll('section[id]').forEach(function (section) {
+      if (section.id === 'top') return;
+      var heading = section.querySelector('h2,h1');
+      var kicker = section.querySelector('.kicker');
+      var label = section.getAttribute('data-nav-label') ||
+        (heading && heading.textContent.trim()) ||
+        (kicker && kicker.textContent.trim()) ||
+        section.id;
+      label = label.replace(/\s+/g, ' ').trim();
+      if (label.length > 18) label = (kicker && kicker.textContent.trim()) || label.slice(0, 18);
+      items.push({ id: section.id, label: label, target: section });
+    });
+  }
+
+  if (items.length < 3 || items.length > 8) return;
+  var nav = document.createElement('nav');
+  nav.className = 'page-rail';
+  nav.setAttribute('aria-label', '현재 페이지 섹션');
+  items.forEach(function (item, index) {
+    var link = document.createElement('a');
+    link.href = '#' + item.id;
+    link.innerHTML = '<span>' + String(index + 1).padStart(2, '0') + '</span><i aria-hidden="true"></i><em>' + item.label + '</em>';
+    nav.appendChild(link);
+    item.link = link;
+  });
+  document.body.appendChild(nav);
+
+  var active = -1;
+  var ticking = false;
+  function paint() {
+    ticking = false;
+    var marker = innerHeight * .38;
+    var beforeFirst = items[0].target.getBoundingClientRect().top > marker;
+    nav.classList.toggle('is-active', !beforeFirst);
+    if (beforeFirst) {
+      active = -1;
+      items.forEach(function (item) { item.link.removeAttribute('aria-current'); });
+      return;
+    }
+    var next = 0;
+    items.forEach(function (item, index) {
+      if (item.target.getBoundingClientRect().top <= marker) next = index;
+    });
+    if (next === active) return;
+    active = next;
+    items.forEach(function (item, index) {
+      if (index === active) item.link.setAttribute('aria-current', 'location');
+      else item.link.removeAttribute('aria-current');
+    });
+  }
+  addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(paint);
+    }
+  }, { passive: true });
+  addEventListener('resize', paint, { passive: true });
+  paint();
+  requestAnimationFrame(function () { nav.classList.add('is-ready'); });
 })();
 
 /* --- GNB 스마트 숨김: 320px 이상에서 하강 시 숨김, 상승 즉시 복귀 (i-bricks 패턴) --- */

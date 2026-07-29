@@ -1258,6 +1258,38 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
   transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.scroll-progress{display:none}}
 
+/* 긴 페이지 공통 섹션 내비게이션 */
+.page-rail{
+  position:fixed;z-index:86;left:16px;top:50%;display:flex;flex-direction:column;gap:3px;
+  padding:10px 9px;border:1px solid rgba(14,22,38,.1);border-radius:16px;
+  background:rgba(255,255,255,.84);box-shadow:0 12px 36px rgba(14,22,38,.1);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  opacity:0;transform:translate(-8px,-50%);pointer-events:none;
+  transition:opacity .32s,transform .32s
+}
+.page-rail.is-ready.is-active{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+.page-rail a{
+  position:relative;display:grid;grid-template-columns:22px 20px;align-items:center;
+  min-height:30px;color:#8190a3;text-decoration:none
+}
+.page-rail a span{font-size:10px;font-weight:800;letter-spacing:.05em;line-height:1}
+.page-rail a i{display:block;width:9px;height:2px;border-radius:2px;background:#a8b3c1;transition:width .22s,background .22s}
+.page-rail a em{
+  position:absolute;left:52px;top:50%;min-width:max-content;padding:7px 10px;border-radius:8px;
+  background:rgba(14,22,38,.94);color:#fff;font-size:12px;font-style:normal;font-weight:750;
+  letter-spacing:-.01em;opacity:0;transform:translate(-5px,-50%);pointer-events:none;
+  transition:opacity .18s,transform .18s;box-shadow:0 8px 24px rgba(0,0,0,.18)
+}
+.page-rail a:hover em,.page-rail a:focus-visible em{opacity:1;transform:translate(0,-50%)}
+.page-rail a:hover,.page-rail a:focus-visible,.page-rail a[aria-current="location"]{color:var(--accent-text)}
+.page-rail a:hover i,.page-rail a:focus-visible i,.page-rail a[aria-current="location"] i{width:17px;background:var(--accent)}
+.page-rail a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:5px}
+@media(max-width:1399px),(max-height:680px){.page-rail{display:none}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .page-rail,.page-rail a i,.page-rail a em{transition:none}
+}
+
 /* GNB CTA 화살표 (레퍼런스 Contact Us → 디테일) */
 .cta-btn::after{content:"→";display:inline-block;margin-left:8px;font-size:.92em;transition:transform .2s}
 .cta-btn:hover::after{transform:translateX(3px)}
