@@ -7,7 +7,7 @@
 <meta name="description" content="QData — 이기종 산업·OT 데이터를 수집·표준화·통합해 산업 AI가 신뢰할 데이터를 만드는 플랫폼.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-50">
+<link rel="stylesheet" href="assets/site2.css?v=codex-51">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-dataq.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -145,7 +145,7 @@
 </section>
 </div>
 
-<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#standards">표준·<wbr>관리</a><a href="#fit">적합한 곳</a></div></nav>
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#arch">아키텍처</a><a href="#features">핵심 기능</a><a href="#standards">표준·<wbr>관리</a><a href="#fit">적합한 곳</a></div></nav>
 
 <section id="overview" class="sec-anchor">
   <div class="wrap">
@@ -160,6 +160,58 @@
       </div>
       <figure><img class="shot" src="assets/img/ai_3.png" alt="QData — 이기종 데이터 통합·표준화 화면" loading="lazy" width="1100" height="655">
         <figcaption class="shot-cap">QData — 데이터 통합·<wbr>표준화 (예시 화면)</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="arch" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="kicker">Architecture</span>
+      <h2>데이터가 AI가 쓸 수 있는 형태가 되기까지</h2>
+      <p class="lead">흩어진 소스를 연결해 6단계로 다듬고, 목적별 AI 데이터로 만들어 서비스까지 잇습니다.</p></div>
+    <div class="qarch rv" data-d="1">
+      <div class="qa-stage">
+        <div class="qa-hd"><span class="qa-no">01</span><b>Data Sources</b></div>
+        <span class="qa-sub">현장에 이미 쌓여 있는 데이터</span>
+        <div class="qa-item"><b>정형 데이터</b><span>ERP · MES · DB · CSV · API</span></div>
+        <div class="qa-item"><b>비정형 데이터</b><span>PDF · DOCX · PPT · 메일</span></div>
+        <div class="qa-item"><b>산업 데이터</b><span>PLC · 센서 · 시계열 · 영상</span></div>
+        <div class="qa-item"><b>지식 데이터</b><span>매뉴얼 · 리포트 · 표준 · 이력</span></div>
+      </div>
+      <div class="qa-stage core">
+        <div class="qa-hd"><span class="qa-no">02</span><b>QData Core Pipeline</b></div>
+        <span class="qa-sub">산업 데이터를 AI가 쓸 수 있는 형태로 바꾸는 6단계</span>
+        <div class="qa-item qa-step"><b><i>1</i>Connect · 데이터 연결</b><span>여러 소스를 연결해 수집</span></div>
+        <div class="qa-item qa-step"><b><i>2</i>Parse · 구조화</b><span>형식을 분석해 구조로 변환</span></div>
+        <div class="qa-item qa-step"><b><i>3</i>Clean · 품질관리</b><span>중복 제거·<wbr>오류 보정·<wbr>결측 처리</span></div>
+        <div class="qa-item qa-step"><b><i>4</i>Standardize · 표준화</b><span>스키마 통일과 단위 표준화</span></div>
+        <div class="qa-item qa-step"><b><i>5</i>Contextualize · 맥락화</b><span>도메인·<wbr>업무 맥락과 관계 부여</span></div>
+        <div class="qa-item qa-step"><b><i>6</i>Ready · AI-Ready</b><span>품질·<wbr>일관성·<wbr>맥락을 갖춘 데이터</span></div>
+        <p class="qa-note">품질·<wbr>일관성·<wbr>맥락을 갖춘 데이터 → AI 활용 최적화</p>
+      </div>
+      <div class="qa-stage">
+        <div class="qa-hd"><span class="qa-no">03</span><b>AI Data Engine</b></div>
+        <span class="qa-sub">하나의 데이터 기반에서 목적별로 생성</span>
+        <div class="qa-item"><b>RAG Ready</b><span>검색·<wbr>근거 중심 데이터</span></div>
+        <div class="qa-item"><b>CAG Ready</b><span>반복 참조용 컨텍스트 최적화 데이터</span></div>
+        <div class="qa-item"><b>TAG Ready</b><span>탐색·<wbr>집계용 구조적 데이터</span></div>
+      </div>
+      <div class="qa-stage">
+        <div class="qa-hd"><span class="qa-no">04</span><b>AI-Ready Data Outputs</b></div>
+        <span class="qa-sub">그대로 가져다 쓰는 산출물</span>
+        <div class="qa-item"><b>Knowledge Data</b><span>청크 · 임베딩 · 메타데이터 · 출처</span></div>
+        <div class="qa-item"><b>Context Data</b><span>도메인 맥락 · 정책 · 매뉴얼 · 규칙</span></div>
+        <div class="qa-item"><b>Structured AI Data</b><span>테이블 데이터셋 · 의미 스키마 · 피처</span></div>
+        <div class="qa-item"><b>Training Data</b><span>인스트럭션 · Q&amp;A · 파인튜닝 데이터셋</span></div>
+      </div>
+      <div class="qa-stage">
+        <div class="qa-hd"><span class="qa-no">05</span><b>AI Applications</b></div>
+        <span class="qa-sub">검색·<wbr>추천·<wbr>학습·<wbr>운영까지 연결</span>
+        <div class="qa-item"><b>LLM · sLLM</b><span>상용 API와 온프레미스 소형 모델</span></div>
+        <div class="qa-item"><b>AI 에이전트</b><span>근거를 붙여 답하고 실행까지</span></div>
+        <div class="qa-item"><b>예측 모델</b><span>이상 감지·<wbr>수요·<wbr>품질 예측</span></div>
+        <div class="qa-item"><b>Cubeon</b><span>판단을 승인과 현장 조치로</span></div>
+      </div>
     </div>
   </div>
 </section>

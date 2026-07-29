@@ -1578,3 +1578,28 @@ br.sb{display:block}
 /* 카드·요약 텍스트는 줄을 고르게 나눠 마지막 줄에 한 단어만 남는 것을 방지 */
 .ref-card p,.ref-feat p,.ref-sum,.sum,.bcase-card p,.dep-card p,.feat span,.ktsum-card p,.cap-desc,.kmod p,
 .pi-bul li,.qeff-card p,.loc-card .note,.case-card p,.mis-card p,.tl-card p{text-wrap:balance}
+
+/* ══ QData Architecture — 데이터 소스에서 AI 활용까지 5단계 흐름 ══ */
+.qarch{--qa-gap:clamp(12px,1.3vw,18px);display:grid;grid-template-columns:repeat(5,1fr);
+  gap:var(--qa-gap);align-items:start;margin-top:clamp(26px,3vw,40px)}
+.qa-stage{position:relative;background:var(--canvas);border:1px solid var(--border);
+  border-radius:16px;padding:clamp(13px,1.3vw,18px);box-shadow:var(--sh-sm)}
+.qa-stage.core{background:var(--accent-soft);border-color:rgba(0,117,222,.30)}
+.qa-hd{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.qa-no{display:inline-flex;align-items:center;justify-content:center;min-width:25px;height:25px;
+  border-radius:999px;background:var(--accent);color:#fff;font-size:12px;font-weight:800;flex:0 0 auto}
+.qa-hd b{font-size:14.5px;font-weight:750;letter-spacing:-.01em;color:var(--fg);line-height:1.3}
+.qa-sub{display:block;font-size:12px;color:var(--fg-muted);line-height:1.55;margin-bottom:11px}
+.qa-item{border:1px solid var(--line-soft);border-radius:11px;padding:9px 11px;background:var(--canvas)}
+.qa-item+.qa-item{margin-top:7px}
+.qa-item b{display:block;font-size:13px;font-weight:750;color:var(--accent-text);line-height:1.4}
+.qa-item span{display:block;font-size:12px;color:var(--fg-muted);line-height:1.55;margin-top:3px}
+.qa-item.qa-step b{color:var(--fg)}
+.qa-item.qa-step b i{font-style:normal;color:var(--accent);font-weight:800;margin-right:5px}
+.qa-note{margin-top:11px;font-size:12px;line-height:1.55;color:var(--accent-text);font-weight:650}
+.qarch>.qa-stage:not(:last-child)::after{content:"→";position:absolute;
+  right:calc(-1 * (var(--qa-gap) / 2) - 6px);top:20px;color:var(--accent);font-size:14px;font-weight:800;line-height:1}
+@media(max-width:1120px){
+  .qarch{grid-template-columns:1fr;gap:14px}
+  .qarch>.qa-stage:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+}
