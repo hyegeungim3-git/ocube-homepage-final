@@ -847,6 +847,9 @@
   if (!vision || reduceMotion.matches) return;
   var panels = [].slice.call(vision.querySelectorAll('[data-vision-panel]'));
   var buttons = [].slice.call(vision.querySelectorAll('[data-vision-jump]'));
+  var visionHead = vision.querySelector('.about-vision-head');
+  var visionHeadLabel = vision.querySelector('[data-vision-head-label]');
+  var visionHeadTitle = vision.querySelector('[data-vision-head-title]');
   if (!panels.length) return;
   var active = -1;
   var visionTicking = false;
@@ -855,6 +858,14 @@
     index = Math.max(0, Math.min(panels.length - 1, index));
     if (index === active) return;
     active = index;
+    var currentPanel = panels[index];
+    if (visionHeadLabel) visionHeadLabel.textContent = currentPanel.getAttribute('data-vision-label') || '';
+    if (visionHeadTitle) visionHeadTitle.textContent = currentPanel.getAttribute('data-vision-title') || '';
+    if (visionHead) {
+      visionHead.classList.remove('is-changing');
+      void visionHead.offsetWidth;
+      visionHead.classList.add('is-changing');
+    }
     panels.forEach(function (panel, i) {
       panel.classList.toggle('is-active', i === index);
       panel.setAttribute('aria-hidden', i === index ? 'false' : 'true');

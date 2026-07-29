@@ -1777,6 +1777,12 @@ br.sb{display:block}
 .about-vision-head h2{
   margin-top:9px;color:#fff;font-size:clamp(30px,3.3vw,46px);line-height:1.2;letter-spacing:-.04em
 }
+.about-vision-head.is-changing .kicker,
+.about-vision-head.is-changing h2{animation:aboutVisionHeadIn .42s cubic-bezier(.22,.61,.36,1)}
+@keyframes aboutVisionHeadIn{
+  from{opacity:.15;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
 .about-vision-panels{position:absolute;inset:0}
 .about-vision-card{
   position:absolute;inset:0;display:flex;align-items:flex-end;
