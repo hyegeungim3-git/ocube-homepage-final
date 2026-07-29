@@ -1582,6 +1582,38 @@ body.lb-open{overflow:hidden}
 .stack-prods span small,.prod-card .sub,.ref-note,.cert-note{font-size:14px;line-height:1.55}
 .loc-note{font-size:15px;line-height:1.6}
 
+/* AX applications */
+.ax-app-grid{align-items:stretch}
+.ax-app-card{
+  min-height:350px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:28px 24px;
+  text-align:center;
+  overflow:hidden;
+}
+.ax-app-icon{
+  width:150px;
+  height:150px;
+  flex:0 0 auto;
+  margin-bottom:22px;
+  border:1px solid rgba(38,128,222,.24);
+  border-radius:26px;
+  overflow:hidden;
+  background:#050b13;
+  box-shadow:0 14px 34px rgba(7,19,35,.16);
+}
+.ax-app-icon img{width:100%;height:100%;display:block;object-fit:cover}
+.ax-app-card h3{margin-top:0;font-size:22px;letter-spacing:-.02em}
+.ax-app-card p{margin-top:12px;font-size:15px;line-height:1.65;text-wrap:balance}
+.ax-app-card p span{display:block}
+@media(max-width:599px){
+  .ax-app-card{min-height:0;padding:24px 20px}
+  .ax-app-icon{width:132px;height:132px;margin-bottom:19px;border-radius:22px}
+}
+
 
 /* QFactory AI Smart Factory scope — source-verified 2026-07-26 */
 .factory-apps{background:linear-gradient(180deg,#f6f8fb 0%,#fff 100%)}
