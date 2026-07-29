@@ -632,7 +632,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .pinsec{padding:var(--pad) 0}
 .pinsec+.pinsec{padding-top:0}
 .pinsec>.wrap{display:grid;grid-template-columns:minmax(250px,35%) 1fr;gap:clamp(28px,5vw,64px);align-items:start}
-.pin-left{position:sticky;top:104px}
+.pin-left{position:sticky;top:calc(50vh + 36px);transform:translateY(-50%)}
 .pin-num{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
 .pin-left h2{font-size:clamp(24px,2.8vw,36px);margin-top:12px}
 .pin-left h2 em{font-style:normal;color:var(--accent-text)}
@@ -702,7 +702,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 
 @media(max-width:900px){
   .pinsec>.wrap{grid-template-columns:1fr}
-  .pin-left{position:static}
+  .pin-left{position:static;top:auto;transform:none}
   .pin-cover{max-width:640px}
   .pin-illust{height:150px}
   .pin-item{width:100%;margin-inline:auto}
