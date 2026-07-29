@@ -1587,12 +1587,12 @@ body.lb-open{overflow:hidden}
 /* Business applications */
 .ax-app-grid{align-items:stretch;gap:16px;margin-top:32px}
 .ax-app-card{
-  min-height:300px;
+  min-height:0;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
-  padding:22px 20px 24px;
+  padding:22px 20px 18px;
   text-align:center;
   overflow:hidden;
 }
@@ -1613,7 +1613,7 @@ body.lb-open{overflow:hidden}
 .ax-app-card p span{display:block}
 @media(max-width:599px){
   .ax-app-grid{gap:14px;margin-top:28px}
-  .ax-app-card{min-height:0;padding:20px 18px 22px}
+  .ax-app-card{min-height:0;padding:20px 18px 18px}
   .ax-app-icon{width:108px;height:108px;margin-bottom:15px;border-radius:19px}
   .ax-app-card h3{font-size:19px}
   .ax-app-card p{margin-top:8px;font-size:14px;line-height:1.55}
