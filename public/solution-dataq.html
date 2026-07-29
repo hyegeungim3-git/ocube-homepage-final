@@ -115,7 +115,7 @@
   </div>
   <div class="sol-body">
     <figure class="sol-stage rv d3">
-    <img src="assets/img/proto/dataq-knowledge.jpg" alt="QData 화면 — 프로토타입 예시" loading="lazy" width="1600" height="1005">
+    <img src="assets/img/proto/dataq-source.jpg" alt="QData 데이터 소스 연계 화면 — 프로토타입 예시" loading="lazy" width="1440" height="1298">
   </figure>
         <div class="wrap">
   <div class="ktsum reveal" data-d="4">
@@ -168,50 +168,95 @@
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Features</span>
       <h2>데이터를 자산으로 만드는 핵심 기능</h2>
-      <p class="lead">현장 소스를 연결하고 품질을 확인해 공통 의미로 정리합니다.</p></div>
+      <p class="lead">수집한 데이터가 찾아 쓸 수 있는 지식이 되기까지, 모든 단계를 한곳에서 관리합니다.</p></div>
     <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Connect</span>
-        <h3>산업·<wbr>업무 시스템 커넥터</h3>
-        <p>산업 프로토콜부터 MES·<wbr>ERP 업무 시스템까지 준비된 커넥터로 연결합니다.<br class="sb"> 새 설비는 커넥터를 더해 확장합니다.</p>
-                <ul class="pi-bul">
-          <li><b>산업 프로토콜</b> OPC-UA · MQTT · Modbus · EtherNet/IP</li>
-          <li><b>기간계 시스템</b> PLC·<wbr>SCADA·<wbr>MES·<wbr>ERP·<wbr>시계열 DB 연동</li>
-          <li><b>스트림 + 배치</b> 실시간·<wbr>배치 데이터를 같은 계층에서 수집</li>
+      <div class="duo-txt rv"><span class="pill">Pipeline</span>
+        <h3>수집한 파일이 어디까지 처리됐는지</h3>
+        <p>파일을 넣어둔 뒤 결과만 기다리지 않도록, 문서 하나하나의 처리 단계를 그대로 보여줍니다.</p>
+        <ul class="pi-bul">
+          <li><b>단계별 상태</b> 파싱·<wbr>청킹·<wbr>임베딩 진행을 문서별 표시</li>
+          <li><b>변경 감지</b> 신규·<wbr>업데이트·<wbr>삭제를 자동 반영</li>
+          <li><b>개인정보 표시</b> 민감 정보 포함 문서 별도 표기</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/cubeon-connect.jpg" alt="데이터 소스·프로토콜 어댑터 개념 화면" loading="lazy" width="2720" height="1270">
-        <p class="fitcap">소스·어댑터 관리 — 개념 예시 화면(실제 UI 아님)</p>
+        <img src="assets/img/proto/dataq-f01.jpg" alt="데이터 처리 현황 화면" loading="lazy" width="1440" height="1090">
+        <p class="fitcap">데이터 처리 현황 — 프로토타입 예시 화면</p>
       </div>
     </div>
     <div class="duo rev">
-      <div class="duo-txt rv"><span class="pill">Semantic</span>
-        <h3>의미 기반 지식화</h3>
-        <p>설비마다 다른 태그와 코드를 온톨로지로 정리합니다.<br class="sb"> 문서·<wbr>이미지도 의미 단위로 구조화해 AI가 맥락을 찾게 합니다.</p>
-                <ul class="pi-bul">
-          <li><b>객체·<wbr>속성 정의</b> 설비·<wbr>라인은 객체로, 계측값은 표준 단위로</li>
-          <li><b>지식그래프·<wbr>공통 스키마</b> 설비-공정-제품 관계를 하나로 매핑</li>
-          <li><b>카탈로그·<wbr>계보·<wbr>품질</b> 데이터 자산 목록화, 원본→표준 계보 추적, 결측·<wbr>이상·<wbr>중복 검증</li>
+      <div class="duo-txt rv"><span class="pill">Chunking</span>
+        <h3>검색 정확도는 자르는 방식에서 갈립니다</h3>
+        <p>문서를 어떻게 나누느냐에 따라 같은 질문의 답이 달라집니다. 자른 결과를 지표로 점검합니다.</p>
+        <ul class="pi-bul">
+          <li><b>품질 지표</b> 길이·<wbr>특수문자·<wbr>중복·<wbr>의미 완결성 점검</li>
+          <li><b>문서별 진단</b> 임계 초과 문서를 주의·<wbr>경고로 분류</li>
+          <li><b>분할 규칙 관리</b> 크기·<wbr>오버랩·<wbr>분할 방식 전역 설정</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/dataq-knowledge.jpg" alt="지식 관리 화면" loading="lazy" width="1600" height="1005">
-        <p class="fitcap">지식 관리 콘솔 — 프로토타입 예시 화면</p>
+        <img src="assets/img/proto/dataq-f02.jpg" alt="청크 품질 관리 화면" loading="lazy" width="1440" height="1042">
+        <p class="fitcap">청크 품질 관리 — 프로토타입 예시 화면</p>
       </div>
     </div>
     <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Serving</span>
-        <h3>지식 검색과 데이터 제공</h3>
-        <p>문서·<wbr>이미지를 의미 기반으로 검색하고, 정리된 데이터는 API로 제공해 QFactory와 QAgent가 바로 활용하게 합니다.</p>
-                <ul class="pi-bul">
-          <li><b>수집 범위</b> PLC · 센서 · SCADA · MES · ERP · 시계열 DB</li>
-          <li><b>제공 방식</b> 지도·<wbr>대시보드 관제와 실시간 질의 API</li>
-          <li><b>배포 선택</b> 클라우드 · 온프레미스 · 폐쇄망 중 선택</li>
+      <div class="duo-txt rv"><span class="pill">Embedding</span>
+        <h3>벡터로 바꾼 뒤에도 품질을 봅니다</h3>
+        <p>임베딩은 한 번 만들고 끝나지 않습니다. 처리량과 지연, 색인 상태를 이어서 관리합니다.</p>
+        <ul class="pi-bul">
+          <li><b>모델별 현황</b> 벡터 차원·<wbr>처리량·<wbr>지연 비교</li>
+          <li><b>색인 상태</b> 컬렉션·<wbr>디스크 사용·<wbr>인덱스 방식 확인</li>
+          <li><b>재순위 검토</b> 검색 품질 개선 후보를 비교</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/agentq-rag.jpg" alt="지식 검색(RAG) 화면" loading="lazy" width="1600" height="1005">
-        <p class="fitcap">지식 검색 — 프로토타입 예시 화면</p>
+        <img src="assets/img/proto/dataq-f03.jpg" alt="임베딩 품질 관리 화면" loading="lazy" width="1440" height="1370">
+        <p class="fitcap">임베딩 품질 관리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Recovery</span>
+        <h3>실패한 문서를 방치하지 않습니다</h3>
+        <p>암호화 파일이나 용량 초과처럼 자동 처리가 막히는 문서는 반드시 생깁니다. 남겨두지 않고 되돌립니다.</p>
+        <ul class="pi-bul">
+          <li><b>실패 단계 기록</b> 파싱·<wbr>청킹·<wbr>임베딩 중 어디서 멈췄는지</li>
+          <li><b>자동 재처리</b> 재시도 횟수·<wbr>우선순위로 큐 관리</li>
+          <li><b>수동 처리 분기</b> 자동 복구 불가 건은 담당자 통보</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/dataq-f04.jpg" alt="재처리 큐 화면" loading="lazy" width="1440" height="822">
+        <p class="fitcap">재처리 큐 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Governance</span>
+        <h3>누가 어디까지 볼지 먼저 정합니다</h3>
+        <p>AI가 답을 잘하는 것보다, 봐서는 안 될 문서를 참조하지 않는 것이 먼저입니다.</p>
+        <ul class="pi-bul">
+          <li><b>폴더 단위 권한</b> 전체·<wbr>부서별·<wbr>특정 공개 범위 지정</li>
+          <li><b>개인정보 마스킹</b> 민감 항목 포함 문서를 표시·<wbr>가림</li>
+          <li><b>반영 상태 확인</b> 문서별 청크 수와 처리 상태</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/dataq-f05.jpg" alt="지식 폴더·권한 관리 화면" loading="lazy" width="1440" height="900">
+        <p class="fitcap">지식 폴더·<wbr>권한 관리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Serving</span>
+        <h3>찾는 순간의 속도가 곧 성능입니다</h3>
+        <p>정리한 데이터는 결국 검색으로 쓰입니다. 용도별로 색인을 나누고 응답 속도를 관리합니다.</p>
+        <ul class="pi-bul">
+          <li><b>컬렉션 관리</b> 용도별로 색인을 나눠 운영</li>
+          <li><b>차원·<wbr>상태 확인</b> 임베딩 차원과 색인 생성 상태</li>
+          <li><b>검색 사전 시험</b> 실제 질의로 검색 결과 확인</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/dataq-f06.jpg" alt="벡터 색인 관리 화면" loading="lazy" width="1440" height="766">
+        <p class="fitcap">벡터 색인 관리 — 프로토타입 예시 화면</p>
       </div>
     </div>
   </div>
