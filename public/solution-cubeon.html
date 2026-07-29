@@ -148,50 +148,95 @@
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Features</span>
       <h2>플랫폼을 이루는 핵심 기능</h2>
-      <p class="lead">데이터 연결, 모델 운영, 담당자 승인, 현장 조치를 하나의 운영 흐름으로 관리합니다.</p></div>
+      <p class="lead">데이터 연결에서 감지·예측·최적화, 원인 분석과 승인 실행까지 하나의 운영 흐름으로 이어집니다.</p></div>
     <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Closed-Loop</span>
-        <h3>승인과 현장 조치를 잇는 워크플로</h3>
-        <p>이상 징후가 발견되면 조치안을 제시하고, 담당자 승인 후 실행한 뒤 결과를 확인합니다. 누가 무엇을 판단하고 실행했는지도 기록으로 남깁니다.</p>
-                <ul class="pi-bul">
-          <li><b>3단계 자율화</b> 승인 → 개입 → 자동 실행을 위험도로 구분</li>
-          <li><b>승인 경로 자동 배정</b> 위험도 규칙에 맞는 승인자에게 전달</li>
-          <li><b>단계적 확대</b> 지켜보기 → 권고 → 자동 실행 순으로</li>
+      <div class="duo-txt rv"><span class="pill">Data Hub</span>
+        <h3>흩어진 현장 데이터를 한곳으로</h3>
+        <p>설비 제어기부터 업무 시스템까지, 서로 다른 방식으로 쌓이던 데이터를 하나의 파이프라인으로 모읍니다.</p>
+        <ul class="pi-bul">
+          <li><b>표준 프로토콜 수집</b> OPC UA · MQTT · Modbus · REST</li>
+          <li><b>단계별 파이프라인</b> 수집 큐 → 정제·<wbr>표준화 → 시계열 저장</li>
+          <li><b>품질·<wbr>표준화 점검</b> 태그 매핑·<wbr>단위 표준화·<wbr>메타데이터 등록</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/cubeon-builder.jpg" alt="에이전트 워크플로 빌더 화면" loading="lazy" width="1600" height="1005">
-        <p class="fitcap">노코드 워크플로 빌더 — 프로토타입 예시 화면</p>
+        <img src="assets/img/proto/cubeon-f01.jpg" alt="산업 데이터 통합 관리 화면" loading="lazy" width="1536" height="1024">
+        <p class="fitcap">산업 데이터 통합 관리 — 프로토타입 예시 화면</p>
       </div>
     </div>
     <div class="duo rev">
-      <div class="duo-txt rv"><span class="pill">ModelOps</span>
-        <h3>모델 레지스트리 · 지속 운영</h3>
-        <p>모델 버전과 배포 상태를 한곳에서 관리하고, 성능 변화를 감시해 재학습 시점을 판단합니다.</p>
-                <ul class="pi-bul">
-          <li><b>지속 재학습 루프</b> 학습 → 배포 → 성능 감시 → 재학습을 자동화된 운영 과정으로</li>
-          <li><b>데이터 변화 탐지</b> 분포 변화를 감지해 재학습 시점 판단</li>
-          <li><b>버전 관리·<wbr>복구</b> 모델 버전과 승인 이력 기록 — 품질 저하 시 검증된 직전 버전으로 복구</li>
+      <div class="duo-txt rv"><span class="pill">Anomaly</span>
+        <h3>임계값 알람을 넘어, 패턴으로 감지</h3>
+        <p>정상 운전 패턴을 학습해, 임계값에 걸리지 않는 미세한 변화까지 이상 점수로 판정합니다.</p>
+        <ul class="pi-bul">
+          <li><b>패턴 기반 이상 점수</b> 정상·<wbr>주의·<wbr>경고·<wbr>위험 구간으로 구분</li>
+          <li><b>감지 즉시 알림</b> 심각도·<wbr>담당자·<wbr>대응 상태 추적</li>
+          <li><b>원인 구간 좁히기</b> 공정 변수 히트맵·<wbr>점수 분포 확인</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
-        <p class="fitcap">모델 관리 화면 — 프로토타입 예시 화면</p>
+        <img src="assets/img/proto/cubeon-f02.jpg" alt="AI 실시간 이상 감지 관리 화면" loading="lazy" width="1536" height="1024">
+        <p class="fitcap">AI 실시간 이상 감지 관리 — 프로토타입 예시 화면</p>
       </div>
     </div>
     <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Knowledge</span>
-        <h3>산업 지식그래프</h3>
-        <p>설비·<wbr>센서·<wbr>작업지시를 하나로 연결해 AI 판단에 현장 맥락을 더합니다.<br class="sb"> 같은 알람도 설비·<wbr>공정에 따라 조치가 달라집니다.</p>
-                <ul class="pi-bul">
-          <li><b>표준 프로토콜 수집</b> OPC-UA · MQTT · Modbus · CAN</li>
-          <li><b>업무 시스템 연동</b> PLC·<wbr>SCADA·<wbr>MES·<wbr>ERP를 어댑터로 통합</li>
-          <li><b>의미·<wbr>관계 정의</b> 설비·<wbr>공정을 객체·<wbr>속성·<wbr>관계로 정리</li>
+      <div class="duo-txt rv"><span class="pill">Predictive</span>
+        <h3>고장 난 뒤가 아니라, 나기 전에</h3>
+        <p>진동·<wbr>온도·<wbr>전류 추이로 설비 상태를 등급화하고, 남은 수명을 기준으로 정비 시점을 제시합니다.</p>
+        <ul class="pi-bul">
+          <li><b>설비 상태 등급화</b> 위험 설비 우선순위 정렬</li>
+          <li><b>잔여 수명(RUL) 예측</b> 권장 정비 시점·<wbr>정비 유형 산출</li>
+          <li><b>모델 성능 점검</b> 정확도·<wbr>정밀도·<wbr>재현율 지표 확인</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/dataq-knowledge.jpg" alt="지식 관리 화면" loading="lazy" width="1600" height="1005">
-        <p class="fitcap">지식 관리 콘솔 — 프로토타입 예시 화면</p>
+        <img src="assets/img/proto/cubeon-f03.jpg" alt="AI 예지보전 관리 화면" loading="lazy" width="1536" height="1024">
+        <p class="fitcap">AI 예지보전 관리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Optimization</span>
+        <h3>지금 조건과 AI 추천 조건을 나란히</h3>
+        <p>생산·<wbr>품질·<wbr>에너지·<wbr>비용을 함께 놓고, 무엇을 얼마나 바꿀지 조건 단위로 비교합니다.</p>
+        <ul class="pi-bul">
+          <li><b>조건 비교표</b> 현재 값·<wbr>추천 값·<wbr>변화량·<wbr>영향</li>
+          <li><b>목적별 시나리오</b> 균형·<wbr>품질 우선·<wbr>에너지 우선</li>
+          <li><b>적용 이력 관리</b> 적용 조건과 결과를 기록</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/cubeon-f04.jpg" alt="공정·품질·에너지 최적화 관리 화면" loading="lazy" width="1536" height="1024">
+        <p class="fitcap">공정·<wbr>품질·<wbr>에너지 최적화 관리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Root Cause</span>
+        <h3>왜 생겼는지, 무엇부터 할지</h3>
+        <p>이벤트의 근본 원인을 순위로 정리하고, 조치안을 예상 효과와 함께 제시합니다.</p>
+        <ul class="pi-bul">
+          <li><b>근본 원인 순위화</b> 원인별 기여도를 파레토로 정리</li>
+          <li><b>권고 조치 제시</b> 심각도·<wbr>신뢰 수준·<wbr>예상 효과 표시</li>
+          <li><b>근거 추적</b> 이벤트 타임라인·<wbr>관련 공정 데이터</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/cubeon-f05.jpg" alt="AI 원인분석 및 운영 권고 관리 화면" loading="lazy" width="1536" height="1024">
+        <p class="fitcap">AI 원인분석 및 운영 권고 관리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Execution</span>
+        <h3>사람이 승인해야 현장이 바뀝니다</h3>
+        <p>AI가 제안한 제어 변경을 담당자가 확인·<wbr>승인한 뒤 실행하고, 결과까지 되돌아봅니다.</p>
+        <ul class="pi-bul">
+          <li><b>변경 전후 명시</b> 현재 값 → 변경 값과 적용 범위</li>
+          <li><b>승인·<wbr>반려 이력</b> 제안부터 실행 완료까지 단계 기록</li>
+          <li><b>실행 결과 검증</b> 성공·<wbr>경고·<wbr>실패와 절감 효과 확인</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/cubeon-f06.jpg" alt="승인 기반 현장 실행 관리 화면" loading="lazy" width="1536" height="1024">
+        <p class="fitcap">승인 기반 현장 실행 관리 — 프로토타입 예시 화면</p>
       </div>
     </div>
   </div>
