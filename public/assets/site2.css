@@ -1584,36 +1584,39 @@ body.lb-open{overflow:hidden}
 .stack-prods span small,.prod-card .sub,.ref-note,.cert-note{font-size:14px;line-height:1.55}
 .loc-note{font-size:15px;line-height:1.6}
 
-/* AX applications */
-.ax-app-grid{align-items:stretch}
+/* Business applications */
+.ax-app-grid{align-items:stretch;gap:16px;margin-top:32px}
 .ax-app-card{
-  min-height:350px;
+  min-height:300px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
-  padding:28px 24px;
+  padding:22px 20px 24px;
   text-align:center;
   overflow:hidden;
 }
 .ax-app-icon{
-  width:150px;
-  height:150px;
+  width:122px;
+  height:122px;
   flex:0 0 auto;
-  margin-bottom:22px;
-  border:1px solid rgba(38,128,222,.24);
-  border-radius:26px;
+  margin-bottom:17px;
+  border:1px solid rgba(38,128,222,.16);
+  border-radius:22px;
   overflow:hidden;
-  background:#050b13;
-  box-shadow:0 14px 34px rgba(7,19,35,.16);
+  background:#fff;
+  box-shadow:0 9px 24px rgba(7,19,35,.08);
 }
 .ax-app-icon img{width:100%;height:100%;display:block;object-fit:cover}
-.ax-app-card h3{margin-top:0;font-size:22px;letter-spacing:-.02em}
-.ax-app-card p{margin-top:12px;font-size:15px;line-height:1.65;text-wrap:balance}
+.ax-app-card h3{margin-top:0;font-size:20px;letter-spacing:-.02em;line-height:1.3}
+.ax-app-card p{margin-top:9px;font-size:14.5px;line-height:1.56;text-wrap:balance}
 .ax-app-card p span{display:block}
 @media(max-width:599px){
-  .ax-app-card{min-height:0;padding:24px 20px}
-  .ax-app-icon{width:132px;height:132px;margin-bottom:19px;border-radius:22px}
+  .ax-app-grid{gap:14px;margin-top:28px}
+  .ax-app-card{min-height:0;padding:20px 18px 22px}
+  .ax-app-icon{width:108px;height:108px;margin-bottom:15px;border-radius:19px}
+  .ax-app-card h3{font-size:19px}
+  .ax-app-card p{margin-top:8px;font-size:14px;line-height:1.55}
 }
 
 
