@@ -503,6 +503,10 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
 .fb-links a:hover{color:#fff}
 .fb-col{display:flex;flex-direction:column;gap:9px}
 .fb-col .f-h{font-size:12px;font-weight:800;letter-spacing:.13em;color:#7f8ca3;text-transform:uppercase;margin-bottom:3px}
+/* 2열 컬럼 — 제목은 두 열을 가로지르고, 링크는 위→아래(4)→오른쪽 위→아래(3) 순으로 채움 */
+.fb-col.two{display:grid;grid-template-columns:auto auto;grid-template-rows:auto repeat(4,auto);
+  grid-auto-flow:column;column-gap:clamp(18px,2vw,30px);row-gap:9px;align-content:start}
+.fb-col.two .f-h{grid-row:1;grid-column:1 / -1}
 .fb-legal{margin-top:clamp(26px,3vw,44px);padding-top:20px;border-top:1px solid rgba(255,255,255,.11);
   display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:12.5px;color:#7f8ca3}
 .fb-legal a{color:#94a2b8;text-decoration:underline;text-underline-offset:3px}
