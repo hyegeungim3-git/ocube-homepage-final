@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ocube-codex-review.issoyeon16.chatgpt.site/sitemap.xml
+Sitemap: https://hyegeungim3-git.github.io/ocube-homepage-final/sitemap.xml
