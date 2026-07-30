@@ -1522,6 +1522,18 @@ body {
     padding: 0 20px;
   }
 
+  /* HOME 은 모바일에서 스크롤 후에도 헤더가 계속 다크(rgba(24,28,37,.96))인데
+     site2.css 의 .gnb.scrolled .m-toggle 이 글자를 var(--fg)(#141414)로 바꿔
+     다크 위 다크 = 1.20:1 로 버튼이 사라졌다(사용자 제보 화면). 흰 글자로 되돌린다.
+     ⚠️ :not(.m-lock) 필수 — 메뉴를 열면 site2.css 의 body.m-lock .gnb 가 헤더를 흰색으로 바꾸므로
+     그때는 흰 글자를 강제하면 안 된다(흰 위 흰 = 1.00). m-lock 상태는 site2 의 다크 글자 규칙에 맡긴다. */
+  .home-page:not(.m-lock) .gnb.scrolled .m-toggle,
+  .home-page:not(.m-lock) .gnb.gnb-mega .m-toggle {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
   .home-page .gnb .logo img,
   .home-page .gnb.scrolled .logo img,
   .home-page .gnb.gnb-mega .logo img {
