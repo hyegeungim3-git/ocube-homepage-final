@@ -558,14 +558,11 @@
     });
   })();
 
-  /* --- 3-f) FAB 스택 : 맨 위로 · 전화 문의 (전 페이지 공통, i-bricks 참고) --- */
+  /* --- 3-f) FAB : 맨 위로 (전 페이지 공통) --- */
   (function fabStack() {
     var fab = document.createElement('div');
     fab.className = 'fab-stack';
     fab.innerHTML =
-      '<a class="fab-btn" href="tel:0533135333" aria-label="전화 문의 053-313-5333">' +
-        '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>' +
-      '</a>' +
       '<button class="fab-btn fab-top" type="button" aria-label="맨 위로">' +
         '<svg viewBox="0 0 17 19" width="16" height="18" aria-hidden="true"><path d="M1 8l7.3-7 7.3 7M8.3 1v17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
       '</button>';
