@@ -456,32 +456,27 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
   .loc-map{min-height:0;aspect-ratio:16/11}
 }
 
-/* ═══ Contact + Footer 통합 블록 (다크 · 둥근 모서리 · 사방 균일 인셋) ═══ */
+/* ═══ Contact + Footer 통합 블록 (홈과 같은 풀폭 다크 푸터) ═══ */
 .fcta{
-  --fcta-inset:clamp(12px,1.6vw,30px);
   position:relative;
   z-index:2;
   margin-top:0;
-  padding:var(--fcta-inset);
-  background:var(--canvas);
+  padding:0;
+  background:#111;
 }
-/* 바깥 여백은 사방 동일하게 두고, 내부 텍스트는 본문 기준선과 맞춘다. */
-.fcta-box{background:var(--ink);color:#fff;border-radius:clamp(20px,2.2vw,30px);overflow:hidden;
-  padding:clamp(40px,5.6vw,88px) 0 clamp(28px,3vw,44px);box-shadow:0 14px 42px rgba(8,16,31,.12)}
-/* 뷰포트가 좁아 .wrap 이 max-width 에 걸리지 않는 구간에서는
-   블록 인셋만큼 안쪽 패딩을 줄여야 본문과 같은 x 위치가 된다 */
-/* 본문 섹션과 콘텐츠 좌측 x 를 전 구간에서 일치시킴.
-   본문:  left = max(0, (VW−1200)/2) + P
-   푸터:  left = I + P'      (I = 블록 인셋)
-   ⇒ P' = max(0, (VW−1200)/2) + P − I
-   여기서 % 는 박스 폭(VW−2I) 기준이므로 50% + I − 640px = (VW−1280)/2 로 환산된다. (--wrap 변경 시 이 640=wrap/2 동기 필수)
-   (100vw 대신 % 를 쓰면 스크롤바 폭 오차도 생기지 않는다) */
+.fcta-box{
+  overflow:hidden;
+  padding:clamp(72px,8vw,112px) 0 clamp(32px,4vw,56px);
+  border-radius:0;
+  background:#111;
+  color:#fff;
+  box-shadow:none;
+}
 .fcta-box > .wrap{
-  --i:var(--fcta-inset);
-  --p:clamp(20px,5vw,40px);
+  width:min(1120px,calc(100% - 80px));
   max-width:none;
-  padding-left:calc(max(0px, 50% + var(--i) - 640px) + var(--p) - var(--i));
-  padding-right:calc(max(0px, 50% + var(--i) - 640px) + var(--p) - var(--i));
+  margin:0 auto;
+  padding:0;
 }
 /* 상단 — 컨택 */
 .fcta-top{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
@@ -491,7 +486,7 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
 .fcta-p{margin-top:18px;color:#aeb8c8;font-size:clamp(15px,1.5vw,17px);max-width:560px;line-height:1.65}
 .fcta-top .fcta-btn{display:none}         /* 데스크톱은 회전 배지가 CTA — 버튼 중복 방지 */
 /* 하단 — 푸터 */
-.fcta-bot{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,4vw,64px);
+.fcta-bot{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(620px,1.22fr);gap:clamp(40px,5vw,72px);
   padding-top:clamp(30px,3.6vw,52px);border-top:1px solid rgba(255,255,255,.13)}
 .fcta-box:not(:has(.fcta-top)){padding-top:clamp(34px,4vw,56px)}
 .fcta-box:not(:has(.fcta-top)) .fcta-bot{padding-top:0;border-top:0}
@@ -500,24 +495,26 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
 .fb-loc .row{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:baseline}
 .fb-loc dt{font-size:12px;font-weight:800;letter-spacing:.13em;color:#7f8ca3}
 .fb-loc dd{margin:0;font-size:14px;color:#c3ccdc;line-height:1.55}
-.fb-links{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:flex-start}
+.fb-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 22px;align-items:start}
 .fb-links a{color:#c3ccdc;font-size:14.5px;font-weight:500;transition:color .16s}
 .fb-links a:hover{color:#fff}
 .fb-col{display:flex;flex-direction:column;gap:9px}
 .fb-col .f-h{font-size:12px;font-weight:800;letter-spacing:.13em;color:#7f8ca3;text-transform:uppercase;margin-bottom:3px}
-/* 2열 컬럼 — 제목은 두 열을 가로지르고, 링크는 위→아래(4)→오른쪽 위→아래(3) 순으로 채움 */
-.fb-col.two{display:grid;grid-template-columns:auto auto;grid-template-rows:auto repeat(4,auto);
-  grid-auto-flow:column;column-gap:clamp(18px,2vw,30px);row-gap:9px;align-content:start}
-.fb-col.two .f-h{grid-row:1;grid-column:1 / -1}
+.fb-col.two{display:flex;flex-direction:column;gap:9px}
 .fb-legal{margin-top:clamp(26px,3vw,44px);padding-top:20px;border-top:1px solid rgba(255,255,255,.11);
   display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:12.5px;color:#7f8ca3}
 .fb-legal a{color:#94a2b8;text-decoration:underline;text-underline-offset:3px}
 .fb-legal a:hover{color:#fff}
-@media(max-width:900px){
+@media(max-width:1100px){
   .fcta-top{grid-template-columns:1fr;gap:30px}
   .fcta-bot{grid-template-columns:1fr;gap:32px}
   .fcta-top .fcta-btn{display:inline-flex}   /* 배지가 숨는 폭에서는 버튼으로 CTA 확보 */
   .fcta-top .cta-badge{display:none}
+}
+@media(max-width:760px){
+  .fcta-box > .wrap{width:calc(100% - 48px)}
+  .fb-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
+  .fb-legal{align-items:flex-start;flex-direction:column}
 }
 
 footer{background:var(--soft);border-top:1px solid var(--line-soft);padding:56px 0 34px;font-size:14px;color:var(--fg-muted)}

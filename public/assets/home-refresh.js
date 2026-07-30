@@ -48,9 +48,9 @@
 
     var characters = Array.from(title.getAttribute("data-typewriter") || "");
     var fragments = characters.map(function (character) {
-      var span = document.createElement("span");
+      var span = document.createElement(character === "\n" ? "br" : "span");
       span.className = "typewriter-character";
-      span.textContent = character;
+      if (character !== "\n") span.textContent = character;
       title.appendChild(span);
       return span;
     });

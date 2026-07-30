@@ -7,7 +7,7 @@
 <meta name="description" content="QVision — 영상 인식(Vision) AI로 교통을 분석하고 도로·작업 위험을 감지합니다.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/site2.css?v=codex-59">
+<link rel="stylesheet" href="assets/site2.css?v=codex-60">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://hyegeungim3-git.github.io/ocube-homepage-final/solution-traffic.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
@@ -36,7 +36,7 @@
       <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Business <span class="badge-caret" aria-hidden="true">▾</span></a>
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">BUSINESS</p>
-            <a href="business-ax.html">AX<small>데이터·AI로 업무와 현장 운영 개선</small></a>
+            <a href="business-ax.html">AX<small>데이터·AI로 업무와 운영 방식 개선</small></a>
             <a href="business-embedded.html">Embedded<small>차량·산업 장비용 소프트웨어</small></a>
             <a href="business-si.html">SI<small>기업·공공 업무 시스템 구축·운영</small></a>
           </div>
@@ -45,7 +45,7 @@
       <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Solution <span class="badge-caret" aria-hidden="true">▾</span></a>
         <div class="dropdown">
           <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
-            <a href="solution-cubeon.html">Cubeon<small>AI 판단을 현장 실행으로 연결</small></a>
+            <a href="solution-cubeon.html">Cubeon<small>AI 판단을 승인과 실행으로 연결</small></a>
             <a href="solution-dataq.html">QData<small>AI가 쓸 수 있는 데이터 구축</small></a>
             <a href="solution-factoryq.html">QFactory<small>공장 데이터 분석·예측·최적화</small></a>
             <a href="solution-agentq.html">QAgent<small>사내 데이터 조회·업무 자동화</small></a>
@@ -207,7 +207,7 @@
 <section id="detect" class="sec-anchor dark">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Incident Detection</span>
-    <h2>도로·<wbr>현장의 위험 영상을 관제 이벤트로 전환합니다</h2>
+    <h2>도로·<wbr>시설의 위험 영상을 관제 이벤트로 전환합니다</h2>
     <p class="sec-sub">AI 기반 돌발상황 감지(AID)가 위험 장면을 분류해 관제 시스템과 담당자에게 알립니다.</p></div>
     <div class="mod-grid reveal" data-d="1">
       <div class="mod">역주행</div>
@@ -219,10 +219,10 @@
       <div class="mod">노면 파손(포트홀)</div>
       <div class="mod">통행량·<wbr>차종</div>
     </div>
-    <p class="sec-note">검지 항목은 현장 요건에 맞춰 확장하며, 오탐을 줄이기 위해 사람 검수 단계를 둘 수 있습니다. 개인영상정보 비식별 처리는 현장 요건과 관련 규정에 따라 적용합니다.</p>
+    <p class="sec-note">검지 항목은 운영 요건에 맞춰 확장하며, 오탐을 줄이기 위해 사람 검수 단계를 둘 수 있습니다. 개인영상정보 비식별 처리는 운영 요건과 관련 규정에 따라 적용합니다.</p>
     <div class="feat-list reveal" data-d="2" style="margin-top:20px">
       <div class="feat"><b>오탐 억제 설계</b><span>이벤트 신뢰도 점수·<wbr>연속 프레임 확인·<wbr>사람 검수를 거쳐 확정</span></div>
-      <div class="feat"><b>야간·<wbr>악천후 대응</b><span>저조도·<wbr>역광·<wbr>우천 환경의 검지 성능을 현장 데이터로 보정</span></div>
+      <div class="feat"><b>야간·<wbr>악천후 대응</b><span>저조도·<wbr>역광·<wbr>우천 환경의 검지 성능을 운영 데이터로 보정</span></div>
       <div class="feat"><b>개인영상정보 보호</b><span>비식별(블러)·<wbr>접근 권한 분리·<wbr>보관 기한 관리로 영상정보 규정 준수</span></div>
     </div>
   </div>
@@ -233,8 +233,8 @@
 <section id="fit" class="sec-anchor deploy">
   <div class="wrap">
     <div class="reveal"><span class="kicker">Ideal Use Cases</span>
-    <h2>이런 현장에 적합합니다</h2>
-    <p class="sec-sub">이미 설치된 카메라를 더 쓰임새 있게 만들어야 하는 현장에 적합합니다.</p></div>
+    <h2>이런 환경에 적합합니다</h2>
+    <p class="sec-sub">이미 설치된 카메라를 더 쓰임새 있게 만들어야 하는 환경에 적합합니다.</p></div>
     <div class="dep-grid g2 reveal" data-d="1" style="margin-top:24px">
       <div class="dep-card"><h3>CCTV는 있지만 사람이 계속 봐야 하는 관제실</h3>
         <p>화면 수가 많아 실시간 확인이 어렵고, 사후 확인에 그치는 환경</p></div>
@@ -243,7 +243,7 @@
       <div class="dep-card"><h3>도로 점검이 순찰에 의존하는 지역</h3>
         <p>신고 전에 찾아야 하는 포트홀·<wbr>균열</p></div>
       <div class="dep-card"><h3>영상정보 보호가 중요한 기관</h3>
-        <p>원본 영상을 외부로 내보내지 않고, <b>현장에서 개인정보를 비식별 처리</b>해야 하는 환경</p></div>
+        <p>원본 영상을 외부로 내보내지 않고, <b>촬영 지점에서 개인정보를 비식별 처리</b>해야 하는 환경</p></div>
     </div>
   </div>
 </section>
@@ -257,7 +257,7 @@
         <div>
           <span class="kicker">CONTACT</span>
           <h2 class="fcta-h">어떤 위험을 봐야 하는지 함께 정의합니다</h2>
-          <p class="fcta-p">도로·<wbr>현장 영상 데이터로 <b>감지할 위험</b>부터 정의</p>
+          <p class="fcta-p">도로·<wbr>시설 영상 데이터로 <b>감지할 위험</b>부터 정의</p>
           <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
         </div>
         <div class="cta-badge">
@@ -280,22 +280,22 @@
             <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18</dd></div>
           </dl>
         </div>
-        <div class="fb-links">
+                <div class="fb-links">
           <div class="fb-col"><p class="f-h">Business</p>
             <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a></div>
-          <div class="fb-col two"><p class="f-h">Solution</p>
+          <div class="fb-col"><p class="f-h">Solution</p>
             <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solution-qdrive.html">QDrive</a><a href="solution-evcp.html">EVCP</a><a href="solution-traffic.html">QVision</a></div>
+          <div class="fb-col"><p class="f-h">Global Partners</p>
+            <a href="license-qt.html">Qt</a><a href="license-telit.html">Telit Cinterion</a><a href="license-toradex.html">Toradex</a><a href="license-visualon.html">VisualOn</a><a href="license-tuxera.html">Tuxera</a><a href="license-protopie.html">ProtoPie</a></div>
           <div class="fb-col"><p class="f-h">Company</p>
-            <a href="about.html">About Ocube</a><a href="location.html">Locations</a><a href="references.html">Use Cases</a><a href="contact.html">Contact</a></div>
+            <a href="about.html">About Ocube</a><a href="company.html#history">History</a><a href="references.html">Use Cases</a><a href="location.html">Locations</a><a href="contact.html">Contact</a></div>
         </div>
       </div>
 
       <div class="fb-legal">
         <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
-        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
-        <a href="tel:0533135333">053-313-5333</a>
         <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
-        <a href="privacy.html">개인정보처리방침</a>
+        <a href="privacy.html">Privacy Policy</a>
       </div>
     </div>
   </div>
