@@ -490,8 +490,7 @@
       dialog.setAttribute('aria-modal', 'true');
       dialog.setAttribute('aria-label', '제품 화면 확대 보기');
       dialog.setAttribute('aria-hidden', 'true');
-      dialog.innerHTML = '<button class="lb-close" type="button" aria-label="확대 화면 닫기">×</button><img class="lb-img" alt=""><p class="lb-cap" id="lb-caption"></p>';
-      dialog.setAttribute('aria-describedby', 'lb-caption');
+      dialog.innerHTML = '<button class="lb-close" type="button" aria-label="확대 화면 닫기">×</button><img class="lb-img" alt="">';
       document.body.appendChild(dialog);
       dialog.addEventListener('click', function (e) { if (e.target === dialog || e.target.classList.contains('lb-close')) close(); });
       dialog.addEventListener('keydown', function (e) {
@@ -499,12 +498,11 @@
         else if (e.key === 'Tab') { e.preventDefault(); dialog.querySelector('.lb-close').focus(); }
       });
     }
-    function openSource(src, alt, caption) {
+    function openSource(src, alt) {
       if (!dialog) build();
       lastFocus = document.activeElement;
       var image = dialog.querySelector('.lb-img');
       image.src = src; image.alt = alt || '';
-      dialog.querySelector('.lb-cap').textContent = caption || alt || '';
       document.body.classList.add('lb-open');
       dialog.classList.add('open');
       dialog.setAttribute('aria-hidden', 'false');
@@ -515,16 +513,14 @@
       img.classList.add('zoomable'); img.tabIndex = 0; img.setAttribute('role', 'button');
       img.setAttribute('aria-label', (img.alt || '제품 화면') + ' 확대 보기');
       function openImage() {
-        var figure = img.closest('figure');
-        var caption = figure && figure.querySelector('figcaption');
-        openSource(img.currentSrc || img.src, img.alt, caption ? caption.textContent : img.alt);
+        openSource(img.currentSrc || img.src, img.alt);
       }
       img.addEventListener('click', openImage);
       img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openImage(); } });
     });
     shotButtons.forEach(function (button) {
       button.addEventListener('click', function () {
-        openSource(button.getAttribute('data-shot'), button.getAttribute('data-shot-alt') || '', button.getAttribute('data-shot-cap') || '');
+        openSource(button.getAttribute('data-shot'), button.getAttribute('data-shot-alt') || '');
       });
     });
   })();
@@ -536,9 +532,9 @@
     var preview = document.createElement('figure');
     preview.className = 'hover-preview';
     preview.setAttribute('aria-hidden', 'true');
-    preview.innerHTML = '<img alt=""><figcaption></figcaption>';
+    preview.innerHTML = '<img alt="">';
     document.body.appendChild(preview);
-    var image = preview.querySelector('img'), caption = preview.querySelector('figcaption');
+    var image = preview.querySelector('img');
     function place(e) {
       var width = 360, height = 250, gap = 22;
       var x = e.clientX + gap, y = e.clientY + gap;
@@ -550,7 +546,6 @@
       card.addEventListener('mouseenter', function (e) {
         image.src = card.getAttribute('data-preview');
         image.alt = card.getAttribute('data-preview-alt') || '';
-        caption.textContent = card.getAttribute('data-preview-cap') || '';
         place(e); preview.classList.add('show');
       });
       card.addEventListener('mousemove', place, { passive: true });
