@@ -940,7 +940,10 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .duo-media .fitcap{margin-top:9px;font-size:12.5px;color:var(--fg-3);text-align:center}
 .duo-media.plain img{border:none;box-shadow:none;background:#fff;border-radius:12px;padding:8px}
 @media(max-width:900px){
-  .duo{grid-template-columns:1fr;gap:20px}
+  /* .duo.rev 는 클래스 2개라 특이도가 .duo 보다 높다 — 함께 명시하지 않으면
+     기본 규칙(.duo.rev{grid-template-columns:1.15fr 1fr})이 이 1단 규칙을 덮어
+     교차 행의 홀수 행이 모바일에서도 2단으로 남는다. */
+  .duo,.duo.rev{grid-template-columns:1fr;gap:20px}
   .duo.rev .duo-txt{order:1}
   .duo.rev .duo-media{order:2}
 }
