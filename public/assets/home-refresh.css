@@ -917,74 +917,9 @@ body {
 }
 
 /* =========================================================
-   Reference home: header, hero, case links and contact footer
+   Reference home: hero, case links and contact footer
+   The header intentionally uses the shared site GNB.
    ========================================================= */
-.home-page .gnb {
-  height: 72px;
-  overflow: visible;
-  border-bottom: 1px solid transparent;
-  background: rgba(24, 28, 37, 0.62);
-  color: #fff;
-  backdrop-filter: saturate(1.05) blur(8px);
-  -webkit-backdrop-filter: saturate(1.05) blur(8px);
-  box-shadow: none;
-}
-
-.home-page .gnb.gnb-hide {
-  transform: none;
-}
-
-.home-page .gnb.scrolled {
-  border-bottom-color: #eeece7;
-  background: rgba(255, 255, 255, 0.96);
-  color: #141414;
-  backdrop-filter: saturate(1.2) blur(14px);
-  -webkit-backdrop-filter: saturate(1.2) blur(14px);
-  box-shadow: 0 5px 22px rgba(14, 22, 38, 0.06);
-}
-
-.home-page .gnb .nav {
-  width: 100%;
-  max-width: 1280px;
-  padding: 0 clamp(20px, 5vw, 40px);
-}
-
-.home-page .gnb .logo img {
-  width: 118px;
-}
-
-.home-page .nav-menu {
-  width: min(440px, calc(100vw - 420px));
-  align-items: flex-start;
-}
-
-.home-page .nav-item {
-  flex: 1 1 0;
-  height: 72px;
-}
-
-.home-page .nav-item > a {
-  width: 100%;
-  height: 72px;
-  min-width: 94px;
-  padding: 0 15px;
-}
-
-.home-page .gnb.gnb-mega {
-  height: calc(72px + var(--mega-h, 350px));
-}
-
-.home-page .gnb.gnb-mega .nav-menu {
-  width: min(720px, calc(100vw - 420px));
-}
-
-.home-page .gnb.gnb-mega .nav-item > a::after {
-  bottom: -1px;
-}
-
-.home-page .cta-btn::after {
-  content: none;
-}
 
 .home-page .fab-stack,
 .home-page .scroll-progress {
