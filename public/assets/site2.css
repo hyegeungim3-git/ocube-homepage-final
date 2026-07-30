@@ -482,8 +482,11 @@ html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dr
 .fcta-top{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
   padding-bottom:clamp(44px,6vw,96px)}
 .fcta-top .kicker{color:#5b9bff}
-.fcta-h{font-size:clamp(30px,4.6vw,60px);font-weight:800;line-height:1.16;letter-spacing:-.035em;margin-top:14px;color:#fff;text-wrap:balance}
-.fcta-p{margin-top:18px;color:#aeb8c8;font-size:clamp(15px,1.5vw,17px);max-width:560px;line-height:1.65}
+/* 메인·서브 문구는 데스크톱에서 각각 한 줄 — 좌측 열 폭이 884px(1440)뿐이라
+   ①메인은 폰트를 60→44px 로 낮추고(3.05vw 기준) ②긴 문구 8건을 축약해 1줄 폭 ≤1180px(@60px)로 맞췄다.
+   ③서브는 max-width:560px 이 2줄을 강제하던 것이라 열 폭까지 개방(실측 최대 759px < 884px). */
+.fcta-h{font-size:clamp(27px,3.05vw,44px);font-weight:800;line-height:1.16;letter-spacing:-.035em;margin-top:14px;color:#fff;text-wrap:balance}
+.fcta-p{margin-top:18px;color:#aeb8c8;font-size:clamp(15px,1.5vw,17px);line-height:1.65}
 .fcta-top .fcta-btn{display:none}         /* 데스크톱은 회전 배지가 CTA — 버튼 중복 방지 */
 /* 하단 — 푸터 */
 .fcta-bot{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(620px,1.22fr);gap:clamp(40px,5vw,72px);
@@ -629,7 +632,15 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .pinsec{padding:var(--pad) 0}
 .pinsec+.pinsec{padding-top:0}
 .pinsec>.wrap{display:grid;grid-template-columns:minmax(250px,35%) 1fr;gap:clamp(28px,5vw,64px);align-items:start}
-.pin-left{position:sticky;top:calc(50vh - 4px);transform:translateY(-50%)}
+/* 좌측 고정 블록은 '상단 정렬' — 뷰포트 세로 중앙(50vh)에 고정하면 섹션 최상단·최하단에서
+   우측 첫/끝 항목과 어긋나고, 어긋나는 양이 뷰포트 높이마다 달라진다(실측 131~327px).
+   상단 정렬이면 시작 시점엔 우측 첫 항목과 같은 줄에서 출발하고, 끝에서는 sticky 가 풀려
+   그리드 행 바닥(= 우측 마지막 항목 바닥)에 맞춰 함께 끝난다.
+   ⚠️ sticky top 을 섹션 padding-top(--pad)과 같게 둘 것 — 고정값(104px)을 쓰면 진입 순간
+   자연 위치(= --pad, 1440에서 122px)에서 고정 위치로 튀어올라 최상단이 우측 첫 항목과
+   어긋난다(실측 18px 점프). 같게 두면 진입·고정·해제 전 구간에서 좌우가 같은 선에 놓인다.
+   max(96px, …) 는 좁은 데스크톱(--pad<96)에서 72px 헤더와 붙지 않게 하는 하한. */
+.pin-left{position:sticky;top:max(96px,var(--pad));align-self:start}
 .pin-num{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
 .pin-left h2{font-size:clamp(24px,2.8vw,36px);margin-top:12px}
 .pin-left h2 em{font-style:normal;color:var(--accent-text)}
