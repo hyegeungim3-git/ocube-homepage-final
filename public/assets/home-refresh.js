@@ -3,12 +3,35 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var hero = document.querySelector(".home-page .hero");
+  var heroShell = hero ? hero.querySelector(".home-hero-shell") : null;
   var heroSlides = hero ? Array.from(hero.querySelectorAll(".hslide")) : [];
-  var revealTargets = document.querySelectorAll(".typo-section, .global-tech-section");
+  var typoSection = document.querySelector(".typo-section");
+  var typoOpen = typoSection ? typoSection.querySelector(".typo-open") : null;
+  var typoCube = typoSection ? typoSection.querySelector(".typo-cube") : null;
+  var typoCopy = typoSection ? typoSection.querySelector(".typo-copy") : null;
+  var globalTechSection = document.querySelector(".global-tech-section");
+  var globalTechCopy = globalTechSection
+    ? globalTechSection.querySelector(".global-tech-copy")
+    : null;
+  var globalTechLogos = globalTechSection
+    ? Array.from(globalTechSection.querySelectorAll(".global-tech-logos a"))
+    : [];
   var capabilityCards = Array.from(document.querySelectorAll(".capability-card"));
   var casesSection = document.querySelector(".home-cases-section");
   var casesPanel = document.querySelector(".home-cases-panel");
   var ticking = false;
+
+  document.documentElement.classList.add("home-scroll-motion");
+
+  if (heroShell) {
+    if (reduceMotion.matches) {
+      heroShell.classList.add("is-entered");
+    } else {
+      window.requestAnimationFrame(function () {
+        heroShell.classList.add("is-entered");
+      });
+    }
+  }
 
   function clearTypewriter(title) {
     if (!title || !title.__typewriterTimers) return;
@@ -78,6 +101,100 @@
     return Math.min(max, Math.max(min, value));
   }
 
+  function power2Out(value) {
+    return 1 - Math.pow(1 - value, 2);
+  }
+
+  function power3Out(value) {
+    return 1 - Math.pow(1 - value, 3);
+  }
+
+  function setMotionState(element, opacity, transform) {
+    if (!element) return;
+    element.style.opacity = String(opacity);
+    element.style.visibility = opacity <= 0.001 ? "hidden" : "visible";
+    element.style.transform = transform;
+  }
+
+  function resetContinuousMotion() {
+    setMotionState(typoOpen, 1, "none");
+    setMotionState(typoCube, 1, "none");
+    setMotionState(typoCopy, 1, "none");
+    setMotionState(globalTechCopy, 1, "none");
+    globalTechLogos.forEach(function (logo) {
+      setMotionState(logo, 1, "none");
+    });
+  }
+
+  function syncTypoMotion() {
+    if (!typoSection || !typoOpen || !typoCube || !typoCopy) return;
+    if (reduceMotion.matches) {
+      resetContinuousMotion();
+      return;
+    }
+
+    var rect = typoSection.getBoundingClientRect();
+    var viewportHeight = window.innerHeight;
+    var progress = clamp(
+      (viewportHeight * 0.82 - rect.top) / (viewportHeight * 0.74),
+      0,
+      1,
+    );
+    var typeProgress = power3Out(progress);
+    var scale = 0.45 + 1.05 * typeProgress;
+    var copyProgress = power2Out(clamp((progress - 0.28) / 0.5, 0, 1));
+
+    setMotionState(
+      typoOpen,
+      typeProgress,
+      "translateX(" + -65 * (1 - typeProgress) + "%) scale(" + scale + ")",
+    );
+    setMotionState(
+      typoCube,
+      typeProgress,
+      "translateX(" + 65 * (1 - typeProgress) + "%) scale(" + scale + ")",
+    );
+    setMotionState(
+      typoCopy,
+      copyProgress,
+      "translateY(" + 44 * (1 - copyProgress) + "px)",
+    );
+  }
+
+  function syncGlobalTechMotion() {
+    if (!globalTechSection || !globalTechCopy || !globalTechLogos.length) return;
+    if (reduceMotion.matches) {
+      resetContinuousMotion();
+      return;
+    }
+
+    var rect = globalTechSection.getBoundingClientRect();
+    var viewportHeight = window.innerHeight;
+    var progress = clamp(
+      (viewportHeight * 0.78 - rect.top) / (viewportHeight * 0.44),
+      0,
+      1,
+    );
+    var timelineTime = progress * 1.12;
+    var copyProgress = power2Out(clamp(timelineTime / 0.55, 0, 1));
+
+    setMotionState(
+      globalTechCopy,
+      copyProgress,
+      "translateY(" + 36 * (1 - copyProgress) + "px)",
+    );
+
+    globalTechLogos.forEach(function (logo, index) {
+      var start = 0.22 + index * 0.08;
+      var logoProgress = power2Out(clamp((timelineTime - start) / 0.5, 0, 1));
+      setMotionState(
+        logo,
+        logoProgress,
+        "translateY(" + 28 * (1 - logoProgress) + "px)",
+      );
+    });
+  }
+
   function activateCapability(activeCard) {
     capabilityCards.forEach(function (card) {
       var active = card === activeCard;
@@ -96,9 +213,9 @@
     var lastCard = capabilityCards[2];
     var activeCard = capabilityCards[0];
 
-    if (lastCard && lastCard.getBoundingClientRect().top <= focusLine - 100) {
+    if (lastCard && lastCard.getBoundingClientRect().top <= focusLine - 120) {
       activeCard = lastCard;
-    } else if (middleCard && middleCard.getBoundingClientRect().top <= focusLine + 100) {
+    } else if (middleCard && middleCard.getBoundingClientRect().top <= focusLine + 120) {
       activeCard = middleCard;
     }
 
@@ -126,8 +243,7 @@
 
     var rect = casesSection.getBoundingClientRect();
     var viewportHeight = window.innerHeight;
-    var start = viewportHeight * 0.78;
-    var progress = clamp((start - rect.top) / (viewportHeight * 0.78), 0, 1);
+    var progress = clamp(-rect.top / 550, 0, 1);
     var startWidth = Math.min(800, window.innerWidth * 0.63);
     var panelWidth = startWidth + (window.innerWidth - startWidth) * progress;
     var contentProgress = clamp((progress - 0.3) / 0.48, 0, 1);
@@ -147,7 +263,9 @@
 
   function syncScrollState() {
     ticking = false;
+    syncTypoMotion();
     syncCapabilities();
+    syncGlobalTechMotion();
     syncCases();
   }
 
@@ -155,24 +273,6 @@
     if (ticking) return;
     ticking = true;
     window.requestAnimationFrame(syncScrollState);
-  }
-
-  if ("IntersectionObserver" in window && !reduceMotion.matches) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) entry.target.classList.add("is-visible");
-        });
-      },
-      { threshold: 0.2 },
-    );
-    revealTargets.forEach(function (target) {
-      observer.observe(target);
-    });
-  } else {
-    revealTargets.forEach(function (target) {
-      target.classList.add("is-visible");
-    });
   }
 
   capabilityCards.forEach(function (card) {

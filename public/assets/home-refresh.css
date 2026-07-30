@@ -389,7 +389,7 @@ body {
 
 .home-cases-section.bcase {
   position: relative;
-  height: max(1320px, 180vh);
+  height: calc(100vh + 550px);
   padding: 0;
   overflow: clip;
   background: #fff;
@@ -1010,6 +1010,24 @@ body {
   background: #020a15;
 }
 
+.js .home-hero-shell {
+  opacity: 0;
+}
+
+.js .home-hero-shell.is-entered {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.home-scroll-motion .typo-open,
+.home-scroll-motion .typo-cube,
+.home-scroll-motion .typo-copy,
+.home-scroll-motion .global-tech-copy,
+.home-scroll-motion .global-tech-logos a {
+  transition: none;
+  will-change: opacity, transform;
+}
+
 .home-page .hslides {
   position: absolute;
   inset: 0;
@@ -1229,6 +1247,80 @@ body {
 .home-cases-panel .bcase-mq:hover .bcase-track,
 .home-cases-panel .bcase-mq:focus-within .bcase-track {
   animation-play-state: paused;
+}
+
+/*
+ * Reference home desktop case choreography
+ * The panel itself expands during the 550px pinned scroll range. Keep the
+ * completed layout on the same absolute coordinates as the source home so
+ * the headline and cards land in the same place at every viewport pass.
+ */
+@media (min-width: 1101px) {
+  .home-cases-panel .bcase-head {
+    width: min(960px, calc(100% - 80px));
+    margin: 0 auto;
+    padding-top: 150px;
+  }
+
+  .home-cases-panel .bcase-head p {
+    margin-top: 38px;
+  }
+
+  .home-cases-panel .bcase-mq {
+    position: absolute;
+    top: 390px;
+    right: 0;
+    left: 0;
+    overflow: visible;
+  }
+
+  .home-cases-panel .bcase-card {
+    width: 540px;
+    height: 585px;
+    padding: 30px;
+  }
+
+  .home-cases-panel .bcase-visual {
+    height: 260px;
+    margin-bottom: 0;
+  }
+
+  .home-cases-panel .bcase-card h3 {
+    margin-top: 22px;
+    font-size: 24px;
+  }
+
+  .home-cases-panel .bcase-card .sum {
+    min-height: 54px;
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .home-cases-panel .bcase-card ul {
+    margin-top: 30px;
+    padding-top: 0;
+    border-top: 0;
+    gap: 7px;
+  }
+
+  .home-cases-panel .bcase-card li {
+    font-size: 18px;
+  }
+
+  .home-cases-panel .bcase-card li i {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-cases-panel .bcase-more {
+    position: absolute;
+    top: 1075px;
+    left: 50%;
+    margin: 0;
+    font-size: 18px;
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes home-hero-copy-in {
