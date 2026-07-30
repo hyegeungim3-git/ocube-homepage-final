@@ -47,3 +47,4 @@ next-env.d.ts
 *.mp4
 # 단, 자체 제작 시연 영상은 배포 대상
 !public/assets/media/demo/**/*.mp4
+!public/assets/videos/home/*.mp4

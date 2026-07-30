@@ -274,9 +274,8 @@
     var bars = [].slice.call(hero.querySelectorAll('.hbar'));
     var vids = [].slice.call(hero.querySelectorAll('.hslide video'));
     var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var mob = reduced || matchMedia('(max-width:900px), (hover:none) and (pointer:coarse)').matches;
-    if (mob) vids.forEach(function (v) { if (v) v.remove(); });
-    var idx = 0, timer = null, DUR = 5200;
+    var mob = reduced;
+    var idx = 0, timer = null, DUR = 6500;
     slides.forEach(function (s, i) {
       var slideId = s.id || 'hero-panel-' + (i + 1);
       var tabId = bars[i] && (bars[i].id || 'hero-tab-' + (i + 1));
