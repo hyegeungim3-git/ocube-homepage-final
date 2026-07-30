@@ -83,8 +83,17 @@ for (const file of htmlFiles) {
   if (/탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i.test(html)) {
     add(file, "content", "opaque closed-loop copy");
   }
-  if (/>(?:About Ocube|Location|Build Cases)<\/a>/i.test(html)) {
-    add(file, "content", "footer labels should be Korean");
+  const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? "";
+  if (
+    !/<p class="f-h">Business<\/p>/.test(footer) ||
+    !/<p class="f-h">Solution<\/p>/.test(footer) ||
+    !/<p class="f-h">Company<\/p>/.test(footer) ||
+    !/>About Ocube<\/a>/.test(footer) ||
+    !/>Locations<\/a>/.test(footer) ||
+    !/>Use Cases<\/a>/.test(footer) ||
+    !/>Contact<\/a>/.test(footer)
+  ) {
+    add(file, "content", "footer category labels should be English");
   }
   if (/Copyright © OCUBE Co\. LTD ALL RIGHTS RESERVED/.test(html)) {
     add(file, "content", "footer copyright style is not normalized");

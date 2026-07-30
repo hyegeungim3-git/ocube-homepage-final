@@ -24,7 +24,14 @@ test("ships the complete reviewed static site", async () => {
     assert.doesNotMatch(html, /기술\s*지원|TECH SUPPORT|License Support/i, `${page}: no retired support label`);
     assert.doesNotMatch(html, /<wbr\s*\/?>\s*<wbr\s*\/?>/i, `${page}: no duplicate wbr`);
     assert.doesNotMatch(html, /탐지에서 행동까지[^<]{0,20}닫|행동까지 닫습니다/i, `${page}: no opaque closed-loop copy`);
-    assert.doesNotMatch(html, />(?:About Ocube|Location|Build Cases)<\/a>/i, `${page}: Korean footer labels`);
+    const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? "";
+    assert.match(footer, /<p class="f-h">Business<\/p>/, `${page}: English Business footer label`);
+    assert.match(footer, /<p class="f-h">Solution<\/p>/, `${page}: English Solution footer label`);
+    assert.match(footer, /<p class="f-h">Company<\/p>/, `${page}: English Company footer label`);
+    assert.match(footer, />About Ocube<\/a>/, `${page}: English About footer link`);
+    assert.match(footer, />Locations<\/a>/, `${page}: English Locations footer link`);
+    assert.match(footer, />Use Cases<\/a>/, `${page}: English Use Cases footer link`);
+    assert.match(footer, />Contact<\/a>/, `${page}: English Contact footer link`);
     assert.equal((html.match(/href="business-si\.html">SI/g) ?? []).length, 2, `${page}: SI navigation labels`);
     assert.match(html, /href="references\.html">Use Cases<small>/, `${page}: Use Cases mega-menu label`);
     assert.doesNotMatch(html, /href="business-si\.html">Enterprise|href="references\.html">Build Cases/, `${page}: no superseded navigation labels`);
@@ -266,7 +273,7 @@ test("presents QFactory as a source-verified, full-cycle AI smart factory", asyn
   assert.match(applications, /품질 예측·공급망 추적/);
   assert.match(applications, /Vision AI 안전 관제/);
   assert.match(applications, /MLOps·자율운영 지원/);
-  assert.match(html, /2026~2029 연구개발·<wbr>현장 실증 추진/);
+  assert.doesNotMatch(html, /id="proof"|제조 현장 실증|2026~2029 연구개발/);
   assert.ok(!html.includes("<b>성과</b> 다운타임·<wbr>에너지 과투입에 사전 대응"));
   assert.match(solutions, /제지 AI Factory 연구개발을 바탕으로 확장합니다/);
   assert.doesNotMatch(solutions, /제지 현장에서 실증했습니다/);

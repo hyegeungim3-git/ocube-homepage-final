@@ -38,9 +38,6 @@ for (const file of htmlFiles) {
 
   html = html
     .replace(/(?:<wbr\s*\/?>\s*){2,}/gi, "<wbr>")
-    .replace(/>About Ocube<\/a>/g, ">회사소개</a>")
-    .replace(/>Location<\/a>/g, ">오시는 길</a>")
-    .replace(/>Build Cases<\/a>/g, ">구축 사례</a>")
     .replace(/<div class="nav-item"><a href="company\.html">회사/g, '<div class="nav-item"><a href="about.html">회사')
     .replace(/<button class="m-toggle"/g, '<button type="button" class="m-toggle"')
     .replace(/<a href="business-si\.html">SI<small>시스템 통합·(?:<wbr>)?구축·(?:<wbr>)?운영<\/small><\/a>/g, '<a href="business-si.html">Enterprise<small>B2B·<wbr>B2G 시스템·<wbr>구축·<wbr>운영</small></a>')
