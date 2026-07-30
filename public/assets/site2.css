@@ -566,6 +566,9 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 .hero-badge{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.16em;color:#8fc0ff}
 .page-hero h1{font-size:clamp(29px,4.2vw,52px);color:#fff;margin-top:14px;letter-spacing:-.028em;line-height:1.15}
 .page-hero p{margin-top:18px;color:#c3ccdc;font-size:clamp(15.5px,1.5vw,18px);max-width:680px;line-height:1.6}
+/* contact 히어로 전용 — 리드가 타 메뉴 Contact 수준(58자)이라 680px 에선 2줄이 된다.
+   .page-hero p 는 12페이지 공용이라 전역 폭을 넓히면 다른 히어로 줄바꿈이 전부 흔들리므로 이 페이지만 확장. */
+.page-hero p.hero-lead-wide{max-width:790px}
 
 /* Business hero: reference-home inspired centered message */
 .business-hero .hero-veil{

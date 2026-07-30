@@ -1141,6 +1141,13 @@ body {
   opacity: 1;
 }
 
+/* 진행 바(트랙) — site2.css 의 border-top rgba(255,255,255,.28) 은 항목 opacity .72 를 곱하면
+   유효 .20 이라 4개 슬라이드 전부 1.72~1.91:1 로 비텍스트 기준(3:1) 미달.
+   .55 로 올려 3.6~3.8:1. (활성 항목의 흰 채움 바 i 는 그대로) */
+.home-page .hpag-item {
+  border-top-color: rgba(255, 255, 255, 0.55);
+}
+
 .home-page .hpag-item i {
   grid-column: 1 / -1;
   height: 3px;
@@ -1340,8 +1347,10 @@ body {
   letter-spacing: -0.045em;
 }
 
+/* 리드가 타 메뉴 Contact(fcta-p, 54~65자) 수준이라 520px 에선 2줄이 된다.
+   좌측 열이 실제로 956px 까지 허용하므로 790px 로 넓혀 한 줄에 수용(문구 실측 739px). */
 .home-page footer.contact .contact-description {
-  max-width: 520px;
+  max-width: 790px;
   margin-top: 30px;
   color: rgba(255, 255, 255, 0.88);
   font-size: 18px;
