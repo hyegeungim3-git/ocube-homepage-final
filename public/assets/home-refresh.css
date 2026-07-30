@@ -301,8 +301,11 @@ body {
   line-height: 1;
 }
 
+/* 활성 카드(파란 배경 rgb(47,99,229)) 위의 칩.
+   흰색 틴트(0.18)는 배경을 rgb(85,127,234)로 밝혀 흰 글자 대비가 3.74:1 로 AA(4.5) 미달이었다.
+   틴트 방향을 잉크 쪽으로 뒤집으면 알약 모양·절제된 톤을 유지하면서 대비 5.95:1 로 통과한다. */
 .capability-card.is-active .capability-chips span {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(14, 22, 38, 0.1);
   color: #fff;
 }
 
@@ -1121,11 +1124,14 @@ body {
   pointer-events: auto;
 }
 
+/* 비활성 페이지네이션도 클릭 가능한 컨트롤이라 라벨이 AA(4.5)를 넘어야 한다.
+   opacity 0.34 는 4개 슬라이드 배경 전부에서 2.17~2.28:1 로 크게 미달 → 0.72(최악 슬라이드 5.1:1).
+   활성 항목은 opacity 1 + 흰 진행바라 위계 구분은 그대로 유지된다. */
 .home-page .hpag-item {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px 4px;
-  opacity: 0.34;
+  opacity: 0.72;
   transition: opacity 0.25s ease;
 }
 
@@ -1384,11 +1390,14 @@ body {
   border-top: 0;
 }
 
+/* 상호(OCUBE CO.,LTD.)는 본문이 아니라 보조 정보지만 장식이 아니라 읽는 텍스트다.
+   알파 0.28 은 rgb(17,17,17) 배경에서 2.48:1 로 AA(4.5) 크게 미달 → 0.48 로 올려 5.00:1.
+   옆의 로고 이미지도 같은 알파로 맞춰야 한 쌍으로 보인다(텍스트만 밝히면 어긋나 보임). */
 .home-page .contact-company-brand-home {
   display: flex;
   align-items: center;
   gap: 24px;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 16px;
   font-weight: 600;
 }
@@ -1397,7 +1406,7 @@ body {
   width: 104px;
   height: auto;
   filter: brightness(0) invert(1);
-  opacity: 0.28;
+  opacity: 0.48;
 }
 
 .home-page .contact-company-brand-home span {

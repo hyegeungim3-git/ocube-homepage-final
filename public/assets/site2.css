@@ -1827,9 +1827,11 @@ br.sb{display:block}
   position:absolute;z-index:7;right:clamp(24px,6vw,92px);top:50%;
   display:flex;flex-direction:column;gap:16px;transform:translateY(-50%)
 }
+/* 비활성 탭 번호(12px/800)는 알파 .42 에서 다크 배경 대비 4.07:1 로 AA(4.5) 미달이었다.
+   .50 으로 올려 5.2:1 — 활성 탭(#fff, 17:1)과의 위계 차이는 그대로 유지된다. */
 .about-vision-nav button{
   display:flex;align-items:center;justify-content:flex-end;gap:12px;width:80px;
-  border:0;background:none;color:rgba(255,255,255,.42);cursor:pointer;padding:3px 0;
+  border:0;background:none;color:rgba(255,255,255,.5);cursor:pointer;padding:3px 0;
   transition:color .25s ease;
 }
 .about-vision-nav button span{font-size:12px;font-weight:800;letter-spacing:.1em}
