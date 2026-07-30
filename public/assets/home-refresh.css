@@ -456,6 +456,15 @@ body {
 .home-cases-panel .bcase-more {
   position: relative;
   z-index: 1;
+}
+
+.home-cases-panel .bcase-head {
+  opacity: var(--case-head-opacity, 0);
+  transform: translateY(var(--case-head-y, 16px));
+}
+
+.home-cases-panel .bcase-mq,
+.home-cases-panel .bcase-more {
   opacity: var(--case-content-opacity, 0);
   transform: translateY(var(--case-content-y, 20px));
 }
@@ -472,6 +481,11 @@ body {
 
 .home-cases-panel .bcase-head h2 {
   font-size: clamp(38px, 4vw, 48px);
+}
+
+.home-cases-panel .bcase-head .eb,
+.home-cases-panel .bcase-head h2 {
+  text-shadow: 0 3px 22px rgba(7, 31, 92, 0.2);
 }
 
 .home-cases-panel .bcase-head p {

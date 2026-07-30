@@ -229,6 +229,8 @@
     casesPanel.style.removeProperty("height");
     casesPanel.style.removeProperty("border-radius");
     casesSection.style.setProperty("--case-opening-opacity", "1");
+    casesPanel.style.setProperty("--case-head-opacity", "1");
+    casesPanel.style.setProperty("--case-head-y", "0px");
     casesPanel.style.setProperty("--case-content-opacity", "1");
     casesPanel.style.setProperty("--case-bg-opacity", "0.62");
     casesPanel.style.setProperty("--case-content-y", "0px");
@@ -246,6 +248,7 @@
     var progress = clamp(-rect.top / 550, 0, 1);
     var startWidth = Math.min(800, window.innerWidth * 0.63);
     var panelWidth = startWidth + (window.innerWidth - startWidth) * progress;
+    var headProgress = power2Out(clamp(progress / 0.2, 0, 1));
     var contentProgress = clamp((progress - 0.3) / 0.48, 0, 1);
 
     casesPanel.style.top = 64 * (1 - progress) + "%";
@@ -256,6 +259,8 @@
       "--case-opening-opacity",
       String(1 - clamp(progress / 0.36, 0, 1)),
     );
+    casesPanel.style.setProperty("--case-head-opacity", String(headProgress));
+    casesPanel.style.setProperty("--case-head-y", 16 * (1 - headProgress) + "px");
     casesPanel.style.setProperty("--case-content-opacity", String(contentProgress));
     casesPanel.style.setProperty("--case-bg-opacity", String(contentProgress * 0.62));
     casesPanel.style.setProperty("--case-content-y", 20 * (1 - contentProgress) + "px");
