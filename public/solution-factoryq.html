@@ -156,47 +156,96 @@
 <section id="features" class="sec-anchor">
   <div class="wrap">
     <div class="sec-head rv"><span class="kicker">Features</span>
-      <h2>제조 지능화의 핵심 기능</h2>
-      <p class="lead">설비 상태를 진단하고 공정·<wbr>정비 조건을 권고합니다.</p></div>
+      <h2>공정 진단부터 AI 모델 운영까지 연결합니다</h2>
+      <p class="lead">설비 상태와 공정 조건, 실시간 운전, 성과 지표를 하나의 흐름으로 분석하고 개선합니다.</p></div>
     <div class="duo">
       <div class="duo-txt rv"><span class="pill">Detect</span>
-        <h3>이상탐지·예지보전</h3>
-        <p>설비 신호와 공정 초기의 열응답 변화를 학습해 이상 징후를 빠르게 찾고 점검과 정비 시점을 안내합니다.</p>
-                <ul class="pi-bul">
-          <li><b>정상 패턴 학습</b> 미세한 이탈을 조기 감지, 원인과 조치까지</li>
-          <li><b>잠재 불량 식별</b> 사이클을 0.1초 단위로 보고 이탈 탐지</li>
-          <li><b>잔존수명 예측</b> 설비 부하·<wbr>마모·<wbr>가동 이력으로 남은 사용 기간과 정비 시점 산정</li>
+        <h3>AI 설비 정밀 진단</h3>
+        <p>펌프·<wbr>히터·<wbr>진공·<wbr>온도 센서의 상태를 함께 분석해 가동 전 위험과 이상 데이터를 확인합니다.</p>
+        <ul class="pi-bul">
+          <li><b>설비 건강도 진단</b> 진공 펌프 준비 상태와 히터·<wbr>진동·<wbr>온도 센서의 건전성을 통합 판정</li>
+          <li><b>AI 판정 검토</b> 이상 감지 결과를 담당자가 확인하고 수용·<wbr>거절해 오탐과 실제 이상을 구분</li>
+          <li><b>안전한 단계 전환</b> 승인된 진단 결과만 공정 설계와 실시간 관제로 연결</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/qfactory-hibox-early-cycle.png" alt="예열 초기 열응답 데이터를 실시간으로 분석해 이상 징후를 감지하고 조기 경보하는 흐름" loading="lazy" width="1800" height="828">
-        <p class="fitcap">하이박 진공 브레이징 — 예열 초기 이상 감지 적용 예시</p>
+        <img src="assets/img/qfactory-feature-equipment-diagnostics.png" alt="진공 펌프, 히터, 진동 센서와 온도 센서의 상태를 종합 판정하는 AI 설비 정밀 진단 화면" loading="lazy" width="2969" height="1969">
+        <p class="fitcap">AI 설비 정밀 진단 — 설비 건강도와 센서 상태 통합 판정</p>
       </div>
     </div>
     <div class="duo rev">
-      <div class="duo-txt rv"><span class="pill">Optimize</span>
-        <h3>AI 공정 조건 권고</h3>
-        <p>제품·<wbr>적재·<wbr>설비 조건과 과거 품질·<wbr>에너지 결과를 분석해 공정별 최적 운전 프로파일을 권고합니다.</p>
-        <a class="duo-cta" href="#why">왜 임계 알람으로 부족한지 <i aria-hidden="true">→</i></a>
-      </div>
-      <div class="duo-media stage rv d1">
-        <img src="assets/img/qfactory-hibox-profile-system.png" alt="열질량 기반 AI 공정 프로파일 권고와 실행·모니터링·성과 분석 흐름" loading="lazy" width="1800" height="764">
-        <p class="fitcap">하이박 진공 브레이징 — 열질량 기반 공정 프로파일 권고 예시</p>
-      </div>
-    </div>
-    <div class="duo">
-      <div class="duo-txt rv"><span class="pill">Sustain</span>
-        <h3>지속 학습·모델 운영</h3>
-        <p>공정 변화에 따른 모델 성능 저하를 감시하고 재학습 시점을 판단합니다.<br class="sb"> 새 모델은 검증과 배포 절차를 거쳐 운영에 반영합니다.</p>
-                <ul class="pi-bul">
-          <li><b>학습·<wbr>배포·<wbr>감시·<wbr>재학습</b> 버전 관리와 승인 절차로 운영</li>
-          <li><b>데이터 변화 탐지</b> 통계 지표로 데이터 분포와 예측 기준의 변화를 감지</li>
-          <li><b>세 가지 배포 방식</b> 클라우드 · 사내 구축형(온프레미스) · 인터넷과 분리된 폐쇄망에서도 같은 모델과 API 사용</li>
+      <div class="duo-txt rv"><span class="pill">Recommend</span>
+        <h3>AI 공정 설계 권고</h3>
+        <p>제품 종류와 적재 조건, 과거 공정 결과를 분석해 단계별 온도와 시간을 포함한 최적 운전 프로파일을 제안합니다.</p>
+        <ul class="pi-bul">
+          <li><b>생산 조건 입력</b> 제품·<wbr>중량·<wbr>두께 등 공정 결과에 영향을 주는 조건을 작업 단위로 설정</li>
+          <li><b>최적 프로파일 생성</b> 과거 성공 사이클과 AI 예측을 바탕으로 단계별 목표 온도와 유지 시간을 설계</li>
+          <li><b>승인 기반 적용</b> 추천 근거와 예상 결과를 확인한 뒤 담당자가 권고안을 수용·<wbr>거절</li>
         </ul>
       </div>
       <div class="duo-media stage rv d1">
-        <img src="assets/img/proto/cubeon-modelreg.jpg" alt="모델 레지스트리 화면" loading="lazy" width="1600" height="1005">
-        <p class="fitcap">모델 레지스트리 — 프로토타입 예시 화면</p>
+        <img src="assets/img/qfactory-feature-process-design.jpg" alt="제품과 적재 조건을 입력해 최적 브레이징 온도 프로파일을 생성하고 승인하는 AI 공정 설계 권고 화면" loading="lazy" width="839" height="489">
+        <p class="fitcap">AI 공정 설계 권고 — 작업 조건별 최적 운전 프로파일 제안</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Monitor</span>
+        <h3>실시간 공정 관제</h3>
+        <p>3차원 설비 화면과 온도·<wbr>전류·<wbr>진공도 추이를 함께 보며 진행 중인 사이클의 이상 징후를 실시간으로 감시합니다.</p>
+        <ul class="pi-bul">
+          <li><b>다중 신호 동시 관제</b> 온도 8채널과 히터 전류·<wbr>진공도·<wbr>환경 데이터를 같은 시간축에서 확인</li>
+          <li><b>공정 이상 알림</b> 정상 패턴과 다른 변화를 감지해 위험도와 원인 후보를 이벤트로 기록</li>
+          <li><b>운영자 안전 조치</b> 경고 근거를 확인한 뒤 필요한 경우 공정을 즉시 중단하고 대응 이력을 관리</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/qfactory-feature-live-monitoring.png" alt="3차원 설비 화면과 실시간 온도 및 진공도 추이, 시스템 이벤트를 함께 보여주는 공정 관제 화면" loading="lazy" width="2884" height="1881">
+        <p class="fitcap">실시간 공정 관제 — 다중 센서 추이와 이상 이벤트 통합 확인</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Analyze</span>
+        <h3>공정 사이클 정밀 분석</h3>
+        <p>완료된 공정을 시간 순서대로 재현해 AI가 이상으로 판단한 시점과 전후 센서 변화를 함께 검증합니다.</p>
+        <ul class="pi-bul">
+          <li><b>초 단위 데이터 재생</b> 온도·<wbr>진공도·<wbr>공정 단계와 이벤트 로그를 하나의 시간축으로 동기화</li>
+          <li><b>3차원 공정 재현</b> 설비와 제품 상태를 분석용 3차원 화면으로 재생해 변화 지점을 직관적으로 확인</li>
+          <li><b>이상 원인 추적</b> 감지 점수와 임계값, 관련 센서의 재구성 오차를 비교해 원인 후보를 검토</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/qfactory-feature-cycle-analysis.png" alt="공정 사이클을 초 단위로 재생하며 3차원 설비, 온도, 진공도와 AI 이상 로그를 분석하는 화면" loading="lazy" width="2883" height="2136">
+        <p class="fitcap">공정 사이클 정밀 분석 — 시간축 기반 재현과 이상 원인 추적</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Measure</span>
+        <h3>AI 공정 KPI 분석</h3>
+        <p>설비 건강도와 열 침투, 사이클·<wbr>수율·<wbr>품질 지표를 함께 분석해 목표 달성도와 개선 우선순위를 확인합니다.</p>
+        <ul class="pi-bul">
+          <li><b>핵심 지표 통합</b> 설비·<wbr>에너지·<wbr>공정·<wbr>품질 성과를 공통 목표와 비교해 한 화면에서 관리</li>
+          <li><b>종합 공정 진단</b> 여러 지표의 균형과 취약 항목을 분석해 공정별 개선 우선순위를 제시</li>
+          <li><b>사이클 추이 비교</b> 기간별·<wbr>사이클별 성과 변화를 비교해 권고 적용 전후의 효과를 검증</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/qfactory-feature-kpi-analysis.png" alt="설비 건강도, 열 침투, 사이클, 수율과 품질 지표의 목표 달성도와 추이를 보여주는 AI 공정 KPI 분석 화면" loading="lazy" width="820" height="528">
+        <p class="fitcap">AI 공정 KPI 분석 — 목표 달성도와 사이클별 개선 효과 확인</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">Operate</span>
+        <h3>AI 모델 관리·머신러닝 운영(MLOps)</h3>
+        <p>설비 진단·<wbr>공정 권고·<wbr>실시간 감시 모델의 학습 상태와 성능, 버전을 관리하고 필요한 시점에 재학습합니다.</p>
+        <ul class="pi-bul">
+          <li><b>모델·<wbr>데이터 버전 관리</b> 학습 데이터와 모델 버전, 성능 기준, 운영 적용 이력을 함께 기록</li>
+          <li><b>피드백 기반 재학습</b> 담당자가 확정한 정상·<wbr>이상 판정을 학습 데이터로 누적해 재학습 시점을 판단</li>
+          <li><b>검증 후 운영 적용</b> 새 모델의 정확도를 기존 버전과 비교하고 승인된 모델만 서비스에 반영</li>
+        </ul>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/qfactory-feature-mlops.png" alt="설비 진단, 공정 권고와 실시간 감시 AI 모델의 버전, 성능, 피드백과 재학습을 관리하는 화면" loading="lazy" width="2823" height="2136">
+        <p class="fitcap">AI 모델 관리·머신러닝 운영(MLOps) — 성능 감시와 재학습 파이프라인</p>
       </div>
     </div>
   </div>
