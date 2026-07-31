@@ -75,7 +75,7 @@ h2{font-size:var(--fz-h2);margin-top:14px}
 .gnb{position:fixed;top:0;left:0;right:0;height:72px;z-index:120;background:transparent;border-bottom:1px solid transparent;transition:background .28s,border-color .28s}
 .gnb.scrolled,body.m-lock .gnb{background:rgba(255,255,255,.93);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px);border-bottom:1px solid var(--line-soft)}
 .gnb .nav{display:flex;align-items:center;gap:20px;height:72px;position:relative}
-.logo img{height:25px;width:auto;filter:brightness(0) invert(1);transition:filter .28s}   /* 투명 상태: 흰 로고 */
+.logo img{height:28px;width:auto;filter:brightness(0) invert(1);transition:filter .28s}   /* 투명 상태: 흰 로고 */
 .gnb.scrolled .logo img,body.m-lock .gnb .logo img{filter:none}
 /* 메뉴 가운데 정렬 — 로고 좌·CTA 우 유지, 메가 확장 시에도 중앙 고정 */
 .nav-menu{display:flex;justify-content:center;gap:2px;width:min(540px,calc(100vw - 420px));position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transition:width .34s cubic-bezier(.22,.61,.36,1)}
@@ -92,8 +92,8 @@ body.no-hero{padding-top:72px}
 html:not(.js) .nav-item:hover .dropdown,html:not(.js) .nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
 .dd-group{display:flex;flex-direction:column;min-width:230px}
 .dd-h{font-size:12px;font-weight:800;letter-spacing:.13em;color:var(--fg-3);padding:8px 12px 6px}
-.dropdown a{padding:9px 12px;border-radius:10px;font-weight:600;font-size:14.5px;color:var(--fg);display:flex;flex-direction:column;transition:background .14s,color .14s}
-.dropdown a small{font-weight:500;font-size:12.5px;color:var(--fg-3);margin-top:2px}
+.dropdown a{padding:9px 12px;border-radius:10px;font-weight:600;font-size:16px;color:var(--fg);display:flex;flex-direction:column;transition:background .14s,color .14s}
+.dropdown a small{font-weight:500;font-size:13.5px;color:var(--fg-3);margin-top:2px}
 .dropdown a:hover{background:var(--accent-soft);color:var(--accent-ink)}
 .dropdown a:hover small{color:var(--accent-ink)}
 .cta-btn{margin-left:auto;background:var(--accent);color:#fff;font-weight:700;padding:11px 22px;border-radius:var(--pill);font-size:15px;transition:background .2s}
