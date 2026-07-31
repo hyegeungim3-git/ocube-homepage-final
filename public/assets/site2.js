@@ -319,8 +319,10 @@
       });
     }
     var manualPause = false;                              // 사용자가 명시적으로 일시정지한 상태
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    function start() { if (mob || manualPause) return; stop(); timer = setInterval(function () { show(idx + 1); }, DUR); }
+    /* hero-hold : 타이머가 멈춘 동안 진행 바 애니메이션도 함께 멈춰 상태를 일치시킨다.
+       (이게 없으면 바는 끝까지 차 있는데 슬라이드는 안 넘어가는 것처럼 보인다) */
+    function stop() { if (timer) { clearInterval(timer); timer = null; } hero.classList.add('hero-hold'); }
+    function start() { if (mob || manualPause) return; stop(); hero.classList.remove('hero-hold'); timer = setInterval(function () { show(idx + 1); }, DUR); }
     bars.forEach(function (b, i) {
       b.addEventListener('click', function () { show(i); start(); });
       b.addEventListener('keydown', function (e) {
@@ -348,8 +350,14 @@
         if (manualPause) stop(); else start();
       }
     });
-    hero.addEventListener('mouseenter', stop);
-    hero.addEventListener('mouseleave', start);
+    /* ⚠️ 히어로는 100vh 라 hero 전체에 hover 정지를 걸면 포인터가 사실상 항상 안에 있어
+       자동 전환이 영구 정지된다(실측 확인). 정지는 컨트롤 바 위에서만 건다.
+       ⚠️ .hero-ctrl 은 HOME 에서 inset:0 + pointer-events:none 인 오버레이라 hover 를 못 받는다 —
+       실제로 이벤트를 받는 자식(.hctrl / .hpag / .hbar-nav)에 건다. */
+    hero.querySelectorAll('.hctrl, .hpag, .hbar-nav').forEach(function (el) {
+      el.addEventListener('mouseenter', stop);
+      el.addEventListener('mouseleave', start);
+    });
     document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
     show(0); start();
   })();
