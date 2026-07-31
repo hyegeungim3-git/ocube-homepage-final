@@ -35,7 +35,7 @@ body {
 .typo-row {
   width: max-content;
   color: #08090b;
-  font-size: clamp(58px, 5.4vw, 78px);
+  font-size: clamp(54px, 5vw, 72px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.055em;
@@ -172,7 +172,7 @@ body {
 
 .capabilities-head h2 {
   margin: 0;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 750;
   line-height: 1.25;
   letter-spacing: -0.055em;
@@ -324,7 +324,7 @@ body {
 
 .global-tech-copy h2 {
   margin: 0;
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 750;
   line-height: 1.2;
   letter-spacing: -0.055em;
@@ -483,7 +483,7 @@ body {
 }
 
 .home-cases-panel .bcase-head h2 {
-  font-size: clamp(40px, 4.4vw, 54px);
+  font-size: clamp(38px, 4vw, 48px);
 }
 
 .home-cases-panel .bcase-head .eb,
