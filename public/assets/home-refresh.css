@@ -279,6 +279,8 @@ body {
   color: #5b5b5b;
   font-size: 19px;
   line-height: 1.55;
+  /* pretty 는 마지막 줄 고아만 막을 뿐 균등 분할은 안 한다 — 523/177 → 342/358 */
+  text-wrap: balance;
 }
 
 .capability-card.is-active > p {
