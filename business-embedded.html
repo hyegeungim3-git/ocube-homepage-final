@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded · 임베디드 소프트웨어 — 오큐브</title>
+<meta name="description" content="오큐브 임베디드 — 글로벌 완성차 7개 그룹 양산에서 검증한 차량 전장·산업용 디바이스 SW를 요구 분석부터 통합 검증·양산 대응까지 개발합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-69">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://hyegeungim3-git.github.io/ocube-homepage-final/business-embedded.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Embedded · 임베디드 소프트웨어 — 오큐브">
+<meta property="og:description" content="오큐브 임베디드 — 글로벌 완성차 7개 그룹 양산에서 검증한 차량 전장·산업용 디바이스 SW를 요구 분석부터 통합 검증·양산 대응까지 개발합니다.">
+<meta property="og:url" content="https://hyegeungim3-git.github.io/ocube-homepage-final/business-embedded.html">
+<meta property="og:image" content="https://hyegeungim3-git.github.io/ocube-homepage-final/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Embedded · 임베디드 소프트웨어 — 오큐브">
+<meta name="twitter:description" content="오큐브 임베디드 — 글로벌 완성차 7개 그룹 양산에서 검증한 차량 전장·산업용 디바이스 SW를 요구 분석부터 통합 검증·양산 대응까지 개발합니다.">
+<meta name="twitter:image" content="https://hyegeungim3-git.github.io/ocube-homepage-final/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://hyegeungim3-git.github.io/ocube-homepage-final/"},{"@type":"ListItem","position":2,"name":"비즈니스","item":"https://hyegeungim3-git.github.io/ocube-homepage-final/business-ax.html"},{"@type":"ListItem","position":3,"name":"임베디드","item":"https://hyegeungim3-git.github.io/ocube-homepage-final/business-embedded.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Business <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><a href="business-ax.html">AX<small>데이터·AI로 업무와 운영 방식 개선</small></a>
+            <a href="business-embedded.html">Embedded<small>차량·산업 장비용 소프트웨어</small></a>
+            <a href="business-si.html">SI<small>기업·공공 업무 시스템 구축·운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Solution <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><a href="solution-cubeon.html">Cubeon<small>AI 판단을 승인과 실행으로 연결</small></a>
+            <a href="solution-dataq.html">QData<small>AI가 쓸 수 있는 데이터 구축</small></a>
+            <a href="solution-factoryq.html">QFactory<small>공장 데이터 분석·예측·최적화</small></a>
+            <a href="solution-agentq.html">AgentQ<small>사내 데이터 조회·업무 자동화</small></a>
+          <a href="solution-qdrive.html">QDrive<small>AI 기반 모빌리티 운영 최적화</small></a>
+            <a href="solution-evcp.html">EVCP<small>AI 기반 충전 운영·수요 최적화</small></a>
+            <a href="solution-traffic.html">QVision<small>AI 기반 교통·안전 영상 분석</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Global Partners <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><a href="license-qt.html">Qt<small>여러 기기에서 쓰는 앱·화면 개발</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>산업·차량용 이동통신 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>동영상 재생 소프트웨어</small></a>
+            <a href="license-tuxera.html">Tuxera<small>안정적인 파일 저장·복구</small></a>
+            <a href="license-protopie.html">ProtoPie<small>코딩 없는 UI·UX 시제품 제작</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Company <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><a href="about.html">About Ocube<small>회사 소개·비전·기업 아이덴티티</small></a>
+            <a href="company.html#history">History<small>설립 이후 주요 연혁</small></a>
+            <a href="references.html">Use Cases<small>산업별 주요 구축 사례</small></a>
+            <a href="location.html">Locations<small>서울·안양·대구 사업장</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button type="button" class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business-ax.html">Business</a>
+  <a href="solution-cubeon.html">Solution</a>
+  <a href="license-qt.html">Global Partners</a>
+  <a href="about.html">Company</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+<main id="top">
+
+<!-- 1. HERO (풀스크린 · 이미지) -->
+<section class="hero page-hero business-hero dark">
+  <div class="hero-bg" style="background-image:url('assets/img/business/business-embedded-codex.webp')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap business-hero-copy">
+    <p class="business-hero-en">Embedded, From Technology to Product.</p>
+    <h1 class="business-hero-ko">
+      <span>차량과 다양한 산업용 디바이스를 위한 소프트웨어를 구현하여,</span>
+      <span>제품의 가치와 경쟁력을 높입니다.</span>
+    </h1>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<!-- 1-1. 글로벌 완성차 파트너 로고 -->
+<section id="oem" class="pcl" aria-label="글로벌 완성차 파트너">
+  <div class="wrap pcl-head rv">
+    <span class="eb">PARTNERS &amp; CLIENTS</span>
+  </div>
+  <div class="pcl-mq">
+    <div class="pcl-track">
+        <div class="pcl-logo"><img src="assets/img/oem/hyundai.png" alt="HYUNDAI" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/kia.png" alt="KIA" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/gm.png" alt="GM" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/renault.png" alt="RENAULT" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/vw.png" alt="Volkswagen" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/toyota.png" alt="TOYOTA" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/nissan.png" alt="NISSAN" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/tata.png" alt="TATA DAEWOO MOBILITY" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/hyundai.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/kia.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/gm.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/renault.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/vw.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/toyota.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/nissan.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/tata.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/hyundai.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/kia.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/gm.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/renault.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/vw.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/toyota.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/nissan.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/tata.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/hyundai.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/kia.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/gm.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/renault.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/vw.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/toyota.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/nissan.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+        <div class="pcl-logo"><img src="assets/img/oem/tata.png" alt="" aria-hidden="true" loading="lazy" width="280" height="127"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 1-2. 3대 핵심 역량 -->
+<section id="core" class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Core Capabilities</span>
+      <h2>3대 핵심 역량</h2>
+    </div>
+    <ul class="cap-list rv d1">
+      <li class="cap-card on">
+        <span class="cap-bg" style="background-image:url('assets/img/business/steps/embedded-05-hil-safety-v3.webp')" aria-hidden="true"></span>
+        <h3>위협 분석부터 인증 대응까지<br>차량 사이버보안</h3>
+        <p class="cap-desc">ISO/SAE 21434 절차에 맞춘 위협 분석과 보안 설계·<wbr>구현·<wbr>검증 산출물</p>
+        <ul class="cap-tags"><li>위협 분석(TARA)</li><li>Secure Lib · SELinux</li><li>HSM · Crypto</li></ul>
+      </li>
+      <li class="cap-card on">
+        <span class="cap-bg" style="background-image:url('assets/img/business/steps/embedded-04-hmi-middleware-v3.webp')" aria-hidden="true"></span>
+        <h3>차량 제어기와 서비스를 연결하는<br>차량 플랫폼·커넥티비티</h3>
+        <p class="cap-desc">AUTOSAR 기반 제어기 소프트웨어부터 무선 업데이트·<wbr>스마트폰 연동·<wbr>차량 통신까지 통합 개발</p>
+        <ul class="cap-tags"><li>AUTOSAR · UDS</li><li>OTA · FOTA</li><li>Telematics · CCU</li></ul>
+      </li>
+      <li class="cap-card on">
+        <span class="cap-bg" style="background-image:url('assets/img/business/steps/embedded-02-board-bringup-v3.webp')" aria-hidden="true"></span>
+        <h3>산업 장비와 데이터를 연결하는<br>산업용 디바이스·IoT·Edge</h3>
+        <p class="cap-desc">센서·<wbr>장비의 제어·<wbr>통신·<wbr>데이터 수집을 위한 Linux·<wbr>RTOS 기반 엣지 소프트웨어 개발</p>
+        <ul class="cap-tags"><li>Linux · QNX · RTOS</li><li>IoT · Edge</li><li>Protocol · Gateway</li></ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- 3. What We Do (좌고정 + 6단계) -->
+<section class="pinsec" id="whatwedo">
+  <div class="wrap">
+    <div class="pin-left">
+      <span class="pin-num">What We Do</span>
+      <h2>Embedded · <em>Software Engineering</em></h2>
+      <p>요구 정의부터 양산 검증까지 여섯 단계로 진행합니다.<br class="sb"> 하드웨어 제약과 안전·<wbr>보안 요구를 설계부터 반영합니다.</p>
+      <div class="pin-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="pin-right">
+
+      <article class="pin-item reveal" data-i="0">
+        <div class="pin-illust pin-illust--art" data-slot="em1">
+          <img src="assets/img/business/steps/embedded-01-vmodel-v3.webp" alt="요구사항에서 검증까지 추적 가능한 임베디드 시스템 V 모델 설계" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">01</div>
+        <h3>요구 분석 · 시스템 설계</h3>
+        <p>기능·<wbr>안전 요구와 하드웨어 제약을 설계·<wbr>검증 기준으로 확정해 양산 단계의 재작업을 줄입니다.</p>
+        <ul class="pi-bul">
+          <li><b>요구 분리</b> 기능 요구와 안전 요구(HARA·<wbr>ASIL)를 나눠 추적 가능한 형태로 정의</li>
+          <li><b>제약 반영 설계</b> 메모리·<wbr>전력·<wbr>발열을 반영한 SW 아키텍처와 단계별 검증 계획</li>
+          <li><b>표준 적용 판단</b> AUTOSAR Classic/<wbr>Adaptive 적용 여부를 프로젝트 특성에 맞춰 결정</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="1">
+        <div class="pin-illust pin-illust--art" data-slot="em2">
+          <img src="assets/img/business/steps/embedded-02-board-bringup-v3.webp" alt="타깃 보드의 부팅 계층과 주변 장치를 순차적으로 포팅하고 검증하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">02</div>
+        <h3>보드 초기 구동 · 보드 지원 패키지(BSP) 적용</h3>
+        <p>타깃 보드에서 부트로더·<wbr>커널·<wbr>드라이버를 구동하고, 재현 가능한 보드 지원 패키지(BSP) 빌드 환경을 확보합니다.</p>
+        <ul class="pi-bul">
+          <li><b>보드 포팅</b> 부트로더·<wbr>커널·<wbr>드라이버를 타깃 보드에 올리고 주변장치 하나씩 검증</li>
+          <li><b>재현 가능한 빌드</b> Yocto 기반 보드 지원 패키지(BSP)로 누구나 같은 결과를 얻는 빌드 환경</li>
+          <li><b>초기 지표</b> 부팅 시간·<wbr>메모리 사용량 측정으로 양산 목표 조기 설정</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="2">
+        <div class="pin-illust pin-illust--art" data-slot="em3">
+          <img src="assets/img/business/steps/embedded-03-os-platform-v3.webp" alt="차량용 운영체제의 안전 영역과 서비스 영역을 분리하고 복구 체계를 구성한 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">03</div>
+        <h3>운영체제 · 플랫폼 구성</h3>
+        <p>실시간성·<wbr>앱 생태계·<wbr>업데이트 요구에 맞춰 OS와 격리·<wbr>복구 구조를 구성합니다.</p>
+        <ul class="pi-bul">
+          <li><b>OS 선택</b> 실시간 영역은 QNX·<wbr>RTOS, 앱 생태계가 필요한 영역은 Linux·<wbr>차량용 Android(AAOS)</li>
+          <li><b>도메인 분리</b> 컨테이너·<wbr>하이퍼바이저로 안전 기능과 인포테인먼트 격리</li>
+          <li><b>OTA 전제</b> A/B 파티션과 실패 시 자동 복구 체계</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="3">
+        <div class="pin-illust pin-illust--art" data-slot="em4">
+          <img src="assets/img/business/steps/embedded-04-hmi-middleware-v3.webp" alt="차량 HMI와 미들웨어가 센서와 도메인 서비스를 연결하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">04</div>
+        <h3>차량 화면(HMI) · 미들웨어 개발</h3>
+        <p>차량 화면과 센서·<wbr>서비스 통신을 함께 개발해 일관된 사용자 경험과 안정적인 데이터 흐름을 구현합니다.</p>
+        <ul class="pi-bul">
+          <li><b>차량 화면(HMI)</b> Qt·<wbr>QML 기반 화면을 프레임 저하 최소화 기준으로 개발</li>
+          <li><b>차량 네트워크</b> 차량 서비스 통신(SOME/IP)·<wbr>제어망(CAN)·<wbr>차량 이더넷 미들웨어 개발·<wbr>통합</li>
+          <li><b>도메인 앱</b> 내비게이션·<wbr>미디어·<wbr>공조 등 서비스 계층 구현</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="4">
+        <div class="pin-illust pin-illust--art" data-slot="em5">
+          <img src="assets/img/business/steps/embedded-05-hil-safety-v3.webp" alt="HIL 시뮬레이션과 보안 검증으로 차량 소프트웨어를 통합 시험하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">05</div>
+        <h3>통합 검증 · 기능안전</h3>
+        <p>가상 장비 시험(HIL)·<wbr>실차·<wbr>정적분석으로 요구사항과 기능안전·<wbr>보안을 검증하고, 회귀 결함을 조기에 발견해 재발 위험을 낮춥니다.</p>
+        <ul class="pi-bul">
+          <li><b>커버리지 검증</b> 가상 장비 연동 시험(HIL)과 실차 테스트로 요구사항 확인</li>
+          <li><b>표준 프로세스</b> ISO 26262 기능안전 · ISO/SAE 21434 사이버보안(TARA)</li>
+          <li><b>회귀 차단</b> MISRA C 정적분석·<wbr>단위·<wbr>통합 테스트를 CI에 연결</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="5">
+        <div class="pin-illust pin-illust--art" data-slot="em6">
+          <img src="assets/img/business/steps/embedded-06-production-optimization-v3.webp" alt="임베디드 소프트웨어를 최적화하고 양산 라인에서 검사하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">06</div>
+        <h3>최적화 · 양산 대응</h3>
+        <p>부팅·<wbr>응답·<wbr>메모리를 목표치에 맞추고 플래싱·<wbr>검사·<wbr>업데이트 체계를 양산 라인에 연결합니다.</p>
+        <ul class="pi-bul">
+          <li><b>목표 스펙 최적화</b> 부팅 시간·<wbr>응답 지연·<wbr>메모리 프로파일링</li>
+          <li><b>양산 라인 대응</b> 플래싱·<wbr>검사 체계와 UDS 진단 프로토콜 지원</li>
+          <li><b>규정·<wbr>유지보수</b> UN R156 SW 업데이트 대응과 양산 이후 체계 구축</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section id="applications" class="sec-anchor deploy embedded-applications">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Applications</span>
+    <h2>적용 분야</h2>
+    <p class="sec-sub">자동차부터 산업 장비와 IoT 엣지까지, 제품 환경에 맞는 임베디드 소프트웨어를 제공합니다.</p></div>
+    <div class="dep-grid ax-app-grid reveal" data-d="1">
+      <article class="dep-card ax-app-card">
+        <div class="ax-app-icon"><img src="assets/img/business/applications/embedded-automotive-white.webp" alt="" loading="lazy" width="640" height="640"></div>
+        <h3>Automotive</h3>
+        <p><span>차량 내 다양한 시스템과 디바이스를 위한</span><span>Embedded Software 및 차량 플랫폼 제공</span></p>
+      </article>
+      <article class="dep-card ax-app-card">
+        <div class="ax-app-icon"><img src="assets/img/business/applications/embedded-ev-charging-white.webp" alt="" loading="lazy" width="640" height="640"></div>
+        <h3>EV &amp; Charging</h3>
+        <p><span>전기차와 충전기의 연결·<wbr>제어·<wbr>운영을 위한</span><span>Embedded Software 제공</span></p>
+      </article>
+      <article class="dep-card ax-app-card">
+        <div class="ax-app-icon"><img src="assets/img/business/applications/embedded-robotics-mobility-white.webp" alt="" loading="lazy" width="640" height="640"></div>
+        <h3>Robotics &amp; Mobility</h3>
+        <p><span>로봇과 이동형 장비의 센서·<wbr>제어 시스템을 연결하여</span><span>안정적인 동작 및 서비스 구현 지원</span></p>
+      </article>
+      <article class="dep-card ax-app-card">
+        <div class="ax-app-icon"><img src="assets/img/business/applications/embedded-industrial-device-white.webp" alt="" loading="lazy" width="640" height="640"></div>
+        <h3>Industrial Device</h3>
+        <p><span>산업용 장비와 디바이스에 필요한</span><span>제어·<wbr>통신·<wbr>인터페이스 소프트웨어 제공</span></p>
+      </article>
+      <article class="dep-card ax-app-card">
+        <div class="ax-app-icon"><img src="assets/img/business/applications/embedded-iot-edge-white.webp" alt="" loading="lazy" width="640" height="640"></div>
+        <h3>IoT &amp; Edge</h3>
+        <p><span>센서와 장비 데이터를 실시간으로 수집하고 연결하는</span><span>Edge 및 IoT 소프트웨어 제공</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 레퍼런스 -->
+<section id="projects" class="bcase">
+  <div class="bcase-head rv">
+    <span class="eb">BUILD CASES</span>
+    <h2>대표 프로젝트</h2>
+    <p>OTA 업데이트부터 HMI·<wbr>미들웨어, 사이버보안 산출까지 실제 수행한 프로젝트입니다.</p>
+  </div>
+  <div class="wrap">
+    <div class="bcase-grid">
+      <article class="bcase-card rv">
+        <div class="bcase-visual"><img src="assets/img/business/steps/embedded-03-os-platform-v3.webp" alt="차량 제어기 소프트웨어 업데이트 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">OTA &amp; UPDATE</span>
+        <h3>현대차 CCU·<wbr>IVI·<wbr>AMP·<wbr>HUD 무선 업데이트</h3>
+        <span class="sum">제어기 네 종에 무선(OTA)·<wbr>USB 업데이트 기능 개발·<wbr>검증</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>CCU · IVI · AMP · HUD</li>
+          <li><i aria-hidden="true">✓</i>OTA · USB Update</li>
+          <li><i aria-hidden="true">✓</i>기능 개발 · 검증</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d1">
+        <div class="bcase-visual"><img src="assets/img/business/steps/embedded-04-hmi-middleware-v3.webp" alt="차량 화면·미들웨어 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">HMI &amp; MIDDLEWARE</span>
+        <h3>Global OEM 차량 화면·<wbr>미들웨어 개발</h3>
+        <span class="sum">글로벌 완성차 규격에 맞춘 차량 화면·<wbr>미들웨어 기능 개발</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>HMI</li>
+          <li><i aria-hidden="true">✓</i>Middleware</li>
+          <li><i aria-hidden="true">✓</i>Global OEM 규격</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d2">
+        <div class="bcase-visual"><img src="assets/img/business/steps/embedded-05-hil-safety-v3.webp" alt="차량 사이버보안 위협 분석 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">CYBERSECURITY</span>
+        <h3>Toyota CCS·<wbr>TSP 사이버보안 산출</h3>
+        <span class="sum">커넥티드 서비스·<wbr>텔레매틱스 플랫폼의 위협 분석과 보안 관리 체계 산출물 작성</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>ISO/SAE 21434</li>
+          <li><i aria-hidden="true">✓</i>CSMS</li>
+          <li><i aria-hidden="true">✓</i>TARA 산출물</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <a class="bcase-more" href="references.html">전체 구축 사례 보기 <span aria-hidden="true">→</span></a>
+</section>
+
+</main>
+
+<footer id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">제품 개발부터 양산까지 기술을 함께 검토합니다</h2>
+          <p class="fcta-p">개발 환경과 주요 기능, 보안 요구사항에 맞춰 소프트웨어 개발부터 검증과 양산까지 필요한 기술을 제공합니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 2·3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722·723·710호</dd></div>
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18</dd></div>
+          </dl>
+        </div>
+                <div class="fb-links">
+          <div class="fb-col"><p class="f-h">Business</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a></div>
+          <div class="fb-col"><p class="f-h">Solution</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">AgentQ</a><a href="solution-qdrive.html">QDrive</a><a href="solution-evcp.html">EVCP</a><a href="solution-traffic.html">QVision</a></div>
+          <div class="fb-col"><p class="f-h">Global Partners</p>
+            <a href="license-qt.html">Qt</a><a href="license-telit.html">Telit Cinterion</a><a href="license-toradex.html">Toradex</a><a href="license-visualon.html">VisualOn</a><a href="license-tuxera.html">Tuxera</a><a href="license-protopie.html">ProtoPie</a></div>
+          <div class="fb-col"><p class="f-h">Company</p>
+            <a href="about.html">About Ocube</a><a href="company.html">History</a><a href="references.html">Use Cases</a><a href="location.html">Locations</a><a href="contact.html">Contact</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site2.js?v=codex-19"></script>
+</body>
+</html>

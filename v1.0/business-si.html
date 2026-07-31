@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SI · 시스템 통합 — 오큐브</title>
+<meta name="description" content="오큐브 SI — 복잡한 B2B·B2G 업무를 분석하고 설계·개발·통합 검증·이행·운영까지 안정적인 시스템으로 구현합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-36">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/business-si.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="SI · 시스템 통합 — 오큐브">
+<meta property="og:description" content="오큐브 SI — 복잡한 B2B·B2G 업무를 분석하고 설계·개발·통합 검증·이행·운영까지 안정적인 시스템으로 구현합니다.">
+<meta property="og:url" content="https://ocube-codex-review.issoyeon16.chatgpt.site/business-si.html">
+<meta property="og:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SI · 시스템 통합 — 오큐브">
+<meta name="twitter:description" content="오큐브 SI — 복잡한 B2B·B2G 업무를 분석하고 설계·개발·통합 검증·이행·운영까지 안정적인 시스템으로 구현합니다.">
+<meta name="twitter:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/"},{"@type":"ListItem","position":2,"name":"SI","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/business-si.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Business <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Solution <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>AI 스마트 팩토리</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Global Partners <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">Global Tech</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Company <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Locations<small>서울·<wbr>안양·<wbr>대구</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button type="button" class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business-ax.html">Business</a>
+  <a href="solution-cubeon.html">Solution</a>
+  <a href="license-qt.html">Global Partners</a>
+  <a href="about.html">Company</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+<main id="top">
+
+<!-- 1. HERO (풀스크린 · 이미지) -->
+<section class="hero page-hero dark">
+  <div class="hero-bg" style="background-image:url('assets/img/business/business-si-codex.webp')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <span class="hero-badge">BUSINESS · SI</span>
+    <h1>복잡한 업무를 안정적인 B2B·B2G 시스템으로 구현합니다</h1>
+    <p>홈 AIoT 플랫폼·<wbr>금융 서비스·<wbr>에너지 인프라의 사용자 서비스와 관리 업무, 데이터를 하나의 운영 흐름으로 설계합니다. 개발·<wbr>보안 검증·<wbr>이행·<wbr>운영 서비스 수준 기준(SLA)까지 한 팀이 수행합니다.</p>
+    <ul class="hero-keys">
+      <li><span class="k">범위</span><span class="v">B2B · B2G · 업무 시스템 · 데이터 연계</span></li>
+      <li><span class="k">아키텍처</span><span class="v">마이크로서비스 구조(MSA) · 자동 통합·배포(CI/CD) · 이행·복구 계획</span></li>
+      <li><span class="k">품질</span><span class="v">KWCAG 접근성 · OWASP 보안 점검</span></li>
+    </ul>
+</div>
+  <div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<!-- 2. 파트너 가로 슬라이드 -->
+<section class="sec-anchor deploy" style="padding:46px 0 42px">
+  <div class="wrap">
+    <p class="kicker" style="text-align:center;display:block;margin-bottom:16px">Global Tech</p>
+    <div class="pmark"><div class="pmark-track">
+      <span class="pchip">Qt</span><span class="pchip">Telit Cinterion</span><span class="pchip">Toradex</span><span class="pchip">VisualOn</span><span class="pchip">Tuxera</span><span class="pchip">ProtoPie</span>
+      <span class="pchip" aria-hidden="true">Qt</span><span class="pchip" aria-hidden="true">Telit</span><span class="pchip" aria-hidden="true">Toradex</span><span class="pchip" aria-hidden="true">VisualOn</span><span class="pchip" aria-hidden="true">Tuxera</span><span class="pchip" aria-hidden="true">ProtoPie</span>
+    </div></div>
+    <p class="sec-note" style="text-align:center;margin-top:14px">글로벌 기술을 프로젝트에 맞게 선정하고, 국내 공급·<wbr>통합·<wbr>엔지니어링 지원까지 수행합니다.</p>
+  </div>
+</section>
+
+<!-- 3. What We Do (좌고정 + 6단계) -->
+<section class="pinsec" id="whatwedo">
+  <div class="wrap">
+    <div class="pin-left">
+      <span class="pin-num">What We Do</span>
+      <h2>SI · <em>System Integration</em></h2>
+      <p>B2B 서비스·<wbr>공공 업무·<wbr>내부 운영 시스템과 기존 데이터를 하나의 흐름으로 통합합니다. 요구 정의부터 안정적인 이행과 운영까지 <b>6단계</b>로 수행합니다.</p>
+      <div class="pin-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="pin-right">
+
+      <article class="pin-item reveal" data-i="0">
+        <div class="pin-illust pin-illust--art" data-slot="si1">
+          <img src="assets/img/business/steps/si-01-discovery-planning-v3.webp" alt="현행 업무 흐름의 병목을 분석해 요구사항과 구축 계획으로 정리하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">01</div>
+        <h3>요구 정의 · 업무 분석</h3>
+        <p>현업의 업무 흐름과 병목을 먼저 확인해 기능·<wbr>성능·<wbr>보안 요구를 측정 가능한 기준으로 정리합니다.</p>
+        <ul class="pi-bul">
+          <li>현업 인터뷰와 AS-IS 분석으로 업무 흐름·병목·예외 케이스를 문서화합니다</li>
+          <li>기능 요구와 비기능 요구(성능·보안·가용성)를 측정 가능한 기준으로 정의합니다</li>
+          <li>WBS와 마일스톤으로 일정과 리스크를 투명하게 관리합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="1">
+        <div class="pin-illust pin-illust--art" data-slot="si2">
+          <img src="assets/img/business/steps/si-02-architecture-ux-v3.webp" alt="확장 가능한 시스템 아키텍처와 반응형 사용자 경험을 함께 설계한 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">02</div>
+        <h3>아키텍처 · UX 설계</h3>
+        <p>예상 트래픽과 데이터 규모에 맞는 확장 구조를 정하고, 실제 사용할 화면 흐름을 개발 전에 검증합니다.</p>
+        <ul class="pi-bul">
+          <li>트래픽·데이터 규모에 맞춰 단일 구조와 마이크로서비스 구조(MSA)를 판단하고 확장 경로를 설계합니다</li>
+          <li>IA·와이어프레임·프로토타입으로 화면 흐름을 개발 전에 검증합니다</li>
+          <li>KWCAG 접근성과 반응형 대응을 설계 단계부터 반영합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="2">
+        <div class="pin-illust pin-illust--art" data-slot="si3">
+          <img src="assets/img/business/steps/si-03-data-system-design-v3.webp" alt="기존 시스템 데이터를 표준화하고 연동·백업·재해복구 구조로 설계한 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">03</div>
+        <h3>데이터 · 시스템 설계</h3>
+        <p>데이터 구조와 API, 이행·<wbr>백업·<wbr>재해복구 기준을 함께 정해 시스템 간 정합성과 복구 가능성을 확보합니다.</p>
+        <ul class="pi-bul">
+          <li>ERD와 데이터 사전을 표준화하고 기존 데이터의 이행 전략을 수립합니다</li>
+          <li>레거시·외부 시스템과의 인터페이스를 API 명세로 확정합니다</li>
+          <li>백업·이중화·재해복구(DR) 체계를 아키텍처에 포함해 설계합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="3">
+        <div class="pin-illust pin-illust--art" data-slot="si4">
+          <img src="assets/img/business/steps/si-04-development-integration-v3.webp" alt="코드 리뷰와 자동 테스트를 거쳐 시스템을 지속적으로 통합하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">04</div>
+        <h3>개발 · 통합</h3>
+        <p>코드 리뷰·<wbr>자동 테스트·<wbr>CI/CD로 품질을 관리하고, 스프린트마다 동작하는 결과물로 진행 상황을 확인합니다.</p>
+        <ul class="pi-bul">
+          <li>코딩 표준·코드 리뷰·정적분석을 CI 파이프라인에 내장합니다</li>
+          <li>단위·통합 테스트 자동화로 회귀 결함을 조기에 발견하고 재발 위험을 낮춥니다</li>
+          <li>스프린트 단위로 동작하는 결과물을 시연하며 현업과 방향을 맞춥니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="4">
+        <div class="pin-illust pin-illust--art" data-slot="si5">
+          <img src="assets/img/business/steps/si-05-quality-security-v3.webp" alt="부하·보안·사용자 수용 기준으로 시스템 품질을 검증하는 모습" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">05</div>
+        <h3>품질 · 보안 검증</h3>
+        <p>성능·<wbr>보안·<wbr>사용자 수용 기준을 실제 시나리오로 검증해 오픈 조건을 확정합니다.</p>
+        <ul class="pi-bul">
+          <li>시나리오·부하 테스트로 목표 성능(응답시간·동시접속)을 실증합니다</li>
+          <li>OWASP Top 10 기준 보안 점검과 취약점 조치를 수행합니다</li>
+          <li>사용자 수용 테스트(UAT)로 현업 승인을 받고 오픈 조건을 확정합니다</li>
+        </ul>
+      </article>
+
+      <article class="pin-item reveal" data-i="5">
+        <div class="pin-illust pin-illust--art" data-slot="si6">
+          <img src="assets/img/business/steps/si-06-cutover-operations-v3.webp" alt="중단 위험을 낮춘 시스템 이행과 롤백, 운영 모니터링 및 지속 개선 체계" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
+        <div class="pi-no">06</div>
+        <h3>이행 · 운영 · 서비스 수준 관리</h3>
+        <p>이행 리허설과 롤백 계획으로 오픈 위험을 낮추고, 모니터링·<wbr>서비스 수준 기준(SLA)·<wbr>개선 과제로 운영 품질을 관리합니다.</p>
+        <ul class="pi-bul">
+          <li>데이터 이행 리허설과 롤백 계획으로 서비스 중단 위험을 낮춰 오픈합니다</li>
+          <li>모니터링·알림 체계와 장애 대응 프로세스(SLA)를 가동합니다</li>
+          <li>운영 데이터 기반 개선 백로그로 시스템을 지속 고도화합니다</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. 적용분야 -->
+<section class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Applications</span>
+    <h2>적용 분야</h2>
+    <p class="sec-sub">프로젝트에 따라 AX·<wbr>임베디드·<wbr>SI 역량을 조합해 <b>금융·<wbr>공공·<wbr>교통·<wbr>제조</b> 현장에 적용합니다.</p></div>
+    <div class="dep-grid reveal" data-d="1">
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏦</div><h3>금융</h3><p>모바일 금융·<wbr>그룹 소통앱·<wbr>플랫폼 고도화 — 금융 그룹 다년 SI 파트너</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏛️</div><h3>공공·<wbr>안전</h3><p>영상·<wbr>센서 융합 안전 관제와 공공 서비스 시스템 — 영상 AI(CCTV)·<wbr>세이프뱃지 국책 등</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🚦</div><h3>교통·<wbr>모빌리티</h3><p>영상 인식 교통·<wbr>안전과 모빌리티 데이터 플랫폼 — QVision·<wbr>Qdrive</p></div>
+      <div class="dep-card"><div class="ic" aria-hidden="true">🏭</div><h3>제조</h3><p>설비 이상 조기감지·<wbr>공정 최적화·<wbr>자율운영 — 자동차부품·<wbr>열처리·<wbr>제지</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 레퍼런스 -->
+<section id="projects" class="bcase">
+  <div class="bcase-head rv">
+    <span class="eb">BUILD CASES</span>
+    <h2>대표 프로젝트</h2>
+    <p>업무를 어떤 시스템으로 구현하고 어디까지 운영했는지 대표 프로젝트로 확인할 수 있습니다.</p>
+  </div>
+  <div class="wrap">
+    <div class="bcase-grid">
+      <article class="bcase-card rv">
+        <div class="bcase-visual"><img src="assets/img/business/steps/si-04-development-integration-v3.webp" alt="금융 시스템 개발·통합 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">FINANCIAL SERVICE</span>
+        <h3>통합 금융 SI · 그룹 소통앱</h3>
+        <span class="sum">계열 금융 앱과 모바일 서비스를 구축·<wbr>고도화하고 다년간 운영·<wbr>확장했습니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>HCE 선불카드</li>
+          <li><i aria-hidden="true">✓</i>그룹 소통앱</li>
+          <li><i aria-hidden="true">✓</i>홈페이지 고도화</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d1">
+        <div class="bcase-visual"><img src="assets/img/business/steps/si-02-architecture-ux-v3.webp" alt="아키텍처·UX 설계 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">HOME AIoT PLATFORM</span>
+        <h3>ThinQ 홈 AIoT · webOS · B2B Cloud</h3>
+        <span class="sum">홈 AIoT 커넥티드 서비스와 webOS 앱, B2B 클라우드를 설계·<wbr>구축했습니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>ThinQ 앱</li>
+          <li><i aria-hidden="true">✓</i>webOS 앱</li>
+          <li><i aria-hidden="true">✓</i>Pro:Centric · SuperSign</li>
+        </ul>
+      </article>
+      <article class="bcase-card rv d2">
+        <div class="bcase-visual"><img src="assets/img/business/steps/si-06-cutover-operations-v3.webp" alt="이행·운영 일러스트" loading="lazy" width="900" height="506"></div>
+        <span class="cat">ENERGY INFRA</span>
+        <h3>EV 충전 플랫폼 구축</h3>
+        <span class="sum">충전기 연동·<wbr>관제·<wbr>과금 시스템을 기획부터 구축까지 일괄 수행했습니다.</span>
+        <ul>
+          <li><i aria-hidden="true">✓</i>충전기 연동</li>
+          <li><i aria-hidden="true">✓</i>관제 · 과금</li>
+          <li><i aria-hidden="true">✓</i>EVCP 제품화</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <a class="bcase-more" href="references.html">전체 구축 사례 보기 <span aria-hidden="true">→</span></a>
+</section>
+
+<section id="public" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Public Programs</span>
+    <h2>국책·<wbr>정부지원사업을 기획부터 평가까지 함께 수행합니다</h2>
+    <p class="sec-sub">AI·<wbr>데이터 관련 지원사업의 과제 정의, 수행 체계와 산출물 준비, 현장 실증, 결과 평가 대응을 수요기업과 함께 진행합니다.</p></div>
+    <div class="feat-list reveal" data-d="1" style="margin-top:22px">
+      <div class="feat"><h3>과제 주관 수행 경험</h3><p>국책 과제 주관기관으로 과제를 직접 수행하고 현장 실증까지 완료한 경험을 보유합니다.</p></div>
+      <div class="feat"><h3>연구개발 수행 요건</h3><p>기업부설연구소(2008년 설립)와 벤처기업·<wbr>이노비즈 인증을 보유하고 있습니다.</p></div>
+      <div class="feat"><h3>직접 수행 체계</h3><p>핵심 기획·<wbr>개발·<wbr>검증을 자체 인력이 수행해 산출물 품질과 일정을 직접 관리합니다.</p></div>
+    </div>
+    <div class="tl reveal" data-d="2" style="margin-top:28px">
+      <div class="tl-card"><span class="yr">STEP 01</span><h3>사전 상담</h3><p>현장 과제와 지원사업 적합성 검토</p></div>
+      <div class="tl-card"><span class="yr">STEP 02</span><h3>과제 기획</h3><p>목표·<wbr>범위·<wbr>수행 체계 정의 및 사업계획 수립</p></div>
+      <div class="tl-card"><span class="yr">STEP 03</span><h3>협약</h3><p>수요기업·<wbr>수행기관 간 역할과 산출물 확정</p></div>
+      <div class="tl-card"><span class="yr">STEP 04</span><h3>수행</h3><p>데이터 수집·<wbr>표준화, 모델 개발, 현장 실증</p></div>
+      <div class="tl-card"><span class="yr">STEP 05</span><h3>결과 평가</h3><p>산출물 정리 및 성과 검증 대응</p></div>
+      <div class="tl-card cur"><span class="yr">STEP 06</span><h3>확산·<wbr>고도화</h3><p>인접 라인·<wbr>타 사업장으로 단계적 확대</p></div>
+    </div>
+    <p class="sec-note reveal" data-d="3">사전 상담부터 결과 평가와 확산·<wbr>고도화까지 단계별로 함께 수행합니다.</p>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">업무 범위와 운영 조건부터 함께 정리합니다</h2>
+          <p class="fcta-p">대상 업무·<wbr/>사용자·<wbr/>연동 시스템·<wbr/>일정을 확인해 구축·<wbr/>이행·<wbr/>운영 계획을 제안합니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 2·3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722·723·710호</dd></div>
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solution-qdrive.html">Qdrive</a><a href="solution-evcp.html">EVCP</a><a href="solution-traffic.html">QVision</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site2.js?v=codex-11"></script>
+</body>
+</html>

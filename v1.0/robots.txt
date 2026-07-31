@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ocube-codex-review.issoyeon16.chatgpt.site/sitemap.xml

@@ -1,0 +1,21 @@
+# 구 Wix URL → 신규 페이지 (301). Netlify/Cloudflare Pages용. 프래그먼트(#)는 클라이언트 처리.
+/greeting                                   /about.html                    301
+/history                                    /company.html                    301
+/vision                                     /about.html                    301
+/ci                                         /about.html                    301
+/contactus                                  /contact.html                    301
+/ai-solution                                /solution-factoryq.html          301
+/automotive-ivi                             /business-embedded.html          301
+/system-integration                         /business-si.html                301
+/qt                                         /license-qt.html           301
+/telit-cintelion                            /license-telit.html           301
+/toradex                                    /license-toradex.html           301
+/visualon                                   /license-visualon.html           301
+/tenable                                    /license-tuxera.html           301
+/btnanotech                                 /license-protopie.html           301
+/ai-tms                                     /solution-traffic.html           301
+/pot-hole                                   /solution-traffic.html           301
+/evcp                                       /solution-evcp.html              301
+/about-1                                    /solution-qdrive.html            301
+/gsteamer                                   /business-embedded.html          301
+/복제-pot-hole-검출-및-관제시스템                     /solution-evcp.html              301

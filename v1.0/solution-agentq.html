@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QAgent AI 에이전트 — 오큐브</title>
+<meta name="description" content="QAgent — 흩어진 사내 데이터와 지식을 자연어로 조회·분석하고, 실행 작업은 담당자 승인 후 처리하는 산업 AI 에이전트.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site2.css?v=codex-36">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-agentq.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230e1626'/%3E%3Cpath%20d='M16%206.5l7.5%204.3v8.6L16%2023.7l-7.5-4.3v-8.6z'%20fill='none'%20stroke='%230075de'%20stroke-width='1.8'/%3E%3Cpath%20d='M16%206.5v17.2M8.5%2010.8l7.5%204.3%207.5-4.3'%20stroke='%235b9bff'%20stroke-width='1.4'%20fill='none'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="오큐브(주)">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="QAgent AI 에이전트 — 오큐브">
+<meta property="og:description" content="QAgent — 흩어진 사내 데이터와 지식을 자연어로 조회·분석하고, 실행 작업은 담당자 승인 후 처리하는 산업 AI 에이전트.">
+<meta property="og:url" content="https://ocube-codex-review.issoyeon16.chatgpt.site/solution-agentq.html">
+<meta property="og:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QAgent AI 에이전트 — 오큐브">
+<meta name="twitter:description" content="QAgent — 흩어진 사내 데이터와 지식을 자연어로 조회·분석하고, 실행 작업은 담당자 승인 후 처리하는 산업 AI 에이전트.">
+<meta name="twitter:image" content="https://ocube-codex-review.issoyeon16.chatgpt.site/og-codex.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/"},{"@type":"ListItem","position":2,"name":"QAgent","item":"https://ocube-codex-review.issoyeon16.chatgpt.site/solution-agentq.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#top">본문 바로가기</a>
+
+<header class="gnb">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="오큐브 홈"><img src="assets/ci_01.avif" alt="OCUBE" width="462" height="140"></a>
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Business <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">BUSINESS</p>
+            <a href="business-ax.html">AX<small>AI 전환·<wbr>프로젝트 수행</small></a>
+            <a href="business-embedded.html">Embedded<small>차량 전장·<wbr>설비제어·<wbr>엣지·<wbr>보안</small></a>
+            <a href="business-si.html">SI<small>기업·<wbr>공공 시스템 구축·<wbr>운영</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Solution <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">AI 플랫폼</p>
+            <a href="solution-cubeon.html">Cubeon<small>산업 AI 운영 플랫폼</small></a>
+            <a href="solution-dataq.html">QData<small>산업 데이터 플랫폼</small></a>
+            <a href="solution-factoryq.html">QFactory<small>AI 스마트 팩토리</small></a>
+            <a href="solution-agentq.html">QAgent<small>AI 에이전트</small></a>
+          </div>
+          <div class="dd-group"><p class="dd-h">산업 솔루션</p>
+            <a href="solution-qdrive.html">Qdrive<small>모빌리티·<wbr>탄소중립</small></a>
+            <a href="solution-evcp.html">EVCP<small>전기차 충전 플랫폼</small></a>
+            <a href="solution-traffic.html">QVision<small>영상 인식 교통·<wbr>안전</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Global Partners <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">Global Tech</p>
+            <a href="license-qt.html">Qt<small>크로스플랫폼 UI 프레임워크</small></a>
+            <a href="license-telit.html">Telit Cinterion<small>셀룰러 IoT 모듈</small></a>
+            <a href="license-toradex.html">Toradex<small>산업용 컴퓨터 모듈·<wbr>캐리어보드</small></a>
+            <a href="license-visualon.html">VisualOn<small>멀티미디어 재생 개발도구</small></a>
+            <a href="license-tuxera.html">Tuxera<small>파일시스템 · 스토리지</small></a>
+            <a href="license-protopie.html">ProtoPie<small>하이피델리티 프로토타이핑</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a role="button" aria-haspopup="true" tabindex="0">Company <span class="badge-caret" aria-hidden="true">▾</span></a>
+        <div class="dropdown">
+          <div class="dd-group"><p class="dd-h">COMPANY</p>
+            <a href="about.html">About Ocube<small>인사말·<wbr>비전·<wbr>기업 아이덴티티</small></a>
+            <a href="company.html#history">History<small>연혁·<wbr>주요 이정표</small></a>
+            <a href="references.html">Use Cases<small>레퍼런스·<wbr>파트너</small></a>
+            <a href="location.html">Locations<small>서울·<wbr>안양·<wbr>대구</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <a href="contact.html" class="cta-btn">문의하기</a>
+    <button type="button" class="m-toggle" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<nav class="m-panel" aria-label="모바일 메뉴">
+  <a href="business-ax.html">Business</a>
+  <a href="solution-cubeon.html">Solution</a>
+  <a href="license-qt.html">Global Partners</a>
+  <a href="about.html">Company</a>
+  <a href="contact.html">문의하기</a>
+</nav>
+
+
+
+<main>
+<div class="sol-open">
+<section id="top" class="hero page-hero dark sol-hero">
+  <div class="hero-bg" style="background-image:url('assets/video/platform_brain_cube.jpg')" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+<div class="hero-scroll" aria-hidden="true"><div class="wrap"><i></i><span>SCROLL</span></div></div>
+</section>
+
+<section class="sol-intro">
+  <div class="sol-copy-zone">
+    <div class="sol-copy page-hero">
+      <div class="wrap">
+    <span class="hero-badge">SOLUTION · AI 플랫폼</span>
+    <h1>QAgent</h1>
+    <p class="sol-desc"><span>여러 시스템에 흩어진 데이터를 대화형 단일 창구로 통합합니다.</span><span>답변에는 근거를 함께 제시하고, 실행은 승인을 거쳐 처리합니다.</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="sol-body">
+    <figure class="sol-stage rv d3">
+    <video class="demovid" src="assets/media/demo/stage/agentq.mp4" poster="assets/media/demo/stage/agentq.jpg"
+      muted loop playsinline preload="metadata" width="1600" height="900"
+      aria-label="QAgent 보고서 작성·승인 흐름 시연 영상 — 프로토타입 예시"></video>
+  </figure>
+  </div>
+</section>
+</div>
+
+<nav class="subnav" hidden aria-hidden="true"><div class="wrap"><a href="#overview">개요</a><a href="#features">핵심 기능</a><a href="#arch">아키텍처</a><a href="#pipeline">파이프라인</a><a href="#capability">기술 스택</a><a href="#connect">연동</a><a href="#compare">비교</a><a href="#autonomy">자율성</a><a href="#stack">배포</a><a href="#proof">사례</a></div></nav>
+
+<section id="overview" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Overview</span>
+    <h2>여러 시스템을 오가며 데이터를 찾는 시간을 줄입니다</h2>
+    <p class="sec-sub">QAgent는 업무 시스템과 사내 문서를 자연어로 조회·<wbr>분석하는 AI 에이전트입니다. 답변을 리포트로 정리하고, 필요한 작업은 담당자 승인 후 실행합니다.</p></div>
+    <div class="media-duo reveal" data-d="1">
+      <figure><img class="shot" src="assets/img/proto/agentq-analysis.jpg" alt="QAgent 데이터 분석 에이전트 화면 — 업무 데이터를 자연어로 분석" loading="lazy" width="1100" height="691">
+        <figcaption class="shot-cap">QAgent — 자연어 기반 업무 데이터 분석 (예시 화면)</figcaption></figure>
+      <div class="feat-list">
+        <div class="feat"><b>NL2SQL</b><span>자연어 질문을 SQL로 변환 — 분산 시스템 데이터를 대화로 조회</span></div>
+        <div class="feat"><b>근거 검색(RAG·<wbr>GraphRAG)</b><span>사내 문서·<wbr>지식 검색에 근거 경로 제시로 환각 억제</span></div>
+        <div class="feat"><b>실행 연동</b><span>메신저·<wbr>이슈트래커 등 사내 시스템 연계 자동화</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="sec-anchor">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="kicker">Features</span>
+      <h2>에이전트를 완성하는 핵심 기능</h2>
+      <p class="lead">데이터를 찾아 답하고, 확인 가능한 근거를 제시하며, 실행 전에는 담당자의 통제를 거칩니다.</p></div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">NL2SQL</span>
+        <h3>자연어 데이터 조회</h3>
+        <p>자연어 질문을 SQL로 변환해 여러 시스템에 흩어진 데이터를 한 번에 조회합니다. SQL을 몰라도 필요한 데이터를 직접 찾을 수 있습니다.</p>
+        <a class="duo-cta" href="#capability">구성 기술 자세히 <i aria-hidden="true">→</i></a>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/agentq-nl2sql.jpg" alt="자연어 데이터 조회(NL2SQL) 화면" loading="lazy" width="1100" height="691">
+        <p class="fitcap">NL2SQL 조회 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo rev">
+      <div class="duo-txt rv"><span class="pill">근거 검색(RAG·GraphRAG)</span>
+        <h3>근거를 제시하는 답변</h3>
+        <p>사내 문서와 지식을 검색 증강(RAG·GraphRAG)으로 활용하고, 답변마다 출처를 함께 인용합니다. 어디서 온 답인지 확인할 수 있어야 업무에 쓸 수 있습니다.</p>
+        <a class="duo-cta" href="#pipeline">판단 파이프라인 자세히 <i aria-hidden="true">→</i></a>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/agentq-graphrag.jpg" alt="지식그래프 기반 검색 화면" loading="lazy" width="1100" height="691">
+        <p class="fitcap">GraphRAG 지식 검색 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="duo-txt rv"><span class="pill">Guardrails</span>
+        <h3>승인 기반 실행 통제</h3>
+        <p>민감한 작업은 안전정책 정책과 사람의 승인을 거쳐 실행합니다. 에이전트에게 일을 맡기되, 통제권은 사람에게 남깁니다.</p>
+        <a class="duo-cta" href="#autonomy">자율화 수준 자세히 <i aria-hidden="true">→</i></a>
+      </div>
+      <div class="duo-media stage rv d1">
+        <img src="assets/img/proto/agentq-guard.jpg" alt="안전정책 정책 관리 화면" loading="lazy" width="1100" height="691">
+        <p class="fitcap">안전정책 관리 — 프로토타입 예시 화면</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="arch" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Architecture</span>
+    <h2>질의에서 실행까지, 3계층</h2>
+    <p class="sec-sub">QAgent는 <b>이해 → 추론 → 실행</b> 3계층으로 동작합니다. 답변에는 확인 가능한 근거를 함께 제시하고, 실제 업무를 실행하기 전에는 담당자 승인 절차를 둡니다.</p></div>
+    <div class="stack-diagram reveal" data-d="1" aria-label="QAgent 처리 흐름: 이해, 추론, 실행">
+      <div class="stack-layer"><span class="stack-tag">01 · 이해 · 검색</span><b>Understanding</b><small>자연어 데이터 조회(NL2SQL)로 자연어를 구조화 쿼리로 변환하고, 근거 검색(RAG·<wbr>GraphRAG)로 사내 지식과 근거 경로를 찾습니다.</small></div>
+      <div class="stack-arrow" aria-hidden="true">↓</div>
+      <div class="stack-layer"><span class="stack-tag">02 · 추론 · 생성</span><b>Reasoning</b><small>상용 대규모 언어모델(LLM) API 또는 사내 소형 언어모델(sLLM)으로 분석·<wbr>리포트를 생성하고 안전정책을 적용합니다.</small></div>
+      <div class="stack-arrow" aria-hidden="true">↓</div>
+      <div class="stack-layer l-op"><span class="stack-tag">03 · 실행 · 행동</span><b>Execution</b><small>생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커와 연동하며, 실제 실행 전에는 사람 승인을 거칩니다.</small></div>
+    </div>
+    <p class="sec-note stack-note reveal">QData가 표준화한 데이터를 사용하고, Cubeon의 에이전트·<wbr>협업 조정 모듈을 기반으로 여러 에이전트가 역할을 나눠 일하도록 확장합니다.</p>
+  </div>
+</section>
+<section id="pipeline" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Runtime Pipeline</span>
+    <h2>근거 있는 답을 만드는 흐름</h2>
+    <p class="sec-sub">질문과 관련된 사내 자료를 먼저 찾고, 답변에 근거를 붙여 검증합니다. 근거가 부족한 답은 실행으로 바로 이어지지 않도록 구성합니다.</p></div>
+    <div class="tl reveal" data-d="1">
+      <div class="tl-card"><div class="yr">STEP 1</div><h3>질의 이해</h3><p>자연어 질문을 데이터 조회문으로 변환(NL2SQL)</p></div>
+      <div class="tl-card"><div class="yr">STEP 2</div><h3>문서 검색</h3><p>문서를 의미 기반으로 검색하고 관련도가 높은 순서로 재정렬</p></div>
+      <div class="tl-card"><div class="yr">STEP 3</div><h3>근거 결합</h3><p>근거 검색(RAG·<wbr>GraphRAG)로 근거 경로를 답변에 결합 · 지식그래프 관계 추론</p></div>
+      <div class="tl-card"><div class="yr">STEP 4</div><h3>추론 · 생성</h3><p>상용 대규모 언어모델(LLM) API 또는 사내 소형 언어모델(sLLM)으로 분석·<wbr>리포트 생성</p></div>
+      <div class="tl-card"><div class="yr">STEP 5</div><h3>근거 검증 · 안전장치</h3><p>검색한 자료와 답변이 일치하는지 확인하고 개인정보를 가려 안전성을 점검</p></div>
+      <div class="tl-card cur"><div class="yr">STEP 6</div><h3>실행 · HITL</h3><p>HITL(사람이 검토·승인하는 절차)을 거친 후 생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>이슈트래커로 액션 실행</p></div>
+    </div>
+    <div class="feat-list reveal" data-d="2" style="margin-top:22px">
+      <div class="feat"><b>근거가 부족하면 답변 보류</b><span>검색 자료와 답변의 일치도가 기준에 못 미치면 답변을 보류하고 다시 검색합니다.</span></div>
+      <div class="feat"><b>권한 인지 검색</b><span>사용자 권한 범위 안의 문서만 검색·<wbr>인용해 정보 접근 통제를 유지합니다.</span></div>
+    </div>
+  </div>
+</section>
+<section id="capability" class="sec-anchor platform">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker" style="color:#79b3f2">Core Stack</span>
+    <h2 style="color:#ffffff">에이전트를 이루는 기술</h2>
+    <p class="sec-sub" style="color:#c7d1df">검색·<wbr>추론·<wbr>실행 전 구간을 산업 현장 요건에 맞춰 구성하도록 설계합니다.</p></div>
+    <div class="kmod-grid reveal" data-d="1" role="list" aria-label="QAgent 핵심 기술">
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-nl2sql.jpg" data-preview-cap="정형데이터(DB) 검색 — 자연어를 SQL로 변환" data-preview-alt="NL2SQL 관련 예시 화면"><b>NL2SQL</b><span>자연어 질문을 SQL로 변환 — 분산 데이터 대화형 조회</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-rag.jpg" data-preview-cap="RAG 지식 연동 — 근거 문서 검색·인용" data-preview-alt="RAG 관련 예시 화면"><b>RAG</b><span>사내 문서·<wbr>지식 검색증강 생성</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-graphrag.jpg" data-preview-cap="지식 검색 — 관계 기반 탐색·근거 제시" data-preview-alt="GraphRAG 관련 예시 화면"><b>GraphRAG</b><span>지식그래프 기반 관계 검색·<wbr>추론</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/cubeon-modelreg.jpg" data-preview-cap="모델 관리 — 사내 설치형 sLLM 운영" data-preview-alt="sLLM 관련 예시 화면"><b>sLLM</b><span>온프레미스·<wbr>폐쇄망용 경량 특화 언어모델</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/dataq-knowledge.jpg" data-preview-cap="지식·의미 데이터 관리(권한·마스킹)" data-preview-alt="온톨로지·의미 기반 검색 관련 예시 화면"><b>온톨로지·<wbr>의미 검색</b><span>사내 용어·<wbr>관계로 근거 경로 제시</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-rag.jpg" data-preview-cap="문서·벡터 검색으로 근거 후보 확보" data-preview-alt="벡터 검색 · Reranking 관련 예시 화면"><b>벡터 검색 · Reranking</b><span>임베딩 후보 검색·<wbr>재순위화</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/cubeon-builder.jpg" data-preview-cap="에이전트 빌더 — MCP 도구·오케스트레이션" data-preview-alt="MCP · Function Calling 관련 예시 화면"><b>MCP · Function Calling</b><span>도구 호출 기반 에이전트 오케스트레이션</span></div>
+      <div class="kmod" role="listitem" data-preview="assets/img/proto/agentq-guard.jpg" data-preview-cap="안전정책 — 안전·품질 정책 관리" data-preview-alt="안전정책 · MLOps 관련 예시 화면"><b>안전정책 · MLOps</b><span>MLOps(모델 학습·배포·성능 관리) · 개인정보 비식별화 · 지속 개선</span></div>
+    </div>
+    <figure class="shot-fig reveal" data-d="2">
+      <img class="shot fit" src="assets/img/proto/agentq-hub.jpg" alt="멀티 에이전트 허브 예시 화면 — 업무 에이전트와 복합 업무 오케스트레이션(OCR·DB검색·보고서 자동 릴레이)" loading="lazy" width="1600" height="1005">
+      <figcaption class="shot-cap">멀티 에이전트 허브 — 프로토타입 예시 화면</figcaption>
+    </figure>
+  </div>
+</section>
+<section id="connect" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Integrations</span>
+    <h2>흩어진 시스템을 하나의 대화로</h2>
+    <p class="sec-sub">사내 데이터 소스와 협업·<wbr>실행 도구를 표준 커넥터로 연결하도록 설계합니다.</p></div>
+    <div class="reveal" data-d="1" style="margin-top:24px">
+      <p style="font-family:var(--font);font-weight:800;color:var(--accent-text);font-size:15px;margin-bottom:10px">데이터 소스</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="pill light">SQL DB</span><span class="pill light">시계열 DB</span><span class="pill light">MES</span><span class="pill light">ERP</span><span class="pill light">사내 문서·<wbr>지식베이스</span><span class="pill light">벡터 DB</span>
+      </div>
+      <p style="font-family:var(--font);font-weight:800;color:var(--accent-text);font-size:15px;margin:20px 0 10px">협업 · 실행</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="pill light">메신저</span><span class="pill light">이슈트래커</span><span class="pill light">메일</span><span class="pill light">그룹웨어</span>
+      </div>
+      <p style="font-family:var(--font);font-weight:800;color:var(--accent-text);font-size:15px;margin:20px 0 10px">인터페이스 · 프로토콜</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="pill light">REST / OpenAPI</span><span class="pill light">SQL</span><span class="pill light">MCP · Function Calling</span><span class="pill light">sLLM 로컬 추론 엔드포인트</span>
+      </div>
+    </div>
+    <p class="sec-note reveal">단순 조회를 넘어, 담당자 승인과 감사 기록이 남는 안전한 업무 실행으로 연결합니다.</p>
+    <figure class="shot-fig reveal" data-d="2">
+      <img class="shot fit" style="max-height:32vh" src="assets/img/proto/agentq-rag.jpg" alt="RAG 지식 연동 예시 화면 — VectorDB 연결·문서 보안등급·지식참조 근거" loading="lazy" width="1600" height="1005">
+      <figcaption class="shot-cap">사내 지식 RAG 연동 — 프로토타입 예시 화면</figcaption>
+    </figure>
+  </div>
+</section>
+<!-- 범용 AI vs 오큐브 산업 AI -->
+<section id="compare" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Why not generic AI</span>
+    <h2>범용 AI로는 부족한 이유</h2>
+    <p class="sec-sub">범용 LLM을 단독으로 도입하는 것과 현장 시스템에 연결하는 산업 AI는 준비 범위가 다릅니다.</p></div>
+    <table class="cmp reveal" data-d="1">
+      <caption class="sr-only">범용 AI로는 부족한 이유 비교표</caption>
+      <thead><tr><th scope="col">항목</th><th scope="col">범용 LLM 단독 도입</th><th scope="col" class="ok">오큐브 산업 AI</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">도메인 데이터 이해</th><td>일반 지식 기반 — 현장 용어·<wbr>설비 맥락 약함</td><td class="ok">이기종 설비·<wbr>공정 데이터를 표준화(QData)해 반영</td></tr>
+        <tr><th scope="row">사내 용어·<wbr>관계 이해</th><td>일반 지식에 의존해 사내 맥락 반영이 어려움</td><td class="ok">사내 용어와 데이터 관계를 정의해 질문을 업무 맥락에 맞게 해석</td></tr>
+        <tr><th scope="row">근거·<wbr>출처 제시</th><td>답의 출처가 불투명 — 환각 위험</td><td class="ok">근거 검색(RAG·<wbr>GraphRAG)로 근거 경로 함께 제시</td></tr>
+        <tr><th scope="row">온프레미스·<wbr>폐쇄망</th><td>배포 환경과 보안 체계를 별도로 구성해야 함</td><td class="ok">클라우드·<wbr>온프레미스·<wbr>폐쇄망 선택형</td></tr>
+        <tr><th scope="row">현장 시스템 연동</th><td>업무 시스템·<wbr>설비 연동을 별도로 개발해야 함</td><td class="ok">생산관리(MES)·<wbr>전사자원관리(ERP)·<wbr>메신저·<wbr>설비 연동, 승인 후 실행</td></tr>
+        <tr><th scope="row">지속 운영</th><td>성능 감시와 개선 체계를 별도로 마련해야 함</td><td class="ok">모델 성능 감시·<wbr>재학습·<wbr>버전 관리</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="autonomy" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Human-in-the-Loop</span>
+    <h2>위험도에 따라 사람이 개입합니다</h2>
+    <p class="sec-sub">실행 자동화의 신뢰는 단계적으로 확보합니다. 작업의 가역성·<wbr>위험도에 따라 사람 개입 수준을 달리하도록 구성합니다.</p></div>
+    <table class="cmp reveal" data-d="1">
+      <caption class="sr-only">위험도에 따라 사람이 개입합니다 비교표</caption>
+      <thead><tr><th scope="col">자율성 단계</th><th scope="col">사람 개입 시점</th><th scope="col" class="ok">적용 시나리오</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Human-in-the-loop</th><td>모든 액션을 실행 직전 사람이 검토·<wbr>승인</td><td class="ok">비가역·<wbr>고위험 (발주·<wbr>정산·<wbr>설비 제어)</td></tr>
+        <tr><th scope="row">Human-on-the-loop</th><td>사람이 감시하며 필요 시 개입·<wbr>중단</td><td class="ok">반복·<wbr>중위험 (리포트 발송·<wbr>티켓 생성)</td></tr>
+        <tr><th scope="row">Human-out-of-the-loop</th><td>사전 정의 정책 내 자동 실행 · 사후 감사</td><td class="ok">저위험·<wbr>가역 (데이터 조회·<wbr>요약)</td></tr>
+      </tbody>
+    </table>
+    <p class="sec-note reveal">업무 위험도와 결과를 되돌릴 수 있는지에 따라 자동 실행 범위와 승인자를 정합니다.</p>
+<div class="feat-list reveal" data-d="2">
+      <div class="feat"><b>권한·<wbr>역할 기반 승인</b><span>업무·<wbr>위험도별로 승인권자를 라우팅해 무단 실행을 차단</span></div>
+      <div class="feat"><b>감사 추적</b><span>설정 범위의 조회·<wbr>실행 이력을 남겨 감사와 원인 추적을 지원</span></div>
+      <div class="feat"><b>롤백·<wbr>보상 처리</b><span>오실행 시 되돌리기·<wbr>보상 트랜잭션으로 안전하게 복구</span></div>
+    </div>
+  </div>
+</section>
+<section id="stack" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Deployment</span>
+    <h2>데이터가 있는 곳에 배포합니다</h2>
+    <p class="sec-sub">데이터 주권·<wbr>보안 요건에 따라 같은 에이전트를 세 형태로 배포하도록 설계합니다.</p></div>
+<p class="sec-note reveal">데이터가 밖으로 나가도 되는지, 얼마나 빨라야 하는지, 최신 모델이 필요한지 — 세 축으로 배포 형태를 결정합니다.</p>
+    <div class="feat-list reveal" data-d="1">
+      <div class="feat"><b>데이터 주권·<wbr>보안</b><span>반출 가능 여부·<wbr>망분리 요건에 따라 클라우드 ↔ 온프레미스 ↔ 폐쇄망 선택</span></div>
+      <div class="feat"><b>지연·<wbr>비용</b><span>실시간성이 중요한 현장은 로컬 추론, 범용 질의는 API로 역할 분담</span></div>
+      <div class="feat"><b>모델 최신성</b><span>최신 상용 LLM API와 내부 특화 sLLM을 요건에 맞춰 조합</span></div>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card reveal" data-d="1"><div class="ic" aria-hidden="true">☁️</div><h3>클라우드</h3><p>상용 LLM API 기반 · 빠른 구축과 최신 모델 활용</p></div>
+      <div class="dep-card reveal" data-d="2"><div class="ic" aria-hidden="true">🏢</div><h3>온프레미스</h3><p>사내 서버 sLLM · 데이터 내부화 · 최신 GPU 인프라 추론</p></div>
+      <div class="dep-card reveal" data-d="3"><div class="ic" aria-hidden="true">🔒</div><h3>폐쇄망</h3><p>망분리(에어갭) 대응 · 데이터 반출 없이 온프레미스 sLLM 운영</p></div>
+    </div>
+  </div>
+</section>
+<section id="proof" class="sec-anchor">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Case</span>
+    <h2>반복 조회·<wbr>정리 시간을 줄인 적용 사례</h2></div>
+    <div class="case-grid two">
+      <article class="case-card reveal" data-d="1"><span class="dom">대기업 제조 · 자재 관리</span>
+        <h3>자재 의사결정 AI Agent</h3>
+        <p class="csi"><b>과제</b> 재고·<wbr>수급 데이터가 시스템마다 분산, 취합에 시간 소모</p>
+        <p class="csi"><b>해결</b> 자연어→SQL 변환 + 지식검색(RAG), 차트·<wbr>표·<wbr>메일 초안까지 대화형 응답</p>
+        <p class="csi"><b>성과</b> 분산 데이터 조회·<wbr>정리 과정을 대화형 조회로 단순화</p></article>
+      <article class="case-card reveal" data-d="2"><span class="dom">확장</span>
+        <h3>CS·<wbr>문서 자동화로 확장</h3>
+        <p class="csi"><b>영역</b> CS 자동응답, 사내 문서 Q&A, 리포트 초안 자동화</p>
+        <p class="csi"><b>효과</b> 반복 조회·<wbr>정리 업무를 대화로 대체 — 사람은 판단에 집중</p></article>
+    </div>
+    <figure class="shot-fig reveal" data-d="3">
+      <img class="shot fit" src="assets/img/proto/agentq-chat.jpg" alt="업무 질의응답 에이전트 예시 화면 — 근거 출처를 함께 제시하는 RAG 기반 답변" loading="lazy" width="1600" height="1005">
+      <figcaption class="shot-cap">근거 출처를 제시하는 업무 에이전트 — 프로토타입 예시 화면</figcaption>
+    </figure>
+    <div class="rv" style="margin-top:36px;text-align:center"><a href="references.html" class="btn btn-ghost">전체 구축 사례 보기 <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section id="scenarios" class="sec-anchor deploy">
+  <div class="wrap">
+    <div class="reveal"><span class="kicker">Optimization Scenarios</span>
+    <h2>이런 상황에서 효과가 큽니다</h2>
+    <p class="sec-sub">복잡한 현장 조건에서 에이전트가 실제로 일하게 만드는 방식을 시나리오로 정리했습니다.</p></div>
+    <div class="dep-grid g2 reveal" data-d="1" style="margin-top:24px">
+      <div class="dep-card"><h3>여러 시스템에 흩어진 데이터를 매번 조회·<wbr>취합하는 업무</h3>
+        <p>재고·<wbr>수급·<wbr>품질 데이터가 시스템마다 따로 있어, 하나의 질문에 답하려면 여러 화면을 오가며 조회하고 다시 표로 옮겨야 합니다. QAgent는 자연어 질의를 질의문(NL2SQL)으로 변환해 필요한 시스템에서 직접 데이터를 가져오고, 표·<wbr>차트와 함께 근거가 된 조회 조건을 같이 제시합니다.</p></div>
+      <div class="dep-card"><h3>사내 규정과 기술 문서가 여러 곳에 분산된 환경</h3>
+        <p>작업표준서·<wbr>점검 절차·<wbr>설비 매뉴얼이 부서별로 나뉘어 있어, 정보가 존재해도 상황에 맞는 답을 일관되게 얻기 어렵습니다. QAgent는 문서를 의미 단위로 구조화하고 출처와 함께 답변해, 단순 문서 검색이 아니라 업무 판단의 근거로 쓸 수 있는 지식베이스로 동작합니다.</p></div>
+      <div class="dep-card"><h3>답변의 근거와 책임 소재가 중요한 업무</h3>
+        <p>안전·<wbr>품질·<wbr>인허가처럼 해석의 정확성이 요구되는 영역에서는 출처가 불분명한 답변 자체가 리스크가 됩니다. QAgent는 검색된 근거와 생성된 답변을 대조하고, 근거가 부족하면 단정하지 않고 확인이 필요하다고 표시하도록 설계합니다.</p></div>
+      <div class="dep-card"><h3>부서마다 열람 범위가 다른 조직</h3>
+        <p>같은 질문이라도 부서와 직무에 따라 접근 가능한 자료가 다릅니다. QAgent는 역할 기반 접근 제어(RBAC)를 지식 범위에 그대로 적용해, 하나의 창구를 쓰면서도 사용자마다 볼 수 있는 근거만 참조하도록 통제합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact" class="fcta">
+  <div class="fcta-box">
+    <div class="wrap">
+      <div class="fcta-top">
+        <div>
+          <span class="kicker">CONTACT</span>
+          <h2 class="fcta-h">어떤 업무부터 자동화할지 함께 찾습니다</h2>
+          <p class="fcta-p">가장 반복이 많고 데이터가 흩어진 업무부터 시작합니다.</p>
+          <a href="contact.html" class="btn btn-primary fcta-btn" style="margin-top:26px">문의하기</a>
+        </div>
+        <div class="cta-badge">
+            <svg class="cta-badge-ring" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <defs><path id="ctaBadgePath" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs>
+              <text font-size="14" font-weight="700" letter-spacing="2.4"><textPath href="#ctaBadgePath">OCUBE · PROJECT INQUIRY · OCUBE · PROJECT INQUIRY · </textPath></text>
+            </svg>
+            <a href="contact.html" class="cta-badge-core" aria-label="문의하기">
+              <svg viewBox="0 0 19 17" width="19" height="17" aria-hidden="true"><path d="M10.7 1 17.7 8.3 10.7 15.6M17.7 8.3H1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+      </div>
+
+      <div class="fcta-bot">
+        <div>
+          <img src="assets/logo_korean_t.png" alt="오큐브(주) | OCUBE CO.,LTD." class="fb-logo" width="672" height="70">
+          <dl class="fb-loc">
+            <div class="row"><dt>SEOUL</dt><dd>서울 강서구 강서로56가길 141 KM빌딩 2·3층</dd></div>
+            <div class="row"><dt>ANYANG</dt><dd>안양 동안구 LS로 142 금정역SKV1센터 722·723·710호</dd></div>
+            <div class="row"><dt>DAEGU</dt><dd>대구광역시 수성구 알파시티1로31길 18 (본사)</dd></div>
+          </dl>
+        </div>
+        <div class="fb-links">
+          <div class="fb-col"><p class="f-h">비즈니스</p>
+            <a href="business-ax.html">AX</a><a href="business-embedded.html">Embedded</a><a href="business-si.html">SI</a></div>
+          <div class="fb-col"><p class="f-h">솔루션</p>
+            <a href="solution-cubeon.html">Cubeon</a><a href="solution-dataq.html">QData</a><a href="solution-factoryq.html">QFactory</a><a href="solution-agentq.html">QAgent</a><a href="solution-qdrive.html">Qdrive</a><a href="solution-evcp.html">EVCP</a><a href="solution-traffic.html">QVision</a></div>
+          <div class="fb-col"><p class="f-h">회사</p>
+            <a href="about.html">회사소개</a><a href="location.html">오시는 길</a><a href="references.html">구축 사례</a><a href="contact.html">문의</a></div>
+        </div>
+      </div>
+
+      <div class="fb-legal">
+        <span>Copyright © OCUBE Co., Ltd. All rights reserved.</span>
+        <span>대표이사 원창연 · 사업자등록번호 504-81-71345</span>
+        <a href="tel:0533135333">053-313-5333</a>
+        <a href="mailto:sales@ocube.co.kr">sales@ocube.co.kr</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site2.js?v=codex-11"></script>
+</body>
+</html>

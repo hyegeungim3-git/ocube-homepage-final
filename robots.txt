@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hyegeungim3-git.github.io/ocube-homepage-final/sitemap.xml
