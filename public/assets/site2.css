@@ -1012,6 +1012,7 @@ section.sec-anchor:not(.deploy):not(.dark):not(.platform) + section.sec-anchor:n
 /* ---- responsive ---- */
 @media(max-width:900px),(hover:none) and (pointer:coarse){
   .nav-menu,.cta-btn{display:none}
+  .logo img{height:34px}                                  /* 모바일 로고 확대(전 페이지 공통) */
   .m-toggle{display:block;min-width:48px;min-height:48px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .biz-grid,.case-grid{grid-template-columns:1fr}

@@ -1540,7 +1540,7 @@ body {
   .home-page .gnb .logo img,
   .home-page .gnb.scrolled .logo img,
   .home-page .gnb.gnb-mega .logo img {
-    width: 108px;
+    width: auto;                                          /* 공통 height:34px 를 그대로 따르게 */
     filter: brightness(0) invert(1);
   }
 

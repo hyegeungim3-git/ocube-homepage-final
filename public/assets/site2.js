@@ -205,7 +205,7 @@
       setBackgroundInert(false);
       t.setAttribute('aria-expanded', 'false');
       t.setAttribute('aria-label', '메뉴 열기');
-      t.textContent = '메뉴';
+      t.textContent = 'Menu';
       collapseAll();
       if (returnFocus) t.focus();
     }
@@ -219,7 +219,7 @@
       setBackgroundInert(true);
       t.setAttribute('aria-expanded', 'true');
       t.setAttribute('aria-label', '메뉴 닫기');
-      t.textContent = '닫기';
+      t.textContent = 'Close';
     });
     p.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () { close(false); });
